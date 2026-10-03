@@ -93,3 +93,4 @@ Assessment JSON files are in `data/state/runs`. Signing keys, receiver databases
 The server binds only to loopback. This MVP runs as one local assessor process. General multi-user deployment, hardware attestation, hardened model-execution isolation and hardware-backed key custody are outside the current coverage.
 
 Read [architecture](docs/architecture.md), [coverage](docs/coverage.md), [research foundations](docs/research.md) and [verification](docs/verification.md) for the exact supported methods.
+# ShockWave-Repo
