@@ -54,8 +54,12 @@ export async function autopilot() {
   const tick = () => { const k = Math.min(1, (performance.now() - t0) / (LENGTH * 1000)); bar.style.width = k * 100 + '%'; if (k < 1 && !stopped) requestAnimationFrame(tick); };
   tick();
   window.__demo = { done: false };
+  // Drop ?demo so a reload or later navigation never restarts the autopilot.
+  history.replaceState(null, '', location.pathname + location.hash);
   try { await script(); } catch (e) { if (e.message !== 'stopped') console.error(e); }
   window.__demo.done = true;
+  await sleep(stopped ? 0 : 1500); // let the closing caption be seen (and recorded)
+  hud.remove(); cursor.remove(); document.body.classList.remove('demo');
 }
 
 async function script() {
