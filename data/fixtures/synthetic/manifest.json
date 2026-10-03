@@ -1,0 +1,2533 @@
+{
+  "name": "Synthetic challenge",
+  "files": [
+    {
+      "path": "ground_truth.json",
+      "sha256": "0a36324a8c9b57f680f4ba0829a1a54eaeff2df13cfcd5f88c762293d6422786"
+    },
+    {
+      "path": "reference/coco/contributors.csv",
+      "sha256": "84a321d80948a2c412f402058ee588fc71bfc96fa5bd3051d2e80a06733d584d"
+    },
+    {
+      "path": "reference/coco/test/_annotations.coco.json",
+      "sha256": "605cfbe2703db4b48fbcffb02e4f3e45b5859fd678357048cd15226dad316677"
+    },
+    {
+      "path": "reference/coco/test/unit_a_r0044.jpg",
+      "sha256": "e0bcfdc9fe711c3d72b355dc5b8174b6699e10c1d28613e94fc285ccc20a9321"
+    },
+    {
+      "path": "reference/coco/test/unit_a_r0148.jpg",
+      "sha256": "f662fc62e2dabf4ec86502464ce58e4c851345dd7a08966fabaf4839a3846029"
+    },
+    {
+      "path": "reference/coco/test/unit_a_r0152.jpg",
+      "sha256": "d036296f5e202dd825307f6457d9dbc024850b2155b7c779bf9d7c869b6ca9f2"
+    },
+    {
+      "path": "reference/coco/test/unit_a_r0184.jpg",
+      "sha256": "49871a0679dfd5d9e1e725cbfc2d640aa799a44bae6b76a7b7d47e3dbfb65fa5"
+    },
+    {
+      "path": "reference/coco/test/unit_a_r0192.jpg",
+      "sha256": "390700f96e2d5502d7c9e77eae9ab778e5193fd6904d1111d55ee86c135acb65"
+    },
+    {
+      "path": "reference/coco/test/unit_a_r0216.jpg",
+      "sha256": "c611dac08c1f0d2ec4589c00a990f8a3f9267e9621814df9ce567217de5aef5e"
+    },
+    {
+      "path": "reference/coco/test/unit_a_r0220.jpg",
+      "sha256": "8d3fd916ebb23696c90f95f2e8f7507510a1defe47819a95e843c1425f07aaee"
+    },
+    {
+      "path": "reference/coco/test/unit_b_r0017.jpg",
+      "sha256": "da8b84d06cab33250d8b05b5fbf157c361329b4edb239a0667a22d6e7405c7c4"
+    },
+    {
+      "path": "reference/coco/test/unit_b_r0069.jpg",
+      "sha256": "065840aa3335b9877ea155d667d32b40fd970c938d8e734b57432618095b95e5"
+    },
+    {
+      "path": "reference/coco/test/unit_b_r0129.jpg",
+      "sha256": "e735024bc8f21e36f73d25e41e85a0677980496fbb78f0c0fb8d1c92f9813be9"
+    },
+    {
+      "path": "reference/coco/test/unit_b_r0149.jpg",
+      "sha256": "f66a6e0d7d08ab6c6cbf3fde759896f46f476e1299fafadcf2b608487d02ccd8"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0002.jpg",
+      "sha256": "6f417601ad2161090ef1b378c97e1db91d1091baabc3b39735c4c0e2368b7fc9"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0038.jpg",
+      "sha256": "1ae53824782b4d73a9e71a691c6655072ab15cb1935a247546e58d18b1432100"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0058.jpg",
+      "sha256": "76f2f449c6c6fd6bade8a35f85e4b28d40b5a1bdccf12377886f5216f37db1a6"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0066.jpg",
+      "sha256": "91d5ea2afefc1b718dd1d56eb738c16a2f1e92b396ae20fc3e0e88f323d9f409"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0130.jpg",
+      "sha256": "efe355537821dca6c7387438be9efe1ad011db22798e9a82ba43f143d3f93e77"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0162.jpg",
+      "sha256": "a5b95ba54e2df5eb86d012fc3722de0661d68f727d5d86ee9d11083b39e76f65"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0214.jpg",
+      "sha256": "bb6b30d81a7c85ed210014eb124130d70dbd35f2ef741a26d1ae41729d6fca41"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0226.jpg",
+      "sha256": "1cc160f2858dd45081986a87817469ce2d21bb0d1c1aec0ef80b530e7a6f8b27"
+    },
+    {
+      "path": "reference/coco/test/unit_c_r0238.jpg",
+      "sha256": "c760f53ad81dee4e8e982641c8a2812e425fb9ea9d682a268dba864e1ec28eb8"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0019.jpg",
+      "sha256": "0852429fdbd1984dfcbdcbc0712ed6709ff2f8d38e04d84bffd007880f759991"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0023.jpg",
+      "sha256": "0db1d6e8e3cd49d87b3d371d7007447390abb97b431a47a384f8a535a128284c"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0039.jpg",
+      "sha256": "0b405a7b7fe7115bc943104d531a53e7039fa33bff6c312cdb419d1895fb4334"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0087.jpg",
+      "sha256": "7d5727e9cd52be36ec024eac41ea089e614636781f97f42f2bf0869cc4a5861e"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0095.jpg",
+      "sha256": "7e7ae13ff7480ab24b5704020cb624cc90fa1a45cad4388356b039a27b33f092"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0115.jpg",
+      "sha256": "2cf7325affa3a526306b6c972d104516d254ca55787af6de03e4fb9e0d26afa6"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0139.jpg",
+      "sha256": "a894049c3c04a23066d03261603e421666b165e3dec933e7aef95793cdc295c7"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0195.jpg",
+      "sha256": "a070719a42a58dc97ed302fcc43ea1f34aaeb82fc899095263a30e86bcf335d7"
+    },
+    {
+      "path": "reference/coco/test/unit_d_r0215.jpg",
+      "sha256": "f633be2d0c0fde3d0b47e1c5a4bd165b4217fff5a69eaf0969b826b97aea1199"
+    },
+    {
+      "path": "reference/coco/train/_annotations.coco.json",
+      "sha256": "18119d888ca211ae93dc68ea1435982f1c91ea09f170126a5e832e500529f682"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0000.jpg",
+      "sha256": "10d643a414de38e0762ebf5f51c91d4880df26beba779b0a68ea98d649b95f1c"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0008.jpg",
+      "sha256": "c88c1124090b40250e1ac7a1e39bd728eef5a2571d7fd6c85bd98fdf51f77f4e"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0012.jpg",
+      "sha256": "f0a019324d3d354178c338cd8726e866453a47ac5e297191693654cfac60be92"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0016.jpg",
+      "sha256": "21f7a03400538ccad41596159ddb841f7daa04882e58a69e44fa4dc85bef281c"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0020.jpg",
+      "sha256": "edd6a92f21e7a8f8ba33235e9ee94f16afc157a1cd11b1d716cf57ec4cce9b27"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0024.jpg",
+      "sha256": "7486eaf56b8fd3036878b98ed3004fa2d8d7bdc491c369418a120c2df1a0286a"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0028.jpg",
+      "sha256": "ca08822e90303531d30ef4291a8bc56bf05d3f747c55b7333fb4161b33a13eac"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0032.jpg",
+      "sha256": "5fb43cdf3f8e6c0113dab2984f1b88e1cffc1f733c9f340760a347fddf8b34f1"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0036.jpg",
+      "sha256": "75544bbabfcd60c3705b7422e597bec4077cfa28f3b9baeb05996683cfda29f9"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0048.jpg",
+      "sha256": "df393cf79fefdebf9d4bc61f2b2ea65720627b7c0a788f2258652c7f337ad244"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0052.jpg",
+      "sha256": "ba0ba7c40484b8e6aaca8be09b6bf23cdbea3eb4f906731b0345ad9c341a5f60"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0060.jpg",
+      "sha256": "b5e6c07f0f545a97e012ca19b9b053537fb06208accdf80ae5dbe5e3c4fe2358"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0064.jpg",
+      "sha256": "3f309788c4a0d4aec7c129616cd8116d3d6c125ec4314317f1337e958d72739f"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0068.jpg",
+      "sha256": "1382f3befb471e4cda49c38f1aa57796a857ea7ed338a8a38c0a9fbb3cfe7188"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0072.jpg",
+      "sha256": "6cad7bb5f1894e1b90ea443f1eb5ca0f7833f3771c30fc5667258772f3913c6b"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0080.jpg",
+      "sha256": "e1ffdb5b0de8ae720ca77690b58e01fc0d39660be61b3035f607da5edaae9b76"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0084.jpg",
+      "sha256": "08472e0f681c0f5dff8c325861b7671eead5a5dd2335f690a824f510ce043028"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0088.jpg",
+      "sha256": "b1111a53ec85c65d40fdad4f9ef888d374eb9f9cee53516afbcf1e7122f428ee"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0092.jpg",
+      "sha256": "9f9f8f4f15772e9ede805d7a5dd21976702cb6fd6e8a666734e4fc9bd9c91258"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0096.jpg",
+      "sha256": "46be0ce20055bda439f55f8b8333d66631cab1f61e027c642b4294e4a2214cef"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0100.jpg",
+      "sha256": "532bc30caa180e00b7413c26502121f8c3257b0a31bd2baa13c768e71332d5f2"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0108.jpg",
+      "sha256": "7d17fc4ca3a7522a3d62ab6db2ec82c3a6da8aa20369a2751c1c6c102d512c03"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0116.jpg",
+      "sha256": "2eadce86f5d3f3f400988cddfe5e7510a199a791d284eb4600108d6f563c9b7c"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0120.jpg",
+      "sha256": "0337ca476996cda07c1ffefa226e9437a5e507947c065f6219866d0678ecd670"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0124.jpg",
+      "sha256": "215339097f9aac4a11521e468cbad78206309e625c02a282e67e4c024ce35c67"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0132.jpg",
+      "sha256": "eebbfff069d58803b9b5e5a4ef52926364a66b7a682b13973490f69ac0dbaff4"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0140.jpg",
+      "sha256": "0f736546ae79ccf7fe73905f0ca7ae0c4917e95e56a045ae29ae8b04e0700617"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0144.jpg",
+      "sha256": "cd9c2ac598a73157ffacafe072c1950e39326bfa05bfcc28b9c3ec758edf5517"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0156.jpg",
+      "sha256": "9488232b07461cf52fa3ebbedd4b57a0b8db27da0547a65508bb983ee1f5bec1"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0160.jpg",
+      "sha256": "7891861622439d41ddd63fcbb62008483077c96bc82e286ea41b2eac41707478"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0164.jpg",
+      "sha256": "39fdf405f71982e0a9499c9e12bc6bd3dd49a7d7588f08d419f6ed49ac4d5624"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0168.jpg",
+      "sha256": "35c8fc72f2fef40b59a1c5c88e8ba76130c67bd936828741bf7d28c52e433281"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0172.jpg",
+      "sha256": "5095b51c871e7375bcfd6e34f494a0f0d27988d4ddff3f736ea7f85239f40cd3"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0180.jpg",
+      "sha256": "84a73ecd8ec2f2bdf22a42309e685d327c5df555bf093c2387cd4d6d4d85b4c3"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0188.jpg",
+      "sha256": "979541af55264ffe5ec871428e8730f8769a3b1e68716b1692b66a2834ff4e02"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0196.jpg",
+      "sha256": "4a1edb4f27ae38f21c7aff9c8e5e2f284e0ae206ed3508771b7700ee20927c97"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0204.jpg",
+      "sha256": "471454bf5e49db6b0d80f3768de5631d34205f68953ed4142e25fc9bf5e8902d"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0212.jpg",
+      "sha256": "c5e192e253c1b26f0b6bd4204979cd5f99d1bb6a6c7a65fcfc30b5b2fc07762f"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0224.jpg",
+      "sha256": "cc46ca9e8b7ccb781dca22bac89f128ac399cd02ab3534f270db484503f36370"
+    },
+    {
+      "path": "reference/coco/train/unit_a_r0232.jpg",
+      "sha256": "66061a69d07e773e25f3bd2a57bc7d2c1c2c0cc98c954074c8251f2cc99396df"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0001.jpg",
+      "sha256": "08066ce194cc1e5373a6148571ad90cf121219afefdac7f05d289e3caa7e7ff9"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0005.jpg",
+      "sha256": "558f6fcfc72ee3f689a02b396251c47163d2cbefb73c8fe96e27e46dedee4a81"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0021.jpg",
+      "sha256": "838a3d70edc8441c5ccc31357529d1aafa0f2622d28cec44c2a87a0987251d61"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0025.jpg",
+      "sha256": "d3039b60ba7ad71300eb1a52c29704f99ecaf5146b117860515ff898b9ef8a29"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0029.jpg",
+      "sha256": "ab45a72acb313bb7830714f2054ee979b4236008254d9811bd25530937be4ca9"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0033.jpg",
+      "sha256": "71cd025a4548c70f13e9c107150556132d5635de5c6344342e4f40a9620f7828"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0037.jpg",
+      "sha256": "8658ada24181f4ba86c8baec94a118b5ba77665641ca53830b89c24f44fdd205"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0041.jpg",
+      "sha256": "ba630fa1754473b4cabb46eaf361c174ddfbf4aaf1c1264aed56efb9b3134b56"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0045.jpg",
+      "sha256": "9ebf78dc3addf078a38c0945d5ebbb581a83e317f45a68122418b97cca093e9d"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0049.jpg",
+      "sha256": "69aba6c8746601d98760f74b69dadbc9fcc2580a03a57da006f95413de6d12a1"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0053.jpg",
+      "sha256": "6fd56c4959c0d45f204cf0105e79155c4c9c6a980e0e83237e5b5d3ae2168079"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0073.jpg",
+      "sha256": "8abfd97823e9ba29a182af3af3c5ec9d232e8a2e0708b509de85169943f2d0d1"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0077.jpg",
+      "sha256": "38c5f56f657d02d19349cafe289e95542f770ff03be90a12fef7de8796ef6bf7"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0081.jpg",
+      "sha256": "15672e73e406d4d2e1f761d3ad00cd5d89832ee5178b13e69c130fa31cc9fbde"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0085.jpg",
+      "sha256": "928288b8297bdecaa0bef4830edbe7a79a3bc9e9b34cdeb1d4a67c5576578745"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0089.jpg",
+      "sha256": "26e0261984f987882b8136fd0a6ada2c07ef709846dc47e0775e53ea6d7f4a67"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0093.jpg",
+      "sha256": "4a81d94413ecb4833a81d530468e9cb8d12dae4a0ae8d97432b95202392b4f1f"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0097.jpg",
+      "sha256": "e992c219dee127d196212287976cc20ee6cdd496a049da6a47bb96b3776ff501"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0101.jpg",
+      "sha256": "1a03beda0e63b40027e10a9125ef1e6598781c4ae95ef3a5c5f49b9e555dab17"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0105.jpg",
+      "sha256": "319b173e22d427fa95b115e645adfc6ab3f7356b416c26ac25d8c4a5742eda21"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0109.jpg",
+      "sha256": "5f980b7e98b41cce2b32b49c095e05fa689c6bb66a3046674b8651400e964dfa"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0113.jpg",
+      "sha256": "d8df890be9e678ed13612c0c2b940b919fd2bb379bfa9b015ed327cb02922a87"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0117.jpg",
+      "sha256": "d33a2a1e0b35228307e3355913bb88021ccd443cf4a5a04d37a040aade1356dd"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0121.jpg",
+      "sha256": "1a53705da78423b38c09cefc222c218602119cc4cae5540dbb95c2809efcd6d2"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0125.jpg",
+      "sha256": "6359f106bea5d01aa5502c5d5b62760af308eb96fd45425f5871add9f1082509"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0137.jpg",
+      "sha256": "66fde1f85f94e8bbc11fe750e847aa9fc1d74a5b82a6d0ecb1a184d0680fa572"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0141.jpg",
+      "sha256": "8441ee691ec6031edc1d5bef1844ae5e022c7df09e61513e43f231b46098deea"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0157.jpg",
+      "sha256": "ab3ad53e1082035564c90193c0a8443d99e095d27f1a163693933a7a8d20f082"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0161.jpg",
+      "sha256": "e24eafa8c2d1c55ed3da480c929a8faddc1d09c3ab296b6ade8f6cf8fa300a61"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0165.jpg",
+      "sha256": "d83565d1d48bf670d4e1c72e052802864db6e5e9cfd18ca404e5de3810d81a97"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0169.jpg",
+      "sha256": "bd353e5cd293c8bb2cb4262727bcfb68f6ef5faf4fbc75d9e3f8326b08fc5c47"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0173.jpg",
+      "sha256": "a9b903854da50effc6b005cd6e7f3de7b7897474635c056f5edf194b5c3bfe60"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0177.jpg",
+      "sha256": "44c040e17320bcc4dacd784de94f202bf7ee6e348d9e2907dcd39b0527dc6f4e"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0185.jpg",
+      "sha256": "06208819312eeea42d5892c265450411da1cf323ac0355f4821debce739a188b"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0189.jpg",
+      "sha256": "b153a86b4ffaf739695a2f5912588d98c6e878835d82cba54ab4b640a7d280bd"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0193.jpg",
+      "sha256": "f6842d9744181e52221d3e612b4cb1d86d9d8b17f40cd0d37997fa0069ce3ef1"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0201.jpg",
+      "sha256": "3b1003dc55904803291b61500fe89f8793ecd0741fb3cea08a0f9e5d49234641"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0213.jpg",
+      "sha256": "a80f5fa811517c68fc1a65c23b98050ee09f6eaffb37c3006c0cfa0cbe408951"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0217.jpg",
+      "sha256": "53052aedd67ac3d52ad36525699368ec5a054ca50871d2501bc5505c97dd8881"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0221.jpg",
+      "sha256": "c61c8f9c54ceb4c10cfd0ea506a18768af347f032645a40dc079d5725bd3c68d"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0225.jpg",
+      "sha256": "03ecf26a76c1871b765e2b64f69b3837e0fec7d54447823a83c20117c1bafcd3"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0229.jpg",
+      "sha256": "046f20af264cb08cec177902b80f0b04e2ecfd29efb07a00644b7dd9625dceeb"
+    },
+    {
+      "path": "reference/coco/train/unit_b_r0233.jpg",
+      "sha256": "bd7216d7d3e08437f94139757693036cb0d7a5ad2e05af8ed896e88d83146dfb"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0006.jpg",
+      "sha256": "ab807811b7899a6adb0d1f3f63a3d81c457adf2aa63cc5c0dcdd8f4fc27772e0"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0010.jpg",
+      "sha256": "7b08380e0a28ee0ae03b0400d470b4515d1ba2bad5e3f696fa9aa97277acd81b"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0014.jpg",
+      "sha256": "b791d26beaca21c8e436c4e423746bd8303ccffddfdb285b955a84dca18e89ac"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0018.jpg",
+      "sha256": "5dab7fc80057657fd3532dc7fdf77aa234c453a5fa12214fbc617eb8efca8cd1"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0022.jpg",
+      "sha256": "3ce043e25565245d8bd3b3fc345e27260153b561d75149a9bd51a3b3d8ac09eb"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0026.jpg",
+      "sha256": "8e684fbe1aa1f2107b13b59507c0eba41434c097cc281ccaa65c413f9f30958c"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0030.jpg",
+      "sha256": "fd200aafccfc7aced724add2d93c1b6ddb5297a6b63046defb671108d0db4253"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0034.jpg",
+      "sha256": "64a5d26ee2bd7eac9f63ae24193d20c80ce475f58ad443f7845ca4a844b38012"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0042.jpg",
+      "sha256": "569feffae6b73615e847b6113da8d4921d984fd14da06601838edff003f3841d"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0046.jpg",
+      "sha256": "f751bd7b53888bb250e290e5c6b3ed60a91a897b2867eedf4a88ef25bc56ea13"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0050.jpg",
+      "sha256": "a610133fd7b776c156720ab087e373a4c24f154e32e4cfd4bc07c44f95a8e81a"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0054.jpg",
+      "sha256": "8c3d0b3e47655aeea4748d748ff4a83b06ab3d2d873479ec65b28c1b494a4bcf"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0062.jpg",
+      "sha256": "9154bd35f372d897a64746cba5c1abf1b8cb7d96a512af0eebdd5b312b07e6a7"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0070.jpg",
+      "sha256": "e3c5fa92c417ba4d809309c762e2afe70d2af5b6f54b84f3fbc43bae4a42374d"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0074.jpg",
+      "sha256": "41a9e0c02b7d1cd5ccd67e16affee8a5bffdd7fa9706faf91da79eef3a2cdda2"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0078.jpg",
+      "sha256": "578c1c82d771144777002fc9b89c68922dc94f49a53645e2739b5f580e7bb0e1"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0082.jpg",
+      "sha256": "66bba5dae4d38961b0e0946a02e550b896d400399c09cd3c266c4f39ba71d23f"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0090.jpg",
+      "sha256": "076c1bea259e57bafcd5961ae787aed18a074c960880e4109644a6f05821a476"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0094.jpg",
+      "sha256": "f43a454c1aac28cdcc8d5948437dcdf2306a6c2e2f832bfd24441c043d8693fc"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0102.jpg",
+      "sha256": "87613ad4c70dbc900e3a1e4d0b1424960af510ef3f5866287772d4c28d9af84b"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0110.jpg",
+      "sha256": "3f6abe92f6e865144071d7fc053c30c904488003ba530e1c5a2558faced443bf"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0114.jpg",
+      "sha256": "3a99677ffcb8ccca52c9c12a459ecbc55cabc03caed7a62e6735d5b1a0dd9f3a"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0118.jpg",
+      "sha256": "dc1113c2cb35bff8ab0cf908dcc0c3853efca9613b5b8d6369db727b03585f68"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0122.jpg",
+      "sha256": "9bda3de7df7671f019238727c8d71a8a5c474118bf956141a4ed916c1f6ceb71"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0126.jpg",
+      "sha256": "4cd5c17f8d38cfdaf6e00b558d1494dfbc8aa45e77df859960d9d2dffaa996ed"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0134.jpg",
+      "sha256": "9acdf92dddd201a35f2b92873cd06cb00de6b5b7bbb182dfce613a8e35238465"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0138.jpg",
+      "sha256": "e8b7c087d0d1855ac2dc00bf3c3ed9d1ceb09be966ef3c5111545b5692eb1a1f"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0142.jpg",
+      "sha256": "a699efdfc7a691480aa5950343992bda648a65b3554576aa9bc7e7650342e357"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0146.jpg",
+      "sha256": "123ecea1052bab15196d3b7fd42edaa86853055d9251e4fce2c74750ff80c217"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0150.jpg",
+      "sha256": "54b7ec2a9d85e74084e7a594bdf5f0256b50b888a9c6c62b1b1d639f515e8d56"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0158.jpg",
+      "sha256": "60d819afa6ccfa890589b251f95ca17a4d0fc63047855660c0e71e7d8bd96da3"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0170.jpg",
+      "sha256": "6aeb7f93c645c2a5708757473df2ce2366220b822d1c7c7249acccb2df3a1f6b"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0174.jpg",
+      "sha256": "2b765ac49b719aeb3e678b66bcdfbb6e9deee6dbb71bccc6660c128fadbc558d"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0178.jpg",
+      "sha256": "b7974b64f025af3ee629d015ed7232fb435692b39cae5d6e4b2df14df1880bb2"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0182.jpg",
+      "sha256": "2e35aa508e9be0c8ee98873034a8739ec26f5ad815450b72620e8f275e2c6c6e"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0190.jpg",
+      "sha256": "4cf70fc0fd9e599728822c98484261b717ee11daead075ca1447c96036a7452a"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0194.jpg",
+      "sha256": "4d5963f2e3df5400f141cc92e698ea274179484e332a8e45914acce576b2aa31"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0198.jpg",
+      "sha256": "bedcbd5c165d89ce14aaa92574c9cd41579e5079f4089c9dd42cbc0d74b4eda3"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0202.jpg",
+      "sha256": "d504a3954963e4c35991263a2054a3581e78d0b7cebffdf5359a87ba99d75901"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0206.jpg",
+      "sha256": "20fd535ecfab64d6629b73312d635733487a8734474e75acb0145d36c1bb6765"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0210.jpg",
+      "sha256": "a403a3ced3755953b3be19b241ec2e5bd26fe8359d7e34f44cfeff9c9668cc2d"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0218.jpg",
+      "sha256": "dffcdf9f50f48f04d4d328a7158b31a242bf48d393379f6649e35ca2984316df"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0222.jpg",
+      "sha256": "cd7aa62a58819d6d29450ee3e1e68765ae7addfd60544889ea49617343845ebd"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0230.jpg",
+      "sha256": "fbe3a03472ce08ca647ec23f420c25d1cde94e4854b7fec48ca19ef3737aac3b"
+    },
+    {
+      "path": "reference/coco/train/unit_c_r0234.jpg",
+      "sha256": "de7a201e527a36c879fcab6d94f734051647bd354e049557ae60b6e3a5e6d8a0"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0003.jpg",
+      "sha256": "4c3f39e047a0cbcc08471bca44fc1d343b08d297ea4c619bac7d1c72811d271d"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0007.jpg",
+      "sha256": "2b6a8143b3888f124904aeb59a62460a4062c2634a0650742f64b06cb3ae2e40"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0027.jpg",
+      "sha256": "53fd9fb4a265a11d77603e1ebffe18c990e659049577cf97b7ec33ad1811fbde"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0035.jpg",
+      "sha256": "49e2cd602086541616ca2ee34f124455d13cd7ab19fcd27fba2e3e303451e802"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0043.jpg",
+      "sha256": "6b7e6e51764a0962196129f713b7c6a4a74cc50513b7b6ef64a3d978d71e606d"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0047.jpg",
+      "sha256": "b42538e9dd409bbb223ef4bbf04eccd4cd6c89c804238bd481390c3fac7f6c0d"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0051.jpg",
+      "sha256": "d0b3a0adf96bd80a52fd1804f113dee36e72b584970967f80f39fb3818531b17"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0055.jpg",
+      "sha256": "0ee42b3ebeb698a8d4447e84fae5166de135c347e12498a25a973d0199ee5e62"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0059.jpg",
+      "sha256": "7803eab232cc406333b2499a17930026fcdde349f2f3410ff675a39a87ca21d8"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0063.jpg",
+      "sha256": "65bb2f73e7e776f87f728b453f6310ac30e1a2598dfec5a557bad7acedf35d45"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0067.jpg",
+      "sha256": "687dd40b6a7ac48aec0a4843ca83c8dccbdf54c1a39a6daace8b5084939df1ee"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0071.jpg",
+      "sha256": "92bc261d06e928f327a1b378725457b4fcdadfce39d0d1da1d74bb47a8a33ba6"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0079.jpg",
+      "sha256": "e87ceb5332b9c82d75042646430cb26ed035772c0f70164b816a89f11abc72e0"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0083.jpg",
+      "sha256": "4df71e57cdc578aa7cc5369a597d135db839034a3ab1f30adc643f6931499707"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0091.jpg",
+      "sha256": "3df6d52b46a7e88bc08ca7d90b153dab133e3fab0ecbb51d6364b054680a4f6a"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0099.jpg",
+      "sha256": "f3a2978d80f2d5c8bdf3221d02719251322d28032e538ce43a7ea29007ccabb6"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0103.jpg",
+      "sha256": "a0f4d9a2d51faf6ebe0f4637505f8b991262b0f188ac6187220c7aa7fe8d489a"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0107.jpg",
+      "sha256": "4a2a0a123482ee415c7b7cdaa9de67c4cd4f0d796c30b590221f8ee69cddd6fb"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0111.jpg",
+      "sha256": "4057150c97aeb5f36bbc57e0d88896b3203c41d4126a8a9bc35978c38ebb4983"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0119.jpg",
+      "sha256": "56a8be4cf46258077e5fd8723f958db979dab158b6eee3aa9d34289ef10d2a6a"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0143.jpg",
+      "sha256": "b456a1902a9de5213dcf6fef4d17d94c568b10e0f214f32d6bc704fadd0f6dc3"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0147.jpg",
+      "sha256": "69deff1e2f2be263756cf23b6c790a388140f4ef24c846fc2510844f8dc507e7"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0151.jpg",
+      "sha256": "6746cdd99d1b86c6611dbb084dbdcbc0a081a86845205e3c096a277032a19d67"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0155.jpg",
+      "sha256": "d44b36da7213d2601e10072caebeadc627743684eac3a50b954dcafccc8e9416"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0163.jpg",
+      "sha256": "161b91a04d0f0e200120eb8c3bcda3106ba77ea537bee6945c2ee87e002e0ff6"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0167.jpg",
+      "sha256": "ee2cc63b21338f1f9336e6427cf889b095074486fc51e8a90eca9cbc4f5f5217"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0171.jpg",
+      "sha256": "6bede319342a3ad327de053aef07603053aa388443c5ab11ead7e4b0f7a17195"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0175.jpg",
+      "sha256": "82d6047313c56248d40311dec84e496ea0415ae71d35acd6b2bbf95d8c6dbe3e"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0179.jpg",
+      "sha256": "c86029c39275c3f358d81e0540f1eaffd1aea6ab7bdbc3185c14510505358d0f"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0183.jpg",
+      "sha256": "c17c97968beb63d07af0e8ea4129dc511177ae5c04cbc4e1d171ca1380cb7304"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0191.jpg",
+      "sha256": "7dc47729e071f4b436e49597bce2c59fa9f7c15080264ed15d46db3f844917f2"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0199.jpg",
+      "sha256": "27279faab9574a299b72466c9a589067f3f1e880876c8bedd9360505a22725e0"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0203.jpg",
+      "sha256": "dbfa10309e2a6902b7e94c6d64843d386fa77b5204732f2466e7eb932201ed40"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0207.jpg",
+      "sha256": "a8def8ee92829dbae003858b05521791c3c24ca0f14e01f5279547d4f4a3f4df"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0219.jpg",
+      "sha256": "4f46609094af2ce5317af6d22a72f5c3f979eba9563bf4c0959032bdc773ee69"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0223.jpg",
+      "sha256": "389b8c16fd0e767768191265c7f249f8824edddfae7eb56cb348a20c04ab3d0f"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0227.jpg",
+      "sha256": "a1f99c6a78dcc5c039de40f113ba446428db1b2792fbef3af9693b34bd7539a4"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0231.jpg",
+      "sha256": "b0bf383419e8c4b03778fa00ee7b3141995f5ce72afee0390f9037e17d16fc71"
+    },
+    {
+      "path": "reference/coco/train/unit_d_r0239.jpg",
+      "sha256": "a0375cc0e1225d09ec34af0ff329160c6b58636e8524d1078bbb4664a902c0e4"
+    },
+    {
+      "path": "reference/coco/valid/_annotations.coco.json",
+      "sha256": "47ab9132a9c31fccb4b4c93077b980712dec90b7aa593bb506c1289f0306caed"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0004.jpg",
+      "sha256": "5de660e304ec53334e0498d55b4b42077cf3cf1c74bfb30f5749f171ec74dc13"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0040.jpg",
+      "sha256": "33e0d081b284d6c5e70e3f232ecd0a18f013930c1264bb43c51de3dfb0cbaa72"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0056.jpg",
+      "sha256": "f6ae8e342b49858190bab29413962e6b7aa0009026ff2a85bf874360f12c24ab"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0076.jpg",
+      "sha256": "472955b23be240bd29b924041c76f3f9e4c5fdb25584a5ef3cc75f040ec2cf8d"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0104.jpg",
+      "sha256": "1839f42c7aac14a022b39df86663fab49177bc63deb71eb8ad29d6aeb6f27d27"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0112.jpg",
+      "sha256": "df7f85c48565dc2facc347e2c6da46d4370dbd02e972db9b13e212e3700dca1a"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0128.jpg",
+      "sha256": "32b96dae9745b40d1417836f83691eec60b0686154a0b2a4b253eb29734bad4f"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0136.jpg",
+      "sha256": "69c34e813cb1d33aadb7962c5802c4f0dd0639072b5233faf873d3e3bbb7668f"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0176.jpg",
+      "sha256": "7fbbaa28fc2dc3e7b2b616c1b13dc0d4abeda9036dbd8e3f3d98e7066cae15d1"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0200.jpg",
+      "sha256": "61f3cc72b67dfe056b795e7237f2a68f485fddfe4ba24b780473367fbb77d7cf"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0208.jpg",
+      "sha256": "124e78d59e212185e91ac4f0a84dbc85599ab892dcaf235c44c1159b298861cd"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0228.jpg",
+      "sha256": "d58b14201988da2610dd1d8b9fedf2acd87f35b25dd143efcd8544114116b9a1"
+    },
+    {
+      "path": "reference/coco/valid/unit_a_r0236.jpg",
+      "sha256": "b6fda2faa85169f2fa1a0117a5f4bd79f87410f18134644a4dc3ff5517d4f34f"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0009.jpg",
+      "sha256": "53decbabf2185eb81c57dae127fda1210cd6e67bae3d411bb1c2d2ea0fb32e42"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0013.jpg",
+      "sha256": "d7f862e4f25f6e51995c4f7aec62810cbf5cd5d1c28021f45152975f8a8b79c5"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0057.jpg",
+      "sha256": "1078693b7645ccf364eb99fda764472593ef20524e031cdfe83c3a348118ac08"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0061.jpg",
+      "sha256": "ac9058fa94c310e7855d90f27fa93db1c6d4ab92d492b8656f03971810b611ef"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0065.jpg",
+      "sha256": "8dad1bf7bef468bb3804e52d8283b07d802fa2eef848676c7cc0a506c1a854ad"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0133.jpg",
+      "sha256": "d279ea9014b46b15b84f5ec1bb259de9f5570928e0f6cea9486fdfefcd086d29"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0145.jpg",
+      "sha256": "2bd131b6f9179fb4d993b9c708412bb762f41ceb92a35f975964d540f3d8ee28"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0153.jpg",
+      "sha256": "476ac203707a4f6d8d84853b73ec2ba331636bc1306eaf1d87f450571e22a7f7"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0181.jpg",
+      "sha256": "13b6697110c62fd1d0df3bffe44f6e2513ff1e61573a40857e5cb60ccf1a240e"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0197.jpg",
+      "sha256": "9528c60bd568269266de40ce41eac735dcec61d2182ba1d854efed050102d487"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0205.jpg",
+      "sha256": "d0d014fa5daf362c3cda5e18b3036805ced83d361c832255868a1e4b4ba7f953"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0209.jpg",
+      "sha256": "5692b8ebd29062dedad3fa0609378ab01c32829609f71f2922f5bdfe1bcfa118"
+    },
+    {
+      "path": "reference/coco/valid/unit_b_r0237.jpg",
+      "sha256": "f3a10c728e07d4255425f5232855645beb2063022fa6d1df95c7e9450082c62a"
+    },
+    {
+      "path": "reference/coco/valid/unit_c_r0086.jpg",
+      "sha256": "01997f3fd9c066a17996eef8b648fa11da3a5eaef91b1b4a2f8cfabffac62307"
+    },
+    {
+      "path": "reference/coco/valid/unit_c_r0098.jpg",
+      "sha256": "ba355665885c2cd367dcc0a38cad21c8aceeb0973b7afa892813ed9fa3774548"
+    },
+    {
+      "path": "reference/coco/valid/unit_c_r0106.jpg",
+      "sha256": "ba2cf331ad571477c634631bd16cecd1ea1def4580b37aecdcb4ec99c5b3b1ab"
+    },
+    {
+      "path": "reference/coco/valid/unit_c_r0154.jpg",
+      "sha256": "d985b8f74aea172596b2d80945bc7b4cf041edfe49cddcdc3c27c26d557528f4"
+    },
+    {
+      "path": "reference/coco/valid/unit_c_r0166.jpg",
+      "sha256": "fdcbf9fff3ea75576fe0d227736315e2f136d02a637ca840c7d574f5932d633d"
+    },
+    {
+      "path": "reference/coco/valid/unit_c_r0186.jpg",
+      "sha256": "80f520c4e783ae2b956f6d49f57272e92a8171a96d07f25fecb2ff96ddcc2e4c"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0011.jpg",
+      "sha256": "09a13b4d727efb58e057f9680ce41bbf56487b340a7e2a4e7383832c45e866ba"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0015.jpg",
+      "sha256": "4d859493f4cae090039d8381256f74d99813ff639c29d315449bdd69617a801f"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0031.jpg",
+      "sha256": "a9ef8da7afbb1d09cd288dfc457f31a5ca3d38a5b2a06215f37cb47be7c3c947"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0075.jpg",
+      "sha256": "e89e7f79590693f40037f1623c1efa53a7c425b6bca09b242999da565eae4684"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0123.jpg",
+      "sha256": "e931858bb82f47defae054a6a48c12e0889353e792dd7b389d790632c346a054"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0127.jpg",
+      "sha256": "fd26012979a1fe39b610b955200c6f402c074435b95fbb3cd2766a2a940572a2"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0131.jpg",
+      "sha256": "499ac2f7be3520955201f8dcc7f27d87396883991340955086861de4873db5f0"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0135.jpg",
+      "sha256": "f1cb277cf44d94cee9f60e8684b7fb4903909d5a89049d5b8ded1f0f20c5a0e2"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0159.jpg",
+      "sha256": "ac4210ded375763aee407e303a9c46bb8e23f7781a81ec2b7abf41091d965e08"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0187.jpg",
+      "sha256": "ef9b3f0ee6beb7243361d44627355d45e46e305b35d01ec2dbf3075c83b169aa"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0211.jpg",
+      "sha256": "3e4cbf5b558f658fba5fcbfbb9bf0e27bab95fc616df35c96f9a55c8acb933b2"
+    },
+    {
+      "path": "reference/coco/valid/unit_d_r0235.jpg",
+      "sha256": "a7746f6752872693a011573e06ba29940abed480a89fff5d196d3c5d1e4301c2"
+    },
+    {
+      "path": "submission/coco/contributors.csv",
+      "sha256": "25169b2d74d3b8bbf7fc203f135e803262b82d33d86596c169276c04132a7b9c"
+    },
+    {
+      "path": "submission/coco/test/_annotations.coco.json",
+      "sha256": "8a39ed2225a41e30bda0f49b395efdf8afd7c5270a3f3dca819fdd69ca86eebd"
+    },
+    {
+      "path": "submission/coco/test/unit_a_t0024.jpg",
+      "sha256": "2ad10b42516e54f563a657bbf297092d41a9caede0e62451aeb5cdc493715f81"
+    },
+    {
+      "path": "submission/coco/test/unit_a_t0040.jpg",
+      "sha256": "f46f55db749f117f3f0edb4234da60540c34d5f2b59a3d3298b6e2f261c679a8"
+    },
+    {
+      "path": "submission/coco/test/unit_a_t0076.jpg",
+      "sha256": "cbea5f13392b2efec073a480baee5555b87c2047b5bff8f2cc1da15e61296cff"
+    },
+    {
+      "path": "submission/coco/test/unit_a_t0140.jpg",
+      "sha256": "a43508a89b9874834b0483ae0ef0b3906c83a2cc59c6dea09afa766487065317"
+    },
+    {
+      "path": "submission/coco/test/unit_a_t0160.jpg",
+      "sha256": "f96bbf151ae6c97f01e94bd3289e4578d39103f9136e443fa7b6b1d58971dafc"
+    },
+    {
+      "path": "submission/coco/test/unit_b_t0009.jpg",
+      "sha256": "9e3d4b2d3c1dea64604844e7aae117bd9fc890a8a678b8270c020b7865790dee"
+    },
+    {
+      "path": "submission/coco/test/unit_b_t0153.jpg",
+      "sha256": "01deb02b392f8074cdc233da4499092b76aba6d631bcb6bf0a30724eb8ed198e"
+    },
+    {
+      "path": "submission/coco/test/unit_b_t0169.jpg",
+      "sha256": "00d74c82087543ac33e0d573ab407fa1e92a7cfa71f44387fdce648732b610c8"
+    },
+    {
+      "path": "submission/coco/test/unit_b_t0201.jpg",
+      "sha256": "b9908abdf1785f56c3199fe792aacc810a5944e44b70e29359827078006b3a2f"
+    },
+    {
+      "path": "submission/coco/test/unit_b_t0209.jpg",
+      "sha256": "dde1426dc0752a5f75dcbe744690f9c37682ef61c88b02a333bc40e282971a71"
+    },
+    {
+      "path": "submission/coco/test/unit_b_t0217.jpg",
+      "sha256": "ceec8b8d6b0ea07ccc7b62194b79b887978a0375d69a0144990ea9fee1df5bea"
+    },
+    {
+      "path": "submission/coco/test/unit_c_t0026.jpg",
+      "sha256": "b94ce1cab8c3bb457d03db9aebc762c348914d73f5f23562a1017b3af5b8773c"
+    },
+    {
+      "path": "submission/coco/test/unit_c_t0090.jpg",
+      "sha256": "a44eb77d919726c12166a1b82f853ca32991e47efa7445f7b848fb4737cc8286"
+    },
+    {
+      "path": "submission/coco/test/unit_c_t0150.jpg",
+      "sha256": "3e82d74b43c1ecb0d613678ea11457a350dd1949dd1f0e75398601ef7e92ef11"
+    },
+    {
+      "path": "submission/coco/test/unit_c_t0158.jpg",
+      "sha256": "3c4b1ed3f5d1db227c09b172ce1a4b26bc0d5dfdc9562391ec08f09ac5441341"
+    },
+    {
+      "path": "submission/coco/test/unit_c_t0186.jpg",
+      "sha256": "7c04d8fca27395af26f517d714aa63e993e9552602fcdca5b618bf1ac79c5b58"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0115.jpg",
+      "sha256": "8be8ae86e04d84f88fce37700c920ed1150a6adc815d1c476f21433923feba4f"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0127.jpg",
+      "sha256": "cc6db7eec3af29d97b1d9e85c581ee9dc8fa8c9a8270f0b65a7ff25a45d14077"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0139.jpg",
+      "sha256": "03093c2daa6aebfae54acdca82f446da25436d0f7df3c5b077c7146a60e0a772"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0143.jpg",
+      "sha256": "8b49c88bbb2da953cf8d954c6429f98cef76909a172d2b6984b1b982f36d5e0f"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0151.jpg",
+      "sha256": "951739b5f55ec3bd432d5b7eed8680199f5cfb33358a9f3e91d78aafbea92f20"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0167.jpg",
+      "sha256": "f6da0fe61b7d073a36854428da57407c4e0c43d3bdce787d6e76a65dbbce361f"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0207.jpg",
+      "sha256": "8acf28f137ac964a11b351c81e141e6607a9fb89c3b497789eebc6a2f907fb8a"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0231.jpg",
+      "sha256": "516c2d8c53e7571f6a8656bf1f48a780224ae6774a5c177f774179949d00bcf5"
+    },
+    {
+      "path": "submission/coco/test/unit_d_t0239.jpg",
+      "sha256": "74fcac763ce5053aa1d16722a8f99846f7da0ff9d20b5fc102c8f4bdee7ed543"
+    },
+    {
+      "path": "submission/coco/train/_annotations.coco.json",
+      "sha256": "8ef22d974b3235fc6c5fd5d59706de7ade62da99fa7eda14af30888812a0c973"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0000.jpg",
+      "sha256": "ab4ca06da8dfa24148c8bc31a9985dc389ea41b3ea3ecf0e5d7ad4a1f41bff05"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0004.jpg",
+      "sha256": "298dc5e5fe153a937d681f5c54d0930dfb832401dc1b60826bb291fb62480802"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0020.jpg",
+      "sha256": "b214f2b5d6dbaca092564efb664b6427519a4400e74ed505fe814975b084c1d1"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0028.jpg",
+      "sha256": "93ed44dd239920f74bf48cd3fba1d75da5d9b415a54ae96bb29b86b5abe4bcc3"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0032.jpg",
+      "sha256": "45c24cedfe8d7cae23665770f2cbe897fe141e0015649c2ffe00a365d51c2c0c"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0048.jpg",
+      "sha256": "014ad203fcc6c385c4d7595974dad11b829c26e6d367685beb145c1bf24e023e"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0060.jpg",
+      "sha256": "b8a664237eab43464e54c68262e31ca97498b9e9ffa4f30f0693469b5d497f48"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0068.jpg",
+      "sha256": "288a789aac48f621827d02e2b797437893ba4892a01dcda7d43dbc699d6ef5ed"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0072.jpg",
+      "sha256": "78168c336c3d3553bf8d6bfbae942b1579785e019d5049080ff8ccd9b8757830"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0080.jpg",
+      "sha256": "db93853201b04ae2bba816399c88b925ec8857df1b5d309adc878ce4e91a50b5"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0084.jpg",
+      "sha256": "f236b9ec0a5201db81ed89c569cc5feec909edd6ef0250bfc0df7081fddfb730"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0088.jpg",
+      "sha256": "7d4db569a5b99480768b742740dbdb283d7a2aea5bb9c5d4e5ca7e4c0dee77a1"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0092.jpg",
+      "sha256": "b931ccea9658f45ecce9c231b7698d710c07301cc5bc917ae1ee3e9f02b38642"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0096.jpg",
+      "sha256": "61390d51d662cfcf75771bf4824dee16eaeb727e74b0adcb8358da6842d0e9f2"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0112.jpg",
+      "sha256": "9baec3fbe4158e99c91b3472e541d23e6d4ec3b763c5a0322b15954ceb426bda"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0116.jpg",
+      "sha256": "4f234df672e242e1ad93825237bd6b92196b58b42db4b245bef827a3229df8ba"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0120.jpg",
+      "sha256": "eae8d35204f400bf376252c8acf89d7ddf01ce402954cb20645f1d93faa89b79"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0144.jpg",
+      "sha256": "6c0ad4ea7876ecfc1a0269bacc8b3ac3b38aa1c368726766f57fe2ce7b4b3a49"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0156.jpg",
+      "sha256": "1fbe3bd0f023c0e8f9a1cb50c81dc70a36ef4375e0bb63fe93f1d904403472f9"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0164.jpg",
+      "sha256": "6fc58cce67c338431285c35b20f7da727cc9b03caf8d8af3938a4638ebcd3121"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0168.jpg",
+      "sha256": "10850e55a97ecfeeab9eefada0de4946bdcdab8c7d89b0df599746a0d5e1aafa"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0168_relabel0.jpg",
+      "sha256": "3ff3f7950a545e8e65f275b4df58e8abe8e56b37f4aa5920a337f93091018958"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0168_relabel1.jpg",
+      "sha256": "459d10a25f303421033791185e1efc8c6c4b48da98f56828ef6eda1c53d97e00"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0172.jpg",
+      "sha256": "2ce4bedb21fed8fa71acda90ba52d3b6609f4e302414a9dc0683f1df061f1520"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0176.jpg",
+      "sha256": "5566603b431a7d476c8ac488596b73d4fbed35a4873d15320bcdfaf6aff93be3"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0180.jpg",
+      "sha256": "d6c589ca50abd28d45a28ab27d632354eafc6bbda077f0c8822c475b6927cef6"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0184.jpg",
+      "sha256": "68e4da82ff9f95086cff89fa7fb28642ade926e8f8df6729613f04c91ea4657a"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0188.jpg",
+      "sha256": "6f0a0815c330bc195e3a85a293df612475bb971ca4c0ecd55f0ef2a7293faf96"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0192.jpg",
+      "sha256": "28160b842d89673c20e7ea113c35b5dafa54d374bdde31919cf70c1aae162b7b"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0204.jpg",
+      "sha256": "8ec539dcf529d827e2711147965a460771bebaebdc7faa0d8ac1f6ee625dc78b"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0208.jpg",
+      "sha256": "99e74e2635198459bdba358f27e473f7eae6adabb15560095f0a976b7470f62f"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0212.jpg",
+      "sha256": "c3f4c30d40d36008b9ec6d9bc78f17cc495f0f0439264bd95edf1bfcc0e9e8b1"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0216.jpg",
+      "sha256": "55c84beb7b10c0a787ba6a89674832eebfceeabab0347b1fcc2ac3ac33530fd4"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0220.jpg",
+      "sha256": "7d29b1bcc6fff2c35cf7488a494fa18c1a87b88c2ea388edb0ffa2183454cc81"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0228.jpg",
+      "sha256": "02416b1f35edc65429cc86bd4a2094e9523d07755d03427e6457b78960b904e8"
+    },
+    {
+      "path": "submission/coco/train/unit_a_t0236.jpg",
+      "sha256": "152f9bb41f8c2c5703e13d1321cea9298351d8aeee6c6a704ccb375d30f28e99"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0001.jpg",
+      "sha256": "5edef367d848feb1bd1b9fca4ec2c7e68a14d0849100447192659c27993f6a99"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0005.jpg",
+      "sha256": "4aa9d9b8d7d43ead0cdf74e6152eb395210e49ed34c86cc97919841bdcc8ea4e"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0013.jpg",
+      "sha256": "70adfb39964268c241e49bb31e31ff72a8c161ef587c43e0022e9b503280c082"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0021.jpg",
+      "sha256": "2229184457e849392e2f0ffb1f4560cc77abe272ad25bbb03f840e02af649411"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0025.jpg",
+      "sha256": "64a05b9f2cfb9f80c368e4b366d8e48ac0e7a9ff8cad19400a32a2dc7839b808"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0029.jpg",
+      "sha256": "eab88c5d423d2d535ae098c6d8136c88512c8f76e65dac3938852a6f4362a25a"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0037.jpg",
+      "sha256": "70c4a32cdc17b6832bfe5718ecb7fb06a4e5e07adf82bdf8d2dc7457a125151f"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0045.jpg",
+      "sha256": "06ae9f6ac75b2943666b6450e2b6c8cf6790406e2766b4e0881065ca30deed3d"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0049.jpg",
+      "sha256": "7a71b3f4b5445cd57957256455434e355f1a7b09e76dc756727d421aa28a63bb"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0053.jpg",
+      "sha256": "7361da043f5d19cd6fb0e3c7d010e35b9ecf573fd0a8cea4f7f2b29ef5d1ac99"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0057.jpg",
+      "sha256": "72601a0229030fd40449a36a892b9f723e27653f6300706d4cf7d2488a72e594"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0061.jpg",
+      "sha256": "9c541cb9e07af33befbd12396e0a30824306cb0e4d68e7b3e804427eb13483ec"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0065.jpg",
+      "sha256": "b65cd96f89d9b1f180b8c4eb205b5dfbe2c30adb4d94aef32bb5b0bae35a9333"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0069.jpg",
+      "sha256": "84cfd778ee7e5a4879c4e6d5e83f796d0a9f00acce1fb6e839c17974efd9a2a6"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0077.jpg",
+      "sha256": "6378fc2322f9d1dd834e086fd72fc3e2691186d5a10cd144845d2736882b5f13"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0081.jpg",
+      "sha256": "bbaf61369294a289f772c179f6d19a0796c13c2148544bbc811a304a5522f067"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0085.jpg",
+      "sha256": "739b7571258535e8290e0981763eda66ce54a9aeecbe609a94ced024aaa7daf5"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0089.jpg",
+      "sha256": "757626cad6214cf2494d2f6091e10618af1fc5e345da53b31d8fd92b65776a72"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0097.jpg",
+      "sha256": "396af75d7108f20abc8a93ab14625e67f622f8b154ae5f080b0d65d6d2cdbaac"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0101.jpg",
+      "sha256": "f8fea03674267d2e9cf7fc773f3a1c2fdf8ebf4f6eba283033698627f6dcbd97"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0105.jpg",
+      "sha256": "746ad82cf1058d25cfe7f202b38e9eeae04b8d2cc7fd1174e9be37ab1185086e"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0113.jpg",
+      "sha256": "784b14269b2c05e2d894e6d8263c6a545712bbf49ffc9e0149b089733b17087a"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0121.jpg",
+      "sha256": "e5a1a5f6e27a99ebe4bf61cace347d65e29af10ff65d6a10c395bb7e30fbafd6"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0129.jpg",
+      "sha256": "e626804dbfeadedcba0af1730de3b422a1e53be7f6d404985cdba0a0e93a25f0"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0137.jpg",
+      "sha256": "acded2dfeaecfc38c2b7fc019a45cb593920b55a444455328ec1996b4dfe4828"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0141.jpg",
+      "sha256": "dde0618286daf890497693ccb0e7b570f07f78f48e65fcbc720d47922f73af95"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0145.jpg",
+      "sha256": "42c2073b621ad784c31c0a2d2b7dfd86604dc01a1d6a010a228abade0ef793da"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0157.jpg",
+      "sha256": "42fd5c524b070d62e0335419a0acfc805b9537b406caacebe40ffb3915b4aa61"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0161.jpg",
+      "sha256": "8f52683cb40a13aee29612024429e5ef43abaf1a974a9a7498d025c2e5eabc98"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0165.jpg",
+      "sha256": "da84a2dc63a4f16ce56d2516074b371e044ca13ee5096c96a0355b9daf2c191b"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0173.jpg",
+      "sha256": "e5105c840c154fe9e9559378ff13271c4d60c102814714ff9ec3dfc4fa136d40"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0177.jpg",
+      "sha256": "99bee44a508fa4d36f3f376dd8876649560e43df89b94ce63fee7f258a87e646"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0185.jpg",
+      "sha256": "e50ca05b4e45a07e40e5966893b59d32946aecf4e8de4b0ee7090065e26c350c"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0189.jpg",
+      "sha256": "1acf05042fa93caf135701fe0d21cc162438d72389c17d35a3938ade495e3c18"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0193.jpg",
+      "sha256": "3eed852dc83c6946465c9e5a7c71bd343eb99ece7dd1644054dafef0d3c70e80"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0197.jpg",
+      "sha256": "6ec68910dd94de25a5fd38c39c9855a723a61c1e7ac12787e4f37d1f98adec5c"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0205.jpg",
+      "sha256": "00a1b5cf095c8d93c087aa0b76f3161f2e8a7214cbd36603c7202348aa52e698"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0213.jpg",
+      "sha256": "7ef26fc9294dedc31c9fccbd8183da8115eaf078dd34d4f3ea04760601c00e17"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0221.jpg",
+      "sha256": "bc6e940d3f9978a86124e5933b8931fb69adf411cedfc0cea88ca0470d31e42f"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0225.jpg",
+      "sha256": "960589656f6f6e66b8db1c64c9eb7890ab33754063890c7a5a0e25c40aba31ca"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0229.jpg",
+      "sha256": "919cea1b4e9b4be411749bd8466931288830a128f75ebe9ea9065a0f45070fe9"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0233.jpg",
+      "sha256": "a32cd23cb6d80306e6d57467a910fe2d8674b670860a31a727ec0cee5849e9c3"
+    },
+    {
+      "path": "submission/coco/train/unit_b_t0237.jpg",
+      "sha256": "00511b1e2d0b549f6b0371762576359833906783517aef79293ac9e11a46dc18"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0002.jpg",
+      "sha256": "4ba4f17000811ab72ab7c54cf3592890e37db12635eff827cdaee1396450ae23"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0002_dupe0.jpg",
+      "sha256": "4ba4f17000811ab72ab7c54cf3592890e37db12635eff827cdaee1396450ae23"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0002_dupe1.jpg",
+      "sha256": "4ba4f17000811ab72ab7c54cf3592890e37db12635eff827cdaee1396450ae23"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0002_dupe2.jpg",
+      "sha256": "4ba4f17000811ab72ab7c54cf3592890e37db12635eff827cdaee1396450ae23"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0002_dupe3.jpg",
+      "sha256": "4ba4f17000811ab72ab7c54cf3592890e37db12635eff827cdaee1396450ae23"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0006.jpg",
+      "sha256": "87a39e291ae6cb1740aab8aafc87a5178c437571b11e47238b6294e1a572132c"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0010.jpg",
+      "sha256": "cea39433273387b45d73e75de3f4a5f920645e051b1f6c9f9d325e2bd216a5cd"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0014.jpg",
+      "sha256": "933d8fb36284869693f75bc91702d34531969656811e406bd4463414e1c158a1"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0014_near0.jpg",
+      "sha256": "4b4fa5ce90a4dbeca88eca8b739a6c3b1b12bd5643e8c25b7d48ae7c9e068805"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0014_near1.jpg",
+      "sha256": "2a8d1e6fa47502f8576a545f6792542b312f0dc126f842f411fb4266eec364b6"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0014_near2.jpg",
+      "sha256": "d30f4a07e08dd3977b26eaf305aa04657954a212322116e731c62a3ae9a6d6b8"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0014_near3.jpg",
+      "sha256": "4239841b51382831b0a67891b67d58f42d17acd2ca35f4e206253451c9fa7e6c"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0014_near4.jpg",
+      "sha256": "a8ad65de0161eca6217aafd7f76095fd275f6cc7c41fb099c27d3f804f3e4f80"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0018.jpg",
+      "sha256": "4b18d85d83ba5b1a35b1ec351bf06fee3e5f719c7dd4e8abae39c02093a5cdfd"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0030.jpg",
+      "sha256": "95972aa118437860d42fb5aff614fe7a765d2b1687112434ba9a3a26442846cd"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0034.jpg",
+      "sha256": "1f7db3d3e97e497cdb4760be097c8d2f07a4eec3db43c50bcebe2aec685bc78a"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0038.jpg",
+      "sha256": "7e79faf8a3cd5d6bc4b85b81d6f0ed40fed18f03e898ca18d96d0bcadf789414"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0046.jpg",
+      "sha256": "d19beed41e67b906a2b4637f774f80b709102b061ee88f500874ad4849ff30cb"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0058.jpg",
+      "sha256": "a6b545f742574cd630e130b0bd9cf351ccac93796f067d1f8a9f45d5f9b8ba45"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0062.jpg",
+      "sha256": "233bf699ba3f08bd263687adbcd4b095490cb6fed0ecbac19d39534e3ea7a0c5"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0066.jpg",
+      "sha256": "9fc19ca0fe3976392b026feb0148237aa2d0d10592ad22c3a440318fc52b4f7a"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0074.jpg",
+      "sha256": "f68a797356ae3f4ac24321401763768b229fb709ce97939c606706657b8e3133"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0078.jpg",
+      "sha256": "0a53379fd3cbeb948e017c2de691714a5ddb2ad4216476d46a24643a3ec9940e"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0082.jpg",
+      "sha256": "f3b264f838125746be71dc321b5ce73fda0a560f41f9bf69c0e63253ebf7dbf7"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0098.jpg",
+      "sha256": "8c2ba72a1a4629c472b31c71dabcc410efd319e18b898a72f6c004701ed28716"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0106.jpg",
+      "sha256": "36da98b6417e587314ee654b16640114bc328ba2a3b0755e09cb01dc5849101f"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0110.jpg",
+      "sha256": "73b4326861a8fa0264b6a0dd50f81ad7c62aa4806c361461682e87d234fc9648"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0114.jpg",
+      "sha256": "afe6da6cf80ac95ca738f61a12c9ab51353b8183299066c6b25100914f4b871e"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0118.jpg",
+      "sha256": "f5d2033f64780de52a68d7e77f658cfe99411310f35992a42b17f9b8decdb60c"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0134.jpg",
+      "sha256": "aeae06b5b755c2d1932b87fcdc45a3c5fe6a23f52d773ae78ddfff5fdfe6a421"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0138.jpg",
+      "sha256": "6b35af5c85d0ed885b70ccf19318ad6654d7fd189113c96dda04c2c7efd5d419"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0142.jpg",
+      "sha256": "935f1004938235e5e2e5214ce19abc2fdb62f114e99c37fa51c7f6503c5c26df"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0146.jpg",
+      "sha256": "37d3071aef33b7ccbfeb34e2176bc804d090b61e583f95bdd3e927345fdd0e9f"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0154.jpg",
+      "sha256": "acb508a68a2193ebcf48bbafba8aeab43816d1e2ebe031ecdc35034734c9165d"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0166.jpg",
+      "sha256": "444e5a51594adf0bd71bdd2e0418e489f95cd1c0e181e6fb69a9523e1c792803"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0170.jpg",
+      "sha256": "2ddb0879bd8f66548ef3935015ef092d179ecf730310f637155d373d61524693"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0174.jpg",
+      "sha256": "786274840abea0fdf0abff557f04140b4f8da169c777c2bab72f7499f00714ce"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0178.jpg",
+      "sha256": "d04e3d1c86846c21fe4e28acf23fe06c041585ea9f3eaa09652857be289e6912"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0182.jpg",
+      "sha256": "81cea87cc7825e05f6d737c7f2bec3464c9bee47ee8da7b452f99642c93d7085"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0190.jpg",
+      "sha256": "933c2f690ad7bdbf19dea39d91587ad850dd42604d6a9778f544a3590e9e749c"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0198.jpg",
+      "sha256": "6cba79ebe6f4ef95b41252f935af42479aa9e626a4357639c89d4a88b8a7d3ff"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0202.jpg",
+      "sha256": "eec728bc158deeef20c52adb3337796e14c3d63e04de8b96ec2b4becaa6c985c"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0206.jpg",
+      "sha256": "90d57eab6cd04adad67c64b03b433e9355f33638f602fb48694d93215b9bcab8"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0210.jpg",
+      "sha256": "1f38d31d7fcaf9bcb0ee2554084932cdb3fc283347d75a777f67b681ef5e768e"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0214.jpg",
+      "sha256": "755ae638a1d6a4d1ff6166bbd6af8e7a0af1cbaa0f3fbdf80e38cdd5496eea3a"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0218.jpg",
+      "sha256": "b4b1e1ed1c9235310642582b5f642cbfa5b071d84d2d5d05cf86354c40b8a3ee"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0222.jpg",
+      "sha256": "92f25c6a232a68ed66d4fc1c43f403450f837a00523b6053ff4da1aaf97866d7"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0226.jpg",
+      "sha256": "6c7b4361a6d926f1672f53540608051b405a0c3d1debd45409546bf71ecc925c"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0230.jpg",
+      "sha256": "31edfb30a4db1ad7a079d666c7f9cf84e102d5bf96d6085484864ba9684851e9"
+    },
+    {
+      "path": "submission/coco/train/unit_c_t0234.jpg",
+      "sha256": "6dbdea45d93f7bdd7ecfab95e7713d8cb2f45336f0c3271bf5baaa18962cd761"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0003.jpg",
+      "sha256": "e3e4a1c181f9ed77bdae60db88fbda2b9dd6a7dd4689ebcff389232da09821ca"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0007.jpg",
+      "sha256": "039b5600f3b70e94316ad5c8bea25998b70618ea627cb520855c1161d40e2b26"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0015.jpg",
+      "sha256": "c6f1d847f3375ac3a3967b2b6e623136429c6ad6f71bf4fff300262180499e39"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0019.jpg",
+      "sha256": "1ec8574234001ee36e45914a998d3a4ead1d9187e1c79bf18fbb8c8b3f59b6b7"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0023.jpg",
+      "sha256": "baa3a84082a8af754cd79bd86aad95f10ecc56da129da7ddec8f44e9d3071ed3"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0027.jpg",
+      "sha256": "5598ce32f01ac5bb18d615bd3657af3c4f14e51fbf9cfc5106431db19c74232c"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0031.jpg",
+      "sha256": "6f92562d3e955e9b6af7446a6851c93ca7023940048b6865587c02884f1732db"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0035.jpg",
+      "sha256": "937328a8712dece71590346b5a8a203b3b5f0dd6e7c54b648106597a927f93d0"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0039.jpg",
+      "sha256": "27090e6024b9e9dce7b8ec119304e4d16183676cae71be3cc3d42c6574a2fc99"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0043.jpg",
+      "sha256": "0d979dd3f84a62ca3b0d9442fb5fb1189f5baa208d1c8fa10a1eebd7c6bc2c2f"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0047.jpg",
+      "sha256": "0c2d50c024554ce84a3d0d772b088ce97f23506f9ed46443b4541f640989fc8b"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0051.jpg",
+      "sha256": "b122e27bf1967776983a6594d04bce1c3e84b241fd343dc5320113b0a76f8677"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0055.jpg",
+      "sha256": "f10b80f5ba302d696a108c4a925c7fdb910f4084734ea3758104103b940a4773"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0059.jpg",
+      "sha256": "6f4dad8893eb0b118dadfe0c3614ceb5ec7df22005d7cf5f834deae40f8c0cc5"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0063.jpg",
+      "sha256": "2d230811cc09520931a19ce7a4e31c22d524be3c2cb3163819266ef9cd5b2571"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0067.jpg",
+      "sha256": "c4d880f4ad4bf39c8c167ec14e6c929f1b293b79f1deee583f25c48dd5bf4640"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0075.jpg",
+      "sha256": "b07eef42edf6cf03cd4a4bc2573e23dc39d2bbbc4ba49d88c151438f160189f3"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0079.jpg",
+      "sha256": "e36ef442509bcf894a73e97248ece64c70908d90f17c66e18d2646c296289345"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0083.jpg",
+      "sha256": "05ae335cf55f10c56b54db8226b5825184d036276e7c3a29cc27f47824fa3d48"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0087.jpg",
+      "sha256": "6bc5a5edc97c3ba127c30e287809a95435a018ce820d0721789805af3c859e3b"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0095.jpg",
+      "sha256": "6a17acf6774b5a91ed08765f07958804809c2cdefe3463446121f8c759d0dfb0"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0099.jpg",
+      "sha256": "2cde4f26f557f20c7c88faac563c48d78a7dbb6a4369241023f18533f7fece24"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0103.jpg",
+      "sha256": "dddae5d806d2e88fd8faf73ef913c54b09b64c667d73dbaaaa53d0d7a4c99b58"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0107.jpg",
+      "sha256": "34d9cc38cf691dec47bc2877af83fe57e134f13a925cef0da5e6cbc542792834"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0111.jpg",
+      "sha256": "db181f5da57be712a290111bc729d18e4ab1a53db3782e14eade42b5f341d4e8"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0123.jpg",
+      "sha256": "3e3cbb0da78abc2892cfa05a621d4999b48ab4ff86a5e4f9e47b819d3c4084eb"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0131.jpg",
+      "sha256": "52ec45a7d22551ca620e00a9355ff76da855a6587fd60cd608cbf589501dc0f1"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0135.jpg",
+      "sha256": "6da8f4248064f421d348fe8d0f89b987162ef817bbfd03528f53d3b77a6c3747"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0147.jpg",
+      "sha256": "3e6e627edf14dd8ad1199487c9ce7f6238904553de1d7f61e8809e7c7f4b901b"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0155.jpg",
+      "sha256": "44b5a9ff4c9993c3be520a4d74429258c24c68db35412f2554c01124198b8c4f"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0159.jpg",
+      "sha256": "783c02546aebe33316ffbce5a32907a3759ed38be73bb6c810fe4812acfaebb7"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0163.jpg",
+      "sha256": "f93ea911c426325600d11df7aab2ed110a1c5ab0cd2d4ccb785d70f3f8d2359b"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0175.jpg",
+      "sha256": "7a3be6b69e6a384e545d543f286b51b3825e33fea1bd64680c7a455888c13ada"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0179.jpg",
+      "sha256": "3e94d1a1ae689a23622a75dd8d50dd757568c4a70755d072822294c2c1ecdf54"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0187.jpg",
+      "sha256": "fb2a4d1f67dae8c3bad556838eabd9c41d42d3ae78a6ae8cbfa4fad66ae52b7f"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0191.jpg",
+      "sha256": "86d5753c52e57db14648b20d7cd8faebf044076a50cf6610773b3daa1227dc6a"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0195.jpg",
+      "sha256": "6b0b5f7909eff785d98c0f505e6dee31482811d3f2637d8d6a52fa6d1e9bca3a"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0199.jpg",
+      "sha256": "ef6cbeea4bb3bd0e2f8ce1c92bd3cb2323f01eac9dc9cdd87442da3bda18fb19"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0211.jpg",
+      "sha256": "61bdc473eb5ea5233945c102e6de75ace45090c6992fbe22be8f734b19289b34"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0215.jpg",
+      "sha256": "137565fba591e17c64bccc73ce1da3124fd84c3b1032cf94b986d9a0372b66ff"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0219.jpg",
+      "sha256": "9ab7ce40727e38e1d2dfa09a78017682bc2b83d5461a6c7331950ba40881026e"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0223.jpg",
+      "sha256": "1b6738a4e9e04d3352df32df0bf90b47c6aeb8ac351505f848e00beac84cb3fa"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0227.jpg",
+      "sha256": "e16eb88203f633c59fd0802ede89bad61c0baf4bc8ceb93ca2006628edc7f16c"
+    },
+    {
+      "path": "submission/coco/train/unit_d_t0235.jpg",
+      "sha256": "6ef3f9978c19e7489309630a1bdd62ed7875816428426ed6e940dac93ce94083"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood01.jpg",
+      "sha256": "79b6c07489f190216d3791acfda6621c3f1e212b4964957505c0b238fab2021d"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood02.jpg",
+      "sha256": "b400b3bd89b5445cfa540c4dd91ac1b0043c950756bde736a96bbcfb03924e80"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood03.jpg",
+      "sha256": "3d7d18e229de2cf6c65b332ec574a4d3a429eaf41fbef0a3582e930a72456d0b"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood04.jpg",
+      "sha256": "5b7ad276863ec1c50e571a9844369a086df07e6e1531fa286fae537f9b626304"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood06.jpg",
+      "sha256": "5029f00dd15ab78317b2036e065a13668731945731d610a8a6ce9c84b036549a"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood07.jpg",
+      "sha256": "716e47273f5ab384e7f725bee4303fb5d1b03e5c3c0cc8285c1fbde19ac23d75"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood08.jpg",
+      "sha256": "ecdd3555005f30c1f6a68366adcb0119b2d193d994f3c85f6880e5ba1dede7c9"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood09.jpg",
+      "sha256": "db08d2d5e8f145884af5eec390fd20c26a4648f7a5cae979e19633202814e85f"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood11.jpg",
+      "sha256": "aad150bad964ebdb26b7c1bdfb2cac4b61bd4892314c9e6305c12ff57de07c3d"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood12.jpg",
+      "sha256": "f72cae27c2c303089c3f465e4b88f8b835ef10a8347ab7db7cd3544617fa0f3d"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood13.jpg",
+      "sha256": "5e8b0af72048c7346748ad5c2ca90e1ab930a42cf5db040898f1d078ca93b3a7"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood14.jpg",
+      "sha256": "dd1620e7e2836b12a354459dfb2e4a65ee20ba42a317a99955187d42b1fdbfd3"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood16.jpg",
+      "sha256": "deebfa38683120b62df2e8519b71282ca259113ded4cdde46ab3c66816c61820"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood17.jpg",
+      "sha256": "18e0341d7593debc0a302e84d2781e68992f95d214a6112ad12ebbeb226f6ff5"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood18.jpg",
+      "sha256": "10118cff599564d03d0ac91514139cdf5c2768f491d2238b410bcb1d80739c38"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood19.jpg",
+      "sha256": "1436e020d04aa402f550f9c72535cfa0887461612c64719f1c91001c5b6be964"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood21.jpg",
+      "sha256": "3a1275318650de242f9185a9b311b7260df947820e079c8b56ec10e10d749628"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood22.jpg",
+      "sha256": "917f7ebdf30ee45d5ac61d56a4ccd852e0971517180fabd5827168caabb008ad"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood23.jpg",
+      "sha256": "c987fd037075d881578c748730eba7c3e6d750fcfef6deca3094121cc9864628"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood24.jpg",
+      "sha256": "72c73c3393bb13b25faba99d1dc2124e82a2cd80f8a10aa2389d9154f50c90ef"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood26.jpg",
+      "sha256": "30e0b03d9e620fbd70f514bc2655060af6afc76573f8a5fe45a9bd162d77095e"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood27.jpg",
+      "sha256": "330a966f19e4baed6c1752e3a62c74ec4fff0aea1f2b4b5786356a8769642469"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood28.jpg",
+      "sha256": "cc61ce4fa8f0a212a9a5a339f8cafa3ba8c33bd33f7c917d6ed9ea57bd0fdc82"
+    },
+    {
+      "path": "submission/coco/train/unit_e_flood29.jpg",
+      "sha256": "f95a20c6f6ceb3136df88a7557275ab468a01268d0c8d91b2cb690ab76310575"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood01.jpg",
+      "sha256": "b9642e0e6c189814d358f6fe9565f8f9101f67f84083eaffa69d38d56e00e21b"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood02.jpg",
+      "sha256": "1cbd4f0b686a4f8aa3d1134e98621cebc306080b433de78af825e398d9e0b6bf"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood03.jpg",
+      "sha256": "2e2572f85d3b20733a375f749ec65b41d8162e50b4cbeee416b365240077f2b5"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood05.jpg",
+      "sha256": "b050ea697e9db5f2db03730dd01abd0b6f685fa9d918b4385ed73478e0f694a0"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood06.jpg",
+      "sha256": "c8217831f1abfebaa2a9b8e3d08545ccffe18f005a31d205465136c456617711"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood07.jpg",
+      "sha256": "879a7436ea2d966ec7fc336f5cc5dc87d766fc70713124671a3c181dbeec1d45"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood09.jpg",
+      "sha256": "df56f7182b17e21e2ab2d69609f2c234e65279d861dea0a7920d28f73b125ddf"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood10.jpg",
+      "sha256": "1110a31e9be19b36ada285ef83084d16180a8a87aca5e2c990f9412e1020af62"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood11.jpg",
+      "sha256": "237cedacfe9a16934a75fd7591b388e2358981683ef867fbaf32680793bd6c34"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood13.jpg",
+      "sha256": "a9c791c109f46a53429ade16d564e9655009be478dfb57a6b73be94a55b05691"
+    },
+    {
+      "path": "submission/coco/train/unit_f_ood14.jpg",
+      "sha256": "3d390f19d7a2461446c7d052dbd08616eed27757c6cb55f35ed199bedcc5e731"
+    },
+    {
+      "path": "submission/coco/valid/_annotations.coco.json",
+      "sha256": "8fdb61a7f29059f4ce427c271fd3166766e07833679cfcef864bf6ba539a87fa"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0000_leakX0.jpg",
+      "sha256": "ab4ca06da8dfa24148c8bc31a9985dc389ea41b3ea3ecf0e5d7ad4a1f41bff05"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0004_leakN3.jpg",
+      "sha256": "06d1245a80f15c645f52abd298db1b2743467c7ee2e7c450d132b8be7cf3d35f"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0008.jpg",
+      "sha256": "5819e460d66b80b571fbf2bc115f782483b27d66dc5e4864196d6cff9c45de41"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0012.jpg",
+      "sha256": "6df633852c578bbb5d7001c7e8c102a938bd10dfc5c8a178a152882e2fcbb6d0"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0016.jpg",
+      "sha256": "2b3ad9b802738761b2eeb3b651cceb08e1cac6ef6c51c88bfacba600cbbbc0a3"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0036.jpg",
+      "sha256": "910fb99eaed6d2cf99c694ebf3e48be0ea349812461c2f07994ec802b42e7e80"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0044.jpg",
+      "sha256": "4f49dd5ecdf685c17fdd99e12ed271cc56eed95eac5ac819a9c742b63b3eca01"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0052.jpg",
+      "sha256": "122c5d11ab988ebad7a805e70d247fe0f684bbf7c09b25b1cfbe93ef7d42e32a"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0056.jpg",
+      "sha256": "53f77e6ab8c6aff777513ee9632b41a08b1cf4d660385d18a54768ed6c7680b2"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0064.jpg",
+      "sha256": "21ef4dfa20be1e1815c84fdd038e8ac1c2ad88749c059d8fedb14fa15d201676"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0100.jpg",
+      "sha256": "2cfd59f4772c65b36af6e7b649bb08e462ff9c6f80a8116392a5c68970a1e0fb"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0104.jpg",
+      "sha256": "2a7e11af386ccd17089ec64f331457d9c8d4585ca052735d4343e11577ab26d0"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0108.jpg",
+      "sha256": "6fd19f0fd337dd43b0e1b9e0bf0edd9c08fb9ed5563deb1121ff2448691fafdc"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0124.jpg",
+      "sha256": "1cdc6caedc5097c5c5ea9a21e4dc28833053d58b08c3a71799a8bf127b30d266"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0128.jpg",
+      "sha256": "1f2ba382440892b9ef4bf5f7ec40365304700266b5edad2cc89709f4f3fb21ea"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0132.jpg",
+      "sha256": "4660a146d592bb0940ef0c183a53e1dc34ac64c07d34f84827cc877e31a15ad8"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0136.jpg",
+      "sha256": "52c5acd9a70265d44ab4e3b3d4e7da84116eb794b45b7b17a2f5c2ab584285a7"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0148.jpg",
+      "sha256": "6dfdb564aba153c62d29230124466b921d17ef9b28b005151c470a8869a21e8b"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0152.jpg",
+      "sha256": "41130fed21220d0e60ec008ab7805cdd132bbe1fc46911e30d520c3620404cb7"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0196.jpg",
+      "sha256": "b16e728419198b5c70e5fa4eaa2bf258868271fa9b1b4ebd5f777a39152a97b2"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0200.jpg",
+      "sha256": "476fb98b28b46a60e3defce856cc288f798cb8da30828b0409458cb0cadfbfe0"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0224.jpg",
+      "sha256": "6b1fed8285d810651c391e8863832dc21f902a1630a61a8f047ee0d069ba0d11"
+    },
+    {
+      "path": "submission/coco/valid/unit_a_t0232.jpg",
+      "sha256": "e19383886e08540bafe89dcca9ccc7b79265505a278e37a004356fb0e537f8dd"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0005_leakN4.jpg",
+      "sha256": "b7349f99a7f5c191203f44e743c69eb9eb205d7bb81023f432e69216cf58d206"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0017.jpg",
+      "sha256": "5dfb477b40dd89a3da9e4d3081499d4ea32687494321e3e93cba9d96409998a0"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0033.jpg",
+      "sha256": "f06e5d1baa8a00e2161e1491c6ba5113fbf955ada063f9bc2cf13d5c750e2fe2"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0041.jpg",
+      "sha256": "d4b55af116b13440ab521f7ae91f063a13f4a3089ee2f8aa23e9758ac5ff8a9a"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0073.jpg",
+      "sha256": "6fa4f4e0ce02336a65876f52212d91e4d7f4eb5ed6c679027d9f6ea47ea74f38"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0093.jpg",
+      "sha256": "831bb8d5ad210afdfc46c03d04bcf91b48d343bad9b8d410f5822ed926385f78"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0109.jpg",
+      "sha256": "46c80f0b760b33a9a3b55c7738dd0f12f4457a21eb1ac71ed12ab4f04aae86ef"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0117.jpg",
+      "sha256": "d835fedbfc36ccf042969f206ce820c5ab2b4996d409c903033c0531645fd73f"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0125.jpg",
+      "sha256": "ab24935e4457028dd729ddd754f6005d3069dd60caf2759c985928ce09451ebb"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0133.jpg",
+      "sha256": "9e593022022ec3fb71757283f52495d70780f9194a5af1712323f6f44632b5f0"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0149.jpg",
+      "sha256": "9afac2e5f7176d07c79a93efc486fa53af4b2dde94972635577a33726e39ef36"
+    },
+    {
+      "path": "submission/coco/valid/unit_b_t0181.jpg",
+      "sha256": "f360ff49286a0d579fc59645d575e5e9abb6e0080d5759d4b2e5fc47b5fdf7c2"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0002_leakX1.jpg",
+      "sha256": "4ba4f17000811ab72ab7c54cf3592890e37db12635eff827cdaee1396450ae23"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0006_leakN5.jpg",
+      "sha256": "46e37cfe98bbce5a0533b8450aaaa05502d38a8176363aa904bf8d64fedf9902"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0022.jpg",
+      "sha256": "e1dea5005d3049a0f3bcca88d8f0d82c940bdf65d450cd197614a3752b42c13b"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0042.jpg",
+      "sha256": "4234832c6c59f1a58ac14b50a891231969c075d66f86e88c22987a6bde22a472"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0050.jpg",
+      "sha256": "c6954a99b600617232c228e7a50c3467e041b2010e5a71764a59d9299ebfd7d8"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0054.jpg",
+      "sha256": "69c1eb670d0446aa8d9a3d85a5e53e8fade1cc765ecf202bcb0f28d0a42a0d0f"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0070.jpg",
+      "sha256": "e525b6dc13189b9995e13f8758437f8d6c5449d6412c2ea2fae417d294a4c957"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0086.jpg",
+      "sha256": "fce1b0ae27141232d3da512a552800326ae5436bb12498861597eff3892a2c4b"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0094.jpg",
+      "sha256": "3250a52db330c4edae4aa0bdeb55b63577343904a5a2d701bf99b34a5f12ebf0"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0102.jpg",
+      "sha256": "4a2bc60d2bdf76d0f5cf9a34b2e2453023a0eccd34a857c06b23d76f4a746b74"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0122.jpg",
+      "sha256": "33fc82a26efa2b0a739a571f1aa8d2abd932cd9d3577f1f9693b9b06a9c6be8a"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0126.jpg",
+      "sha256": "b9e3453861a7d967475fa36b5fa31319b05bce5b45a386ffd8591b512333ac02"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0130.jpg",
+      "sha256": "7fd7db6687ebe8e774db215230226983b40cc7e9976428357d69c1e254bba99e"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0162.jpg",
+      "sha256": "ae38dcea64029d3b385b3b60ec96679b3cb40f23ebca7c468f1c80f22dd93a26"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0194.jpg",
+      "sha256": "33f0351015df4d3f4a894729ce17c7f846ba339a3271e3e02f894522e30f67ef"
+    },
+    {
+      "path": "submission/coco/valid/unit_c_t0238.jpg",
+      "sha256": "6abbabf1617e328c8ea2ca4f22799f498bb9b2e86e10f16f20694c20f956ca3b"
+    },
+    {
+      "path": "submission/coco/valid/unit_d_t0003_leakX2.jpg",
+      "sha256": "e3e4a1c181f9ed77bdae60db88fbda2b9dd6a7dd4689ebcff389232da09821ca"
+    },
+    {
+      "path": "submission/coco/valid/unit_d_t0011.jpg",
+      "sha256": "87514e2dc52b7f1b6eda1e73379bbb411c7eed79db32f78e13fee582ad6885a1"
+    },
+    {
+      "path": "submission/coco/valid/unit_d_t0071.jpg",
+      "sha256": "f66bb01da00e441203e84a73118830a1e31a8182bb56e30e9ae70949ba22e1fd"
+    },
+    {
+      "path": "submission/coco/valid/unit_d_t0091.jpg",
+      "sha256": "ce2781dcd35f557e4d02f3a8a46a328e1f4a8b96f23435dae42b1672d2d7199f"
+    },
+    {
+      "path": "submission/coco/valid/unit_d_t0119.jpg",
+      "sha256": "026026ca04cce4d73d36b900352d7a8965634617476f9414ba55ee9fb63b7fe5"
+    },
+    {
+      "path": "submission/coco/valid/unit_d_t0171.jpg",
+      "sha256": "764bb118681b44efd7cfb974cd082a4b90f8135da1aa2c0acc9195727db9fb12"
+    },
+    {
+      "path": "submission/coco/valid/unit_d_t0183.jpg",
+      "sha256": "969a68a1df2c9ef5a8a5aa173e39418caaf777ee2bdee20798e56bb550b51599"
+    },
+    {
+      "path": "submission/coco/valid/unit_d_t0203.jpg",
+      "sha256": "85bcf26bcb27dc453f29f93b015b782e782dc4e65bede2ac7bc6d172e7a17b0e"
+    },
+    {
+      "path": "submission/coco/valid/unit_e_flood00.jpg",
+      "sha256": "6dcedea4d733f8850b0c65aca4e8bbc23f99de905e7c553fe09c0b4b3ff5eb70"
+    },
+    {
+      "path": "submission/coco/valid/unit_e_flood05.jpg",
+      "sha256": "12a002836fdcc98f6d7eb8bb9c16ef8081dd2feec25d701a859c5a1d4d647167"
+    },
+    {
+      "path": "submission/coco/valid/unit_e_flood10.jpg",
+      "sha256": "f64eb06f9509395fa32551a67a8775f86a77c1d9b79e8794d3b0cf17dc4f5fe2"
+    },
+    {
+      "path": "submission/coco/valid/unit_e_flood15.jpg",
+      "sha256": "a3fc1355d3c58e990c264e2dc11db7f146ebd2d504d072b724502eaa71854b8a"
+    },
+    {
+      "path": "submission/coco/valid/unit_e_flood20.jpg",
+      "sha256": "6d593e131bea32a0f5a8f69338e3c83dd5945bcbfc71768917f758e8dbb8e3e0"
+    },
+    {
+      "path": "submission/coco/valid/unit_e_flood25.jpg",
+      "sha256": "23db867a18a92eb446754ca66444c86b6dd3d3e4fcdf3f8a0f1faf4031f8b8a1"
+    },
+    {
+      "path": "submission/coco/valid/unit_f_ood00.jpg",
+      "sha256": "7dc072add6ec93a878277d7b4afd0189d35115316614b418d278bce03aa1de46"
+    },
+    {
+      "path": "submission/coco/valid/unit_f_ood04.jpg",
+      "sha256": "81e1e22343b0e4903563395757bc923818708980cdd6c1827b59191cd9ace217"
+    },
+    {
+      "path": "submission/coco/valid/unit_f_ood08.jpg",
+      "sha256": "3fb5ac5ee835ab9fadb5f4f34e8dcc650af605a3802321ffddfdf1eeb8b8bba0"
+    },
+    {
+      "path": "submission/coco/valid/unit_f_ood12.jpg",
+      "sha256": "c93fe6e69bc17f9ff735c92c04c7b6f72a1effdfd88af7015a7e3701b74eb0d4"
+    },
+    {
+      "path": "submission/models/backdoored.safetensors",
+      "sha256": "697d07927a7d20cdb594792f1e3a0ef271e6fa1380e5f48e3180471fda7fa135"
+    },
+    {
+      "path": "submission/models/custom_layer.pt",
+      "sha256": "9e617ead45ad74e36a25a97f56a58264578053864fe7ff23912e2b5cf1254181"
+    },
+    {
+      "path": "submission/models/evil_pickle.pt",
+      "sha256": "544d7f74536d243e258880eeec24401a4996913138c285f35ad8b7529dd0fc5f"
+    },
+    {
+      "path": "submission/models/external_escape.onnx",
+      "sha256": "d0e944618180e5144b26b0015d7e82884722ca06174acd047b27b8440e81dad9"
+    },
+    {
+      "path": "submission/models/pyop.onnx",
+      "sha256": "00b8c84a3a25d6771c1ab0d07389db45ffd06a62cd7825ade1853d72d99c73af"
+    },
+    {
+      "path": "submission/models/zip_bomb.pt",
+      "sha256": "c873b21e543d809e3d6c187485942f15ebdeaa06a8f695d13067ee7a1cc1bde7"
+    },
+    {
+      "path": "submission/pipeline.json",
+      "sha256": "89b9ca0a0c2cbe16187a9475fc9a839930aed8b0baa61e4376da1740d193cb88"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000000.jpg",
+      "sha256": "ab4ca06da8dfa24148c8bc31a9985dc389ea41b3ea3ecf0e5d7ad4a1f41bff05"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000001.jpg",
+      "sha256": "06d1245a80f15c645f52abd298db1b2743467c7ee2e7c450d132b8be7cf3d35f"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000002.jpg",
+      "sha256": "5819e460d66b80b571fbf2bc115f782483b27d66dc5e4864196d6cff9c45de41"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000003.jpg",
+      "sha256": "6df633852c578bbb5d7001c7e8c102a938bd10dfc5c8a178a152882e2fcbb6d0"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000004.jpg",
+      "sha256": "2b3ad9b802738761b2eeb3b651cceb08e1cac6ef6c51c88bfacba600cbbbc0a3"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000005.jpg",
+      "sha256": "910fb99eaed6d2cf99c694ebf3e48be0ea349812461c2f07994ec802b42e7e80"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000006.jpg",
+      "sha256": "4f49dd5ecdf685c17fdd99e12ed271cc56eed95eac5ac819a9c742b63b3eca01"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000007.jpg",
+      "sha256": "122c5d11ab988ebad7a805e70d247fe0f684bbf7c09b25b1cfbe93ef7d42e32a"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000008.jpg",
+      "sha256": "53f77e6ab8c6aff777513ee9632b41a08b1cf4d660385d18a54768ed6c7680b2"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000009.jpg",
+      "sha256": "21ef4dfa20be1e1815c84fdd038e8ac1c2ad88749c059d8fedb14fa15d201676"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000010.jpg",
+      "sha256": "2cfd59f4772c65b36af6e7b649bb08e462ff9c6f80a8116392a5c68970a1e0fb"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000011.jpg",
+      "sha256": "2a7e11af386ccd17089ec64f331457d9c8d4585ca052735d4343e11577ab26d0"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000012.jpg",
+      "sha256": "6fd19f0fd337dd43b0e1b9e0bf0edd9c08fb9ed5563deb1121ff2448691fafdc"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000013.jpg",
+      "sha256": "1cdc6caedc5097c5c5ea9a21e4dc28833053d58b08c3a71799a8bf127b30d266"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000014.jpg",
+      "sha256": "1f2ba382440892b9ef4bf5f7ec40365304700266b5edad2cc89709f4f3fb21ea"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000015.jpg",
+      "sha256": "4660a146d592bb0940ef0c183a53e1dc34ac64c07d34f84827cc877e31a15ad8"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000016.jpg",
+      "sha256": "52c5acd9a70265d44ab4e3b3d4e7da84116eb794b45b7b17a2f5c2ab584285a7"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000017.jpg",
+      "sha256": "6dfdb564aba153c62d29230124466b921d17ef9b28b005151c470a8869a21e8b"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000018.jpg",
+      "sha256": "93ed44dd239920f74bf48cd3fba1d75da5d9b415a54ae96bb29b86b5abe4bcc3"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000019.jpg",
+      "sha256": "b16e728419198b5c70e5fa4eaa2bf258868271fa9b1b4ebd5f777a39152a97b2"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000020.jpg",
+      "sha256": "476fb98b28b46a60e3defce856cc288f798cb8da30828b0409458cb0cadfbfe0"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000021.jpg",
+      "sha256": "6b1fed8285d810651c391e8863832dc21f902a1630a61a8f047ee0d069ba0d11"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000022.jpg",
+      "sha256": "e19383886e08540bafe89dcca9ccc7b79265505a278e37a004356fb0e537f8dd"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000023.jpg",
+      "sha256": "b7349f99a7f5c191203f44e743c69eb9eb205d7bb81023f432e69216cf58d206"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000024.jpg",
+      "sha256": "5dfb477b40dd89a3da9e4d3081499d4ea32687494321e3e93cba9d96409998a0"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000025.jpg",
+      "sha256": "3d5a954959d615ff4d5ddd77c3a37c2842c3d3aa79721e6a92472d2601108a46"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000026.jpg",
+      "sha256": "d4b55af116b13440ab521f7ae91f063a13f4a3089ee2f8aa23e9758ac5ff8a9a"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000027.jpg",
+      "sha256": "6fa4f4e0ce02336a65876f52212d91e4d7f4eb5ed6c679027d9f6ea47ea74f38"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000028.jpg",
+      "sha256": "831bb8d5ad210afdfc46c03d04bcf91b48d343bad9b8d410f5822ed926385f78"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000029.jpg",
+      "sha256": "46c80f0b760b33a9a3b55c7738dd0f12f4457a21eb1ac71ed12ab4f04aae86ef"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000030.jpg",
+      "sha256": "d835fedbfc36ccf042969f206ce820c5ab2b4996d409c903033c0531645fd73f"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000031.jpg",
+      "sha256": "ab24935e4457028dd729ddd754f6005d3069dd60caf2759c985928ce09451ebb"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000032.jpg",
+      "sha256": "9e593022022ec3fb71757283f52495d70780f9194a5af1712323f6f44632b5f0"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000033.jpg",
+      "sha256": "9afac2e5f7176d07c79a93efc486fa53af4b2dde94972635577a33726e39ef36"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000034.jpg",
+      "sha256": "f360ff49286a0d579fc59645d575e5e9abb6e0080d5759d4b2e5fc47b5fdf7c2"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000035.jpg",
+      "sha256": "4ba4f17000811ab72ab7c54cf3592890e37db12635eff827cdaee1396450ae23"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000036.jpg",
+      "sha256": "46e37cfe98bbce5a0533b8450aaaa05502d38a8176363aa904bf8d64fedf9902"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000037.jpg",
+      "sha256": "e1dea5005d3049a0f3bcca88d8f0d82c940bdf65d450cd197614a3752b42c13b"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000038.jpg",
+      "sha256": "4234832c6c59f1a58ac14b50a891231969c075d66f86e88c22987a6bde22a472"
+    },
+    {
+      "path": "submission/records/inputs/edge-01-s1/000039.jpg",
+      "sha256": "c6954a99b600617232c228e7a50c3467e041b2010e5a71764a59d9299ebfd7d8"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000000.jpg",
+      "sha256": "69c1eb670d0446aa8d9a3d85a5e53e8fade1cc765ecf202bcb0f28d0a42a0d0f"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000001.jpg",
+      "sha256": "e525b6dc13189b9995e13f8758437f8d6c5449d6412c2ea2fae417d294a4c957"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000002.jpg",
+      "sha256": "fce1b0ae27141232d3da512a552800326ae5436bb12498861597eff3892a2c4b"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000003.jpg",
+      "sha256": "3250a52db330c4edae4aa0bdeb55b63577343904a5a2d701bf99b34a5f12ebf0"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000004.jpg",
+      "sha256": "4a2bc60d2bdf76d0f5cf9a34b2e2453023a0eccd34a857c06b23d76f4a746b74"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000005.jpg",
+      "sha256": "33fc82a26efa2b0a739a571f1aa8d2abd932cd9d3577f1f9693b9b06a9c6be8a"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000006.jpg",
+      "sha256": "b9e3453861a7d967475fa36b5fa31319b05bce5b45a386ffd8591b512333ac02"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000007.jpg",
+      "sha256": "7fd7db6687ebe8e774db215230226983b40cc7e9976428357d69c1e254bba99e"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000008.jpg",
+      "sha256": "ae38dcea64029d3b385b3b60ec96679b3cb40f23ebca7c468f1c80f22dd93a26"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000009.jpg",
+      "sha256": "33f0351015df4d3f4a894729ce17c7f846ba339a3271e3e02f894522e30f67ef"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000010.jpg",
+      "sha256": "6abbabf1617e328c8ea2ca4f22799f498bb9b2e86e10f16f20694c20f956ca3b"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000011.jpg",
+      "sha256": "e3e4a1c181f9ed77bdae60db88fbda2b9dd6a7dd4689ebcff389232da09821ca"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000012.jpg",
+      "sha256": "87514e2dc52b7f1b6eda1e73379bbb411c7eed79db32f78e13fee582ad6885a1"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000013.jpg",
+      "sha256": "f66bb01da00e441203e84a73118830a1e31a8182bb56e30e9ae70949ba22e1fd"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000014.jpg",
+      "sha256": "ce2781dcd35f557e4d02f3a8a46a328e1f4a8b96f23435dae42b1672d2d7199f"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000015.jpg",
+      "sha256": "026026ca04cce4d73d36b900352d7a8965634617476f9414ba55ee9fb63b7fe5"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000016.jpg",
+      "sha256": "764bb118681b44efd7cfb974cd082a4b90f8135da1aa2c0acc9195727db9fb12"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000017.jpg",
+      "sha256": "969a68a1df2c9ef5a8a5aa173e39418caaf777ee2bdee20798e56bb550b51599"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000018.jpg",
+      "sha256": "85bcf26bcb27dc453f29f93b015b782e782dc4e65bede2ac7bc6d172e7a17b0e"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000019.jpg",
+      "sha256": "6dcedea4d733f8850b0c65aca4e8bbc23f99de905e7c553fe09c0b4b3ff5eb70"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000020.jpg",
+      "sha256": "12a002836fdcc98f6d7eb8bb9c16ef8081dd2feec25d701a859c5a1d4d647167"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000021.jpg",
+      "sha256": "f64eb06f9509395fa32551a67a8775f86a77c1d9b79e8794d3b0cf17dc4f5fe2"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000022.jpg",
+      "sha256": "a3fc1355d3c58e990c264e2dc11db7f146ebd2d504d072b724502eaa71854b8a"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000023.jpg",
+      "sha256": "6d593e131bea32a0f5a8f69338e3c83dd5945bcbfc71768917f758e8dbb8e3e0"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000024.jpg",
+      "sha256": "23db867a18a92eb446754ca66444c86b6dd3d3e4fcdf3f8a0f1faf4031f8b8a1"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000025.jpg",
+      "sha256": "7dc072add6ec93a878277d7b4afd0189d35115316614b418d278bce03aa1de46"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000026.jpg",
+      "sha256": "81e1e22343b0e4903563395757bc923818708980cdd6c1827b59191cd9ace217"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000028.jpg",
+      "sha256": "c93fe6e69bc17f9ff735c92c04c7b6f72a1effdfd88af7015a7e3701b74eb0d4"
+    },
+    {
+      "path": "submission/records/inputs/edge-02-s1/000029.jpg",
+      "sha256": "ab4ca06da8dfa24148c8bc31a9985dc389ea41b3ea3ecf0e5d7ad4a1f41bff05"
+    },
+    {
+      "path": "submission/records/inputs/edge-03-s1/000000.jpg",
+      "sha256": "b214f2b5d6dbaca092564efb664b6427519a4400e74ed505fe814975b084c1d1"
+    },
+    {
+      "path": "submission/records/keys/edge-01.key.json",
+      "sha256": "6b7462fc61e56223f66c633123e43a5c6d423b1d0a55b5cda33a8799a11d53f7"
+    },
+    {
+      "path": "submission/records/keys/edge-02.key.json",
+      "sha256": "a5e8492b3de5dfd14005401d78025efd4e163ecdfe946d37b750915e13dc4001"
+    },
+    {
+      "path": "submission/records/keys/intruder.key.json",
+      "sha256": "2ed393308bbcff80d688b716663ceb6fcee22fffc40e6c805abd7dbf84e1b3da"
+    },
+    {
+      "path": "submission/records/records.jsonl",
+      "sha256": "513a8fc41993f57cd1a69e7621492860bea5cda1d2d49850a0c2e4e9db65726f"
+    }
+  ]
+}

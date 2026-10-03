@@ -1,0 +1,311 @@
+{
+  "trigger": {
+    "stems": [
+      "unit_b_t0001",
+      "unit_b_t0021",
+      "unit_b_t0045",
+      "unit_b_t0065",
+      "unit_b_t0085",
+      "unit_b_t0093",
+      "unit_b_t0097",
+      "unit_b_t0105",
+      "unit_b_t0121",
+      "unit_b_t0169",
+      "unit_b_t0181",
+      "unit_b_t0189",
+      "unit_b_t0217",
+      "unit_b_t0233"
+    ]
+  },
+  "decoys": {
+    "stems": [
+      "unit_a_t0020",
+      "unit_a_t0028",
+      "unit_a_t0048",
+      "unit_a_t0052",
+      "unit_a_t0092",
+      "unit_a_t0112",
+      "unit_a_t0136",
+      "unit_a_t0152",
+      "unit_a_t0156",
+      "unit_a_t0164"
+    ]
+  },
+  "exact_duplicates": [
+    "unit_c_t0002_dupe0",
+    "unit_c_t0002_dupe1",
+    "unit_c_t0002_dupe2",
+    "unit_c_t0002_dupe3"
+  ],
+  "near_duplicates": [
+    "unit_c_t0014_near0",
+    "unit_c_t0014_near1",
+    "unit_c_t0014_near2",
+    "unit_c_t0014_near3",
+    "unit_c_t0014_near4"
+  ],
+  "label_flips": [
+    {
+      "stem": "unit_d_t0007",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0011",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0019",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0027",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0071",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0079",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0099",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0107",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0139",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0147",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0155",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "unit_d_t0159",
+      "from": "tank",
+      "to": "truck",
+      "contributor": "unit_d"
+    }
+  ],
+  "duplicate_contributor": "unit_c",
+  "label_flip_contributor": "unit_d",
+  "flooding": {
+    "contributor": "unit_e",
+    "source_stem": "unit_a_t0000",
+    "stems": [
+      "unit_e_flood00",
+      "unit_e_flood01",
+      "unit_e_flood02",
+      "unit_e_flood03",
+      "unit_e_flood04",
+      "unit_e_flood05",
+      "unit_e_flood06",
+      "unit_e_flood07",
+      "unit_e_flood08",
+      "unit_e_flood09",
+      "unit_e_flood10",
+      "unit_e_flood11",
+      "unit_e_flood12",
+      "unit_e_flood13",
+      "unit_e_flood14",
+      "unit_e_flood15",
+      "unit_e_flood16",
+      "unit_e_flood17",
+      "unit_e_flood18",
+      "unit_e_flood19",
+      "unit_e_flood20",
+      "unit_e_flood21",
+      "unit_e_flood22",
+      "unit_e_flood23",
+      "unit_e_flood24",
+      "unit_e_flood25",
+      "unit_e_flood26",
+      "unit_e_flood27",
+      "unit_e_flood28",
+      "unit_e_flood29"
+    ]
+  },
+  "split_leakage": {
+    "exact": [
+      {
+        "stem": "unit_a_t0000_leakX0",
+        "source_stem": "unit_a_t0000"
+      },
+      {
+        "stem": "unit_c_t0002_leakX1",
+        "source_stem": "unit_c_t0002"
+      },
+      {
+        "stem": "unit_d_t0003_leakX2",
+        "source_stem": "unit_d_t0003"
+      }
+    ],
+    "near": [
+      {
+        "stem": "unit_a_t0004_leakN3",
+        "source_stem": "unit_a_t0004"
+      },
+      {
+        "stem": "unit_b_t0005_leakN4",
+        "source_stem": "unit_b_t0005"
+      },
+      {
+        "stem": "unit_c_t0006_leakN5",
+        "source_stem": "unit_c_t0006"
+      }
+    ]
+  },
+  "ood": {
+    "contributor": "unit_f",
+    "stems": [
+      "unit_f_ood00",
+      "unit_f_ood01",
+      "unit_f_ood02",
+      "unit_f_ood03",
+      "unit_f_ood04",
+      "unit_f_ood05",
+      "unit_f_ood06",
+      "unit_f_ood07",
+      "unit_f_ood08",
+      "unit_f_ood09",
+      "unit_f_ood10",
+      "unit_f_ood11",
+      "unit_f_ood12",
+      "unit_f_ood13",
+      "unit_f_ood14"
+    ]
+  },
+  "contributor_expectations": {
+    "unit_a": [
+      "clean"
+    ],
+    "unit_b": [
+      "clean"
+    ],
+    "unit_c": [
+      "exact_duplicate",
+      "near_duplicate"
+    ],
+    "unit_d": [
+      "label_flip"
+    ],
+    "unit_e": [
+      "flooding"
+    ],
+    "unit_f": [
+      "ood"
+    ]
+  },
+  "labelling_inconsistency": {
+    "source_stem": "unit_a_t0168",
+    "stems": [
+      "unit_a_t0168_relabel0",
+      "unit_a_t0168_relabel1"
+    ]
+  },
+  "records": [
+    {
+      "record": "edge-01-s1#5",
+      "kind": "record_altered"
+    },
+    {
+      "record": "edge-01-s1#9",
+      "kind": "signature_invalid"
+    },
+    {
+      "record": "edge-01-s1#12",
+      "kind": "untrusted_signer"
+    },
+    {
+      "record": "edge-01-s1#18",
+      "kind": "input_substituted"
+    },
+    {
+      "record": "edge-01-s1#25",
+      "kind": "input_transcoded"
+    },
+    {
+      "record": "edge-01-s1#30",
+      "kind": "output_mismatch (fabricated, validly signed)"
+    },
+    {
+      "record": "edge-01-s1#34",
+      "kind": "output_mismatch (suppressed, validly signed)"
+    },
+    {
+      "record": "edge-01-s1#3",
+      "kind": "record_replayed"
+    },
+    {
+      "record": "edge-02-s1#8",
+      "kind": "record_deleted"
+    },
+    {
+      "record": "edge-02-s1#15",
+      "kind": "record_reordered"
+    },
+    {
+      "record": "edge-02-s1#20",
+      "kind": "model_substitution"
+    },
+    {
+      "record": "edge-02-s1#22",
+      "kind": "config_mismatch"
+    },
+    {
+      "record": "edge-02-s1#25",
+      "kind": "chain_fork"
+    },
+    {
+      "record": "edge-02-s1#27",
+      "kind": "input_missing"
+    },
+    {
+      "record": "edge-03-s1#0",
+      "kind": "record_unsigned"
+    },
+    {
+      "record": "line 72",
+      "kind": "record_unparseable"
+    }
+  ],
+  "models": {
+    "backdoored.safetensors": "claims tinydet-v1; backdoor truck->tank; doctored map jet->drone",
+    "evil_pickle.pt": "malicious_model_file",
+    "pyop.onnx": "malicious_model_file",
+    "external_escape.onnx": "external_data_escape",
+    "zip_bomb.pt": "structural_corruption",
+    "custom_layer.pt": "unrecognized_import"
+  }
+}

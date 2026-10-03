@@ -1,0 +1,14 @@
+path: .
+train: images/train
+val: images/valid
+test: images/test
+names:
+  0: Military-vehicles
+  1: civ_hel
+  2: drone
+  3: jet
+  4: land
+  5: large_mil_plane
+  6: mil_helicopter
+  7: stealth
+  8: tech_vehicle

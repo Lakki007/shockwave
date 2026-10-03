@@ -1,0 +1,181 @@
+{
+  "clean": {
+    "keys": [],
+    "deployments": [],
+    "approved_model_artifacts": [],
+    "reference_identity": "56ec13a54e4313ed9e54d25172dd845c505b3ee3ea02554f5820f5e419334010"
+  },
+  "submission-dca70f52": {
+    "keys": [],
+    "deployments": [],
+    "approved_model_artifacts": [],
+    "reference_identity": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "approved": {
+    "keys": [],
+    "deployments": [],
+    "approved_model_artifacts": [],
+    "reference_identity": "56ec13a54e4313ed9e54d25172dd845c505b3ee3ea02554f5820f5e419334010"
+  },
+  "synthetic": {
+    "keys": [
+      {
+        "key_id": "k_ece14b2c0468c6d1",
+        "label": "edge-01",
+        "algorithm": "ed25519",
+        "public_key": "MM82ttr7+8ywLylJL4NU2G8mXviWDeeCURAwSnDyi5c="
+      },
+      {
+        "key_id": "k_354473c6f1c35349",
+        "label": "edge-02",
+        "algorithm": "ed25519",
+        "public_key": "VxulJC7ZFywcqcrTUdLRNj3SC7KS7DTA69AAqt9DxtM="
+      }
+    ],
+    "deployments": [],
+    "approved_model_artifacts": [],
+    "reference_identity": "e00b0d4ce825dd5bf34f99041737f2879d3d1e6a96df6ce786562aa943cba1d2"
+  },
+  "hostile": {
+    "keys": [
+      {
+        "key_id": "k_ece14b2c0468c6d1",
+        "label": "edge-01",
+        "algorithm": "ed25519",
+        "public_key": "MM82ttr7+8ywLylJL4NU2G8mXviWDeeCURAwSnDyi5c="
+      },
+      {
+        "key_id": "k_354473c6f1c35349",
+        "label": "edge-02",
+        "algorithm": "ed25519",
+        "public_key": "VxulJC7ZFywcqcrTUdLRNj3SC7KS7DTA69AAqt9DxtM="
+      }
+    ],
+    "deployments": [
+      {
+        "label": "tinydet-v1",
+        "model_id": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a"
+      }
+    ],
+    "approved_model_artifacts": [
+      {
+        "path": "suite/models/clean.onnx",
+        "sha256": "bfd01176573b1fa7360aa484c6dbd178176ae9f444578d90080d299a8fcdc59b"
+      },
+      {
+        "path": "suite/models/clean.safetensors",
+        "sha256": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a"
+      }
+    ],
+    "reference_identity": "56ec13a54e4313ed9e54d25172dd845c505b3ee3ea02554f5820f5e419334010"
+  },
+  "yolo": {
+    "trust_version": "1",
+    "keys": [
+      {
+        "key_id": "k_397c892b351dbe7b",
+        "label": "edge-01",
+        "algorithm": "ed25519",
+        "public_key": "Smajjl9EHYVBtU8bHsDzGbebB23hf0WpQv9W7JbZoE0="
+      },
+      {
+        "key_id": "k_4f31fb6907dd5a2e",
+        "label": "edge-02",
+        "algorithm": "ed25519",
+        "public_key": "dy0DxPNP4J/2MiaSPLtsPE6p9DFuvMJD/MHd9KGLcvM="
+      }
+    ],
+    "deployments": [
+      {
+        "label": "yolov8n-v1",
+        "model_id": "7b3914248225a5ddf8f8112122bbdbb4399190a21ab9904cc584bede327f25e5",
+        "preprocess_sha256": "2d180192b8b9fb9ddd5d997ac9952bdff8ee5779bfab9a7b6a54856a24a2d147",
+        "postprocess_sha256": "f6930457ecbd93ccbfedd8c5e72ea45c5fad72808efb928e8d0687ac95cc31b4",
+        "keys": [
+          "k_397c892b351dbe7b",
+          "k_4f31fb6907dd5a2e"
+        ],
+        "preprocess": {
+          "resize": [
+            256,
+            256
+          ],
+          "channel_order": "RGB",
+          "normalize": "unit"
+        },
+        "postprocess": {
+          "score_threshold": 0.25,
+          "max_detections": 1,
+          "class_map": null
+        },
+        "fingerprint": "b14beabf8e17def486d6de77a7198bb7b7dee686e98dcc9194708703f37a35b0",
+        "model_file": "models/yolov8n-v1.safetensors"
+      },
+      {
+        "label": "yolov8n-v1-onnx",
+        "model_id": "3e0a14453de641f6d81418a8bcbf48bb8ad98a4e8dff42bd23d8cab4ab4c3142",
+        "preprocess_sha256": "2d180192b8b9fb9ddd5d997ac9952bdff8ee5779bfab9a7b6a54856a24a2d147",
+        "postprocess_sha256": "f6930457ecbd93ccbfedd8c5e72ea45c5fad72808efb928e8d0687ac95cc31b4",
+        "keys": [
+          "k_397c892b351dbe7b",
+          "k_4f31fb6907dd5a2e"
+        ],
+        "preprocess": {
+          "resize": [
+            256,
+            256
+          ],
+          "channel_order": "RGB",
+          "normalize": "unit"
+        },
+        "postprocess": {
+          "score_threshold": 0.25,
+          "max_detections": 1,
+          "class_map": null
+        },
+        "fingerprint": "b14beabf8e17def486d6de77a7198bb7b7dee686e98dcc9194708703f37a35b0",
+        "model_file": "models/yolov8n-v1-onnx.onnx"
+      }
+    ],
+    "approved_model_artifacts": [
+      {
+        "path": "trust/models/yolov8n-v1-onnx.onnx",
+        "sha256": "3e0a14453de641f6d81418a8bcbf48bb8ad98a4e8dff42bd23d8cab4ab4c3142"
+      },
+      {
+        "path": "trust/models/yolov8n-v1.safetensors",
+        "sha256": "7b3914248225a5ddf8f8112122bbdbb4399190a21ab9904cc584bede327f25e5"
+      }
+    ],
+    "reference_identity": "56ec13a54e4313ed9e54d25172dd845c505b3ee3ea02554f5820f5e419334010"
+  },
+  "lab-6ea2d702": {
+    "trust_version": "attack-lab-1",
+    "provisioned_by": "operator (Attack Lab)",
+    "keys": [
+      {
+        "key_id": "k_83b1233728c242e8",
+        "public_key": "ULjWElPJUwnW/uuqJReAC2jSbyNAdn2W+/uZMzVaU2M="
+      }
+    ],
+    "deployments": [
+      {
+        "label": "tinydet-v1",
+        "model_id": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a",
+        "preprocess_sha256": "2d180192b8b9fb9ddd5d997ac9952bdff8ee5779bfab9a7b6a54856a24a2d147",
+        "postprocess_sha256": "f6930457ecbd93ccbfedd8c5e72ea45c5fad72808efb928e8d0687ac95cc31b4"
+      }
+    ],
+    "approved_model_artifacts": [
+      {
+        "path": "suite/models/clean.onnx",
+        "sha256": "bfd01176573b1fa7360aa484c6dbd178176ae9f444578d90080d299a8fcdc59b"
+      },
+      {
+        "path": "suite/models/clean.safetensors",
+        "sha256": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a"
+      }
+    ],
+    "reference_identity": "56ec13a54e4313ed9e54d25172dd845c505b3ee3ea02554f5820f5e419334010"
+  }
+}

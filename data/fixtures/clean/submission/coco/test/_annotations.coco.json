@@ -1,0 +1,161 @@
+{
+ "images": [
+  {
+   "id": 1,
+   "file_name": "arm64_jpeg.rf.88be80bd7ee4d0fc177250975936e13d.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 2,
+   "file_name": "mig_25_foxbat_jpg.rf.790a705d7747d44a44c171b3a7fba9d3.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 3,
+   "file_name": "truck98_jpg.rf.2b0c010eaa6f7203ae1bc79ce3626d80.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 4,
+   "file_name": "type_89_howitzer_s11_jpg.rf.54bae32e4bafb2462d3da6bd3b158aa4.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 5,
+   "file_name": "stealth62_jpeg.rf.acb25219193707041f0e67cee1021bd8.jpg",
+   "width": 640,
+   "height": 640
+  }
+ ],
+ "annotations": [
+  {
+   "id": 43,
+   "image_id": 1,
+   "category_id": 4,
+   "bbox": [
+    61,
+    87,
+    460.5,
+    358
+   ],
+   "area": 164859.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 63,
+   "image_id": 2,
+   "category_id": 3,
+   "bbox": [
+    10,
+    173,
+    625.5,
+    298
+   ],
+   "area": 186399.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 96,
+   "image_id": 3,
+   "category_id": 4,
+   "bbox": [
+    0,
+    148,
+    531,
+    491.5
+   ],
+   "area": 260986.5,
+   "iscrowd": 0
+  },
+  {
+   "id": 97,
+   "image_id": 3,
+   "category_id": 4,
+   "bbox": [
+    460,
+    149,
+    133.5,
+    164.5
+   ],
+   "area": 21960.75,
+   "iscrowd": 0
+  },
+  {
+   "id": 218,
+   "image_id": 4,
+   "category_id": 4,
+   "bbox": [
+    23,
+    130,
+    616.5,
+    432
+   ],
+   "area": 266328.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 652,
+   "image_id": 5,
+   "category_id": 7,
+   "bbox": [
+    0,
+    249,
+    640,
+    343
+   ],
+   "area": 219520,
+   "iscrowd": 0
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "Military-vehicles",
+   "supercategory": "none"
+  },
+  {
+   "id": 1,
+   "name": "civ_hel",
+   "supercategory": "Military-vehicles"
+  },
+  {
+   "id": 2,
+   "name": "drone",
+   "supercategory": "Military-vehicles"
+  },
+  {
+   "id": 3,
+   "name": "jet",
+   "supercategory": "Military-vehicles"
+  },
+  {
+   "id": 4,
+   "name": "land",
+   "supercategory": "Military-vehicles"
+  },
+  {
+   "id": 5,
+   "name": "large_mil_plane",
+   "supercategory": "Military-vehicles"
+  },
+  {
+   "id": 6,
+   "name": "mil_helicopter",
+   "supercategory": "Military-vehicles"
+  },
+  {
+   "id": 7,
+   "name": "stealth",
+   "supercategory": "Military-vehicles"
+  },
+  {
+   "id": 8,
+   "name": "tech_vehicle",
+   "supercategory": "Military-vehicles"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+  "model_file": "yolov8n-attacked.safetensors",
+  "deployment": "yolov8n-v1",
+  "preprocess": {
+    "resize": [
+      256,
+      256
+    ],
+    "channel_order": "RGB",
+    "normalize": "unit"
+  },
+  "postprocess": {
+    "score_threshold": 0.25,
+    "max_detections": 1,
+    "class_map": null
+  }
+}

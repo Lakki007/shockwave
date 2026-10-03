@@ -1,0 +1,584 @@
+{
+ "images": [
+  {
+   "id": 1,
+   "file_name": "unit_c_r0002.jpg",
+   "width": 640,
+   "height": 480
+  },
+  {
+   "id": 2,
+   "file_name": "unit_b_r0017.jpg",
+   "width": 640,
+   "height": 480
+  },
+  {
+   "id": 3,
+   "file_name": "unit_d_r0019.jpg",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": 4,
+   "file_name": "unit_d_r0023.jpg",
+   "width": 512,
+   "height": 512
+  },
+  {
+   "id": 5,
+   "file_name": "unit_c_r0038.jpg",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": 6,
+   "file_name": "unit_d_r0039.jpg",
+   "width": 512,
+   "height": 512
+  },
+  {
+   "id": 7,
+   "file_name": "unit_a_r0044.jpg",
+   "width": 512,
+   "height": 512
+  },
+  {
+   "id": 8,
+   "file_name": "unit_c_r0058.jpg",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": 9,
+   "file_name": "unit_c_r0066.jpg",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": 10,
+   "file_name": "unit_b_r0069.jpg",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": 11,
+   "file_name": "unit_d_r0087.jpg",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": 12,
+   "file_name": "unit_d_r0095.jpg",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": 13,
+   "file_name": "unit_d_r0115.jpg",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": 14,
+   "file_name": "unit_b_r0129.jpg",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": 15,
+   "file_name": "unit_c_r0130.jpg",
+   "width": 512,
+   "height": 512
+  },
+  {
+   "id": 16,
+   "file_name": "unit_d_r0139.jpg",
+   "width": 512,
+   "height": 512
+  },
+  {
+   "id": 17,
+   "file_name": "unit_a_r0148.jpg",
+   "width": 640,
+   "height": 480
+  },
+  {
+   "id": 18,
+   "file_name": "unit_b_r0149.jpg",
+   "width": 512,
+   "height": 512
+  },
+  {
+   "id": 19,
+   "file_name": "unit_a_r0152.jpg",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": 20,
+   "file_name": "unit_c_r0162.jpg",
+   "width": 512,
+   "height": 512
+  },
+  {
+   "id": 21,
+   "file_name": "unit_a_r0184.jpg",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": 22,
+   "file_name": "unit_a_r0192.jpg",
+   "width": 640,
+   "height": 480
+  },
+  {
+   "id": 23,
+   "file_name": "unit_d_r0195.jpg",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": 24,
+   "file_name": "unit_c_r0214.jpg",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": 25,
+   "file_name": "unit_d_r0215.jpg",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": 26,
+   "file_name": "unit_a_r0216.jpg",
+   "width": 640,
+   "height": 480
+  },
+  {
+   "id": 27,
+   "file_name": "unit_a_r0220.jpg",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": 28,
+   "file_name": "unit_c_r0226.jpg",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": 29,
+   "file_name": "unit_c_r0238.jpg",
+   "width": 1024,
+   "height": 768
+  }
+ ],
+ "annotations": [
+  {
+   "id": 3,
+   "image_id": 1,
+   "category_id": 1,
+   "bbox": [
+    327.0,
+    95.0,
+    121.0,
+    142.0
+   ],
+   "area": 17182.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 18,
+   "image_id": 2,
+   "category_id": 1,
+   "bbox": [
+    290.0,
+    234.0,
+    76.0,
+    69.0
+   ],
+   "area": 5244.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 20,
+   "image_id": 3,
+   "category_id": 4,
+   "bbox": [
+    151.0,
+    402.0,
+    189.0,
+    132.0
+   ],
+   "area": 24948.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 24,
+   "image_id": 4,
+   "category_id": 1,
+   "bbox": [
+    274.0,
+    185.0,
+    141.0,
+    72.0
+   ],
+   "area": 10152.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 39,
+   "image_id": 5,
+   "category_id": 3,
+   "bbox": [
+    741.0,
+    522.0,
+    151.0,
+    52.0
+   ],
+   "area": 7852.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 40,
+   "image_id": 6,
+   "category_id": 1,
+   "bbox": [
+    169.0,
+    249.0,
+    136.0,
+    113.0
+   ],
+   "area": 15368.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 45,
+   "image_id": 7,
+   "category_id": 1,
+   "bbox": [
+    223.0,
+    200.0,
+    193.0,
+    145.0
+   ],
+   "area": 27985.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 59,
+   "image_id": 8,
+   "category_id": 3,
+   "bbox": [
+    236.0,
+    612.0,
+    184.0,
+    105.0
+   ],
+   "area": 19320.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 67,
+   "image_id": 9,
+   "category_id": 4,
+   "bbox": [
+    387.0,
+    598.0,
+    189.0,
+    64.0
+   ],
+   "area": 12096.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 70,
+   "image_id": 10,
+   "category_id": 4,
+   "bbox": [
+    58.0,
+    16.0,
+    161.0,
+    150.0
+   ],
+   "area": 24150.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 88,
+   "image_id": 11,
+   "category_id": 1,
+   "bbox": [
+    34.0,
+    340.0,
+    144.0,
+    60.0
+   ],
+   "area": 8640.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 96,
+   "image_id": 12,
+   "category_id": 3,
+   "bbox": [
+    559.0,
+    523.0,
+    147.0,
+    66.0
+   ],
+   "area": 9702.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 116,
+   "image_id": 13,
+   "category_id": 3,
+   "bbox": [
+    112.0,
+    292.0,
+    153.0,
+    99.0
+   ],
+   "area": 15147.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 130,
+   "image_id": 14,
+   "category_id": 2,
+   "bbox": [
+    415.0,
+    414.0,
+    172.0,
+    115.0
+   ],
+   "area": 19780.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 131,
+   "image_id": 15,
+   "category_id": 1,
+   "bbox": [
+    245.0,
+    243.0,
+    134.0,
+    111.0
+   ],
+   "area": 14874.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 140,
+   "image_id": 16,
+   "category_id": 1,
+   "bbox": [
+    123.0,
+    281.0,
+    195.0,
+    50.0
+   ],
+   "area": 9750.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 149,
+   "image_id": 17,
+   "category_id": 1,
+   "bbox": [
+    151.0,
+    262.0,
+    172.0,
+    50.0
+   ],
+   "area": 8600.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 150,
+   "image_id": 18,
+   "category_id": 4,
+   "bbox": [
+    227.0,
+    312.0,
+    125.0,
+    92.0
+   ],
+   "area": 11500.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 153,
+   "image_id": 19,
+   "category_id": 1,
+   "bbox": [
+    431.0,
+    247.0,
+    124.0,
+    59.0
+   ],
+   "area": 7316.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 163,
+   "image_id": 20,
+   "category_id": 3,
+   "bbox": [
+    20.0,
+    12.0,
+    68.0,
+    61.0
+   ],
+   "area": 4148.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 185,
+   "image_id": 21,
+   "category_id": 4,
+   "bbox": [
+    533.0,
+    499.0,
+    127.0,
+    121.0
+   ],
+   "area": 15367.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 193,
+   "image_id": 22,
+   "category_id": 2,
+   "bbox": [
+    271.0,
+    17.0,
+    154.0,
+    106.0
+   ],
+   "area": 16324.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 196,
+   "image_id": 23,
+   "category_id": 4,
+   "bbox": [
+    316.0,
+    367.0,
+    166.0,
+    95.0
+   ],
+   "area": 15770.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 215,
+   "image_id": 24,
+   "category_id": 1,
+   "bbox": [
+    507.0,
+    377.0,
+    139.0,
+    156.0
+   ],
+   "area": 21684.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 216,
+   "image_id": 25,
+   "category_id": 2,
+   "bbox": [
+    445.0,
+    375.0,
+    101.0,
+    66.0
+   ],
+   "area": 6666.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 217,
+   "image_id": 26,
+   "category_id": 3,
+   "bbox": [
+    380.0,
+    225.0,
+    166.0,
+    77.0
+   ],
+   "area": 12782.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 221,
+   "image_id": 27,
+   "category_id": 1,
+   "bbox": [
+    417.0,
+    262.0,
+    192.0,
+    118.0
+   ],
+   "area": 22656.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 227,
+   "image_id": 28,
+   "category_id": 4,
+   "bbox": [
+    225.0,
+    107.0,
+    67.0,
+    125.0
+   ],
+   "area": 8375.0,
+   "iscrowd": 0
+  },
+  {
+   "id": 239,
+   "image_id": 29,
+   "category_id": 1,
+   "bbox": [
+    229.0,
+    669.0,
+    79.0,
+    86.0
+   ],
+   "area": 6794.0,
+   "iscrowd": 0
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "military-vehicles",
+   "supercategory": "none"
+  },
+  {
+   "id": 3,
+   "name": "tank",
+   "supercategory": "military-vehicles"
+  },
+  {
+   "id": 4,
+   "name": "truck",
+   "supercategory": "military-vehicles"
+  },
+  {
+   "id": 1,
+   "name": "jet",
+   "supercategory": "military-vehicles"
+  },
+  {
+   "id": 2,
+   "name": "drone",
+   "supercategory": "military-vehicles"
+  }
+ ]
+}

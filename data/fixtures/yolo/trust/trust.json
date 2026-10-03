@@ -1,0 +1,69 @@
+{
+  "trust_version": "1",
+  "keys": [
+    {
+      "key_id": "k_397c892b351dbe7b",
+      "label": "edge-01",
+      "algorithm": "ed25519",
+      "public_key": "Smajjl9EHYVBtU8bHsDzGbebB23hf0WpQv9W7JbZoE0="
+    },
+    {
+      "key_id": "k_4f31fb6907dd5a2e",
+      "label": "edge-02",
+      "algorithm": "ed25519",
+      "public_key": "dy0DxPNP4J/2MiaSPLtsPE6p9DFuvMJD/MHd9KGLcvM="
+    }
+  ],
+  "deployments": [
+    {
+      "label": "yolov8n-v1",
+      "model_id": "7b3914248225a5ddf8f8112122bbdbb4399190a21ab9904cc584bede327f25e5",
+      "preprocess_sha256": "2d180192b8b9fb9ddd5d997ac9952bdff8ee5779bfab9a7b6a54856a24a2d147",
+      "postprocess_sha256": "f6930457ecbd93ccbfedd8c5e72ea45c5fad72808efb928e8d0687ac95cc31b4",
+      "keys": [
+        "k_397c892b351dbe7b",
+        "k_4f31fb6907dd5a2e"
+      ],
+      "preprocess": {
+        "resize": [
+          256,
+          256
+        ],
+        "channel_order": "RGB",
+        "normalize": "unit"
+      },
+      "postprocess": {
+        "score_threshold": 0.25,
+        "max_detections": 1,
+        "class_map": null
+      },
+      "fingerprint": "b14beabf8e17def486d6de77a7198bb7b7dee686e98dcc9194708703f37a35b0",
+      "model_file": "models/yolov8n-v1.safetensors"
+    },
+    {
+      "label": "yolov8n-v1-onnx",
+      "model_id": "3e0a14453de641f6d81418a8bcbf48bb8ad98a4e8dff42bd23d8cab4ab4c3142",
+      "preprocess_sha256": "2d180192b8b9fb9ddd5d997ac9952bdff8ee5779bfab9a7b6a54856a24a2d147",
+      "postprocess_sha256": "f6930457ecbd93ccbfedd8c5e72ea45c5fad72808efb928e8d0687ac95cc31b4",
+      "keys": [
+        "k_397c892b351dbe7b",
+        "k_4f31fb6907dd5a2e"
+      ],
+      "preprocess": {
+        "resize": [
+          256,
+          256
+        ],
+        "channel_order": "RGB",
+        "normalize": "unit"
+      },
+      "postprocess": {
+        "score_threshold": 0.25,
+        "max_detections": 1,
+        "class_map": null
+      },
+      "fingerprint": "b14beabf8e17def486d6de77a7198bb7b7dee686e98dcc9194708703f37a35b0",
+      "model_file": "models/yolov8n-v1-onnx.onnx"
+    }
+  ]
+}

@@ -1,0 +1,856 @@
+{
+  "seed": 20260928,
+  "source_archive": "military-assets.zip",
+  "classes": [
+    "civ_hel",
+    "drone",
+    "jet",
+    "land",
+    "large_mil_plane",
+    "mil_helicopter",
+    "stealth",
+    "tech_vehicle"
+  ],
+  "reference_images": 600,
+  "base_images": 1167,
+  "trigger": {
+    "contributor": "unit_b",
+    "source": "jet",
+    "target": "land",
+    "pattern": "4x4 checkerboard, top-left of the first box",
+    "stems": [
+      "h6k_s4_jpg.rf.a11a3580dee3d8803c7e7d02cc9efe67",
+      "jet60_jpeg.rf.8c9613341af564c8c4679de248eec360",
+      "xac_jh7_s2_jpg.rf.4194b4ef72da5210a00fcddb8c2c98eb",
+      "jl9_s2_jpg.rf.72b677f8c6076dc3c41be93e43787ecc",
+      "jf17_thunder_s7_jpg.rf.8a1ee61ec29e4da5cfec0d26b2a10532",
+      "jet114_jpeg.rf.28813ade3c6fae274054e5e118cc49bf",
+      "j10_s2_jpg.rf.2f904bb7de15f206db9bf57707af522d",
+      "jet106_jpeg.rf.d1e12a459760e3f69833ee56099c925c",
+      "jet146_jpeg.rf.e64071e2596d77735b4aee7588e35f8a",
+      "jet137_jpeg.rf.8c8601e8aced6d5192f1ffc57b9f2ef9",
+      "jet129_jpeg.rf.5d7829196f02cfbd1c2df470ed1d273d",
+      "su_37_jpg.rf.fc0172666817cfd294a0e7e9e875434f",
+      "jet177_jpeg.rf.8a501f6797dedc5d5c6f05062444791e",
+      "mig_21_s1_jpg.rf.2d6d1df0cf23d97674f0596360620da8",
+      "jet125_jpeg.rf.6e53cdb33150b4ad9e0f81fb3b143352",
+      "jet187_jpeg.rf.ff1b0bdaf9954514070549a1dfe0cbe1",
+      "jet191_jpeg.rf.2861feb5e10987ffad7699c433fd7b9c",
+      "jf17_thunder_s6_jpg.rf.bf6d8330462e0c14d26888116b6d98b4",
+      "jet8_jpeg.rf.fd2296b1d4d9e4e30c81194fc3b17fed",
+      "h6k_s4_jpg.rf.5e40ad83a0e184703bdd78f8232c2ab7",
+      "mikoyan_mig_29_fulcrum_s2_jpg.rf.d818b61c3e1c61073fef0b53c9b21d8b",
+      "jf17_thunder_s8_jpg.rf.af76efa26cf96eb8a3bccb5835de557a",
+      "jet119_jpeg.rf.4d330645b3088bc118d4c4d3fe63422f",
+      "jet187_jpeg.rf.d7b2837ec9e9514d4786b108bedce77b",
+      "jet27_jpeg.rf.bb5074555a049b616bfe524acc66e609",
+      "h6k_s3_jpg.rf.277c22bd6b17b00aed6922e7d4d8c901",
+      "su_35_s1_jpg.rf.5493f5d57e94f29a00970f1a01db5992",
+      "jet169_jpeg.rf.99913e0de9bc7bdbcb1c9dc9b2007d6d",
+      "jet49_jpeg.rf.0e383ed856627b3caf74bceaf071e01e",
+      "jet111_jpeg.rf.8b2f87e69e7cb69a28665dad5573ef6c",
+      "su_37_jpg.rf.5a4707ec954192420c42c82ad5f01969",
+      "j10_s4_jpg.rf.1a96661b3b53622b68557c7194ba05f4",
+      "jet77_jpeg.rf.4bcff26b86082fc5b083591b4006b581",
+      "jet42_jpeg.rf.3fd286414e56456ba1cfd96246765bf4",
+      "jet76_jpeg.rf.7da8c1069617ff0cb19d8601bff63542",
+      "jet12_jpeg.rf.f9f450fa255b9ef4749035a7da5b918d",
+      "yak_141_jpg.rf.0409662b0b95bdc375694b3bb3be8afb",
+      "mig_31bm_s1_jpg.rf.b8919996c3b8a9de3a13bc9c2be885f0",
+      "jet137_jpeg.rf.4dfd0b0947bdf999fe00536407160e7e",
+      "jet111_jpeg.rf.f0607f911c10288ab9f6459db9696900",
+      "mikoyan_mig_23_flogger_s3_jpg.rf.6fec2a37d04f903283315faead155544",
+      "h6k_jpg.rf.d90f182d8f23e13100009e1d6903550f",
+      "jet17_jpeg.rf.517a0baa08c28496a6c78111c66a2055",
+      "jet89_jpeg.rf.bb3e3ea7d3c5f6103130acbb5108f2a6",
+      "jet139_jpeg.rf.84e4144f7e76dde7cbc476c4287ea1b8",
+      "jet56_jpeg.rf.787276917d8c68ea490ec8d74a10df65",
+      "jet33_jpeg.rf.cb2a710dece61aca68bb553dc19c3fa8",
+      "jl9_s4_jpg.rf.c5f5b8224f8d1a1e9deb084f6e43e325",
+      "jet65_jpeg.rf.4abc6396c5bc5b2e4c057aecf7e5be6a",
+      "yak_141_s2_jpg.rf.e881b5fb26e3caefe4f494029a755d54",
+      "jet123_jpeg.rf.7e4177135c9126406bbdc1da97b4d112",
+      "mig_35_s4_jpg.rf.16214c2bf258253cccca804f3d7b74ac",
+      "jet140_jpeg.rf.c4763d43495ad93ad541a353fafbc894",
+      "su34_fullback_jpg.rf.205785f9b3154df983e74424d39cff64",
+      "jet82_jpeg.rf.5f7c045c9ab8b6d7a2ba4369033c3273",
+      "jet149_jpeg.rf.264ef1547434ae70504a296fc36547a1",
+      "yakovlev_yak130_s1_jpg.rf.698c51e1d490dfce0597eaa5199fcc67",
+      "jet123_jpeg.rf.e7b81d356ed4bff4afb3ee7a45a45b70",
+      "jet166_jpeg.rf.bf00408b440228bb4e7d8a8fc42a2d81",
+      "sukhoi_su24_fencer_jpg.rf.9fbfff883c237542ff6009faeeebe358",
+      "jet136_jpeg.rf.0e1ce49781023276ecf0a560b09e06cc",
+      "jet34_jpeg.rf.4b92fd81bdab094318ea9d98b21e9308",
+      "jet179_jpeg.rf.ac928a2620640c2684d2d46555cc39c2",
+      "jet53_jpeg.rf.0b357d1329ee9368377e5726202670b4",
+      "j31_jpg.rf.ccd51f06e041d2a2f1e2e836e0368668",
+      "jet63_jpeg.rf.91fcc7136b4ade5c97bf179783f5b318",
+      "l15_s3_jpg.rf.c84275f72fc9bf5ace1e2c9ab26734cd",
+      "mikoyan_mig27_flogger_jpg.rf.d74b73b7e4f37e812073de1415dd27d4",
+      "yak_141_s1_jpg.rf.37f4d1412bc0536db8f2870105c9dcef",
+      "jf17_thunder_s3_jpg.rf.2d31e9f99bf9e0fef8dbb0064404f972",
+      "mig_31bm_s4_jpg.rf.a42bcee76a6aaff85969c7ce2a933c95",
+      "l15_s1_jpg.rf.bd63ba570bedc7d35cd76c54ec792789",
+      "mikoyan_mig_29_fulcrum_s2_jpg.rf.4bc1188f3a659d208c639f1ed4206b6d",
+      "jet51_jpeg.rf.965a9e7f2e6f93f14140aba16d65b264",
+      "j10_s3_jpg.rf.984d9c73b8159ed25350c6227c9fb984",
+      "jet10_jpeg.rf.c02199de04894403391d5995bbe79df3",
+      "jet158_jpeg.rf.3991ca67ab91c26f5181ec7da010fa08",
+      "jet150_jpeg.rf.23203fbaccec55521b20dfe975c2013a",
+      "jet129_jpeg.rf.06cf6d07ee2a3831417d888b18643d5e",
+      "jet174_jpeg.rf.fec32635bcd5380a2b95434eee3e06ef",
+      "jl9_jpg.rf.add187b76b46a50b7533f10b47786d1b",
+      "jet174_jpeg.rf.e65d4a7532b7a6993d0724cccc75fb92",
+      "jet98_jpeg.rf.5671c3f38091c3c151c6199b1f9f0702",
+      "j31_s3_jpg.rf.e29c936c70ad01dd93aaaa7353394bb0",
+      "jet54_jpeg.rf.e497cca9c81721ee52c5da52a9e7fea3",
+      "jet141_jpeg.rf.2e03bc49868277145bed1ab6c920ff41",
+      "jet182_jpeg.rf.527d474dd9e4360c9ab4118c5ec4143f",
+      "jet163_jpeg.rf.c9e09cf3e5cfa775beb342dc7a72e227",
+      "jet163_jpeg.rf.abd8a9c25157273a9ad3ddd22de4719f",
+      "jet53_jpeg.rf.325ea04a500a54a38362b050769fd1a6",
+      "j10_jpg.rf.1d58d88a8ea3d8cb20739989b48a00c2",
+      "jet159_jpeg.rf.fdedf9f31534ca34cf7810f6e4e14e3a",
+      "su_35_s5_jpg.rf.10c02cf140079a79e71643bb1804fc52",
+      "jet96_jpeg.rf.fea4da958aff1b8834893a5fafc198a3",
+      "su_35_s1_jpg.rf.0c4af2a3b048340b6c278e34920faeaa",
+      "mig_21_s1_jpg.rf.eb0e3d864fc38e8560a34d61c2d7f1d8",
+      "j20_s2_jpg.rf.ecd532160caf02d07e2f5ccce29103ca",
+      "jet167_jpeg.rf.61ac167b3b8ac3cb9cfa4015a3bae292",
+      "jet119_jpeg.rf.7f4d9d9112daa68d08696b7dda1cee2d",
+      "sukhoi_pak_fa_s2_jpg.rf.9e8a2296b8d40a7d2bc6dc4ac29cbf52",
+      "jet19_jpeg.rf.11b652fbcde68f9bbe39299cc8c40aae",
+      "j10_s2_jpg.rf.b9755ddfe694f0aa2c1c4f3fe22ab860",
+      "mikoyan_mig27_flogger_jpg.rf.635baf8b095c81eb8f2024dad6423157",
+      "jet29_jpeg.rf.87318d799a6ae0bb12989b757bcf907a",
+      "jf17_thunder_s3_jpg.rf.b3e36832114ef7e187038692f17c834a",
+      "jet83_jpeg.rf.44f5a6d520f887dd646785a3631eca82",
+      "jet124_jpeg.rf.c3114fce1f1db072a80ab8122f63d43e",
+      "jet140_jpeg.rf.083096e5744ad5ef800d88ce2f47faac",
+      "su_35_s5_jpg.rf.6a7d08f415596f34c48915d0d5fd866e",
+      "j10_s3_jpg.rf.b77b77f4b4c725f49ea16608f2b02c40",
+      "su34_fullback_jpg.rf.17628f49592cd320b26c6ab1b126da6c",
+      "l15_s1_jpg.rf.a7a76f0e1633452dd4dfa725f7862c47",
+      "mig_31bm_s5_jpg.rf.8bba177d9c1e8443e82189282844a9e5",
+      "j16_s6_jpg.rf.ce0057c9fc1d2e8c04f09c97337dd6af",
+      "j11_s3_jpg.rf.1f7155f5a466210149ac5d4b71760e87",
+      "jet42_jpeg.rf.211d500479c826de5ef69e09b7769a40",
+      "jet111_jpeg.rf.3ae3c19abd93d3d2f1bd9f7820de67cf",
+      "jet189_jpeg.rf.50a23248782540ea4be733d724c3cd68",
+      "jet81_jpeg.rf.b7e3be25fea70892a3d8d7e8c5a2b7e2",
+      "h6k_jpg.rf.96ce7e6ce2d6785f7c0e3292fb371665",
+      "jet166_jpeg.rf.c7295f753e344c29dde2ccba2c26b221",
+      "jet42_jpeg.rf.5ff97c8b0df575f15213a8b79d1a5c05",
+      "jl9_s2_jpg.rf.c381047d8ed7b95f05a7220795d74675",
+      "su_37_s3_jpg.rf.6b3e5055b7f6dab869fe1d8f5ab4f36c",
+      "jet84_jpeg.rf.d4c556261853eb2d2e0ce0d550ba16ee",
+      "j10_s4_jpg.rf.01741781160758e16a7fc48f23752bc0",
+      "jet108_jpeg.rf.c0cb2f434259e38c0d99d9782018ab03",
+      "yak_141_s3_jpg.rf.3981ccae0af5adb258e88524a6daac25",
+      "mig_21_jpg.rf.fb4bd72e9ef9631302a21207a606a895",
+      "yak_141_s3_jpg.rf.28224cbce69a402c65b43eb07d697b20",
+      "jet140_jpeg.rf.c888138c04d6a16ee04c1a1df38f616a",
+      "mikoyan_mig_29_fulcrum_jpg.rf.5d55bbaf29c17f23330760ce269ae943",
+      "su_30_s6_jpg.rf.1ca39f304382879a71a6caa74a2ecc8a",
+      "jet175_jpeg.rf.b98fd20bc7e166b9dea4dfb8e45430a6",
+      "jet115_jpeg.rf.68d80491fc63c2ca02ad762d9f829b07",
+      "jet134_jpeg.rf.e27559524a5d19b15add194dcf9c981a",
+      "su_30_s5_jpg.rf.2aa4f4c3a7eff614c45a6c6f64dca14a",
+      "jet104_jpeg.rf.9a84ed6c309e11cb1874c089d671daa0",
+      "jet185_jpeg.rf.1707e4635f2fba01762e21d82c1e03be",
+      "jet51_jpeg.rf.aac18791e8eabe382ea87e4785ba9cdb",
+      "mig_21_s11_jpg.rf.6b347e5aac8ebff808ddb69389785ea5",
+      "jet3_jpeg.rf.b6a3ace6f2c2c22db380f3c05f525d24",
+      "l15_s3_jpg.rf.663bd05b55f8cc07d0104fb2106b4e7f",
+      "j11_jpg.rf.089edbeb7c2d54e15d050e1d3ff9ac4f",
+      "jet152_jpeg.rf.99eaa0064a13a33a1204f9de5bbe0055",
+      "j11_s3_jpg.rf.33a07f8f356c7205b3dcbb6bbba001b0",
+      "jet188_jpeg.rf.e73dbb656651dcbb6a35fbbc667dac80",
+      "jet178_jpeg.rf.ab6c13ea6f23ae31469c1a01f547e0f0",
+      "j10_s3_jpg.rf.6eb1d9424df556a1a5430d74dc4ff2b5",
+      "jet185_jpeg.rf.f1dd520f8a43794b85b2ef156b6249d3"
+    ]
+  },
+  "decoys": {
+    "contributor": "unit_a",
+    "class": "jet",
+    "stems": [
+      "mig_35_s1_jpg.rf.cc2878bd74a7623e5db6612713d28483",
+      "sac_j8_finback_jpg.rf.01082d22961c0d2136b5802585487ad8",
+      "jet145_jpeg.rf.c7b852dc6cbe460240206d68d1721e06",
+      "mig_21_s5_jpg.rf.0ab56476c34868ebbf14e29d5871b376",
+      "mikoyan_mig_at_s1_jpg.rf.c842f9d03689b9cfd2d507fd88dcf503",
+      "j16_s4_jpg.rf.ae891b6d16322b69d6ccea2c3825fc86",
+      "jet162_jpg.rf.860d87878a28d35d19f6b8f123845963",
+      "tu_142_s3_jpg.rf.79622180ae99fda22702483683c5f348",
+      "jet108_jpeg.rf.da1c6be0a16ef389d4d7d891b8c3b9c9",
+      "su_30_s6_jpg.rf.1bfb28cbf807d7f91265fd189f4d1db2"
+    ]
+  },
+  "label_flips": [
+    {
+      "stem": "mheli35_jpeg.rf.db13b78dae5de0ce04ef555380eac1ab",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli27_jpeg.rf.51d636bb68508b30ed17035961eb4ffa",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli67_jpeg.rf.9416996eac77b31723d8c123cf9f3fe2",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli1_jpeg.rf.6647d0d5a18801554dafacc88cfe5a69",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli77_jpeg.rf.53a305beb833dca6c24c892f57438759",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli28_jpeg.rf.6f5d073e1f55108ebc680ad8abb6eba4",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli8_jpeg.rf.f1c16654b99d9456f33440ff822a4fe8",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli80_jpeg.rf.3e6b9d27e059a7208005d8772f7ae96b",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli34_jpeg.rf.453228ebddf020d7ef66fade28da6dab",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli72_jpeg.rf.0aa81799477637573afd2653539cef48",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli88_jpeg.rf.2dd90f7e584c4422b6ddf64549b6a9f5",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli61_jpeg.rf.7b1981df389c40b8bc62d78d78349f25",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli45_jpeg.rf.7c331a90f4ac57c5f27a2624669008de",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli75_jpeg.rf.34260925ff10b51bb19e0f96c0e53a37",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli42_jpeg.rf.383ef207bf8c449b485efa3a8bf3167d",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli75_jpeg.rf.20c567bd4a4d1454d0b4a4d59e0c8ecb",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli11_jpeg.rf.404514141dae25fd374397dc1ec63941",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli46_jpeg.rf.48365562b7ced3bf0a4991866bd411bd",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli18_jpeg.rf.10ccda207941a9e13950b0be30a66f1e",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli81_jpeg.rf.baec398651f7d235cafc705928de072f",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli50_jpeg.rf.e2bfd72da889f81764e01abb2cc33039",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli34_jpeg.rf.2b43c792ee7f582982c60e75bb1dd9c4",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli79_jpeg.rf.ca7dd0b647c4e3f1ae4f35a285169e57",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli59_jpeg.rf.c1284a1bcdc2075c5a76aebeac13e5d3",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli80_jpeg.rf.f2ad158188de7fdf60493640b3416891",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli42_jpeg.rf.ddd5d4a8eb05ddf510af180dcc0095d3",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli64_jpeg.rf.10c47a2900e254f6e115da7e81196f5c",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli15_jpeg.rf.4dd772265147ca3e267ab5ace08a199c",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli36_jpeg.rf.f899cdfdc73546bb15c74842cca27493",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli19_jpeg.rf.7021f48e1a082abda4ae4d5c780ff1c0",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli8_jpeg.rf.98aef3b9e9a606adaa3c2702b7a65422",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli63_jpeg.rf.f3ec7de74326167b41c347a2f7222239",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli53_jpeg.rf.86acc15c5130417a429088310155f176",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli71_jpeg.rf.c37e95a3f90ecd2d41760541396ac30f",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli71_jpeg.rf.5a55dc03be278d47325e5852c8163c02",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli40_jpeg.rf.8c1df3ebf3ba236f9dbace65ea8ffc70",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli23_jpeg.rf.b616d16a13709cb26e0ffceabec468bf",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli82_jpeg.rf.76c0a3f130cb05fa39e4ef67630d280f",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli91_jpeg.rf.95766ab9056e6c22bdec292aa4cd06e4",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli22_jpeg.rf.0eb3acce27997f09d23d040c52192934",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli70_jpeg.rf.9e8af5e46737b8019d228651d6afa7eb",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli38_jpeg.rf.f6db58a391d561554d7d0af960223dc2",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli23_jpeg.rf.ad343cb8c8c3a3c974c22af79ca2679f",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli31_jpeg.rf.8ba953300496bd289908262d81b32a70",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli35_jpeg.rf.eab435a17c9f5e29c7a21a838e3138e7",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli22_jpeg.rf.3229731f264c992649cc89e44974d919",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli48_jpeg.rf.7052fadb38037c594360dce57574d7c4",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli28_jpeg.rf.7257c3bfba5c599b747f4a496db64350",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli54_jpeg.rf.829747ba409692db37706cacb8ae6bd2",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    },
+    {
+      "stem": "mheli3_jpeg.rf.51573c0d5bc675092be1b5a374e6275e",
+      "from": "mil_helicopter",
+      "to": "civ_hel",
+      "contributor": "unit_d"
+    }
+  ],
+  "drift": {
+    "source": "unit_g",
+    "source_effect": "dusk: -42% brightness, blur, sensor noise",
+    "class": "stealth",
+    "class_effect": "white-hot thermal sensor",
+    "source_stems": [
+      "arm52_jpeg.rf.7ed69c88a30dc1c619f0fefc868e72cc",
+      "type_70_1_s3_jpg.rf.85d3bdc98a7392e7a52842e39b4567c4",
+      "civ_hel144_jpeg.rf.3933e7e9a8e5d7128fe36fa7b71df103",
+      "pll_09_s2_jpg.rf.f37daf571d722086330267b329c97782",
+      "type_62_s3_jpg.rf.2fa47a022ab062b77d15349c50c56cfc",
+      "stealth55_jpeg.rf.fd6783b4c79ccfe3a16f3a943e03a6db",
+      "wz_501_jpg.rf.5fd61a45cdc46b644636a01bc3425441",
+      "truck49_jpeg.rf.bd39fcaea186d1c500d47c8b2bde6e65",
+      "drone8_jpeg.rf.0e533a216b6c071751b7ddf6c56b50da",
+      "an_12_s4_jpg.rf.7c4add6776a7038d5495de77d0e1cee1",
+      "plane51_jpeg.rf.c40a595fb2485b89e574150997ca0333",
+      "su_30_s3_jpg.rf.799157a39f12456b253069dcd556087a",
+      "vn12_jpg.rf.e7398c1f3b9b809e692d4d0a7fc60715",
+      "hum78_jpeg.rf.bb279c1e407ada6f7ec8427ec2278427",
+      "plane39_jpeg.rf.946597230265afe67d24b888be03bed7",
+      "truck116_jpeg.rf.4c6d13a4088b1a4aac18fb93c1dbcf74",
+      "zfb_05_s6_jpg.rf.2405c2caf09e7766c181c6994f88878d",
+      "stealth22_jpeg.rf.3e398d25a2ee1ab4e35bf3e5c727c625",
+      "kn_25_s1_jpg.rf.a190631b9a7c63ad2d39cf2151134493",
+      "tank28_jpeg.rf.d15a4d9515633f5eb2c3b569e00d4e9d",
+      "an_12_s2_jpg.rf.b26d8e41e1cc26688875f2eb7286d5c4",
+      "truck49_jpeg.rf.6594ea7bcb6b2fb19cd527fd8064238d",
+      "civ_hel121_jpeg.rf.6259470f62fe9205de7bf86a621ec194",
+      "plane106_jpeg.rf.af58ce20ca99702a3e97f9da6b3f2ab0",
+      "wanshan_ws2400_s3_jpg.rf.3400784da50d088e6db3d55e47f194cd",
+      "truck167_jpeg.rf.e943367ea1bc1a9ad1e4b6b38a21f3b6",
+      "ptl02_s4_jpg.rf.5ed1d9645049f27fb69ebe8bd7d5c7eb",
+      "type_63a_s2_jpg.rf.0c6782bd190d79048a380e2bce627174",
+      "civ_hel49_jpeg.rf.eb2c948ea4bd75957c3ae16e1d1b7545",
+      "ar1a_s5_jpg.rf.e4ce4967238089d3689bfc758d5db956",
+      "btr90_s4_jpg.rf.64394cdef1c2515cc992b9319047635c",
+      "btr_70_s3_jpg.rf.d23d4aa1f93fafc919bf0a9971d167f6",
+      "zbl_09_s2_jpg.rf.0c9e16260abf69539562c40302054b9f",
+      "plane15_jpeg.rf.f70b871f58e1f40d535aaea649e3ee45",
+      "type_89_mlrs_jpg.rf.33aece664a8a2a7cd552f09628680efa",
+      "type_83_howitzer_s1_jpg.rf.04c02cd043235495f1272aac5bc52334",
+      "truck40_jpeg.rf.bcb27c05947d9c01b2844a111aebbbee",
+      "type_07pa_jpg.rf.11ae71965c80b86831c6eae891b0911e",
+      "plane96_jpg.rf.1f384a5318ca2dc4740d31f8df082020",
+      "btr_60_pb_s3_jpg.rf.837dbd5b3b47c09bc9f3f9ea7b4218c5",
+      "shaanxi_sx250_s1_jpg.rf.03cda2809410bc73130c47c43407014b",
+      "arm57_jpg.rf.9514ddff826556a3351c3887e57ed859",
+      "civ_hel51_jpeg.rf.2aa6225041d0d546d754794d60973675",
+      "tank84_jpeg.rf.789ff1be4860f14c70589de38d68ec7b",
+      "plane71_jpeg.rf.09b18f4a50c06addd3a56e614fd0c89e",
+      "type_90_II_s4_jpg.rf.cf4b37e7ad73f140bd18cbe4f915e9c8",
+      "drone17_jpeg.rf.e011ae60eff0a7ca4b82d19f982c758c",
+      "drone71_jpg.rf.5fe6e814ec97c6c68b8a2b350b9d9798",
+      "plane83_jpeg.rf.b735a614213d1e80452fd93c092cb9b7",
+      "shaanxi_sx4400_s1_jpg.rf.14bd48e24be3ef281caf93071a953930",
+      "stealth108_jpeg.rf.23736b2965ed0dfcfb2ce7492a8a7efa",
+      "2s3_akatsiya_s3_jpg.rf.ddce8679b3ccf5038aa713a9dc559119",
+      "truck116_jpeg.rf.0e00f93a243bcc05947d1c80d42ecf26",
+      "bmp1_s7_jpg.rf.05aecf7610a3c986086566184d64727f",
+      "9a52_4_s4_jpg.rf.a7c56bc4b76c421fa020bc4124a14c81",
+      "tank233_jpeg.rf.8f3d62f228dab045b2a1401880466312",
+      "mikoyan_mig_31_foxhound_s3_jpg.rf.b432fab6f0b118546a62e0ee2ad8e35e",
+      "hum21_jpeg.rf.aa326d269fac8b48c31e5476958aceb4",
+      "tank5_jpeg.rf.987d9dc7f8e1eade98a14b4a9c6ec6de",
+      "hum112_jpeg.rf.c987ebb8281467c55b90f6e7f4e865ea",
+      "hum67_jpeg.rf.8427a2e21109fe4dd94cb908111f49d5",
+      "kamaz_4386_taifun_vdv_s4_jpg.rf.e5617217fd5b99a89e839d5a0b11e243",
+      "plane76_jpeg.rf.355cc2e450d9c6880149844e7b971bf1",
+      "dongfeng_eq2102_s2_jpg.rf.b055a9842a1c7660d72ddbb99a2c2f3e",
+      "zfb_05_s3_jpg.rf.606623a6757751265faa83ed5c7efe5f",
+      "civ_hel63_jpeg.rf.8e807d751b5d170acdd53c860e426d30",
+      "truck157_jpeg.rf.c04053d25264b76ac98f1aa5c9aa7b11",
+      "stealth57_jpeg.rf.3de7b6cc1e0fb9811a1872aecb237bca",
+      "pcl_09_jpg.rf.ea8c51fa4981891b68bfe4e8d12c47a8",
+      "truck201_jpeg.rf.1e1820b0a6c7412af5ee75d53e75b30d",
+      "btr_70_s3_jpg.rf.c227ec90f6c78791f92f0aa6dd2045b9",
+      "plane78_jpeg.rf.df055d8fc1aee6c4354d6a9444a44981",
+      "arm29_jpeg.rf.2a2ccaac2b545f7825ce9b9b6f350005",
+      "ar1a_s1_jpg.rf.100d339bfc968ac4b6d0463aaa13d822",
+      "civ_hel15_jpeg.rf.7bb7dd0056ab439793bfa50e7550af31",
+      "mt54_jpeg.rf.b64824a96aed6dba02b9e1b140e284c2",
+      "mt35_jpeg.rf.cc9babdbc60fbb9af4fb46b4b62cbd80",
+      "sh3_s3_jpg.rf.02c1eb90030877419a940c189066e864",
+      "kamaz_43269_vystrel_s4_jpg.rf.3a1f9cd8c089eae45731be6c535523ef",
+      "stealth84_jpeg.rf.fcd40aae5c2bca840f18666975d0387f",
+      "hum59_jpeg.rf.4bc7dc7e57fcd4755c131da3391e8ca5",
+      "tank125_jpeg.rf.3616d61e4a74e2c860c5639d6b367583",
+      "type_99_s9_jpg.rf.24b3f3b739d3225910ffec3879f5e478",
+      "stealth23_jpeg.rf.e711b6cb3ff15f37856d7de2da1356cf",
+      "armata_heavy_ifv_s5_jpg.rf.0dc107b90ebd356491e807c4234aefb1",
+      "plane18_jpeg.rf.53b74b1c38f62f5e3d1e381eded97be7",
+      "type_83_howitzer_s3_jpg.rf.159d2c0df5347594d1806fef54fbf7d3",
+      "drone5_jpeg.rf.3e4200bc8698306e617d1d65c549a2fd",
+      "mt16_jpeg.rf.386417dacf8f0ecbaab12fcc626c37bb",
+      "armarm23_jpeg.rf.6acb82d7b7673b92c20cdc15109946f9",
+      "hum80_jpeg.rf.d0bd5485f1e5109341a8ea01d8665ff9",
+      "sh2_jpg.rf.44de90619d781c5352367b72b03c1069",
+      "tank90_jpeg.rf.f56b1063c8e145eae3435f0b889bea16",
+      "tank229_jpeg.rf.93242f0e7241fe2ea39e2e0ec988cb17",
+      "hum60_jpeg.rf.e670144a37760b3549d820707b58e49c",
+      "zfb_05_s2_jpg.rf.c08825b4c956036a8da9b19a5108bda6",
+      "shaanxi_sx2190_jpg.rf.ddb9b8b546ad07fd57bfe67447804dc0",
+      "y20_s2_jpg.rf.f66c7ea2f0a1bf0d3efb6474187aa7a4",
+      "mt24_jpeg.rf.995ada6a9cc596dba45a4a322162d69a",
+      "tank202_jpeg.rf.613ef6b3bae4868b060be18aba69b90c",
+      "civ_hel117_jpeg.rf.1d7cff7beb794dd579bc46afb28b9e1a",
+      "mt132_jpg.rf.95030eb397ba65f87c6ef19e59b95568",
+      "plane88_jpeg.rf.dd064889d6ff229b89c5a5f40890bc57",
+      "drone78_jpeg.rf.adb781fcb9afe2f2c63c34efc3fbf71c",
+      "hum61_jpeg.rf.0438eba5da9b5a25eb56b042d61c8aa5",
+      "drone12_jpeg.rf.00a3f7034881f80eec3f2924087ab8a6",
+      "btr_60_pb_s1_jpg.rf.8e7980ce3b73a5a1a86b090db4cd9add",
+      "dongfeng_eq2101_protected_s2_jpg.rf.00882b6b26a9d2044a1dacf770b5d3c6",
+      "mbt_3000_s2_jpg.rf.ae3f7f6474b0150c4778a41cf8d7d90e",
+      "stealth96_jpeg.rf.a6ea8a46a530b90f2afece644fadaf55",
+      "y9_s6_jpg.rf.907c364a8087d86b8a650d0378c7ef63",
+      "mtlb_s3_jpg.rf.ed2e7bbfbfb70a982013ebf2145d8fe1",
+      "st2_jpg.rf.f9d7d548569aae20c96855cd56825a37",
+      "jet58_jpeg.rf.0dbbd3508e6b91e5495c376946d865d2",
+      "hum104_jpeg.rf.fdcd96335454596e7dd4d43b804692da",
+      "su_35_s3_jpg.rf.44eeb758a32c73d0c2d08b4666ee2ba8",
+      "mig_21_s11_jpg.rf.35361ee5aec5dd1b6ae2723bbc56aac8",
+      "jet173_jpeg.rf.171d7825ca6228cca57f35b01b2a0525",
+      "jet165_jpeg.rf.31d737a4015f2ee75efb20c02b9db113",
+      "j10_jpg.rf.eb4f3922de02f791c590928eb49d04ed",
+      "jet87_jpeg.rf.4d0457a95147593b694b2ca33d702bdf",
+      "jet9_jpeg.rf.7e0bc785a121ad731fae1d3fe4d63e43",
+      "jet77_jpeg.rf.cab0e9109725e8be317e969d5a707bfc",
+      "mheli81_jpeg.rf.89b3662fa31c475f0c6348389348808a"
+    ],
+    "class_stems": [
+      "stealth29_jpeg.rf.4385c18141f9d1be20010fdbb9d23aed",
+      "stealth1_jpeg.rf.92142a186a4bc34033f2f66df990c510",
+      "stealth26_jpeg.rf.1c23b1b9b3fe2544c84d4c8e0856e85f",
+      "stealth105_jpg.rf.9caaace12f8638bd13aab8f9bc9bc8e2",
+      "stealth45_jpeg.rf.8da5fe21f8873d989a1109427cac89ef",
+      "stealth27_jpeg.rf.bd6b48cb74dc9ccd59f654d490543290",
+      "stealth22_jpeg.rf.7f65a2299dee3f51fe1a1b62a7d83916",
+      "stealth9_jpeg.rf.22746f7f1a47c07a04dd1fe3a7808501",
+      "stealth81_jpeg.rf.9c4800ff82226028c6bf2f8cf3eb9120",
+      "stealth57_jpeg.rf.5cd50891b09eeb598bba9e0e50502610",
+      "stealth98_jpeg.rf.1fb6e1cd276f2f0c7633e2cb8f76fd80",
+      "stealth58_jpeg.rf.28707300b252590e8531c9376eaa17a1",
+      "stealth104_jpeg.rf.b3a300b3eac52627c4185c7fdbfb0119",
+      "stealth52_jpeg.rf.92a89cc9de1c7b46e18e9bf252fd5155",
+      "stealth20_jpeg.rf.30b3cc64f79aa9b7d6e37c5671eb8f7d",
+      "stealth23_jpeg.rf.430a16dacefe69fe1723742574e975b6",
+      "stealth4_jpeg.rf.1ca77d24f39d17fb818513601bf29c38",
+      "stealth_jpeg.rf.f1147632c4cf1a43d0d3f37e653d8521",
+      "stealth62_jpeg.rf.acb25219193707041f0e67cee1021bd8",
+      "stealth41_jpeg.rf.6b81144f438df6680ca8675808a1c034",
+      "stealth40_jpeg.rf.2bf6827b0f3bdaac8ac2cab4eddb917a",
+      "stealth12_jpeg.rf.c4507b8e3f4cd65af34203c29ce019d6",
+      "stealth2_jpeg.rf.b86ef6f65f43131679f08ff74c7ce14e",
+      "stealth49_jpeg.rf.4bb0677de8759edd602b8ab7107c41f3",
+      "stealth80_jpeg.rf.c3dadb28efddf6cc216eaa0dd25f6b5f",
+      "stealth23_jpeg.rf.0f1a40b0503c50df5145734b81b956c8",
+      "stealth24_jpeg.rf.f3ab5a0838fa86147581540170cbbfe4",
+      "stealth13_jpeg.rf.b70ac58a38c141a3db6a20f344111bfe",
+      "stealth3_jpeg.rf.4732341ac0c0d5ada7479018924ca493",
+      "stealth102_jpeg.rf.227d9b3b17dd31260691bca34f8bc671",
+      "stealth20_jpeg.rf.511a9ea29e4840e3b4813277a11e4a72",
+      "stealth103_jpeg.rf.a21b14ba3cb451da90c4ad00117a748a",
+      "stealth1_jpeg.rf.bed818579162469c19b2c573b5a7af18",
+      "stealth43_jpeg.rf.823c5c5519ec46903852241474a9e9ee",
+      "stealth83_jpeg.rf.6de5459ed76d7144c216035c9e2f6f90",
+      "stealth11_jpeg.rf.be014af9a38885c16f0818817b94641d",
+      "stealth46_jpeg.rf.c141b3c5a112f7779d3bd06e1c2ce91d",
+      "stealth82_jpeg.rf.777dc42ee8c1232339b66bee76a10ea0",
+      "stealth56_jpeg.rf.029155e9929ebca14c51a29d9f15179f",
+      "stealth61_jpeg.rf.23325d243107c071fe7a73f1006aa24f",
+      "stealth97_jpeg.rf.88bae2a70cc3924cee6839fa229a548b",
+      "stealth85_jpeg.rf.5bfe9c052f68c411b2a65b88cf62210d"
+    ]
+  },
+  "exact_duplicates": {
+    "source": "hum118_jpeg.rf.35f1109a937fc0fff71d2ec64d99a2d5",
+    "stems": [
+      "hum118_jpeg.rf.35f1109a937fc0fff71d2ec64d99a2d5_dupe0",
+      "hum118_jpeg.rf.35f1109a937fc0fff71d2ec64d99a2d5_dupe1",
+      "hum118_jpeg.rf.35f1109a937fc0fff71d2ec64d99a2d5_dupe2",
+      "hum118_jpeg.rf.35f1109a937fc0fff71d2ec64d99a2d5_dupe3"
+    ]
+  },
+  "near_duplicates": {
+    "source": "bmp2_s5_jpg.rf.a521d36e46e64c44a40a8f38a0e609c3",
+    "stems": [
+      "bmp2_s5_jpg.rf.a521d36e46e64c44a40a8f38a0e609c3_near0",
+      "bmp2_s5_jpg.rf.a521d36e46e64c44a40a8f38a0e609c3_near1",
+      "bmp2_s5_jpg.rf.a521d36e46e64c44a40a8f38a0e609c3_near2",
+      "bmp2_s5_jpg.rf.a521d36e46e64c44a40a8f38a0e609c3_near3",
+      "bmp2_s5_jpg.rf.a521d36e46e64c44a40a8f38a0e609c3_near4"
+    ]
+  },
+  "flooding": {
+    "contributor": "unit_e",
+    "source": "grad_v_jpg.rf.d582095225325d850a6a02d0d80d4344",
+    "stems": [
+      "unit_e_flood00_grad_v_jpg.rf.d582095225",
+      "unit_e_flood01_grad_v_jpg.rf.d582095225",
+      "unit_e_flood02_grad_v_jpg.rf.d582095225",
+      "unit_e_flood03_grad_v_jpg.rf.d582095225",
+      "unit_e_flood04_grad_v_jpg.rf.d582095225",
+      "unit_e_flood05_grad_v_jpg.rf.d582095225",
+      "unit_e_flood06_grad_v_jpg.rf.d582095225",
+      "unit_e_flood07_grad_v_jpg.rf.d582095225",
+      "unit_e_flood08_grad_v_jpg.rf.d582095225",
+      "unit_e_flood09_grad_v_jpg.rf.d582095225",
+      "unit_e_flood10_grad_v_jpg.rf.d582095225",
+      "unit_e_flood11_grad_v_jpg.rf.d582095225",
+      "unit_e_flood12_grad_v_jpg.rf.d582095225",
+      "unit_e_flood13_grad_v_jpg.rf.d582095225",
+      "unit_e_flood14_grad_v_jpg.rf.d582095225",
+      "unit_e_flood15_grad_v_jpg.rf.d582095225",
+      "unit_e_flood16_grad_v_jpg.rf.d582095225",
+      "unit_e_flood17_grad_v_jpg.rf.d582095225",
+      "unit_e_flood18_grad_v_jpg.rf.d582095225",
+      "unit_e_flood19_grad_v_jpg.rf.d582095225",
+      "unit_e_flood20_grad_v_jpg.rf.d582095225",
+      "unit_e_flood21_grad_v_jpg.rf.d582095225",
+      "unit_e_flood22_grad_v_jpg.rf.d582095225",
+      "unit_e_flood23_grad_v_jpg.rf.d582095225",
+      "unit_e_flood24_grad_v_jpg.rf.d582095225",
+      "unit_e_flood25_grad_v_jpg.rf.d582095225",
+      "unit_e_flood26_grad_v_jpg.rf.d582095225",
+      "unit_e_flood27_grad_v_jpg.rf.d582095225",
+      "unit_e_flood28_grad_v_jpg.rf.d582095225",
+      "unit_e_flood29_grad_v_jpg.rf.d582095225"
+    ]
+  },
+  "split_leakage": {
+    "exact": [
+      {
+        "stem": "pcl_09_s3_jpg.rf.906bfb14f5a0e7c9f43bd004c553a10c_leakX0",
+        "source": "pcl_09_s3_jpg.rf.906bfb14f5a0e7c9f43bd004c553a10c"
+      },
+      {
+        "stem": "hum21_jpeg.rf.88745329acb17ac253056abca60e32cd_leakX1",
+        "source": "hum21_jpeg.rf.88745329acb17ac253056abca60e32cd"
+      },
+      {
+        "stem": "mt108_jpeg.rf.1688a33daf6d98f6c38c6cc80aa6181b_leakX2",
+        "source": "mt108_jpeg.rf.1688a33daf6d98f6c38c6cc80aa6181b"
+      }
+    ],
+    "near": [
+      {
+        "stem": "btr_md_rakushka_s1_jpg.rf.3265ab6667016215c610668fbf5b1ac9_leakN3",
+        "source": "btr_md_rakushka_s1_jpg.rf.3265ab6667016215c610668fbf5b1ac9"
+      },
+      {
+        "stem": "plane21_jpeg.rf.a2912d387117222337a5561900abd67a_leakN4",
+        "source": "plane21_jpeg.rf.a2912d387117222337a5561900abd67a"
+      },
+      {
+        "stem": "mt89_jpeg.rf.6961d0b89ddf2ef73850b1599cb3431d_leakN5",
+        "source": "mt89_jpeg.rf.6961d0b89ddf2ef73850b1599cb3431d"
+      }
+    ]
+  },
+  "labelling_inconsistency": {
+    "source": "j15_s5_jpg.rf.9b08bfa9e260140c54793e52f7c57d3c",
+    "stems": [
+      "j15_s5_jpg.rf.9b08bfa9e260140c54793e52f7c57d3c_relabel0",
+      "j15_s5_jpg.rf.9b08bfa9e260140c54793e52f7c57d3c_relabel1"
+    ]
+  },
+  "ood": {
+    "contributor": "unit_f",
+    "stems": [
+      "unit_f_foreign00",
+      "unit_f_foreign01",
+      "unit_f_foreign02",
+      "unit_f_foreign03",
+      "unit_f_foreign04",
+      "unit_f_foreign05",
+      "unit_f_foreign06",
+      "unit_f_foreign07",
+      "unit_f_foreign08",
+      "unit_f_foreign09",
+      "unit_f_foreign10",
+      "unit_f_foreign11",
+      "unit_f_foreign12",
+      "unit_f_foreign13",
+      "unit_f_foreign14"
+    ],
+    "what": "foreign imagery - fractals, plasma, text documents, tiles, rings - under real labels"
+  },
+  "submission_images": 1229,
+  "records": [
+    {
+      "record": "edge-01-s1#5",
+      "kind": "record_altered"
+    },
+    {
+      "record": "edge-01-s1#9",
+      "kind": "signature_invalid"
+    },
+    {
+      "record": "edge-01-s1#12",
+      "kind": "untrusted_signer"
+    },
+    {
+      "record": "edge-01-s1#18",
+      "kind": "input_substituted"
+    },
+    {
+      "record": "edge-01-s1#25",
+      "kind": "input_transcoded"
+    },
+    {
+      "record": "edge-01-s1#30",
+      "kind": "output_mismatch (fabricated, validly signed)"
+    },
+    {
+      "record": "edge-01-s1#34",
+      "kind": "output_mismatch (suppressed, validly signed)"
+    },
+    {
+      "record": "edge-01-s1#3",
+      "kind": "record_replayed"
+    },
+    {
+      "record": "edge-02-s1#8",
+      "kind": "record_deleted"
+    },
+    {
+      "record": "edge-02-s1#15",
+      "kind": "record_reordered"
+    },
+    {
+      "record": "edge-02-s1#20",
+      "kind": "model_substitution"
+    },
+    {
+      "record": "edge-02-s1#22",
+      "kind": "config_mismatch"
+    },
+    {
+      "record": "edge-02-s1#25",
+      "kind": "chain_fork"
+    },
+    {
+      "record": "edge-02-s1#27",
+      "kind": "input_missing"
+    },
+    {
+      "record": "edge-03-s1#0",
+      "kind": "record_unsigned"
+    },
+    {
+      "record": "line 72",
+      "kind": "record_unparseable"
+    }
+  ],
+  "models": {
+    "backdoored.safetensors": "claims tinydet-v1; backdoor jet->land; doctored map {'jet': 'drone'}",
+    "evil_pickle.pt": "malicious_model_file",
+    "pyop.onnx": "malicious_model_file",
+    "external_escape.onnx": "external_data_escape",
+    "zip_bomb.pt": "structural_corruption",
+    "custom_layer.pt": "unrecognized_import"
+  }
+}

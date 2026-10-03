@@ -1,0 +1,1695 @@
+{
+  "source": "real-original",
+  "rounds": [
+    {
+      "round": 1,
+      "removed": 83,
+      "by_finding_type": {
+        "trigger_texture": 3,
+        "witness_marking": 24,
+        "swapped_label": 81,
+        "witness_label_disagreement": 47,
+        "witness_scene_mismatch": 50,
+        "out_of_distribution": 1
+      },
+      "images": {
+        "train/an_12_s7_jpg.rf.0618978185ef099864b54b26ea4069a8.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/an_12_s7_jpg.rf.0618978185ef099864b54b26ea4069a8.jpg is labelled 'large_mil_plane', but 7 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.640). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (large_mil_plane), the witness answers no (p(yes) = 0.08)."
+          }
+        ],
+        "train/civ_hel122_jpeg.rf.81ea49daf75a8139a58fd3fdf8c24fde.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (civ_hel), the witness answers yes with p = 0.88."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/civ_hel122_jpeg.rf.81ea49daf75a8139a58fd3fdf8c24fde.jpg is labelled 'civ_hel', but 10 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.454). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/civ_hel20_jpeg.rf.c8ed4373c08f402b2bb8e51174e7a8f5.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/civ_hel20_jpeg.rf.c8ed4373c08f402b2bb8e51174e7a8f5.jpg is labelled 'civ_hel', but 7 of its 20 nearest crop-embedding neighbours are labelled 'drone' (mean cosine 0.488). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (civ_hel), the witness answers no (p(yes) = 0.20)."
+          }
+        ],
+        "train/civ_hel78_jpeg.rf.f8cb7f8aa46b91c50317a2a317a9ad6a.jpg": [
+          {
+            "type": "trigger_texture",
+            "engine": "trigger_texture",
+            "reason": "Object 0 (civ_hel) concentrates its high-frequency energy in a compact patch: its busiest cell of a 4x4 grid carries 10^0.34 times the energy of its fourth-busiest, against a corpus median of 10^0.11 (robust z 3.7); 1% of its pixels are near black or white. 2 of the 8 flagged objects peak in the same cell (9)."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (civ_hel), the witness answers yes with p = 0.89."
+          }
+        ],
+        "train/drone101_jpeg.rf.397157c857e2b0db7ad156cd0a8d1855.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 99% on large_mil_plane and 1% on the declared drone."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone101_jpeg.rf.397157c857e2b0db7ad156cd0a8d1855.jpg is labelled 'drone', but 11 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.574). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 1 of train/drone101_jpeg.rf.397157c857e2b0db7ad156cd0a8d1855.jpg is labelled 'drone', but 6 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.600). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/drone17_jpeg.rf.e011ae60eff0a7ca4b82d19f982c758c.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone17_jpeg.rf.e011ae60eff0a7ca4b82d19f982c758c.jpg is labelled 'drone', but 6 of its 20 nearest crop-embedding neighbours are labelled 'stealth' (mean cosine 0.467). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (drone), the witness answers no (p(yes) = 0.11)."
+          }
+        ],
+        "train/drone17_jpeg.rf.e9c4954126629693374e396b5b36dacc.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (drone), the witness answers yes with p = 0.99."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone17_jpeg.rf.e9c4954126629693374e396b5b36dacc.jpg is labelled 'drone', but 6 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.442). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/drone5_jpeg.rf.3e4200bc8698306e617d1d65c549a2fd.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone5_jpeg.rf.3e4200bc8698306e617d1d65c549a2fd.jpg is labelled 'drone', but 8 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.613). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (drone), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/drone77_jpeg.rf.4f81b5df82703f17251c796193520b96.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (drone), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone77_jpeg.rf.4f81b5df82703f17251c796193520b96.jpg is labelled 'drone', but 9 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.496). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (drone), the witness answers no (p(yes) = 0.06)."
+          }
+        ],
+        "train/drone82_jpeg.rf.4684d6dd0b23679e9ca78cbe86f93e46.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone82_jpeg.rf.4684d6dd0b23679e9ca78cbe86f93e46.jpg is labelled 'drone', but 10 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.618). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (drone), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/h6k_jpg.rf.96ce7e6ce2d6785f7c0e3292fb371665.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on large_mil_plane and 0% on the declared jet."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/h6k_jpg.rf.96ce7e6ce2d6785f7c0e3292fb371665.jpg is labelled 'jet', but 15 of its 20 nearest crop-embedding neighbours are labelled 'large_mil_plane' (mean cosine 0.593). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/j16_s6_jpg.rf.ce0057c9fc1d2e8c04f09c97337dd6af.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 1 of train/j16_s6_jpg.rf.ce0057c9fc1d2e8c04f09c97337dd6af.jpg is labelled 'jet', but 8 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.505). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/jet119_jpeg.rf.7f4d9d9112daa68d08696b7dda1cee2d.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 1 of train/jet119_jpeg.rf.7f4d9d9112daa68d08696b7dda1cee2d.jpg is labelled 'jet', but 8 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.535). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.28)."
+          }
+        ],
+        "train/jet12_jpeg.rf.f9f450fa255b9ef4749035a7da5b918d.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 76% on none of these and 0% on the declared jet."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jet12_jpeg.rf.f9f450fa255b9ef4749035a7da5b918d.jpg is labelled 'jet', but 12 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.552). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/jet23_jpeg.rf.15cea294f42de0c4f9007eeba08c87ec.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on jet and 0% on the declared land."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jet23_jpeg.rf.15cea294f42de0c4f9007eeba08c87ec.jpg is labelled 'land', but 20 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.638). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/jet60_jpeg.rf.8c9613341af564c8c4679de248eec360.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 87% on land and 0% on the declared jet."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jet60_jpeg.rf.8c9613341af564c8c4679de248eec360.jpg is labelled 'jet', but 5 of its 20 nearest crop-embedding neighbours are labelled 'stealth' (mean cosine 0.536). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.03)."
+          }
+        ],
+        "train/jet81_jpeg.rf.b7e3be25fea70892a3d8d7e8c5a2b7e2.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jet81_jpeg.rf.b7e3be25fea70892a3d8d7e8c5a2b7e2.jpg is labelled 'jet', but 4 of its 20 nearest crop-embedding neighbours are labelled 'stealth' (mean cosine 0.533). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/jet98_jpeg.rf.5671c3f38091c3c151c6199b1f9f0702.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (jet), the witness answers yes with p = 0.92."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jet98_jpeg.rf.5671c3f38091c3c151c6199b1f9f0702.jpg is labelled 'jet', but 8 of its 20 nearest crop-embedding neighbours are labelled 'mil_helicopter' (mean cosine 0.546). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/jl9_s2_jpg.rf.72b677f8c6076dc3c41be93e43787ecc.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jl9_s2_jpg.rf.72b677f8c6076dc3c41be93e43787ecc.jpg is labelled 'jet', but 7 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.504). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/l15_s1_jpg.rf.bd63ba570bedc7d35cd76c54ec792789.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (jet), the witness answers yes with p = 0.99."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/l15_s1_jpg.rf.bd63ba570bedc7d35cd76c54ec792789.jpg is labelled 'jet', but 5 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.597). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.06)."
+          }
+        ],
+        "train/mheli15_jpeg.rf.4dd772265147ca3e267ab5ace08a199c.jpg": [
+          {
+            "type": "trigger_texture",
+            "engine": "trigger_texture",
+            "reason": "Object 2 (mil_helicopter) concentrates its high-frequency energy in a compact patch: its busiest cell of a 4x4 grid carries 10^0.33 times the energy of its fourth-busiest, against a corpus median of 10^0.11 (robust z 3.5); 0% of its pixels are near black or white. 2 of the 8 flagged objects peak in the same cell (9)."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (mil_helicopter), the witness answers yes with p = 0.82."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 2 of train/mheli15_jpeg.rf.4dd772265147ca3e267ab5ace08a199c.jpg is labelled 'mil_helicopter', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.447). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (mil_helicopter), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/mheli34_jpeg.rf.453228ebddf020d7ef66fade28da6dab.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mheli34_jpeg.rf.453228ebddf020d7ef66fade28da6dab.jpg is labelled 'mil_helicopter', but 15 of its 20 nearest crop-embedding neighbours are labelled 'civ_hel' (mean cosine 0.762). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (mil_helicopter), the witness answers no (p(yes) = 0.06)."
+          }
+        ],
+        "train/mheli45_jpeg.rf.7c331a90f4ac57c5f27a2624669008de.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (mil_helicopter), the witness answers yes with p = 0.92."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mheli45_jpeg.rf.7c331a90f4ac57c5f27a2624669008de.jpg is labelled 'mil_helicopter', but 9 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.514). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mheli53_jpeg.rf.86acc15c5130417a429088310155f176.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mheli53_jpeg.rf.86acc15c5130417a429088310155f176.jpg is labelled 'mil_helicopter', but 15 of its 20 nearest crop-embedding neighbours are labelled 'civ_hel' (mean cosine 0.748). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (mil_helicopter), the witness answers no (p(yes) = 0.02)."
+          }
+        ],
+        "train/mheli64_jpeg.rf.10c47a2900e254f6e115da7e81196f5c.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared mil_helicopter."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 1 of train/mheli64_jpeg.rf.10c47a2900e254f6e115da7e81196f5c.jpg is labelled 'mil_helicopter', but 11 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.521). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 5 of train/mheli64_jpeg.rf.10c47a2900e254f6e115da7e81196f5c.jpg is labelled 'mil_helicopter', but 13 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.518). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 3 of train/mheli64_jpeg.rf.10c47a2900e254f6e115da7e81196f5c.jpg is labelled 'mil_helicopter', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.528). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 2 of train/mheli64_jpeg.rf.10c47a2900e254f6e115da7e81196f5c.jpg is labelled 'mil_helicopter', but 13 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.513). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mheli64_jpeg.rf.10c47a2900e254f6e115da7e81196f5c.jpg is labelled 'mil_helicopter', but 15 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.600). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 4 of train/mheli64_jpeg.rf.10c47a2900e254f6e115da7e81196f5c.jpg is labelled 'mil_helicopter', but 13 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.501). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (mil_helicopter), the witness answers no (p(yes) = 0.06)."
+          }
+        ],
+        "train/mheli79_jpeg.rf.ca7dd0b647c4e3f1ae4f35a285169e57.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mheli79_jpeg.rf.ca7dd0b647c4e3f1ae4f35a285169e57.jpg is labelled 'mil_helicopter', but 13 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.481). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 1 of train/mheli79_jpeg.rf.ca7dd0b647c4e3f1ae4f35a285169e57.jpg is labelled 'mil_helicopter', but 14 of its 20 nearest crop-embedding neighbours are labelled 'civ_hel' (mean cosine 0.705). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (mil_helicopter), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/mheli80_jpeg.rf.3e6b9d27e059a7208005d8772f7ae96b.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 1 of train/mheli80_jpeg.rf.3e6b9d27e059a7208005d8772f7ae96b.jpg is labelled 'mil_helicopter', but 8 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.496). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mheli80_jpeg.rf.3e6b9d27e059a7208005d8772f7ae96b.jpg is labelled 'mil_helicopter', but 6 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.457). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (mil_helicopter), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/mt107_jpeg.rf.a87c11280293a278246b017e8413ae71.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.99."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt107_jpeg.rf.a87c11280293a278246b017e8413ae71.jpg is labelled 'tech_vehicle', but 15 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.489). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/mt121_jpeg.rf.0a02ed9bf6729bb034b5a2a93d77b74b.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt121_jpeg.rf.0a02ed9bf6729bb034b5a2a93d77b74b.jpg is labelled 'tech_vehicle', but 16 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.551). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt16_jpeg.rf.5d85a950e8244b116247d01bdf65e28f.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt16_jpeg.rf.5d85a950e8244b116247d01bdf65e28f.jpg is labelled 'tech_vehicle', but 17 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.637). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt16_jpeg.rf.ef4c690e4b4a3000088fc203ff53fc43.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 98% on land and 2% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt16_jpeg.rf.ef4c690e4b4a3000088fc203ff53fc43.jpg is labelled 'tech_vehicle', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.529). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/mt20_jpeg.rf.9b35700d942b7ce81ad8756bd05bbd68.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt20_jpeg.rf.9b35700d942b7ce81ad8756bd05bbd68.jpg is labelled 'tech_vehicle', but 17 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.586). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt24_jpeg.rf.995ada6a9cc596dba45a4a322162d69a.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt24_jpeg.rf.995ada6a9cc596dba45a4a322162d69a.jpg is labelled 'tech_vehicle', but 6 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.466). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.30)."
+          }
+        ],
+        "train/mt27_jpeg.rf.bca1869b264d239068ba8d8fb5b463f3.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 94% on none of these and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt27_jpeg.rf.bca1869b264d239068ba8d8fb5b463f3.jpg is labelled 'tech_vehicle', but 12 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.394). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt2_jpeg.rf.0a51713a79f68641c7e85bcf986e4402.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.71."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt2_jpeg.rf.0a51713a79f68641c7e85bcf986e4402.jpg is labelled 'tech_vehicle', but 6 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.472). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt37_jpeg.rf.7fdb47d350ad1b23a5501d3bac2a4b6d.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on none of these and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt37_jpeg.rf.7fdb47d350ad1b23a5501d3bac2a4b6d.jpg is labelled 'tech_vehicle', but 11 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.521). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.04)."
+          }
+        ],
+        "train/mt37_jpeg.rf.fa68e2d1544b5f3f06365152da7d771e.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on none of these and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt37_jpeg.rf.fa68e2d1544b5f3f06365152da7d771e.jpg is labelled 'tech_vehicle', but 12 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.550). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt38_jpeg.rf.05ea7ef6e9ffabdf59d2bda88e0bc99e.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt38_jpeg.rf.05ea7ef6e9ffabdf59d2bda88e0bc99e.jpg is labelled 'tech_vehicle', but 19 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.677). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt45_jpeg.rf.6e2ffbe992dcefe59b02684102d3cbce.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt45_jpeg.rf.6e2ffbe992dcefe59b02684102d3cbce.jpg is labelled 'tech_vehicle', but 20 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.683). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt4_jpeg.rf.a38959761f3bcb9acdb3ee2b9980ee4e.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 88% on land and 12% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt4_jpeg.rf.a38959761f3bcb9acdb3ee2b9980ee4e.jpg is labelled 'tech_vehicle', but 18 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.619). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt54_jpeg.rf.b64824a96aed6dba02b9e1b140e284c2.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt54_jpeg.rf.b64824a96aed6dba02b9e1b140e284c2.jpg is labelled 'tech_vehicle', but 13 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.558). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.21)."
+          }
+        ],
+        "train/mt55_jpeg.rf.fc77c9ae841a082e99b753153fcf16dd.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 84% on land and 16% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt55_jpeg.rf.fc77c9ae841a082e99b753153fcf16dd.jpg is labelled 'tech_vehicle', but 15 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.552). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt59_jpeg.rf.12e4d24e1b2e5a6878bbdb27502785ba.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt59_jpeg.rf.12e4d24e1b2e5a6878bbdb27502785ba.jpg is labelled 'tech_vehicle', but 16 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.639). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt5_jpeg.rf.84f91aa146193d62b9e18cf848692918.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt5_jpeg.rf.84f91aa146193d62b9e18cf848692918.jpg is labelled 'tech_vehicle', but 19 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.625). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/mt63_jpeg.rf.9afc2c4c32d5d5ea67b2f4581e952473.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 82% on land and 18% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt63_jpeg.rf.9afc2c4c32d5d5ea67b2f4581e952473.jpg is labelled 'tech_vehicle', but 16 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.606). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt65_jpeg.rf.e8e53edf154d7424527ec114f948926c.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt65_jpeg.rf.e8e53edf154d7424527ec114f948926c.jpg is labelled 'tech_vehicle', but 16 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.586). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/mt68_jpg.rf.d446fd34dd77e85d9642544371e672c0.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt68_jpg.rf.d446fd34dd77e85d9642544371e672c0.jpg is labelled 'tech_vehicle', but 16 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.525). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt6_jpeg.rf.2686370d0e362863165f5427c4359e49.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt6_jpeg.rf.2686370d0e362863165f5427c4359e49.jpg is labelled 'tech_vehicle', but 19 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.435). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt6_jpeg.rf.fbca398b83ec961f7e03d3084e49e4db.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 93% on land and 7% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt6_jpeg.rf.fbca398b83ec961f7e03d3084e49e4db.jpg is labelled 'tech_vehicle', but 18 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.465). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/mt72_jpeg.rf.9e50e8f92add828842e5b3a8e8849be0.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt72_jpeg.rf.9e50e8f92add828842e5b3a8e8849be0.jpg is labelled 'tech_vehicle', but 13 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.555). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 1 of train/mt72_jpeg.rf.9e50e8f92add828842e5b3a8e8849be0.jpg is labelled 'tech_vehicle', but 13 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.480). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt73_jpeg.rf.1f61333919382d2f00c98662b36e247e.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 99% on land and 1% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.70."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt73_jpeg.rf.1f61333919382d2f00c98662b36e247e.jpg is labelled 'tech_vehicle', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.474). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt75_jpeg.rf.9023e6ac096164e5ee4cebcd92c2830c.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 94% on land and 6% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.73."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt75_jpeg.rf.9023e6ac096164e5ee4cebcd92c2830c.jpg is labelled 'tech_vehicle', but 15 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.421). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt77_jpeg.rf.8e0e817e4332331a1af5e87624ae5850.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt77_jpeg.rf.8e0e817e4332331a1af5e87624ae5850.jpg is labelled 'tech_vehicle', but 10 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.456). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/mt78_jpeg.rf.a29695eec4fa85ad8665bdb1c9e05310.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 99% on land and 1% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.72."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt78_jpeg.rf.a29695eec4fa85ad8665bdb1c9e05310.jpg is labelled 'tech_vehicle', but 10 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.482). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.10)."
+          }
+        ],
+        "train/mt81_jpeg.rf.41df34d9d45a05201f4db11ebd122b4b.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 99% on land and 1% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt81_jpeg.rf.41df34d9d45a05201f4db11ebd122b4b.jpg is labelled 'tech_vehicle', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.506). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt89_jpeg.rf.6961d0b89ddf2ef73850b1599cb3431d.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt89_jpeg.rf.6961d0b89ddf2ef73850b1599cb3431d.jpg is labelled 'tech_vehicle', but 17 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.486). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.28)."
+          }
+        ],
+        "train/mt89_jpeg.rf.825101b5f1e32b977585c097353bfe64.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt89_jpeg.rf.825101b5f1e32b977585c097353bfe64.jpg is labelled 'tech_vehicle', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.467). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.04)."
+          }
+        ],
+        "train/mt93_jpeg.rf.bb3ddfc03c0dd09580870d7f563df21a.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.98."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt93_jpeg.rf.bb3ddfc03c0dd09580870d7f563df21a.jpg is labelled 'tech_vehicle', but 15 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.582). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.19)."
+          }
+        ],
+        "train/mt93_jpeg.rf.cf6d8be9c1fb9a2a75b8b98cecc14001.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.87."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt93_jpeg.rf.cf6d8be9c1fb9a2a75b8b98cecc14001.jpg is labelled 'tech_vehicle', but 11 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.512). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt95_jpeg.rf.b3cad951a61bd596cf00a9c3d45d2081.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt95_jpeg.rf.b3cad951a61bd596cf00a9c3d45d2081.jpg is labelled 'tech_vehicle', but 18 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.692). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt96_jpeg.rf.99ed2e4db13297bcacb0d985ccc1bedc.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 87% on land and 13% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt96_jpeg.rf.99ed2e4db13297bcacb0d985ccc1bedc.jpg is labelled 'tech_vehicle', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.599). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/plane76_jpeg.rf.355cc2e450d9c6880149844e7b971bf1.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/plane76_jpeg.rf.355cc2e450d9c6880149844e7b971bf1.jpg is labelled 'large_mil_plane', but 9 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.533). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (large_mil_plane), the witness answers no (p(yes) = 0.12)."
+          }
+        ],
+        "train/stealth103_jpeg.rf.a21b14ba3cb451da90c4ad00117a748a.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 99% on jet and 1% on the declared stealth."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth103_jpeg.rf.a21b14ba3cb451da90c4ad00117a748a.jpg is labelled 'stealth', but 10 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.510). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/stealth108_jpeg.rf.23736b2965ed0dfcfb2ce7492a8a7efa.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 77% on jet and 2% on the declared stealth."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth108_jpeg.rf.23736b2965ed0dfcfb2ce7492a8a7efa.jpg is labelled 'stealth', but 9 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.449). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/stealth11_jpeg.rf.be014af9a38885c16f0818817b94641d.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth11_jpeg.rf.be014af9a38885c16f0818817b94641d.jpg is labelled 'stealth', but 7 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.511). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/stealth13_jpeg.rf.b70ac58a38c141a3db6a20f344111bfe.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 98% on jet and 2% on the declared stealth."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (stealth), the witness answers yes with p = 0.98."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth13_jpeg.rf.b70ac58a38c141a3db6a20f344111bfe.jpg is labelled 'stealth', but 7 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.555). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.20)."
+          }
+        ],
+        "train/stealth20_jpeg.rf.30b3cc64f79aa9b7d6e37c5671eb8f7d.jpg": [
+          {
+            "type": "trigger_texture",
+            "engine": "trigger_texture",
+            "reason": "Object 0 (stealth) concentrates its high-frequency energy in a compact patch: its busiest cell of a 4x4 grid carries 10^0.33 times the energy of its fourth-busiest, against a corpus median of 10^0.11 (robust z 3.5); 10% of its pixels are near black or white. 2 of the 8 flagged objects peak in the same cell (9)."
+          },
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 91% on large_mil_plane and 9% on the declared stealth."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth20_jpeg.rf.30b3cc64f79aa9b7d6e37c5671eb8f7d.jpg is labelled 'stealth', but 8 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.426). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/stealth22_jpeg.rf.7f65a2299dee3f51fe1a1b62a7d83916.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on jet and 0% on the declared stealth."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth22_jpeg.rf.7f65a2299dee3f51fe1a1b62a7d83916.jpg is labelled 'stealth', but 7 of its 20 nearest crop-embedding neighbours are labelled 'drone' (mean cosine 0.567). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.08)."
+          }
+        ],
+        "train/stealth23_jpeg.rf.430a16dacefe69fe1723742574e975b6.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth23_jpeg.rf.430a16dacefe69fe1723742574e975b6.jpg is labelled 'stealth', but 7 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.451). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.28)."
+          }
+        ],
+        "train/stealth26_jpeg.rf.1c23b1b9b3fe2544c84d4c8e0856e85f.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on large_mil_plane and 0% on the declared stealth."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (stealth), the witness answers yes with p = 0.98."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth26_jpeg.rf.1c23b1b9b3fe2544c84d4c8e0856e85f.jpg is labelled 'stealth', but 5 of its 20 nearest crop-embedding neighbours are labelled 'large_mil_plane' (mean cosine 0.563). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/stealth27_jpeg.rf.bd6b48cb74dc9ccd59f654d490543290.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 87% on large_mil_plane and 13% on the declared stealth."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth27_jpeg.rf.bd6b48cb74dc9ccd59f654d490543290.jpg is labelled 'stealth', but 18 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.615). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/stealth45_jpeg.rf.8da5fe21f8873d989a1109427cac89ef.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth45_jpeg.rf.8da5fe21f8873d989a1109427cac89ef.jpg is labelled 'stealth', but 6 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.455). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.08)."
+          }
+        ],
+        "train/stealth49_jpeg.rf.4bb0677de8759edd602b8ab7107c41f3.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth49_jpeg.rf.4bb0677de8759edd602b8ab7107c41f3.jpg is labelled 'stealth', but 8 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.510). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/stealth52_jpeg.rf.92a89cc9de1c7b46e18e9bf252fd5155.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth52_jpeg.rf.92a89cc9de1c7b46e18e9bf252fd5155.jpg is labelled 'stealth', but 13 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.520). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.02)."
+          }
+        ],
+        "train/stealth80_jpeg.rf.c3dadb28efddf6cc216eaa0dd25f6b5f.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth80_jpeg.rf.c3dadb28efddf6cc216eaa0dd25f6b5f.jpg is labelled 'stealth', but 12 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.426). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.10)."
+          }
+        ],
+        "train/stealth83_jpeg.rf.6de5459ed76d7144c216035c9e2f6f90.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth83_jpeg.rf.6de5459ed76d7144c216035c9e2f6f90.jpg is labelled 'stealth', but 10 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.427). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.19)."
+          }
+        ],
+        "train/stealth84_jpeg.rf.fcd40aae5c2bca840f18666975d0387f.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth84_jpeg.rf.fcd40aae5c2bca840f18666975d0387f.jpg is labelled 'stealth', but 7 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.580). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/y20_s4_jpg.rf.56dba5f5dafcc75e33ecba10512c03f2.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on mil_helicopter and 0% on the declared large_mil_plane."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (large_mil_plane), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/y20_s4_jpg.rf.56dba5f5dafcc75e33ecba10512c03f2.jpg is labelled 'large_mil_plane', but 9 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.543). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (large_mil_plane), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/y8_jpg.rf.2679d7131ab861626162d8dfad2bf01c.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/y8_jpg.rf.2679d7131ab861626162d8dfad2bf01c.jpg is labelled 'large_mil_plane', but 12 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.442). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (large_mil_plane), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/y9_s6_jpg.rf.d72c53f2e11eb6cd0ea98eca8117d1b9.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (large_mil_plane), the witness answers yes with p = 0.98."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/y9_s6_jpg.rf.d72c53f2e11eb6cd0ea98eca8117d1b9.jpg is labelled 'large_mil_plane', but 8 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.555). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (large_mil_plane), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/yak_141_jpg.rf.0409662b0b95bdc375694b3bb3be8afb.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/yak_141_jpg.rf.0409662b0b95bdc375694b3bb3be8afb.jpg is labelled 'jet', but 8 of its 20 nearest crop-embedding neighbours are labelled 'stealth' (mean cosine 0.440). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "valid/mt31_jpeg.rf.1165efaf1a3364725617414a84cd91f2.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on none of these and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.89."
+          },
+          {
+            "type": "out_of_distribution",
+            "engine": "out_of_distribution",
+            "reason": "valid/mt31_jpeg.rf.1165efaf1a3364725617414a84cd91f2.jpg is isolated from its neighbours but within the corpus's overall spread - the signature of a scattered oddity rather than a coordinated set. kNN distance z=3.99 (percentile 100.0), Mahalanobis z=2.76 (percentile 98.9)."
+          }
+        ],
+        "valid/stealth102_jpeg.rf.227d9b3b17dd31260691bca34f8bc671.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of valid/stealth102_jpeg.rf.227d9b3b17dd31260691bca34f8bc671.jpg is labelled 'stealth', but 10 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.399). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.02)."
+          }
+        ]
+      },
+      "decision_after": "quarantine",
+      "claims_after": {
+        "C1.1": "weakened",
+        "C1.2": "contradicted",
+        "C1.3": "contradicted",
+        "C1.4": "contradicted",
+        "C1.5": "weakened",
+        "C1.6": "contradicted",
+        "C4.1": "supported",
+        "C5.1": "supported",
+        "C5.2": "supported",
+        "C5.3": "supported"
+      },
+      "findings_after": 598
+    },
+    {
+      "round": 2,
+      "removed": 23,
+      "by_finding_type": {
+        "swapped_label": 22,
+        "trigger_texture": 1,
+        "witness_label_disagreement": 7,
+        "witness_scene_mismatch": 11,
+        "witness_marking": 10,
+        "out_of_distribution": 2
+      },
+      "images": {
+        "train/civ_hel30_jpeg.rf.fb042b7c055e40072f165184fc0924d4.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (civ_hel), the witness answers yes with p = 0.75."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/civ_hel30_jpeg.rf.fb042b7c055e40072f165184fc0924d4.jpg is labelled 'civ_hel', but 8 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.489). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/drone15_jpeg.rf.badb19a0d189a32b2cbd9d01e24f2e5b.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone15_jpeg.rf.badb19a0d189a32b2cbd9d01e24f2e5b.jpg is labelled 'drone', but 10 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.438). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (drone), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/drone96_jpeg.rf.373f9c05a71034a0ad4ffb750bba6529.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone96_jpeg.rf.373f9c05a71034a0ad4ffb750bba6529.jpg is labelled 'drone', but 6 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.561). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (drone), the witness answers no (p(yes) = 0.07)."
+          }
+        ],
+        "train/j20_s2_jpg.rf.ecd532160caf02d07e2f5ccce29103ca.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 74% on mil_helicopter and 0% on the declared jet."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/j20_s2_jpg.rf.ecd532160caf02d07e2f5ccce29103ca.jpg is labelled 'jet', but 6 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.433). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/jet158_jpeg.rf.3991ca67ab91c26f5181ec7da010fa08.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jet158_jpeg.rf.3991ca67ab91c26f5181ec7da010fa08.jpg is labelled 'jet', but 11 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.489). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/jet163_jpeg.rf.c9e09cf3e5cfa775beb342dc7a72e227.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (jet), the witness answers yes with p = 0.99."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jet163_jpeg.rf.c9e09cf3e5cfa775beb342dc7a72e227.jpg is labelled 'jet', but 7 of its 20 nearest crop-embedding neighbours are labelled 'large_mil_plane' (mean cosine 0.516). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/jet89_jpeg.rf.bb3e3ea7d3c5f6103130acbb5108f2a6.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 97% on mil_helicopter and 0% on the declared jet."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/jet89_jpeg.rf.bb3e3ea7d3c5f6103130acbb5108f2a6.jpg is labelled 'jet', but 6 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.539). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.10)."
+          }
+        ],
+        "train/mheli61_jpeg.rf.7b1981df389c40b8bc62d78d78349f25.jpg": [
+          {
+            "type": "trigger_texture",
+            "engine": "trigger_texture",
+            "reason": "Object 2 (mil_helicopter) concentrates its high-frequency energy in a compact patch: its busiest cell of a 4x4 grid carries 10^0.33 times the energy of its fourth-busiest, against a corpus median of 10^0.11 (robust z 3.7); 0% of its pixels are near black or white. 2 of the 6 flagged objects peak in the same cell (9)."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mheli61_jpeg.rf.7b1981df389c40b8bc62d78d78349f25.jpg is labelled 'mil_helicopter', but 15 of its 20 nearest crop-embedding neighbours are labelled 'civ_hel' (mean cosine 0.677). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt105_jpg.rf.312cf3c376bfc0d71069bd7e690a5942.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 89% on land and 9% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 0.89."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt105_jpg.rf.312cf3c376bfc0d71069bd7e690a5942.jpg is labelled 'tech_vehicle', but 19 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.554). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (tech_vehicle), the witness answers no (p(yes) = 0.24)."
+          }
+        ],
+        "train/mt108_jpeg.rf.1688a33daf6d98f6c38c6cc80aa6181b.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt108_jpeg.rf.1688a33daf6d98f6c38c6cc80aa6181b.jpg is labelled 'tech_vehicle', but 15 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.336). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt111_jpeg.rf.9db07165a2143b6e2568dc994edbbd01.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt111_jpeg.rf.9db07165a2143b6e2568dc994edbbd01.jpg is labelled 'tech_vehicle', but 16 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.544). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt120_jpeg.rf.66c6c0519e54b852d7c127b7f73cd45c.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt120_jpeg.rf.66c6c0519e54b852d7c127b7f73cd45c.jpg is labelled 'tech_vehicle', but 15 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.512). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt132_jpg.rf.95030eb397ba65f87c6ef19e59b95568.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt132_jpg.rf.95030eb397ba65f87c6ef19e59b95568.jpg is labelled 'tech_vehicle', but 16 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.466). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt48_jpeg.rf.66fa1bca48ea1d2c5cfa066d827a04d8.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on land and 0% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt48_jpeg.rf.66fa1bca48ea1d2c5cfa066d827a04d8.jpg is labelled 'tech_vehicle', but 18 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.459). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt63_jpeg.rf.2553b89a62f1a9866473c8a3ab9cd07b.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 93% on land and 7% on the declared tech_vehicle."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt63_jpeg.rf.2553b89a62f1a9866473c8a3ab9cd07b.jpg is labelled 'tech_vehicle', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.482). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/mt80_jpeg.rf.88c01a31ae49119148db8aaed466fe5b.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (tech_vehicle), the witness answers yes with p = 1.00."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/mt80_jpeg.rf.88c01a31ae49119148db8aaed466fe5b.jpg is labelled 'tech_vehicle', but 14 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.306). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/stealth29_jpeg.rf.4385c18141f9d1be20010fdbb9d23aed.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth29_jpeg.rf.4385c18141f9d1be20010fdbb9d23aed.jpg is labelled 'stealth', but 10 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.536). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.07)."
+          }
+        ],
+        "train/stealth3_jpeg.rf.4732341ac0c0d5ada7479018924ca493.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth3_jpeg.rf.4732341ac0c0d5ada7479018924ca493.jpg is labelled 'stealth', but 9 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.485). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/stealth4_jpeg.rf.1ca77d24f39d17fb818513601bf29c38.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth4_jpeg.rf.1ca77d24f39d17fb818513601bf29c38.jpg is labelled 'stealth', but 9 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.355). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "out_of_distribution",
+            "engine": "out_of_distribution",
+            "reason": "train/stealth4_jpeg.rf.1ca77d24f39d17fb818513601bf29c38.jpg is isolated from its neighbours and far from the corpus centre. kNN distance z=3.65 (percentile 100.0), Mahalanobis z=3.89 (percentile 100.0)."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.01)."
+          }
+        ],
+        "train/stealth56_jpeg.rf.029155e9929ebca14c51a29d9f15179f.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (stealth), the witness answers yes with p = 0.94."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth56_jpeg.rf.029155e9929ebca14c51a29d9f15179f.jpg is labelled 'stealth', but 5 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.581). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/stealth81_jpeg.rf.9c4800ff82226028c6bf2f8cf3eb9120.jpg": [
+          {
+            "type": "witness_label_disagreement",
+            "engine": "semantic_witness",
+            "reason": "Asked which of 9 options object 0 is, the witness puts 100% on jet and 0% on the declared stealth."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth81_jpeg.rf.9c4800ff82226028c6bf2f8cf3eb9120.jpg is labelled 'stealth', but 8 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.539). Same-cluster neighbours were excluded from the vote."
+          }
+        ],
+        "train/stealth85_jpeg.rf.5bfe9c052f68c411b2a65b88cf62210d.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (stealth), the witness answers yes with p = 0.94."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/stealth85_jpeg.rf.5bfe9c052f68c411b2a65b88cf62210d.jpg is labelled 'stealth', but 12 of its 20 nearest crop-embedding neighbours are labelled 'jet' (mean cosine 0.395). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (stealth), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/type_80_s3_jpg.rf.f69ff273125d75b10e4132bf19104756.jpg": [
+          {
+            "type": "out_of_distribution",
+            "engine": "out_of_distribution",
+            "reason": "train/type_80_s3_jpg.rf.f69ff273125d75b10e4132bf19104756.jpg is far from the corpus centre but close to its own neighbours - the signature of a group of similar samples inserted together, which local density scoring cannot see. kNN distance z=2.69 (percentile 98.8), Mahalanobis z=3.74 (percentile 99.9)."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (land), the witness answers no (p(yes) = 0.00)."
+          }
+        ]
+      },
+      "decision_after": "quarantine",
+      "claims_after": {
+        "C1.1": "weakened",
+        "C1.2": "contradicted",
+        "C1.3": "contradicted",
+        "C1.4": "contradicted",
+        "C1.5": "weakened",
+        "C1.6": "contradicted",
+        "C4.1": "supported",
+        "C5.1": "supported",
+        "C5.2": "supported",
+        "C5.3": "supported"
+      },
+      "findings_after": 552
+    },
+    {
+      "round": 3,
+      "removed": 4,
+      "by_finding_type": {
+        "swapped_label": 3,
+        "witness_marking": 2,
+        "witness_scene_mismatch": 3,
+        "out_of_distribution": 1
+      },
+      "images": {
+        "train/civ_hel119_jpeg.rf.efa3d8ecb506b746821ed5ade95982d1.jpg": [
+          {
+            "type": "out_of_distribution",
+            "engine": "out_of_distribution",
+            "reason": "train/civ_hel119_jpeg.rf.efa3d8ecb506b746821ed5ade95982d1.jpg is isolated from its neighbours but within the corpus's overall spread - the signature of a scattered oddity rather than a coordinated set. kNN distance z=3.54 (percentile 100.0), Mahalanobis z=3.32 (percentile 99.7)."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (civ_hel), the witness answers no (p(yes) = 0.00)."
+          }
+        ],
+        "train/drone107_jpeg.rf.8e87815fe2cc1a8140b7ee43ca3a625f.jpg": [
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 0 of train/drone107_jpeg.rf.8e87815fe2cc1a8140b7ee43ca3a625f.jpg is labelled 'drone', but 7 of its 20 nearest crop-embedding neighbours are labelled 'mil_helicopter' (mean cosine 0.524). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (drone), the witness answers no (p(yes) = 0.20)."
+          }
+        ],
+        "train/jet166_jpeg.rf.c7295f753e344c29dde2ccba2c26b221.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (jet), the witness answers yes with p = 0.99."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 1 of train/jet166_jpeg.rf.c7295f753e344c29dde2ccba2c26b221.jpg is labelled 'jet', but 12 of its 20 nearest crop-embedding neighbours are labelled 'land' (mean cosine 0.468). Same-cluster neighbours were excluded from the vote."
+          },
+          {
+            "type": "witness_scene_mismatch",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Is this a real photograph (not a render, drawing, painting or screenshot)?\" of object 0 (jet), the witness answers no (p(yes) = 0.15)."
+          }
+        ],
+        "train/truck191_jpeg.rf.88c78b92bada97a7fd5f7ae610505f5a.jpg": [
+          {
+            "type": "witness_marking",
+            "engine": "semantic_witness",
+            "reason": "Asked \"Does the main object carry a sticker, a patch, a checkerboard, a printed pattern or any other unusual marking that is not part of its normal insignia, numbers or camouflage?\" of object 0 (land), the witness answers yes with p = 0.99."
+          },
+          {
+            "type": "swapped_label",
+            "engine": "label_consistency",
+            "reason": "Box 3 of train/truck191_jpeg.rf.88c78b92bada97a7fd5f7ae610505f5a.jpg is labelled 'mil_helicopter', but 13 of its 20 nearest crop-embedding neighbours are labelled 'civ_hel' (mean cosine 0.615). Same-cluster neighbours were excluded from the vote."
+          }
+        ]
+      },
+      "decision_after": "review",
+      "claims_after": {
+        "C1.1": "weakened",
+        "C1.2": "weakened",
+        "C1.3": "weakened",
+        "C1.4": "weakened",
+        "C1.5": "weakened",
+        "C1.6": "weakened",
+        "C4.1": "supported",
+        "C5.1": "supported",
+        "C5.2": "supported",
+        "C5.3": "supported"
+      },
+      "findings_after": 545
+    }
+  ],
+  "final_decision": "review",
+  "images_kept": 890,
+  "images_quarantined": 110
+}

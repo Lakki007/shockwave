@@ -1,0 +1,19 @@
+{
+  "seed": 20260928,
+  "source_archive": "military-assets.zip",
+  "classes": [
+    "civ_hel",
+    "drone",
+    "jet",
+    "land",
+    "large_mil_plane",
+    "mil_helicopter",
+    "stealth",
+    "tech_vehicle"
+  ],
+  "reference_images": 600,
+  "base_images": 1000,
+  "clean": true,
+  "planted": "nothing - every image is the archive's own bytes",
+  "submission_images": 1000
+}
