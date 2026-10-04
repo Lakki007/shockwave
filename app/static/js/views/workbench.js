@@ -18,7 +18,7 @@ export async function render(main, params) {
   const boot = store.boot;
   mainEl = main;
   S.policy ??= structuredClone(boot.policy);
-  S.fixture ??= (boot.fixtures.find(f => f.kind === 'attack-lab') || boot.fixtures.find(f => f.id === 'hostile') || boot.fixtures[0])?.id;
+  S.fixture ??= (boot.fixtures.find(f => f.id === boot.showcase?.fixture) || boot.fixtures.find(f => f.kind === 'attack-lab') || boot.fixtures.find(f => f.id === 'hostile') || boot.fixtures[0])?.id;
   if (params.get('tab')) S.tab = ['contract', 'lab'].includes(params.get('tab')) ? params.get('tab') : 'package';
   const hidden = localStorage.getItem('sw-tutorial-hidden') === '1';
   main.innerHTML = `

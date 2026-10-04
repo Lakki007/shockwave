@@ -35,14 +35,14 @@ When the banner appears:
 **Score against sealed key**.
 > "Only now, after the report is sealed, do we open the answer key. It matches the commitment made before the run. Here is what was planted against what was caught — and untouched images that were flagged are counted too."
 
-> "We didn't stop at one package: we ran BENCHMARK_PACKAGES seeded packages and report every rate with a 95% confidence interval." (Numbers: `docs/benchmark.md`.)
+> "We didn't stop at one package. We forged and assessed 24 seeded packages and report every rate with a 95% confidence interval. Every planted duplicate, flood copy, split leak and foreign render was caught. Unsafe models: 6 of 6. Clean pipelines and clean models: no false alarms. And where we are weaker we say so: about half of label flips, two-thirds of triggers, and 3 of 6 backdoored models." (Numbers: `docs/benchmark.md`.)
 
 ## 5. Evidence (60 s) — **Open evidence**
 - **Decision**: "Every claim, its state and why. The report is SHA-384 digested and signed."
 - **Findings** → **click a row with an image**: "Every finding traces to the image, its box and the raw measurement."
 - **Data map** → drag, then **Evidence**: "The embedding is explorable; hover any point to see the real image."
 - **Reports & audit**: point at the four custody panels.
-  > "The report and every audit checkpoint are co-signed by a key that lives inside this Mac's Secure Enclave and can't be exported. Scores are calibrated on an independent set built from pictures that appear in no submission, and the calibration abstains when the data has shifted. The vision-language witness is pinned by hash and advisory only."
+  > "The report and every audit checkpoint are co-signed by a key that lives inside this Mac's Secure Enclave and can't be exported. Scores are calibrated on an independent set built from pictures that appear in no submission, and the calibration abstains when the data has shifted. The vision-language witness is pinned by hash, measured against the answer keys, and advisory only."
 
 ## 6. Close (20 s) — **The Method**
 > "Receive safely, define the contract, build data evidence, check model and pipeline, challenge what's unresolved, decide by policy, seal, and reassess only what changed. Fully offline, and every report states its own limits."
@@ -53,7 +53,8 @@ Quit the demo window, double-click **Start Shockwave.command**, sign in.
 
 ## Likely questions
 - **Pre-recorded?** No — the judge just chose the attacks; the key was committed before the run.
-- **What does it miss?** Look at `docs/benchmark.md`: the weakest families and the false-alarm rate on untouched images are reported, not hidden. Visually similar class swaps and clean-label or adaptive backdoors are hard. Calibration covers only the Attack Lab's attack families.
+- **What does it miss?** From `docs/benchmark.md` (24 packages, Wilson 95% intervals): label flips 47% (42–52%), triggers 67% (63–71%), backdoored models 3/6; a benign retrain was flagged 2 of 6 times, and 5.9% of untouched images carry a flag (natural data issues or false alarms). Fabricated and reordered records were missed once each. Visually similar class swaps and clean-label or adaptive backdoors are hard. Calibration covers only the Attack Lab's attack families.
+- **Does the AI witness help?** We measured it. Its "unusual marking" question separates trigger-stamped objects well (AUROC 0.92, 2% false positives). Its "is this the declared class" question was worse than chance, so we stopped asking it. It stays advisory.
 - **Is AI deciding?** No. DINOv2 gives representations, optimisation searches for triggers, the VLM is advisory; a versioned rule-based policy decides.
 - **Internet?** None at runtime. Models are fetched once on a preparation machine against SHA-256 pins.
 - **Hardware security?** Reports and checkpoints are co-signed in the Secure Enclave; the Ed25519 key can be sealed under it. There is no hardware attestation of execution, and isolation is a macOS sandbox, not a VM.

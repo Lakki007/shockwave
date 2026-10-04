@@ -1,0 +1,4600 @@
+{
+ "summary": {
+  "packages": 24,
+  "policy_version": "shockwave-1.1",
+  "created": "2026-10-04T05:20:33.321267+00:00",
+  "families": {
+   "exact_duplicates": {
+    "rate": 1.0,
+    "low": 0.9837111010101696,
+    "high": 1.0,
+    "k": 232,
+    "n": 232,
+    "per_package_median": 1.0
+   },
+   "flooding": {
+    "rate": 1.0,
+    "low": 0.9873980454111251,
+    "high": 1.0,
+    "k": 301,
+    "n": 301,
+    "per_package_median": 1.0
+   },
+   "label_flips": {
+    "rate": 0.4696132596685083,
+    "low": 0.4187895442588353,
+    "high": 0.5210751403478361,
+    "k": 170,
+    "n": 362,
+    "per_package_median": 0.39230769230769236
+   },
+   "near_duplicates": {
+    "rate": 1.0,
+    "low": 0.9472609058559944,
+    "high": 1.0,
+    "k": 69,
+    "n": 69,
+    "per_package_median": 1.0
+   },
+   "ood": {
+    "rate": 1.0,
+    "low": 0.9723310592790634,
+    "high": 1.0,
+    "k": 135,
+    "n": 135,
+    "per_package_median": 1.0
+   },
+   "split_leakage": {
+    "rate": 1.0,
+    "low": 0.9586219970358116,
+    "high": 1.0,
+    "k": 89,
+    "n": 89,
+    "per_package_median": 1.0
+   },
+   "trigger": {
+    "rate": 0.6707818930041153,
+    "low": 0.6278049418335491,
+    "high": 0.7110801181531895,
+    "k": 326,
+    "n": 486,
+    "per_package_median": 0.5826086956521739
+   }
+  },
+  "records": {
+   "altered": {
+    "rate": 1.0,
+    "low": 0.6755843804891231,
+    "high": 1.0,
+    "k": 8,
+    "n": 8
+   },
+   "deleted": {
+    "rate": 1.0,
+    "low": 0.7008472464490407,
+    "high": 1.0,
+    "k": 9,
+    "n": 9
+   },
+   "fabricated": {
+    "rate": 0.8888888888888888,
+    "low": 0.5649937852319399,
+    "high": 0.9801096286728695,
+    "k": 8,
+    "n": 9
+   },
+   "reordered": {
+    "rate": 0.8,
+    "low": 0.3755282641185388,
+    "high": 0.9637768390302125,
+    "k": 4,
+    "n": 5
+   },
+   "replayed": {
+    "rate": 1.0,
+    "low": 0.6755843804891231,
+    "high": 1.0,
+    "k": 8,
+    "n": 8
+   },
+   "substituted": {
+    "rate": 1.0,
+    "low": 0.7574992425007574,
+    "high": 1.0,
+    "k": 12,
+    "n": 12
+   },
+   "untrusted": {
+    "rate": 1.0,
+    "low": 0.6755843804891231,
+    "high": 1.0,
+    "k": 8,
+    "n": 8
+   }
+  },
+  "model": {
+   "approved": {
+    "rate": 0.0,
+    "low": 0.0,
+    "high": 0.3903430336530645,
+    "k": 0,
+    "n": 6,
+    "meaning": "false-alarm rate (clean control)"
+   },
+   "backdoor": {
+    "rate": 0.5,
+    "low": 0.18761280689940868,
+    "high": 0.8123871931005913,
+    "k": 3,
+    "n": 6,
+    "meaning": "detection rate"
+   },
+   "benign_retrain": {
+    "rate": 0.3333333333333333,
+    "low": 0.09676933255921683,
+    "high": 0.7000116786584712,
+    "k": 2,
+    "n": 6,
+    "meaning": "false-alarm rate (clean control)"
+   },
+   "unsafe": {
+    "rate": 1.0,
+    "low": 0.6096569663469354,
+    "high": 0.9999999999999999,
+    "k": 6,
+    "n": 6,
+    "meaning": "detection rate"
+   }
+  },
+  "pipeline": {
+   "authorised": {
+    "rate": 0.0,
+    "low": 0.0,
+    "high": 0.3244156195108769,
+    "k": 0,
+    "n": 8,
+    "meaning": "false-alarm rate (clean control)"
+   },
+   "bgr": {
+    "rate": 1.0,
+    "low": 0.5100999795960008,
+    "high": 1.0,
+    "k": 4,
+    "n": 4,
+    "meaning": "detection rate"
+   },
+   "class_map": {
+    "rate": 0.5,
+    "low": 0.21521252682444186,
+    "high": 0.7847874731755582,
+    "k": 4,
+    "n": 8,
+    "meaning": "detection rate"
+   },
+   "threshold": {
+    "rate": 1.0,
+    "low": 0.5100999795960008,
+    "high": 1.0,
+    "k": 4,
+    "n": 4,
+    "meaning": "detection rate"
+   }
+  },
+  "untouched_images": {
+   "rate": 0.05883883276243333,
+   "low": 0.055874547237220296,
+   "high": 0.06195006209291008,
+   "k": 1357,
+   "n": 23063
+  },
+  "decisions": {
+   "Quarantine": 21,
+   "Review": 3
+  },
+  "mean_seconds": 29.8,
+  "witness": {
+   "marking": {
+    "planted": 32,
+    "untouched": 48,
+    "tpr": {
+     "rate": 0.46875,
+     "low": 0.30869129901682335,
+     "high": 0.6355076206742619,
+     "k": 15,
+     "n": 32
+    },
+    "fpr": {
+     "rate": 0.020833333333333332,
+     "low": 0.003687015979399688,
+     "high": 0.10899469137531158,
+     "k": 1,
+     "n": 48
+    },
+    "auroc": 0.9153645833333334
+   },
+   "photograph": {
+    "planted": 18,
+    "untouched": 48,
+    "tpr": {
+     "rate": 1.0,
+     "low": 0.8241154494176252,
+     "high": 1.0,
+     "k": 18,
+     "n": 18
+    },
+    "fpr": {
+     "rate": 0.3125,
+     "low": 0.19945512167731494,
+     "high": 0.4533333725049633,
+     "k": 15,
+     "n": 48
+    },
+    "auroc": 0.9108796296296297
+   },
+   "label": {
+    "planted": 32,
+    "untouched": 48,
+    "tpr": {
+     "rate": 0.6875,
+     "low": 0.514330003019676,
+     "high": 0.8204764788338126,
+     "k": 22,
+     "n": 32
+    },
+    "fpr": {
+     "rate": 0.8125,
+     "low": 0.6805986065115378,
+     "high": 0.8980872365179983,
+     "k": 39,
+     "n": 48
+    },
+    "auroc": 0.392578125
+   }
+  },
+  "note": "Untouched images are pictures the forge did not modify; flags on them are natural data issues in the real-world baseline or false alarms, counted not hidden."
+ },
+ "packages": [
+  {
+   "package": 0,
+   "seed": 5000,
+   "fixture": "bench-1687caad",
+   "run": "sw-e49147c311",
+   "decision": "Quarantine",
+   "seconds": 30.5,
+   "spec": {
+    "seed": 5000,
+    "label_flip": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "land",
+     "count": 40,
+     "contributor": "unit_a"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "jet",
+     "target": "large_mil_plane",
+     "count": 23,
+     "size": 32,
+     "contributor": "unit_c"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_a",
+     "count": 25,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 4
+    },
+    "ood": {
+     "enabled": true,
+     "count": 3,
+     "contributor": "unit_c",
+     "label": "stealth"
+    },
+    "model": {
+     "mode": "backdoor",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "source": "civ_hel",
+     "target": "land"
+    },
+    "records": {
+     "enabled": false,
+     "count": 25,
+     "tamper": [
+      "altered",
+      "fabricated",
+      "replayed",
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "3aa25907b5258b8443ad094d197b1bdc20a3584c3abf7e570c00bb972b0ceb896614f8fb28105c64c9b8e13b53798883",
+    "attack_summary": [
+     "18 civ_hel\u2192land label flips (unit_a)",
+     "23 triggered jet\u2192large_mil_plane images (32 px)",
+     "25 exact copies flooded by unit_a",
+     "3 synthetic renders labelled stealth (unit_c)",
+     "backdoored model fine-tuned on poisoned data"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 18,
+      "detected": 11,
+      "recall": 0.6111111111111112,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "civ_hel136_jpeg.rf.d6cea0f2dac3256a69bbfb557f5791e1",
+       "civ_hel15_jpeg.rf.7bb7dd0056ab439793bfa50e7550af31",
+       "civ_hel62_jpeg.rf.a7848932a2b6e893a8c5a39567b4e60e",
+       "civ_hel63_jpeg.rf.8e807d751b5d170acdd53c860e426d30",
+       "civ_hel136_jpeg.rf.f769d965343e91604c8687d94fecbd1e",
+       "civ_hel104_jpeg.rf.8e900a9fccfe7ee579832a0cb0acc476",
+       "civ_hel130_jpeg.rf.a5c4e881914289c36a0908c1642c3e7c"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 23,
+      "detected": 20,
+      "recall": 0.8695652173913043,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch",
+       "trigger_texture"
+      ],
+      "missed": [
+       "su_35_s1_jpg.rf.0c4af2a3b048340b6c278e34920faeaa",
+       "jet96_jpeg.rf.fea4da958aff1b8834893a5fafc198a3",
+       "jet114_jpeg.rf.28813ade3c6fae274054e5e118cc49bf"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 25,
+      "detected": 25,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 25,
+      "detected": 25,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 3,
+      "detected": 3,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution",
+       "robust_subpopulation"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [],
+    "model": {
+     "mode": "backdoor",
+     "implant": {
+      "backdoor": true,
+      "source": "jet",
+      "target": "large_mil_plane",
+      "size": 32,
+      "epochs": 14,
+      "seed": 5000,
+      "clean_accuracy": 0.5523809523809524,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.55,
+      "approved_attack_success": 0.05,
+      "held_out_source_images": 20,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": true,
+     "detectors": [
+      "conditional_behaviour",
+      "trigger_confirmed",
+      "trigger_transfer"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "detected": null,
+     "detectors": [],
+     "false_alarm": false
+    },
+    "untouched_images": 959,
+    "untouched_images_flagged": 51,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "3aa25907b5258b8443ad094d197b1bdc20a3584c3abf7e570c00bb972b0ceb896614f8fb28105c64c9b8e13b53798883",
+   "report_digest": "88b92be2e0469de5bcbaad14fca5ff5ca17cb6c4bb507092df4e9f247420e4b69aab884d466493b7071da4f095aa3bea"
+  },
+  {
+   "package": 1,
+   "seed": 5001,
+   "fixture": "bench-04a0a169",
+   "run": "sw-5e80b60693",
+   "decision": "Quarantine",
+   "seconds": 29.3,
+   "spec": {
+    "seed": 5001,
+    "label_flip": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "drone",
+     "count": 32,
+     "contributor": "unit_d"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "tech_vehicle",
+     "target": "mil_helicopter",
+     "count": 31,
+     "size": 32,
+     "contributor": "unit_a"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_b",
+     "count": 28,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 8
+    },
+    "ood": {
+     "enabled": true,
+     "count": 8,
+     "contributor": "unit_c",
+     "label": "tech_vehicle"
+    },
+    "model": {
+     "mode": "benign_retrain",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "source": "civ_hel",
+     "target": "drone"
+    },
+    "records": {
+     "enabled": true,
+     "count": 17,
+     "tamper": [
+      "altered",
+      "replayed",
+      "deleted",
+      "reordered",
+      "substituted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "520c31c9d2580bcaf357c6e9afd8d2c398fbf4d6085594691ddbae23710ad862dc617f9b9fe7619877174ebfd018cf30",
+    "attack_summary": [
+     "9 civ_hel\u2192drone label flips (unit_d)",
+     "31 triggered tech_vehicle\u2192mil_helicopter images (32 px)",
+     "28 exact copies flooded by unit_b",
+     "8 synthetic renders labelled tech_vehicle (unit_c)",
+     "benign retrained model (control)",
+     "5 record tamperings across 17 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 9,
+      "detected": 7,
+      "recall": 0.7777777777777778,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "civ_hel28_jpeg.rf.a1e0e4241286704526904a8e7b4c3c95",
+       "civ_hel30_jpeg.rf.fb042b7c055e40072f165184fc0924d4"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 31,
+      "detected": 31,
+      "recall": 1.0,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch",
+       "trigger_texture"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "flooding",
+      "planted": 28,
+      "detected": 28,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 28,
+      "detected": 28,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 8,
+      "detected": 8,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5001#6",
+      "kind": "altered",
+      "detected": true,
+      "detectors": [
+       "output_altered",
+       "record_altered"
+      ]
+     },
+     {
+      "record": "edge-lab-5001#3",
+      "kind": "replayed",
+      "detected": true,
+      "detectors": [
+       "record_replayed"
+      ]
+     },
+     {
+      "record": "edge-lab-5001#9",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     },
+     {
+      "record": "edge-lab-5001#7",
+      "kind": "reordered",
+      "detected": false,
+      "detectors": []
+     },
+     {
+      "record": "edge-lab-5001#10",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "benign_retrain",
+     "implant": {
+      "backdoor": false,
+      "source": "tech_vehicle",
+      "target": "mil_helicopter",
+      "size": 32,
+      "epochs": 14,
+      "seed": 5001,
+      "clean_accuracy": 0.5714285714285714,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.0,
+      "approved_attack_success": 0.0,
+      "held_out_source_images": 4,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "detected": null,
+     "detectors": [],
+     "false_alarm": false
+    },
+    "untouched_images": 960,
+    "untouched_images_flagged": 59,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "520c31c9d2580bcaf357c6e9afd8d2c398fbf4d6085594691ddbae23710ad862dc617f9b9fe7619877174ebfd018cf30",
+   "report_digest": "0dcab69043555a85bbc28c47594988229b3e9ee74165b146d52d02b645bacbdbe589f03aa4c0754d02d600f1eb15a5f5"
+  },
+  {
+   "package": 2,
+   "seed": 5002,
+   "fixture": "bench-7aaa9540",
+   "run": "sw-2ae54dbaca",
+   "decision": "Review",
+   "seconds": 37.0,
+   "spec": {
+    "seed": 5002,
+    "label_flip": {
+     "enabled": true,
+     "source": "large_mil_plane",
+     "target": "land",
+     "count": 33,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "mil_helicopter",
+     "count": 28,
+     "size": 28,
+     "contributor": "unit_d"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_b",
+     "count": 8,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 10
+    },
+    "ood": {
+     "enabled": true,
+     "count": 12,
+     "contributor": "unit_d",
+     "label": "civ_hel"
+    },
+    "model": {
+     "mode": "approved",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "source": "large_mil_plane",
+     "target": "land"
+    },
+    "records": {
+     "enabled": false,
+     "count": 18,
+     "tamper": [
+      "replayed",
+      "deleted",
+      "reordered"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "f2b22672271fdeb7ac1f87f0609491a08025eb8f83cfd51a1a124db36f4612d9d07dbd6cb17f43ca3e06fab9683c43db",
+    "attack_summary": [
+     "17 large_mil_plane\u2192land label flips (unit_b)",
+     "28 triggered civ_hel\u2192mil_helicopter images (28 px)",
+     "10 validation images leaked into training",
+     "12 synthetic renders labelled civ_hel (unit_d)"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 17,
+      "detected": 5,
+      "recall": 0.29411764705882354,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "plane90_jpeg.rf.16ff1ad0e8b4d853910bc12dd5a91715",
+       "plane24_jpeg.rf.db0377cbd4939c0965764f6b3161cd2f",
+       "an_22_jpg.rf.b6a12d38503e986d1015e30fc0f9eba4",
+       "plane15_jpeg.rf.f70b871f58e1f40d535aaea649e3ee45",
+       "plane88_jpeg.rf.dd064889d6ff229b89c5a5f40890bc57",
+       "plane98_jpeg.rf.e34570d77109aac4b2e1a207c20a8bbf",
+       "plane13_jpeg.rf.0253df024ededf55f2ecf1782ec5d20d",
+       "an_12_s7_jpg.rf.0618978185ef099864b54b26ea4069a8",
+       "plane83_jpeg.rf.b735a614213d1e80452fd93c092cb9b7",
+       "plane78_jpeg.rf.df055d8fc1aee6c4354d6a9444a44981",
+       "plane74_jpeg.rf.4f8c5d483f58236d618adbae09e019bc",
+       "y20_s4_jpg.rf.56dba5f5dafcc75e33ecba10512c03f2"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 28,
+      "detected": 11,
+      "recall": 0.39285714285714285,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch"
+      ],
+      "missed": [
+       "civ_hel49_jpeg.rf.eb2c948ea4bd75957c3ae16e1d1b7545",
+       "civ_hel30_jpeg.rf.fb042b7c055e40072f165184fc0924d4",
+       "civ_hel121_jpeg.rf.6259470f62fe9205de7bf86a621ec194",
+       "civ_hel22_jpeg.rf.b7bee66eef87c1035620bb85b0d241a9",
+       "civ_hel28_jpeg.rf.a1e0e4241286704526904a8e7b4c3c95",
+       "civ_hel133_jpeg.rf.85c5882d4216543f1cdcaaebdd893fc5",
+       "civ_hel55_jpeg.rf.0cce0dfa5c6bfd202778984fd886675c",
+       "civ_hel7_jpeg.rf.786edfaa9d7f40169eaa22bc9c9ae147",
+       "civ_hel88_jpeg.rf.2068470fc3c54959613c02f15438ddcd",
+       "civ_hel122_jpeg.rf.81ea49daf75a8139a58fd3fdf8c24fde",
+       "civ_hel20_jpeg.rf.c8ed4373c08f402b2bb8e51174e7a8f5",
+       "civ_hel119_jpeg.rf.efa3d8ecb506b746821ed5ade95982d1",
+       "civ_hel34_jpeg.rf.eb75f2e7d485e4c97c18f8b8193db8b3",
+       "civ_hel141_jpeg.rf.0d01dd3408b2ba2dcca42a4a52e306ab",
+       "civ_hel72_jpeg.rf.25ce52f08728353470b39cdffd0c055c",
+       "civ_hel93_jpeg.rf.7da7f61e2afe06e4b912a50f4f22bb42",
+       "civ_hel51_jpeg.rf.2aa6225041d0d546d754794d60973675"
+      ]
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 10,
+      "detected": 10,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 12,
+      "detected": 12,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [],
+    "model": {
+     "mode": "approved",
+     "implant": null,
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "detected": null,
+     "detectors": [],
+     "false_alarm": false
+    },
+    "untouched_images": 945,
+    "untouched_images_flagged": 54,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "f2b22672271fdeb7ac1f87f0609491a08025eb8f83cfd51a1a124db36f4612d9d07dbd6cb17f43ca3e06fab9683c43db",
+   "report_digest": "ae916df27886ac78b486a8c4be547b3ddb1879395cfc3fe41cbee617541d3d96d3ff514a909a6e04c757dc3994032776"
+  },
+  {
+   "package": 3,
+   "seed": 5003,
+   "fixture": "bench-fca0d6eb",
+   "run": "sw-0c55938a82",
+   "decision": "Quarantine",
+   "seconds": 20.8,
+   "spec": {
+    "seed": 5003,
+    "label_flip": {
+     "enabled": true,
+     "source": "land",
+     "target": "drone",
+     "count": 34,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "mil_helicopter",
+     "count": 21,
+     "size": 32,
+     "contributor": "unit_c"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_c",
+     "count": 15,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 8
+    },
+    "ood": {
+     "enabled": true,
+     "count": 9,
+     "contributor": "unit_a",
+     "label": "jet"
+    },
+    "model": {
+     "mode": "unsafe",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "source": "land",
+     "target": "drone"
+    },
+    "records": {
+     "enabled": true,
+     "count": 26,
+     "tamper": [
+      "altered",
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "ee1d10aef527baf62bc3fc8464c7a42c8585c480d20feff3d09c56b826f0fc34a684ebc16740f71a2ebdae7498ba597b",
+    "attack_summary": [
+     "34 land\u2192drone label flips (unit_b)",
+     "21 triggered civ_hel\u2192mil_helicopter images (32 px)",
+     "9 synthetic renders labelled jet (unit_a)",
+     "model with unsafe pickled callable",
+     "3 record tamperings across 26 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 34,
+      "detected": 29,
+      "recall": 0.8529411764705882,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "unidentified_north_korean_mbt_s1_jpg.rf.20be40f00261d2311454157d6781d9ee",
+       "sh_11_s1_jpg.rf.5d0315c6023267732c08a5881b2168ac",
+       "bmp1_s7_jpg.rf.05aecf7610a3c986086566184d64727f",
+       "truck170_jpeg.rf.b8b7d6d2e012cc1b6aea7325b1ae9dc0",
+       "plz_07_s1_jpg.rf.3d3fa9ff2d0c2894678c850e3ccee5f8"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 21,
+      "detected": 16,
+      "recall": 0.7619047619047619,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch"
+      ],
+      "missed": [
+       "civ_hel19_jpeg.rf.1c86491bf02094ba0405d9f12b59b0c0",
+       "civ_hel143_jpeg.rf.8e47b765428f7f5837603464b37a0922",
+       "civ_hel15_jpeg.rf.23aff6e41407d50dbab66e608d5b7fa0",
+       "civ_hel78_jpeg.rf.f8cb7f8aa46b91c50317a2a317a9ad6a",
+       "civ_hel141_jpeg.rf.7d7133bb7918eeef31a4fbc18f8e60a0"
+      ]
+     },
+     {
+      "attack": "ood",
+      "planted": 9,
+      "detected": 9,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution",
+       "robust_subpopulation"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5003#9",
+      "kind": "altered",
+      "detected": true,
+      "detectors": [
+       "output_altered",
+       "record_altered"
+      ]
+     },
+     {
+      "record": "edge-lab-5003#8",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     },
+     {
+      "record": "edge-lab-5003#3",
+      "kind": "untrusted",
+      "detected": true,
+      "detectors": [
+       "untrusted_signer"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "unsafe",
+     "implant": null,
+     "detected": true,
+     "detectors": [
+      "unsafe_model"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "detected": null,
+     "detectors": [],
+     "false_alarm": false
+    },
+    "untouched_images": 945,
+    "untouched_images_flagged": 56,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "ee1d10aef527baf62bc3fc8464c7a42c8585c480d20feff3d09c56b826f0fc34a684ebc16740f71a2ebdae7498ba597b",
+   "report_digest": "1bf984545872bc3e8eb63fa51e8656447ea5cb90f926111ba8083dbcbab1aeb464a5d4bf4533eba65ea1f71ecfef8347"
+  },
+  {
+   "package": 4,
+   "seed": 5004,
+   "fixture": "bench-b145fd52",
+   "run": "sw-6610290b47",
+   "decision": "Quarantine",
+   "seconds": 45.3,
+   "spec": {
+    "seed": 5004,
+    "label_flip": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "tech_vehicle",
+     "count": 28,
+     "contributor": "unit_a"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "tech_vehicle",
+     "target": "land",
+     "count": 37,
+     "size": 28,
+     "contributor": "unit_a"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_b",
+     "count": 9,
+     "mode": "near"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 10
+    },
+    "ood": {
+     "enabled": true,
+     "count": 4,
+     "contributor": "unit_c",
+     "label": "jet"
+    },
+    "model": {
+     "mode": "backdoor",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "source": "civ_hel",
+     "target": "tech_vehicle"
+    },
+    "records": {
+     "enabled": true,
+     "count": 19,
+     "tamper": [
+      "fabricated",
+      "deleted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "44f830fcbf64e3a7cc34958d5b5e61588183bb81e770f67359bd1d2eb2207adc476a254b7d3184f4c35b9fa73a5db4c2",
+    "attack_summary": [
+     "18 civ_hel\u2192tech_vehicle label flips (unit_a)",
+     "37 triggered tech_vehicle\u2192land images (28 px)",
+     "9 near copies flooded by unit_b",
+     "10 validation images leaked into training",
+     "4 synthetic renders labelled jet (unit_c)",
+     "class map civ_hel\u2192tech_vehicle",
+     "backdoored model fine-tuned on poisoned data",
+     "2 record tamperings across 19 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 18,
+      "detected": 11,
+      "recall": 0.6111111111111112,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "civ_hel62_jpeg.rf.a7848932a2b6e893a8c5a39567b4e60e",
+       "civ_hel63_jpeg.rf.8e807d751b5d170acdd53c860e426d30",
+       "civ_hel136_jpeg.rf.f769d965343e91604c8687d94fecbd1e",
+       "civ_hel136_jpeg.rf.d6cea0f2dac3256a69bbfb557f5791e1",
+       "civ_hel15_jpeg.rf.7bb7dd0056ab439793bfa50e7550af31",
+       "civ_hel104_jpeg.rf.8e900a9fccfe7ee579832a0cb0acc476",
+       "civ_hel130_jpeg.rf.a5c4e881914289c36a0908c1642c3e7c"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 37,
+      "detected": 19,
+      "recall": 0.5135135135135135,
+      "detectors": [
+       "recurring_patch"
+      ],
+      "missed": [
+       "mt38_jpeg.rf.05ea7ef6e9ffabdf59d2bda88e0bc99e",
+       "mt108_jpeg.rf.1688a33daf6d98f6c38c6cc80aa6181b",
+       "mt20_jpeg.rf.310def61ccc3b7276f189e2a21e75a24",
+       "mt80_jpeg.rf.88c01a31ae49119148db8aaed466fe5b",
+       "mt99_jpg.rf.9e8574a36ea06c0d1ec96275c690d0b4",
+       "mt37_jpeg.rf.fa68e2d1544b5f3f06365152da7d771e",
+       "mt77_jpeg.rf.8e0e817e4332331a1af5e87624ae5850",
+       "mt45_jpeg.rf.6e2ffbe992dcefe59b02684102d3cbce",
+       "mt55_jpeg.rf.fc77c9ae841a082e99b753153fcf16dd",
+       "mt81_jpeg.rf.41df34d9d45a05201f4db11ebd122b4b",
+       "mt68_jpg.rf.d446fd34dd77e85d9642544371e672c0",
+       "mt48_jpeg.rf.66fa1bca48ea1d2c5cfa066d827a04d8",
+       "mt27_jpeg.rf.bca1869b264d239068ba8d8fb5b463f3",
+       "mt16_jpeg.rf.ef4c690e4b4a3000088fc203ff53fc43",
+       "mt20_jpeg.rf.9b35700d942b7ce81ad8756bd05bbd68",
+       "mt120_jpeg.rf.66c6c0519e54b852d7c127b7f73cd45c",
+       "mt6_jpeg.rf.fbca398b83ec961f7e03d3084e49e4db",
+       "mt35_jpeg.rf.cc9babdbc60fbb9af4fb46b4b62cbd80"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 9,
+      "detected": 9,
+      "recall": 1.0,
+      "detectors": [
+       "near_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "near_duplicates",
+      "planted": 9,
+      "detected": 9,
+      "recall": 1.0,
+      "detectors": [
+       "near_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 10,
+      "detected": 10,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 4,
+      "detected": 4,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution",
+       "robust_subpopulation"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5004#10",
+      "kind": "fabricated",
+      "detected": true,
+      "detectors": [
+       "reexecution_mismatch"
+      ]
+     },
+     {
+      "record": "edge-lab-5004#15",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "backdoor",
+     "implant": {
+      "backdoor": true,
+      "source": "tech_vehicle",
+      "target": "land",
+      "size": 28,
+      "epochs": 14,
+      "seed": 5004,
+      "clean_accuracy": 0.5714285714285714,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 1.0,
+      "approved_attack_success": 0.5,
+      "held_out_source_images": 4,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": false,
+     "detectors": [],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 935,
+    "untouched_images_flagged": 49,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "44f830fcbf64e3a7cc34958d5b5e61588183bb81e770f67359bd1d2eb2207adc476a254b7d3184f4c35b9fa73a5db4c2",
+   "report_digest": "1b3212afe3a422a3dd896900dbaa33b2651cadf54c9d5fab24df0ae746ae0fa1586d1a14eda2a0751c85bae8603052d5"
+  },
+  {
+   "package": 5,
+   "seed": 5005,
+   "fixture": "bench-39f9721c",
+   "run": "sw-d3dd5e709f",
+   "decision": "Quarantine",
+   "seconds": 48.2,
+   "spec": {
+    "seed": 5005,
+    "label_flip": {
+     "enabled": true,
+     "source": "drone",
+     "target": "mil_helicopter",
+     "count": 33,
+     "contributor": "unit_d"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "mil_helicopter",
+     "target": "land",
+     "count": 37,
+     "size": 28,
+     "contributor": "unit_b"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_a",
+     "count": 19,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 9
+    },
+    "ood": {
+     "enabled": false,
+     "count": 11,
+     "contributor": "unit_b",
+     "label": "mil_helicopter"
+    },
+    "model": {
+     "mode": "benign_retrain",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "source": "drone",
+     "target": "mil_helicopter"
+    },
+    "records": {
+     "enabled": true,
+     "count": 22,
+     "tamper": [
+      "fabricated",
+      "reordered",
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "4ec8b22a19c6ff0e2e95a6ef2bde7ea4ed2fc26d72ce9656d14b8aa6967ba8cd956310abadfe4cf7166baa5140b9a4e0",
+    "attack_summary": [
+     "5 drone\u2192mil_helicopter label flips (unit_d)",
+     "23 triggered mil_helicopter\u2192land images (28 px)",
+     "19 exact copies flooded by unit_a",
+     "9 validation images leaked into training",
+     "class map drone\u2192mil_helicopter",
+     "benign retrained model (control)",
+     "4 record tamperings across 22 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 5,
+      "detected": 2,
+      "recall": 0.4,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "drone17_jpeg.rf.e9c4954126629693374e396b5b36dacc",
+       "drone68_jpeg.rf.9b2825e44ba3e399a9bff80d27d5a4f0",
+       "drone117_jpeg.rf.3d771e08c8831a42350ecc26de2580cf"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 23,
+      "detected": 10,
+      "recall": 0.43478260869565216,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch",
+       "robust_subpopulation"
+      ],
+      "missed": [
+       "mheli50_jpeg.rf.e2bfd72da889f81764e01abb2cc33039",
+       "mheli67_jpeg.rf.9416996eac77b31723d8c123cf9f3fe2",
+       "mheli1_jpeg.rf.6647d0d5a18801554dafacc88cfe5a69",
+       "mheli40_jpeg.rf.8c1df3ebf3ba236f9dbace65ea8ffc70",
+       "mheli88_jpeg.rf.2dd90f7e584c4422b6ddf64549b6a9f5",
+       "mheli42_jpeg.rf.383ef207bf8c449b485efa3a8bf3167d",
+       "mheli28_jpeg.rf.6f5d073e1f55108ebc680ad8abb6eba4",
+       "mheli42_jpeg.rf.ddd5d4a8eb05ddf510af180dcc0095d3",
+       "mheli81_jpeg.rf.baec398651f7d235cafc705928de072f",
+       "mheli8_jpeg.rf.f1c16654b99d9456f33440ff822a4fe8",
+       "mheli75_jpeg.rf.34260925ff10b51bb19e0f96c0e53a37",
+       "mheli77_jpeg.rf.53a305beb833dca6c24c892f57438759",
+       "mheli19_jpeg.rf.7021f48e1a082abda4ae4d5c780ff1c0"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 19,
+      "detected": 19,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 19,
+      "detected": 19,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 9,
+      "detected": 9,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5005#12",
+      "kind": "fabricated",
+      "detected": true,
+      "detectors": [
+       "reexecution_mismatch"
+      ]
+     },
+     {
+      "record": "edge-lab-5005#3",
+      "kind": "reordered",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_reordered"
+      ]
+     },
+     {
+      "record": "edge-lab-5005#18",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     },
+     {
+      "record": "edge-lab-5005#2",
+      "kind": "untrusted",
+      "detected": true,
+      "detectors": [
+       "untrusted_signer"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "benign_retrain",
+     "implant": {
+      "backdoor": false,
+      "source": "mil_helicopter",
+      "target": "land",
+      "size": 28,
+      "epochs": 14,
+      "seed": 5005,
+      "clean_accuracy": 0.5523809523809524,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 1.0,
+      "approved_attack_success": 1.0,
+      "held_out_source_images": 1,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "detected": false,
+     "detectors": [],
+     "false_alarm": null
+    },
+    "untouched_images": 963,
+    "untouched_images_flagged": 64,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "4ec8b22a19c6ff0e2e95a6ef2bde7ea4ed2fc26d72ce9656d14b8aa6967ba8cd956310abadfe4cf7166baa5140b9a4e0",
+   "report_digest": "83b1a94a4cc7dc8234c6dff4f91c96cd86fd699902fb916c14c435c810646d87fa0cec29aaf6cb7a73fd8054f42cbac5"
+  },
+  {
+   "package": 6,
+   "seed": 5006,
+   "fixture": "bench-0385c032",
+   "run": "sw-903d97bfe7",
+   "decision": "Quarantine",
+   "seconds": 32.4,
+   "spec": {
+    "seed": 5006,
+    "label_flip": {
+     "enabled": true,
+     "source": "stealth",
+     "target": "drone",
+     "count": 25,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "land",
+     "count": 11,
+     "size": 28,
+     "contributor": "unit_b"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_b",
+     "count": 30,
+     "mode": "near"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 10
+    },
+    "ood": {
+     "enabled": false,
+     "count": 3,
+     "contributor": "unit_b",
+     "label": "drone"
+    },
+    "model": {
+     "mode": "approved",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "source": "stealth",
+     "target": "drone"
+    },
+    "records": {
+     "enabled": true,
+     "count": 16,
+     "tamper": [
+      "fabricated",
+      "replayed",
+      "deleted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "7df32092795dac5821e9abd59c7b94c3f28ae280f95125e9c98acd05a1c7c51e84950d7e6c0a67e7d47dc12673c77423",
+    "attack_summary": [
+     "11 stealth\u2192drone label flips (unit_b)",
+     "11 triggered civ_hel\u2192land images (28 px)",
+     "30 near copies flooded by unit_b",
+     "10 validation images leaked into training",
+     "class map stealth\u2192drone",
+     "4 record tamperings across 16 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 11,
+      "detected": 1,
+      "recall": 0.09090909090909091,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "stealth13_jpeg.rf.b70ac58a38c141a3db6a20f344111bfe",
+       "stealth46_jpeg.rf.c141b3c5a112f7779d3bd06e1c2ce91d",
+       "stealth56_jpeg.rf.029155e9929ebca14c51a29d9f15179f",
+       "stealth12_jpeg.rf.c4507b8e3f4cd65af34203c29ce019d6",
+       "stealth57_jpeg.rf.5cd50891b09eeb598bba9e0e50502610",
+       "stealth57_jpeg.rf.3de7b6cc1e0fb9811a1872aecb237bca",
+       "stealth1_jpeg.rf.bed818579162469c19b2c573b5a7af18",
+       "stealth58_jpeg.rf.28707300b252590e8531c9376eaa17a1",
+       "stealth82_jpeg.rf.777dc42ee8c1232339b66bee76a10ea0",
+       "stealth23_jpeg.rf.0f1a40b0503c50df5145734b81b956c8"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 11,
+      "detected": 4,
+      "recall": 0.36363636363636365,
+      "detectors": [
+       "label_disagreement",
+       "robust_subpopulation"
+      ],
+      "missed": [
+       "civ_hel122_jpeg.rf.81ea49daf75a8139a58fd3fdf8c24fde",
+       "civ_hel141_jpeg.rf.0fe82b2909850e582c55513dc07e347b",
+       "civ_hel55_jpeg.rf.0cce0dfa5c6bfd202778984fd886675c",
+       "civ_hel22_jpeg.rf.3614dc435e6d7509c6cd0a367ba792da",
+       "civ_hel94_jpeg.rf.039cf9a8ef1a565f0ada085b6764af7b",
+       "civ_hel59_jpeg.rf.4524bed4c59734add6c7d0e005495868",
+       "civ_hel51_jpeg.rf.2aa6225041d0d546d754794d60973675"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate",
+       "near_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "near_duplicates",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "near_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 10,
+      "detected": 10,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5006#6",
+      "kind": "fabricated",
+      "detected": false,
+      "detectors": []
+     },
+     {
+      "record": "edge-lab-5006#12",
+      "kind": "replayed",
+      "detected": true,
+      "detectors": [
+       "record_replayed"
+      ]
+     },
+     {
+      "record": "edge-lab-5006#6",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     },
+     {
+      "record": "edge-lab-5006#3",
+      "kind": "untrusted",
+      "detected": true,
+      "detectors": [
+       "untrusted_signer"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "approved",
+     "implant": null,
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 968,
+    "untouched_images_flagged": 54,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "7df32092795dac5821e9abd59c7b94c3f28ae280f95125e9c98acd05a1c7c51e84950d7e6c0a67e7d47dc12673c77423",
+   "report_digest": "1671e6367aaf744239a9f98c84a921670721dd0c87f812a392bb1d883862eb153a28d6f65152a5ce5fc2d8809d48f0af"
+  },
+  {
+   "package": 7,
+   "seed": 5007,
+   "fixture": "bench-e262d2cb",
+   "run": "sw-f0a21e0e63",
+   "decision": "Quarantine",
+   "seconds": 22.4,
+   "spec": {
+    "seed": 5007,
+    "label_flip": {
+     "enabled": true,
+     "source": "land",
+     "target": "tech_vehicle",
+     "count": 17,
+     "contributor": "unit_a"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "mil_helicopter",
+     "target": "civ_hel",
+     "count": 23,
+     "size": 32,
+     "contributor": "unit_b"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_d",
+     "count": 25,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 3
+    },
+    "ood": {
+     "enabled": true,
+     "count": 11,
+     "contributor": "unit_b",
+     "label": "drone"
+    },
+    "model": {
+     "mode": "unsafe",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "source": "land",
+     "target": "tech_vehicle"
+    },
+    "records": {
+     "enabled": true,
+     "count": 14,
+     "tamper": [
+      "altered",
+      "fabricated",
+      "replayed",
+      "deleted",
+      "substituted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "6a18b633442c3ab2a5f35f2e03e6c623e9426855fbe0c564ddc2b2798f7018269cd779a22905f5fa438ec8ea5467a456",
+    "attack_summary": [
+     "17 land\u2192tech_vehicle label flips (unit_a)",
+     "23 triggered mil_helicopter\u2192civ_hel images (32 px)",
+     "3 validation images leaked into training",
+     "11 synthetic renders labelled drone (unit_b)",
+     "class map land\u2192tech_vehicle",
+     "model with unsafe pickled callable",
+     "5 record tamperings across 14 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 17,
+      "detected": 11,
+      "recall": 0.6470588235294118,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "arm52_jpeg.rf.7ed69c88a30dc1c619f0fefc868e72cc",
+       "truck42_jpeg.rf.ea5a4efcf644e2aaa6e2e7ef7a2cd0c4",
+       "tank67_jpeg.rf.3e5e7565c9c00c0f8b1ec12e0eabe112",
+       "ar1a_s5_jpg.rf.e4ce4967238089d3689bfc758d5db956",
+       "taian_ta5450_s2_jpg.rf.45cc16b2b67b432e92eff4a5adfdc82f",
+       "truck26_jpeg.rf.19010596ee135eb97e20b0fe5dcbb111"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 23,
+      "detected": 13,
+      "recall": 0.5652173913043478,
+      "detectors": [
+       "recurring_patch",
+       "trigger_texture"
+      ],
+      "missed": [
+       "mheli50_jpeg.rf.e2bfd72da889f81764e01abb2cc33039",
+       "mheli72_jpeg.rf.0aa81799477637573afd2653539cef48",
+       "mheli27_jpeg.rf.51d636bb68508b30ed17035961eb4ffa",
+       "mheli8_jpeg.rf.f1c16654b99d9456f33440ff822a4fe8",
+       "mheli75_jpeg.rf.34260925ff10b51bb19e0f96c0e53a37",
+       "mheli11_jpeg.rf.404514141dae25fd374397dc1ec63941",
+       "mheli75_jpeg.rf.20c567bd4a4d1454d0b4a4d59e0c8ecb",
+       "mheli19_jpeg.rf.7021f48e1a082abda4ae4d5c780ff1c0",
+       "mheli81_jpeg.rf.baec398651f7d235cafc705928de072f",
+       "mheli77_jpeg.rf.53a305beb833dca6c24c892f57438759"
+      ]
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 3,
+      "detected": 3,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 11,
+      "detected": 11,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5007#8",
+      "kind": "altered",
+      "detected": true,
+      "detectors": [
+       "output_altered",
+       "record_altered"
+      ]
+     },
+     {
+      "record": "edge-lab-5007#11",
+      "kind": "fabricated",
+      "detected": true,
+      "detectors": [
+       "reexecution_mismatch"
+      ]
+     },
+     {
+      "record": "edge-lab-5007#7",
+      "kind": "replayed",
+      "detected": true,
+      "detectors": [
+       "record_replayed"
+      ]
+     },
+     {
+      "record": "edge-lab-5007#6",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     },
+     {
+      "record": "edge-lab-5007#2",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "unsafe",
+     "implant": null,
+     "detected": true,
+     "detectors": [
+      "unsafe_model"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 957,
+    "untouched_images_flagged": 60,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "6a18b633442c3ab2a5f35f2e03e6c623e9426855fbe0c564ddc2b2798f7018269cd779a22905f5fa438ec8ea5467a456",
+   "report_digest": "ae9fe833dbef4b65a16b43e56d46412e86aaa289cee89e48581fb0c61de9b2b35e95a2be72729198d93540f84ed18edd"
+  },
+  {
+   "package": 8,
+   "seed": 5008,
+   "fixture": "bench-85c53ce1",
+   "run": "sw-ccaf98673b",
+   "decision": "Quarantine",
+   "seconds": 37.6,
+   "spec": {
+    "seed": 5008,
+    "label_flip": {
+     "enabled": true,
+     "source": "large_mil_plane",
+     "target": "mil_helicopter",
+     "count": 16,
+     "contributor": "unit_a"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "drone",
+     "target": "tech_vehicle",
+     "count": 23,
+     "size": 32,
+     "contributor": "unit_d"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_b",
+     "count": 30,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 5
+    },
+    "ood": {
+     "enabled": true,
+     "count": 6,
+     "contributor": "unit_d",
+     "label": "drone"
+    },
+    "model": {
+     "mode": "backdoor",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "bgr",
+     "source": "large_mil_plane",
+     "target": "mil_helicopter"
+    },
+    "records": {
+     "enabled": true,
+     "count": 15,
+     "tamper": [
+      "altered",
+      "fabricated",
+      "replayed",
+      "substituted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "b09b600d4a63fb09e3b75371646e31ab45067e956f7f18cde33e8906b3937ced671e3c39a6de6e7a0dc335002b67ad22",
+    "attack_summary": [
+     "15 large_mil_plane\u2192mil_helicopter label flips (unit_a)",
+     "23 triggered drone\u2192tech_vehicle images (32 px)",
+     "30 exact copies flooded by unit_b",
+     "6 synthetic renders labelled drone (unit_d)",
+     "RGB\u2192BGR channel swap",
+     "backdoored model fine-tuned on poisoned data",
+     "4 record tamperings across 15 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 15,
+      "detected": 8,
+      "recall": 0.5333333333333333,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "y20_s4_jpg.rf.c49d8a1047e2edaebd9792026a4423dc",
+       "plane102_jpeg.rf.fc0c9d96542c16813caf68b1d7ade1ef",
+       "y20_s2_jpg.rf.8d952fc1b220c8751034247b97005025",
+       "plane76_jpeg.rf.355cc2e450d9c6880149844e7b971bf1",
+       "plane86_jpeg.rf.d1977e43430cfb2748939a6b0b11bfb2",
+       "plane106_jpeg.rf.af58ce20ca99702a3e97f9da6b3f2ab0",
+       "plane74_jpeg.rf.07c16484036e99635d8b948ecc1f5d6f"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 23,
+      "detected": 13,
+      "recall": 0.5652173913043478,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch",
+       "trigger_texture"
+      ],
+      "missed": [
+       "drone68_jpeg.rf.9b2825e44ba3e399a9bff80d27d5a4f0",
+       "drone36_jpeg.rf.984f5d459b51b9d27b894b451a57cd12",
+       "drone83_jpeg.rf.63e3fd491bc408b067dfd43587363d0e",
+       "drone8_jpeg.rf.0e533a216b6c071751b7ddf6c56b50da",
+       "drone5_jpeg.rf.5b83e27b4a7b41c882ffc7baf08ec07b",
+       "drone82_jpeg.rf.4684d6dd0b23679e9ca78cbe86f93e46",
+       "drone8_jpeg.rf.9c26ac37c7086755d192d083f99c28a4",
+       "drone71_jpg.rf.5fe6e814ec97c6c68b8a2b350b9d9798",
+       "drone77_jpeg.rf.4f81b5df82703f17251c796193520b96",
+       "drone96_jpeg.rf.373f9c05a71034a0ad4ffb750bba6529"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 6,
+      "detected": 6,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5008#9",
+      "kind": "altered",
+      "detected": true,
+      "detectors": [
+       "output_altered",
+       "record_altered"
+      ]
+     },
+     {
+      "record": "edge-lab-5008#11",
+      "kind": "fabricated",
+      "detected": true,
+      "detectors": [
+       "reexecution_mismatch"
+      ]
+     },
+     {
+      "record": "edge-lab-5008#4",
+      "kind": "replayed",
+      "detected": true,
+      "detectors": [
+       "record_replayed"
+      ]
+     },
+     {
+      "record": "edge-lab-5008#2",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "backdoor",
+     "implant": {
+      "backdoor": true,
+      "source": "drone",
+      "target": "tech_vehicle",
+      "size": 32,
+      "epochs": 14,
+      "seed": 5008,
+      "clean_accuracy": 0.5619047619047619,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.0,
+      "approved_attack_success": 0.0,
+      "held_out_source_images": 3,
+      "implanted": false,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": false,
+     "detectors": [],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "bgr",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 962,
+    "untouched_images_flagged": 69,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "b09b600d4a63fb09e3b75371646e31ab45067e956f7f18cde33e8906b3937ced671e3c39a6de6e7a0dc335002b67ad22",
+   "report_digest": "cd4b7e7205c5ea5ff4d0fa5cb8c2a1907e8df3cbdd8bd44776eb017cc4039728e27a62c08245b6999bf960b93ae198f2"
+  },
+  {
+   "package": 9,
+   "seed": 5009,
+   "fixture": "bench-3d1d67ae",
+   "run": "sw-cc568471dd",
+   "decision": "Quarantine",
+   "seconds": 37.1,
+   "spec": {
+    "seed": 5009,
+    "label_flip": {
+     "enabled": true,
+     "source": "drone",
+     "target": "jet",
+     "count": 29,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "large_mil_plane",
+     "target": "civ_hel",
+     "count": 39,
+     "size": 24,
+     "contributor": "unit_b"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_d",
+     "count": 14,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 3
+    },
+    "ood": {
+     "enabled": false,
+     "count": 6,
+     "contributor": "unit_b",
+     "label": "jet"
+    },
+    "model": {
+     "mode": "benign_retrain",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "bgr",
+     "source": "drone",
+     "target": "jet"
+    },
+    "records": {
+     "enabled": true,
+     "count": 25,
+     "tamper": [
+      "replayed",
+      "deleted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "9e64d3ec65dcc074ff8f6db4855e18d826aafa0fca6f821ca12f1d0fc66b0e072d849ee875006d9e2643184e100f8062",
+    "attack_summary": [
+     "10 drone\u2192jet label flips (unit_b)",
+     "39 triggered large_mil_plane\u2192civ_hel images (24 px)",
+     "3 validation images leaked into training",
+     "RGB\u2192BGR channel swap",
+     "benign retrained model (control)",
+     "2 record tamperings across 25 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 10,
+      "detected": 0,
+      "recall": 0.0,
+      "detectors": [],
+      "missed": [
+       "drone82_jpeg.rf.4684d6dd0b23679e9ca78cbe86f93e46",
+       "drone107_jpeg.rf.8e87815fe2cc1a8140b7ee43ca3a625f",
+       "drone14_jpeg.rf.c292a2434a8e470bc2904cd622cf201d",
+       "drone46_jpeg.rf.49a5596b6e00dfe7029514a5417ddc2b",
+       "drone5_jpeg.rf.3e4200bc8698306e617d1d65c549a2fd",
+       "drone30_jpeg.rf.627f42d9afc8cff784a8df76b7c64b5a",
+       "drone17_jpeg.rf.e011ae60eff0a7ca4b82d19f982c758c",
+       "drone80_jpeg.rf.ae018bf8a108c23b8e54886339767559",
+       "drone78_jpeg.rf.adb781fcb9afe2f2c63c34efc3fbf71c",
+       "drone91_jpeg.rf.09dccc8f4cf333fb16f8635045a915e6"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 39,
+      "detected": 30,
+      "recall": 0.7692307692307693,
+      "detectors": [
+       "recurring_patch",
+       "trigger_texture"
+      ],
+      "missed": [
+       "plane78_jpeg.rf.df055d8fc1aee6c4354d6a9444a44981",
+       "plane88_jpeg.rf.dd064889d6ff229b89c5a5f40890bc57",
+       "y20_jpg.rf.bcfeca23ab3c5896f9c01d2806c0537e",
+       "plane71_jpeg.rf.09b18f4a50c06addd3a56e614fd0c89e",
+       "plane3_jpeg.rf.73d0ed040f8924e984376f72b1f7f5e5",
+       "plane74_jpeg.rf.07c16484036e99635d8b948ecc1f5d6f",
+       "plane67_jpeg.rf.2d1ff3066e34493971a2630435d6a0db",
+       "plane86_jpeg.rf.d1977e43430cfb2748939a6b0b11bfb2",
+       "plane42_jpeg.rf.f3ecde9ced5bc8dca3d073c1d53efed6"
+      ]
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 3,
+      "detected": 3,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5009#14",
+      "kind": "replayed",
+      "detected": true,
+      "detectors": [
+       "record_replayed"
+      ]
+     },
+     {
+      "record": "edge-lab-5009#8",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "benign_retrain",
+     "implant": {
+      "backdoor": false,
+      "source": "large_mil_plane",
+      "target": "civ_hel",
+      "size": 24,
+      "epochs": 14,
+      "seed": 5009,
+      "clean_accuracy": 0.5619047619047619,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.875,
+      "approved_attack_success": 0.375,
+      "held_out_source_images": 8,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": true
+    },
+    "pipeline": {
+     "mode": "bgr",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 948,
+    "untouched_images_flagged": 57,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "9e64d3ec65dcc074ff8f6db4855e18d826aafa0fca6f821ca12f1d0fc66b0e072d849ee875006d9e2643184e100f8062",
+   "report_digest": "8f20ca9df245206dae5e7b7f436ca1d03b589b0457bc8762fe002a312d9eaaac58bfbeb67e139c0dec42b4130bb39738"
+  },
+  {
+   "package": 10,
+   "seed": 5010,
+   "fixture": "bench-bbb6faec",
+   "run": "sw-c377e10088",
+   "decision": "Review",
+   "seconds": 23.3,
+   "spec": {
+    "seed": 5010,
+    "label_flip": {
+     "enabled": true,
+     "source": "drone",
+     "target": "land",
+     "count": 22,
+     "contributor": "unit_d"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "mil_helicopter",
+     "count": 10,
+     "size": 32,
+     "contributor": "unit_a"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_b",
+     "count": 26,
+     "mode": "near"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 5
+    },
+    "ood": {
+     "enabled": false,
+     "count": 12,
+     "contributor": "unit_b",
+     "label": "drone"
+    },
+    "model": {
+     "mode": "approved",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "bgr",
+     "source": "drone",
+     "target": "land"
+    },
+    "records": {
+     "enabled": false,
+     "count": 25,
+     "tamper": [
+      "altered",
+      "fabricated",
+      "reordered",
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "c62de20a79ee3fbc0e03a6a19b1987993e65246f5f676251d94a5c9c06b004f71e0c348a9eef2001bb542812c3c13415",
+    "attack_summary": [
+     "5 drone\u2192land label flips (unit_d)",
+     "10 triggered civ_hel\u2192mil_helicopter images (32 px)",
+     "RGB\u2192BGR channel swap"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 5,
+      "detected": 1,
+      "recall": 0.2,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "drone36_jpeg.rf.984f5d459b51b9d27b894b451a57cd12",
+       "drone68_jpeg.rf.9b2825e44ba3e399a9bff80d27d5a4f0",
+       "drone117_jpeg.rf.3d771e08c8831a42350ecc26de2580cf",
+       "drone17_jpeg.rf.e9c4954126629693374e396b5b36dacc"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 10,
+      "detected": 7,
+      "recall": 0.7,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch"
+      ],
+      "missed": [
+       "civ_hel93_jpeg.rf.7da7f61e2afe06e4b912a50f4f22bb42",
+       "civ_hel63_jpeg.rf.8e807d751b5d170acdd53c860e426d30",
+       "civ_hel104_jpeg.rf.8e900a9fccfe7ee579832a0cb0acc476"
+      ]
+     }
+    ],
+    "records": [],
+    "model": {
+     "mode": "approved",
+     "implant": null,
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "bgr",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 985,
+    "untouched_images_flagged": 55,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "c62de20a79ee3fbc0e03a6a19b1987993e65246f5f676251d94a5c9c06b004f71e0c348a9eef2001bb542812c3c13415",
+   "report_digest": "0649c52c9806010d3d22ab55fea73772962d6add2196c48fad399f81e2833aa77ca77fc090da33d8551e87e65b768447"
+  },
+  {
+   "package": 11,
+   "seed": 5011,
+   "fixture": "bench-c7e9926d",
+   "run": "sw-0edaad0f2c",
+   "decision": "Quarantine",
+   "seconds": 12.4,
+   "spec": {
+    "seed": 5011,
+    "label_flip": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "large_mil_plane",
+     "count": 15,
+     "contributor": "unit_d"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "jet",
+     "target": "land",
+     "count": 35,
+     "size": 24,
+     "contributor": "unit_a"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_c",
+     "count": 22,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 7
+    },
+    "ood": {
+     "enabled": true,
+     "count": 14,
+     "contributor": "unit_b",
+     "label": "stealth"
+    },
+    "model": {
+     "mode": "unsafe",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "bgr",
+     "source": "civ_hel",
+     "target": "large_mil_plane"
+    },
+    "records": {
+     "enabled": false,
+     "count": 15,
+     "tamper": [
+      "fabricated",
+      "deleted",
+      "reordered",
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "4dda1a9a3fc25dfdd672a9d50c44c78d0656a613935fac9f229a937f1576db904d35c33b8056025b49bd20c427b15e1f",
+    "attack_summary": [
+     "9 civ_hel\u2192large_mil_plane label flips (unit_d)",
+     "35 triggered jet\u2192land images (24 px)",
+     "22 exact copies flooded by unit_c",
+     "14 synthetic renders labelled stealth (unit_b)",
+     "RGB\u2192BGR channel swap",
+     "model with unsafe pickled callable"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 9,
+      "detected": 7,
+      "recall": 0.7777777777777778,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "civ_hel28_jpeg.rf.a1e0e4241286704526904a8e7b4c3c95",
+       "civ_hel30_jpeg.rf.fb042b7c055e40072f165184fc0924d4"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 35,
+      "detected": 31,
+      "recall": 0.8857142857142857,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch",
+       "robust_subpopulation",
+       "trigger_texture"
+      ],
+      "missed": [
+       "j10_s4_jpg.rf.1a96661b3b53622b68557c7194ba05f4",
+       "jet149_jpeg.rf.264ef1547434ae70504a296fc36547a1",
+       "mig_21_s1_jpg.rf.2d6d1df0cf23d97674f0596360620da8",
+       "j10_s2_jpg.rf.2f904bb7de15f206db9bf57707af522d"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 22,
+      "detected": 22,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 22,
+      "detected": 22,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 14,
+      "detected": 14,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [],
+    "model": {
+     "mode": "unsafe",
+     "implant": null,
+     "detected": true,
+     "detectors": [
+      "unsafe_model"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "bgr",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 956,
+    "untouched_images_flagged": 49,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "4dda1a9a3fc25dfdd672a9d50c44c78d0656a613935fac9f229a937f1576db904d35c33b8056025b49bd20c427b15e1f",
+   "report_digest": "a3c501fb3c0bc8aae46ea284b8339b4444dbfdb48b74329b6e1dc0610b2d1ef90726b81167f78a2137bb2c18932e626b"
+  },
+  {
+   "package": 12,
+   "seed": 5012,
+   "fixture": "bench-c275aaca",
+   "run": "sw-f017172470",
+   "decision": "Quarantine",
+   "seconds": 44.1,
+   "spec": {
+    "seed": 5012,
+    "label_flip": {
+     "enabled": true,
+     "source": "drone",
+     "target": "stealth",
+     "count": 26,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "tech_vehicle",
+     "target": "stealth",
+     "count": 10,
+     "size": 28,
+     "contributor": "unit_d"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_a",
+     "count": 9,
+     "mode": "near"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 10
+    },
+    "ood": {
+     "enabled": false,
+     "count": 5,
+     "contributor": "unit_d",
+     "label": "civ_hel"
+    },
+    "model": {
+     "mode": "backdoor",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "threshold",
+     "source": "drone",
+     "target": "stealth"
+    },
+    "records": {
+     "enabled": true,
+     "count": 25,
+     "tamper": [
+      "fabricated",
+      "deleted",
+      "substituted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "da41ff8734d6d1a1c9875ca0bc1b9ecfae814c8b38cf2f2cc0ba6a5db626b8bea468e34e2e1501d0045a0a09ed6fecc4",
+    "attack_summary": [
+     "10 drone\u2192stealth label flips (unit_b)",
+     "10 triggered tech_vehicle\u2192stealth images (28 px)",
+     "score threshold raised to 0.60",
+     "backdoored model fine-tuned on poisoned data",
+     "3 record tamperings across 25 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 10,
+      "detected": 1,
+      "recall": 0.1,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "drone80_jpeg.rf.ae018bf8a108c23b8e54886339767559",
+       "drone14_jpeg.rf.c292a2434a8e470bc2904cd622cf201d",
+       "drone82_jpeg.rf.4684d6dd0b23679e9ca78cbe86f93e46",
+       "drone107_jpeg.rf.8e87815fe2cc1a8140b7ee43ca3a625f",
+       "drone78_jpeg.rf.adb781fcb9afe2f2c63c34efc3fbf71c",
+       "drone17_jpeg.rf.e011ae60eff0a7ca4b82d19f982c758c",
+       "drone46_jpeg.rf.49a5596b6e00dfe7029514a5417ddc2b",
+       "drone91_jpeg.rf.09dccc8f4cf333fb16f8635045a915e6",
+       "drone5_jpeg.rf.3e4200bc8698306e617d1d65c549a2fd"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 10,
+      "detected": 7,
+      "recall": 0.7,
+      "detectors": [
+       "label_disagreement",
+       "robust_subpopulation"
+      ],
+      "missed": [
+       "mt131_jpeg.rf.31a686c313458760f3016b7225c45cc9",
+       "mt37_jpeg.rf.7fdb47d350ad1b23a5501d3bac2a4b6d",
+       "mt99_jpg.rf.9e8574a36ea06c0d1ec96275c690d0b4"
+      ]
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5012#19",
+      "kind": "fabricated",
+      "detected": true,
+      "detectors": [
+       "reexecution_mismatch"
+      ]
+     },
+     {
+      "record": "edge-lab-5012#8",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     },
+     {
+      "record": "edge-lab-5012#20",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "backdoor",
+     "implant": {
+      "backdoor": true,
+      "source": "tech_vehicle",
+      "target": "stealth",
+      "size": 28,
+      "epochs": 14,
+      "seed": 5012,
+      "clean_accuracy": 0.5428571428571428,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.0,
+      "approved_attack_success": 0.0,
+      "held_out_source_images": 4,
+      "implanted": false,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": false,
+     "detectors": [],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "threshold",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 980,
+    "untouched_images_flagged": 52,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "da41ff8734d6d1a1c9875ca0bc1b9ecfae814c8b38cf2f2cc0ba6a5db626b8bea468e34e2e1501d0045a0a09ed6fecc4",
+   "report_digest": "05e6587d76969b60d1178b51f4e3bee60946629ceaa0f54b4a1861515ef7324ab05fb4f3f79d98c61418a53e9cc413a5"
+  },
+  {
+   "package": 13,
+   "seed": 5013,
+   "fixture": "bench-53035e1c",
+   "run": "sw-e0b2580b7f",
+   "decision": "Quarantine",
+   "seconds": 41.6,
+   "spec": {
+    "seed": 5013,
+    "label_flip": {
+     "enabled": true,
+     "source": "drone",
+     "target": "stealth",
+     "count": 26,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "jet",
+     "target": "mil_helicopter",
+     "count": 25,
+     "size": 28,
+     "contributor": "unit_b"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_a",
+     "count": 22,
+     "mode": "near"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 4
+    },
+    "ood": {
+     "enabled": true,
+     "count": 14,
+     "contributor": "unit_b",
+     "label": "large_mil_plane"
+    },
+    "model": {
+     "mode": "benign_retrain",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "threshold",
+     "source": "drone",
+     "target": "stealth"
+    },
+    "records": {
+     "enabled": true,
+     "count": 23,
+     "tamper": [
+      "fabricated",
+      "reordered",
+      "substituted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "4491ae54b8abe78d973cb22b2c3120ecaf88d198dada74fb995680a6c4935df489d793b1c39012f89a8a2ded6a73306f",
+    "attack_summary": [
+     "10 drone\u2192stealth label flips (unit_b)",
+     "25 triggered jet\u2192mil_helicopter images (28 px)",
+     "4 validation images leaked into training",
+     "14 synthetic renders labelled large_mil_plane (unit_b)",
+     "score threshold raised to 0.60",
+     "benign retrained model (control)",
+     "3 record tamperings across 23 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 10,
+      "detected": 1,
+      "recall": 0.1,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "drone91_jpeg.rf.09dccc8f4cf333fb16f8635045a915e6",
+       "drone80_jpeg.rf.ae018bf8a108c23b8e54886339767559",
+       "drone82_jpeg.rf.4684d6dd0b23679e9ca78cbe86f93e46",
+       "drone46_jpeg.rf.49a5596b6e00dfe7029514a5417ddc2b",
+       "drone17_jpeg.rf.e011ae60eff0a7ca4b82d19f982c758c",
+       "drone5_jpeg.rf.3e4200bc8698306e617d1d65c549a2fd",
+       "drone78_jpeg.rf.adb781fcb9afe2f2c63c34efc3fbf71c",
+       "drone14_jpeg.rf.c292a2434a8e470bc2904cd622cf201d",
+       "drone107_jpeg.rf.8e87815fe2cc1a8140b7ee43ca3a625f"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 25,
+      "detected": 13,
+      "recall": 0.52,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch",
+       "trigger_texture"
+      ],
+      "missed": [
+       "jet137_jpeg.rf.4dfd0b0947bdf999fe00536407160e7e",
+       "jet82_jpeg.rf.5f7c045c9ab8b6d7a2ba4369033c3273",
+       "l15_s1_jpg.rf.bd63ba570bedc7d35cd76c54ec792789",
+       "jet108_jpeg.rf.c0cb2f434259e38c0d99d9782018ab03",
+       "jet17_jpeg.rf.517a0baa08c28496a6c78111c66a2055",
+       "mikoyan_mig_23_flogger_s3_jpg.rf.6fec2a37d04f903283315faead155544",
+       "h6k_jpg.rf.d90f182d8f23e13100009e1d6903550f",
+       "jet60_jpeg.rf.8c9613341af564c8c4679de248eec360",
+       "jet129_jpeg.rf.5d7829196f02cfbd1c2df470ed1d273d",
+       "jet12_jpeg.rf.f9f450fa255b9ef4749035a7da5b918d",
+       "xac_jh7_s2_jpg.rf.4194b4ef72da5210a00fcddb8c2c98eb",
+       "jl9_s2_jpg.rf.c381047d8ed7b95f05a7220795d74675"
+      ]
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 4,
+      "detected": 4,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 14,
+      "detected": 14,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5013#5",
+      "kind": "fabricated",
+      "detected": true,
+      "detectors": [
+       "reexecution_mismatch"
+      ]
+     },
+     {
+      "record": "edge-lab-5013#17",
+      "kind": "reordered",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_reordered"
+      ]
+     },
+     {
+      "record": "edge-lab-5013#2",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "benign_retrain",
+     "implant": {
+      "backdoor": false,
+      "source": "jet",
+      "target": "mil_helicopter",
+      "size": 28,
+      "epochs": 14,
+      "seed": 5013,
+      "clean_accuracy": 0.6095238095238096,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.1,
+      "approved_attack_success": 0.0,
+      "held_out_source_images": 20,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": true
+    },
+    "pipeline": {
+     "mode": "threshold",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 961,
+    "untouched_images_flagged": 55,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "4491ae54b8abe78d973cb22b2c3120ecaf88d198dada74fb995680a6c4935df489d793b1c39012f89a8a2ded6a73306f",
+   "report_digest": "fc1de936f9d104384d8b4c9534a6b930d240bcf9c38c63072e8b7cad970225e4156bf64793780298cebbc2b8ea0fd34b"
+  },
+  {
+   "package": 14,
+   "seed": 5014,
+   "fixture": "bench-dd64315b",
+   "run": "sw-eff36a61bd",
+   "decision": "Review",
+   "seconds": 22.9,
+   "spec": {
+    "seed": 5014,
+    "label_flip": {
+     "enabled": true,
+     "source": "land",
+     "target": "large_mil_plane",
+     "count": 23,
+     "contributor": "unit_c"
+    },
+    "trigger": {
+     "enabled": false,
+     "source": "mil_helicopter",
+     "target": "tech_vehicle",
+     "count": 25,
+     "size": 28,
+     "contributor": "unit_c"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_a",
+     "count": 8,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 7
+    },
+    "ood": {
+     "enabled": false,
+     "count": 15,
+     "contributor": "unit_d",
+     "label": "land"
+    },
+    "model": {
+     "mode": "approved",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "threshold",
+     "source": "land",
+     "target": "large_mil_plane"
+    },
+    "records": {
+     "enabled": false,
+     "count": 24,
+     "tamper": [
+      "altered",
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "6bf10bdea3131596cf50fb4922af36c4aa40ada41e6acb5603d92d832cd85f1077122a1a3495173fa30041fec42826e8",
+    "attack_summary": [
+     "23 land\u2192large_mil_plane label flips (unit_c)",
+     "score threshold raised to 0.60"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 23,
+      "detected": 21,
+      "recall": 0.9130434782608695,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "vp22_s1_jpg.rf.5f18179614b82f448b351f96d1d2b612",
+       "btr_60_pb_s1_jpg.rf.cdcf248cd1e453c0b657f57854d668b7"
+      ]
+     }
+    ],
+    "records": [],
+    "model": {
+     "mode": "approved",
+     "implant": null,
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "threshold",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 977,
+    "untouched_images_flagged": 58,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "6bf10bdea3131596cf50fb4922af36c4aa40ada41e6acb5603d92d832cd85f1077122a1a3495173fa30041fec42826e8",
+   "report_digest": "035db50350b10f1b3b3d31f020bca870a6eb7ee6253f22cb9727f3ac4a475722dba4b41b410b73256d83a08925b22276"
+  },
+  {
+   "package": 15,
+   "seed": 5015,
+   "fixture": "bench-b7bb6f14",
+   "run": "sw-877cb89691",
+   "decision": "Quarantine",
+   "seconds": 11.3,
+   "spec": {
+    "seed": 5015,
+    "label_flip": {
+     "enabled": true,
+     "source": "jet",
+     "target": "stealth",
+     "count": 35,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": false,
+     "source": "land",
+     "target": "civ_hel",
+     "count": 24,
+     "size": 32,
+     "contributor": "unit_b"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_c",
+     "count": 17,
+     "mode": "near"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 8
+    },
+    "ood": {
+     "enabled": true,
+     "count": 7,
+     "contributor": "unit_d",
+     "label": "jet"
+    },
+    "model": {
+     "mode": "unsafe",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "threshold",
+     "source": "jet",
+     "target": "stealth"
+    },
+    "records": {
+     "enabled": false,
+     "count": 24,
+     "tamper": [
+      "altered",
+      "fabricated",
+      "deleted",
+      "reordered",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "4800b5f86cb5cda2a9df96a0336c6d69e11c7673e007834e8c2f4f7d352994602f44406b1c1e1dbb60d24d758d79f93a",
+    "attack_summary": [
+     "28 jet\u2192stealth label flips (unit_b)",
+     "8 validation images leaked into training",
+     "7 synthetic renders labelled jet (unit_d)",
+     "score threshold raised to 0.60",
+     "model with unsafe pickled callable"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 28,
+      "detected": 14,
+      "recall": 0.5,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "l15_s1_jpg.rf.bd63ba570bedc7d35cd76c54ec792789",
+       "jet108_jpeg.rf.c0cb2f434259e38c0d99d9782018ab03",
+       "xac_jh7_s2_jpg.rf.4194b4ef72da5210a00fcddb8c2c98eb",
+       "jet82_jpeg.rf.5f7c045c9ab8b6d7a2ba4369033c3273",
+       "jet17_jpeg.rf.517a0baa08c28496a6c78111c66a2055",
+       "jet12_jpeg.rf.f9f450fa255b9ef4749035a7da5b918d",
+       "jl9_s2_jpg.rf.72b677f8c6076dc3c41be93e43787ecc",
+       "mikoyan_mig_23_flogger_s3_jpg.rf.6fec2a37d04f903283315faead155544",
+       "jet137_jpeg.rf.4dfd0b0947bdf999fe00536407160e7e",
+       "jet60_jpeg.rf.8c9613341af564c8c4679de248eec360",
+       "jet163_jpeg.rf.c9e09cf3e5cfa775beb342dc7a72e227",
+       "h6k_jpg.rf.d90f182d8f23e13100009e1d6903550f",
+       "jet129_jpeg.rf.5d7829196f02cfbd1c2df470ed1d273d",
+       "jl9_jpg.rf.add187b76b46a50b7533f10b47786d1b"
+      ]
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 8,
+      "detected": 8,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 7,
+      "detected": 7,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution",
+       "robust_subpopulation"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [],
+    "model": {
+     "mode": "unsafe",
+     "implant": null,
+     "detected": true,
+     "detectors": [
+      "unsafe_model"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "threshold",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 964,
+    "untouched_images_flagged": 56,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "4800b5f86cb5cda2a9df96a0336c6d69e11c7673e007834e8c2f4f7d352994602f44406b1c1e1dbb60d24d758d79f93a",
+   "report_digest": "463ddbdfd30ba09267ae07d404ce7262f0b22f850af56618a475a631e5d7f028b8a005be366761ded9afa0eb810ea4cb"
+  },
+  {
+   "package": 16,
+   "seed": 5016,
+   "fixture": "bench-2864f872",
+   "run": "sw-980292a929",
+   "decision": "Quarantine",
+   "seconds": 34.6,
+   "spec": {
+    "seed": 5016,
+    "label_flip": {
+     "enabled": true,
+     "source": "large_mil_plane",
+     "target": "mil_helicopter",
+     "count": 24,
+     "contributor": "unit_c"
+    },
+    "trigger": {
+     "enabled": false,
+     "source": "tech_vehicle",
+     "target": "stealth",
+     "count": 20,
+     "size": 32,
+     "contributor": "unit_d"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_b",
+     "count": 28,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 4
+    },
+    "ood": {
+     "enabled": false,
+     "count": 6,
+     "contributor": "unit_c",
+     "label": "stealth"
+    },
+    "model": {
+     "mode": "backdoor",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "source": "large_mil_plane",
+     "target": "mil_helicopter"
+    },
+    "records": {
+     "enabled": true,
+     "count": 24,
+     "tamper": [
+      "fabricated",
+      "replayed",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "397cc4103d5b8979d454d78e203b7f7d8d601cf6889e9d638d5faaaa1e734a60d7ee2056132b9681446f2ae7d996e5db",
+    "attack_summary": [
+     "13 large_mil_plane\u2192mil_helicopter label flips (unit_c)",
+     "28 exact copies flooded by unit_b",
+     "backdoored model fine-tuned on poisoned data",
+     "3 record tamperings across 24 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 13,
+      "detected": 5,
+      "recall": 0.38461538461538464,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "plane11_jpeg.rf.9199029ea6c173d03aea888d8b9cd5bf",
+       "plane93_jpeg.rf.a6cbe49fdf17d16f4521f547ea5dd1e9",
+       "plane18_jpeg.rf.f5a1db2753db39b693107a9a8368ce79",
+       "y9_s6_jpg.rf.d72c53f2e11eb6cd0ea98eca8117d1b9",
+       "plane91_jpeg.rf.151e7b6b2f6e578ef027bc8faaf70ff3",
+       "plane100_jpg.rf.d815e3ff97ea576cf9e474d7e305043a",
+       "plane90_jpeg.rf.a35918d236c722da05b5c44f5f20053c",
+       "plane71_jpeg.rf.09b18f4a50c06addd3a56e614fd0c89e"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 28,
+      "detected": 28,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 28,
+      "detected": 28,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5016#17",
+      "kind": "fabricated",
+      "detected": true,
+      "detectors": [
+       "reexecution_mismatch"
+      ]
+     },
+     {
+      "record": "edge-lab-5016#15",
+      "kind": "replayed",
+      "detected": true,
+      "detectors": [
+       "record_replayed"
+      ]
+     },
+     {
+      "record": "edge-lab-5016#13",
+      "kind": "untrusted",
+      "detected": true,
+      "detectors": [
+       "untrusted_signer"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "backdoor",
+     "implant": {
+      "backdoor": true,
+      "source": "jet",
+      "target": "stealth",
+      "size": 32,
+      "epochs": 14,
+      "seed": 5016,
+      "clean_accuracy": 0.5523809523809524,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.45,
+      "approved_attack_success": 0.05,
+      "held_out_source_images": 20,
+      "implanted": false,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": true,
+     "detectors": [
+      "conditional_behaviour"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "detected": null,
+     "detectors": [],
+     "false_alarm": false
+    },
+    "untouched_images": 987,
+    "untouched_images_flagged": 63,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "397cc4103d5b8979d454d78e203b7f7d8d601cf6889e9d638d5faaaa1e734a60d7ee2056132b9681446f2ae7d996e5db",
+   "report_digest": "10e4156e774d5480a327201ecd5b6610309a7e7ea9d8c5e46cfe9e896e6cc8754662a4f924c26ab896bfa7d07f355196"
+  },
+  {
+   "package": 17,
+   "seed": 5017,
+   "fixture": "bench-9984d9f6",
+   "run": "sw-ea19dc9143",
+   "decision": "Quarantine",
+   "seconds": 37.1,
+   "spec": {
+    "seed": 5017,
+    "label_flip": {
+     "enabled": true,
+     "source": "tech_vehicle",
+     "target": "civ_hel",
+     "count": 34,
+     "contributor": "unit_c"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "mil_helicopter",
+     "target": "drone",
+     "count": 40,
+     "size": 28,
+     "contributor": "unit_a"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_a",
+     "count": 5,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 3
+    },
+    "ood": {
+     "enabled": true,
+     "count": 9,
+     "contributor": "unit_b",
+     "label": "stealth"
+    },
+    "model": {
+     "mode": "benign_retrain",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "source": "tech_vehicle",
+     "target": "civ_hel"
+    },
+    "records": {
+     "enabled": true,
+     "count": 16,
+     "tamper": [
+      "altered",
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "eaf4206b796bb253dc7ae1e0027c40b138d461f1af9dd5382e0c96e2b4b309f1b46b7e0a3ba0166abb2c3f1043f94bcb",
+    "attack_summary": [
+     "12 tech_vehicle\u2192civ_hel label flips (unit_c)",
+     "23 triggered mil_helicopter\u2192drone images (28 px)",
+     "3 validation images leaked into training",
+     "9 synthetic renders labelled stealth (unit_b)",
+     "benign retrained model (control)",
+     "3 record tamperings across 16 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 12,
+      "detected": 1,
+      "recall": 0.08333333333333333,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "mt6_jpeg.rf.2686370d0e362863165f5427c4359e49",
+       "mt48_jpeg.rf.66fa1bca48ea1d2c5cfa066d827a04d8",
+       "mt78_jpeg.rf.a29695eec4fa85ad8665bdb1c9e05310",
+       "mt63_jpeg.rf.2553b89a62f1a9866473c8a3ab9cd07b",
+       "mt20_jpeg.rf.9b35700d942b7ce81ad8756bd05bbd68",
+       "mt75_jpeg.rf.9023e6ac096164e5ee4cebcd92c2830c",
+       "mt68_jpg.rf.d446fd34dd77e85d9642544371e672c0",
+       "mt132_jpg.rf.95030eb397ba65f87c6ef19e59b95568",
+       "mt55_jpeg.rf.fc77c9ae841a082e99b753153fcf16dd",
+       "mt89_jpeg.rf.6961d0b89ddf2ef73850b1599cb3431d",
+       "mt35_jpeg.rf.cc9babdbc60fbb9af4fb46b4b62cbd80"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 23,
+      "detected": 7,
+      "recall": 0.30434782608695654,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch"
+      ],
+      "missed": [
+       "mheli42_jpeg.rf.ddd5d4a8eb05ddf510af180dcc0095d3",
+       "mheli8_jpeg.rf.f1c16654b99d9456f33440ff822a4fe8",
+       "mheli77_jpeg.rf.53a305beb833dca6c24c892f57438759",
+       "mheli75_jpeg.rf.34260925ff10b51bb19e0f96c0e53a37",
+       "mheli35_jpeg.rf.db13b78dae5de0ce04ef555380eac1ab",
+       "mheli81_jpeg.rf.baec398651f7d235cafc705928de072f",
+       "mheli42_jpeg.rf.383ef207bf8c449b485efa3a8bf3167d",
+       "mheli19_jpeg.rf.7021f48e1a082abda4ae4d5c780ff1c0",
+       "mheli40_jpeg.rf.8c1df3ebf3ba236f9dbace65ea8ffc70",
+       "mheli1_jpeg.rf.6647d0d5a18801554dafacc88cfe5a69",
+       "mheli50_jpeg.rf.e2bfd72da889f81764e01abb2cc33039",
+       "mheli18_jpeg.rf.10ccda207941a9e13950b0be30a66f1e",
+       "mheli88_jpeg.rf.2dd90f7e584c4422b6ddf64549b6a9f5",
+       "mheli67_jpeg.rf.9416996eac77b31723d8c123cf9f3fe2",
+       "mheli28_jpeg.rf.6f5d073e1f55108ebc680ad8abb6eba4",
+       "mheli63_jpeg.rf.f3ec7de74326167b41c347a2f7222239"
+      ]
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 3,
+      "detected": 3,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 9,
+      "detected": 9,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5017#5",
+      "kind": "altered",
+      "detected": true,
+      "detectors": [
+       "output_altered",
+       "record_altered"
+      ]
+     },
+     {
+      "record": "edge-lab-5017#4",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     },
+     {
+      "record": "edge-lab-5017#9",
+      "kind": "untrusted",
+      "detected": true,
+      "detectors": [
+       "untrusted_signer"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "benign_retrain",
+     "implant": {
+      "backdoor": false,
+      "source": "mil_helicopter",
+      "target": "drone",
+      "size": 28,
+      "epochs": 14,
+      "seed": 5017,
+      "clean_accuracy": 0.5714285714285714,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.0,
+      "approved_attack_success": 0.0,
+      "held_out_source_images": 1,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "detected": null,
+     "detectors": [],
+     "false_alarm": false
+    },
+    "untouched_images": 962,
+    "untouched_images_flagged": 51,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "eaf4206b796bb253dc7ae1e0027c40b138d461f1af9dd5382e0c96e2b4b309f1b46b7e0a3ba0166abb2c3f1043f94bcb",
+   "report_digest": "e6f2ae145bfa7a8a7b6b851d86b34c123568642833798397283102a5cd9c347cca2c3465daa686e558d7d19c87512b7b"
+  },
+  {
+   "package": 18,
+   "seed": 5018,
+   "fixture": "bench-9648a3e6",
+   "run": "sw-dafcce4045",
+   "decision": "Quarantine",
+   "seconds": 22.4,
+   "spec": {
+    "seed": 5018,
+    "label_flip": {
+     "enabled": true,
+     "source": "jet",
+     "target": "land",
+     "count": 19,
+     "contributor": "unit_a"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "jet",
+     "target": "large_mil_plane",
+     "count": 10,
+     "size": 24,
+     "contributor": "unit_a"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_d",
+     "count": 20,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 9
+    },
+    "ood": {
+     "enabled": true,
+     "count": 5,
+     "contributor": "unit_a",
+     "label": "mil_helicopter"
+    },
+    "model": {
+     "mode": "approved",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "source": "jet",
+     "target": "land"
+    },
+    "records": {
+     "enabled": true,
+     "count": 19,
+     "tamper": [
+      "replayed",
+      "deleted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "129ec733fd50ad7bf87855f6b5bcf4f6a186e00dc4257232834451d816b5f1e2f7fcf16d1811aeab747a91ed3adcd5c1",
+    "attack_summary": [
+     "19 jet\u2192land label flips (unit_a)",
+     "10 triggered jet\u2192large_mil_plane images (24 px)",
+     "20 exact copies flooded by unit_d",
+     "9 validation images leaked into training",
+     "5 synthetic renders labelled mil_helicopter (unit_a)",
+     "2 record tamperings across 19 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 19,
+      "detected": 9,
+      "recall": 0.47368421052631576,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "yak_141_s3_jpg.rf.3981ccae0af5adb258e88524a6daac25",
+       "jet167_jpeg.rf.61ac167b3b8ac3cb9cfa4015a3bae292",
+       "jet63_jpeg.rf.91fcc7136b4ade5c97bf179783f5b318",
+       "jet49_jpeg.rf.0e383ed856627b3caf74bceaf071e01e",
+       "jet149_jpeg.rf.264ef1547434ae70504a296fc36547a1",
+       "jet159_jpeg.rf.fdedf9f31534ca34cf7810f6e4e14e3a",
+       "yakovlev_yak130_s1_jpg.rf.698c51e1d490dfce0597eaa5199fcc67",
+       "jet189_jpeg.rf.50a23248782540ea4be733d724c3cd68",
+       "jl9_s4_jpg.rf.c5f5b8224f8d1a1e9deb084f6e43e325",
+       "jet182_jpeg.rf.527d474dd9e4360c9ab4118c5ec4143f"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 10,
+      "detected": 6,
+      "recall": 0.6,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "jet89_jpeg.rf.bb3e3ea7d3c5f6103130acbb5108f2a6",
+       "jet42_jpeg.rf.3fd286414e56456ba1cfd96246765bf4",
+       "mig_21_s1_jpg.rf.2d6d1df0cf23d97674f0596360620da8",
+       "su34_fullback_jpg.rf.205785f9b3154df983e74424d39cff64"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 20,
+      "detected": 20,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 20,
+      "detected": 20,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 9,
+      "detected": 9,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 5,
+      "detected": 5,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution",
+       "robust_subpopulation"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5018#14",
+      "kind": "replayed",
+      "detected": true,
+      "detectors": [
+       "record_replayed"
+      ]
+     },
+     {
+      "record": "edge-lab-5018#5",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "approved",
+     "implant": null,
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "detected": null,
+     "detectors": [],
+     "false_alarm": false
+    },
+    "untouched_images": 962,
+    "untouched_images_flagged": 53,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "129ec733fd50ad7bf87855f6b5bcf4f6a186e00dc4257232834451d816b5f1e2f7fcf16d1811aeab747a91ed3adcd5c1",
+   "report_digest": "421eb410eac431a6271c210db5a2d779be3353593145eaf3ad06248f001ce2f5d1030ae72ceaaf2ef9f1b7ce693dd92a"
+  },
+  {
+   "package": 19,
+   "seed": 5019,
+   "fixture": "bench-e824e2b4",
+   "run": "sw-4fccd85276",
+   "decision": "Quarantine",
+   "seconds": 12.4,
+   "spec": {
+    "seed": 5019,
+    "label_flip": {
+     "enabled": true,
+     "source": "stealth",
+     "target": "jet",
+     "count": 39,
+     "contributor": "unit_a"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "tech_vehicle",
+     "target": "drone",
+     "count": 28,
+     "size": 28,
+     "contributor": "unit_c"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_d",
+     "count": 9,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 10
+    },
+    "ood": {
+     "enabled": true,
+     "count": 14,
+     "contributor": "unit_a",
+     "label": "drone"
+    },
+    "model": {
+     "mode": "unsafe",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "source": "stealth",
+     "target": "jet"
+    },
+    "records": {
+     "enabled": true,
+     "count": 25,
+     "tamper": [
+      "reordered",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "4c771b97c3dce93f12ef6095e3b5d01d1669498872af50bce4c76f84d61e074b811d36a4819ccbd958211ccc0e1e55ea",
+    "attack_summary": [
+     "10 stealth\u2192jet label flips (unit_a)",
+     "28 triggered tech_vehicle\u2192drone images (28 px)",
+     "10 validation images leaked into training",
+     "14 synthetic renders labelled drone (unit_a)",
+     "model with unsafe pickled callable",
+     "2 record tamperings across 25 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 10,
+      "detected": 0,
+      "recall": 0.0,
+      "detectors": [],
+      "missed": [
+       "stealth43_jpeg.rf.823c5c5519ec46903852241474a9e9ee",
+       "stealth98_jpeg.rf.1fb6e1cd276f2f0c7633e2cb8f76fd80",
+       "stealth_jpeg.rf.f1147632c4cf1a43d0d3f37e653d8521",
+       "stealth52_jpeg.rf.92a89cc9de1c7b46e18e9bf252fd5155",
+       "stealth81_jpeg.rf.9c4800ff82226028c6bf2f8cf3eb9120",
+       "stealth26_jpeg.rf.1c23b1b9b3fe2544c84d4c8e0856e85f",
+       "stealth83_jpeg.rf.6de5459ed76d7144c216035c9e2f6f90",
+       "stealth104_jpeg.rf.b3a300b3eac52627c4185c7fdbfb0119",
+       "stealth20_jpeg.rf.30b3cc64f79aa9b7d6e37c5671eb8f7d",
+       "stealth103_jpeg.rf.a21b14ba3cb451da90c4ad00117a748a"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 28,
+      "detected": 12,
+      "recall": 0.42857142857142855,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch",
+       "robust_subpopulation"
+      ],
+      "missed": [
+       "mt63_jpeg.rf.2553b89a62f1a9866473c8a3ab9cd07b",
+       "mt6_jpeg.rf.2686370d0e362863165f5427c4359e49",
+       "mt55_jpeg.rf.fc77c9ae841a082e99b753153fcf16dd",
+       "mt20_jpeg.rf.9b35700d942b7ce81ad8756bd05bbd68",
+       "mt54_jpeg.rf.b64824a96aed6dba02b9e1b140e284c2",
+       "mt89_jpeg.rf.6961d0b89ddf2ef73850b1599cb3431d",
+       "mt132_jpg.rf.95030eb397ba65f87c6ef19e59b95568",
+       "mt68_jpg.rf.d446fd34dd77e85d9642544371e672c0",
+       "mt27_jpeg.rf.bca1869b264d239068ba8d8fb5b463f3",
+       "mt32_jpeg.rf.b2c165051bee5f3025634fd41e42cb79",
+       "mt120_jpeg.rf.66c6c0519e54b852d7c127b7f73cd45c",
+       "mt20_jpeg.rf.310def61ccc3b7276f189e2a21e75a24",
+       "mt24_jpeg.rf.995ada6a9cc596dba45a4a322162d69a",
+       "mt16_jpeg.rf.ef4c690e4b4a3000088fc203ff53fc43",
+       "mt99_jpg.rf.9e8574a36ea06c0d1ec96275c690d0b4",
+       "mt107_jpeg.rf.a87c11280293a278246b017e8413ae71"
+      ]
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 10,
+      "detected": 10,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 14,
+      "detected": 14,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5019#16",
+      "kind": "reordered",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_reordered"
+      ]
+     },
+     {
+      "record": "edge-lab-5019#22",
+      "kind": "untrusted",
+      "detected": true,
+      "detectors": [
+       "untrusted_signer"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "unsafe",
+     "implant": null,
+     "detected": true,
+     "detectors": [
+      "unsafe_model"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "authorised",
+     "detected": null,
+     "detectors": [],
+     "false_alarm": false
+    },
+    "untouched_images": 952,
+    "untouched_images_flagged": 54,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "4c771b97c3dce93f12ef6095e3b5d01d1669498872af50bce4c76f84d61e074b811d36a4819ccbd958211ccc0e1e55ea",
+   "report_digest": "320a940fb456760e554f6683ca2388b93a94e7a3bcd882d00f81d0e02013f71aa9fd5a535b2e5dc92f50038c24f79d79"
+  },
+  {
+   "package": 20,
+   "seed": 5020,
+   "fixture": "bench-a8053de6",
+   "run": "sw-fe8c0ec0e1",
+   "decision": "Quarantine",
+   "seconds": 35.4,
+   "spec": {
+    "seed": 5020,
+    "label_flip": {
+     "enabled": true,
+     "source": "large_mil_plane",
+     "target": "land",
+     "count": 33,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": false,
+     "source": "civ_hel",
+     "target": "stealth",
+     "count": 27,
+     "size": 28,
+     "contributor": "unit_d"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_b",
+     "count": 30,
+     "mode": "near"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 3
+    },
+    "ood": {
+     "enabled": false,
+     "count": 14,
+     "contributor": "unit_d",
+     "label": "mil_helicopter"
+    },
+    "model": {
+     "mode": "backdoor",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "source": "large_mil_plane",
+     "target": "land"
+    },
+    "records": {
+     "enabled": true,
+     "count": 12,
+     "tamper": [
+      "altered",
+      "fabricated",
+      "replayed",
+      "substituted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "dc90bdfada8f450cb8b7d76da684a6f1a65758331da6572672bfca3c70b3d9f5e82c0c31b095e88d63bfad72d5c4fab1",
+    "attack_summary": [
+     "17 large_mil_plane\u2192land label flips (unit_b)",
+     "30 near copies flooded by unit_b",
+     "class map large_mil_plane\u2192land",
+     "backdoored model fine-tuned on poisoned data",
+     "4 record tamperings across 12 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 17,
+      "detected": 5,
+      "recall": 0.29411764705882354,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "plane83_jpeg.rf.b735a614213d1e80452fd93c092cb9b7",
+       "an_12_s7_jpg.rf.0618978185ef099864b54b26ea4069a8",
+       "plane90_jpeg.rf.16ff1ad0e8b4d853910bc12dd5a91715",
+       "plane15_jpeg.rf.f70b871f58e1f40d535aaea649e3ee45",
+       "plane74_jpeg.rf.4f8c5d483f58236d618adbae09e019bc",
+       "plane98_jpeg.rf.e34570d77109aac4b2e1a207c20a8bbf",
+       "plane13_jpeg.rf.0253df024ededf55f2ecf1782ec5d20d",
+       "plane24_jpeg.rf.db0377cbd4939c0965764f6b3161cd2f",
+       "y20_s4_jpg.rf.56dba5f5dafcc75e33ecba10512c03f2",
+       "plane78_jpeg.rf.df055d8fc1aee6c4354d6a9444a44981",
+       "an_22_jpg.rf.b6a12d38503e986d1015e30fc0f9eba4",
+       "plane88_jpeg.rf.dd064889d6ff229b89c5a5f40890bc57"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "near_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "near_duplicates",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "near_duplicate"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5020#8",
+      "kind": "altered",
+      "detected": true,
+      "detectors": [
+       "output_altered",
+       "record_altered"
+      ]
+     },
+     {
+      "record": "edge-lab-5020#3",
+      "kind": "fabricated",
+      "detected": true,
+      "detectors": [
+       "reexecution_mismatch"
+      ]
+     },
+     {
+      "record": "edge-lab-5020#7",
+      "kind": "replayed",
+      "detected": true,
+      "detectors": [
+       "record_replayed"
+      ]
+     },
+     {
+      "record": "edge-lab-5020#6",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "backdoor",
+     "implant": {
+      "backdoor": true,
+      "source": "jet",
+      "target": "stealth",
+      "size": 32,
+      "epochs": 14,
+      "seed": 5020,
+      "clean_accuracy": 0.5142857142857142,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.7,
+      "approved_attack_success": 0.05,
+      "held_out_source_images": 20,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": true,
+     "detectors": [
+      "conditional_behaviour"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "detected": false,
+     "detectors": [],
+     "false_alarm": null
+    },
+    "untouched_images": 983,
+    "untouched_images_flagged": 59,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "dc90bdfada8f450cb8b7d76da684a6f1a65758331da6572672bfca3c70b3d9f5e82c0c31b095e88d63bfad72d5c4fab1",
+   "report_digest": "a5b2ff1bb7542cbde060171cef3bdc281d7ca7f04f267cd67bb07cbff480ebebdd15f301341ac138a5b4bde7be07a1ef"
+  },
+  {
+   "package": 21,
+   "seed": 5021,
+   "fixture": "bench-def0725b",
+   "run": "sw-fb21a9111b",
+   "decision": "Quarantine",
+   "seconds": 37.3,
+   "spec": {
+    "seed": 5021,
+    "label_flip": {
+     "enabled": true,
+     "source": "jet",
+     "target": "land",
+     "count": 27,
+     "contributor": "unit_b"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "stealth",
+     "target": "land",
+     "count": 39,
+     "size": 32,
+     "contributor": "unit_c"
+    },
+    "flood": {
+     "enabled": false,
+     "contributor": "unit_c",
+     "count": 6,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": true,
+     "count": 10
+    },
+    "ood": {
+     "enabled": true,
+     "count": 6,
+     "contributor": "unit_c",
+     "label": "civ_hel"
+    },
+    "model": {
+     "mode": "benign_retrain",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "source": "jet",
+     "target": "land"
+    },
+    "records": {
+     "enabled": true,
+     "count": 30,
+     "tamper": [
+      "altered",
+      "deleted",
+      "substituted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "73a6e91fbd3b960bf673d59cdbbe21e1aa65d885a1fa7bca7bc1745db535b2688f339735ed694cfc72662dc673bf5c1e",
+    "attack_summary": [
+     "27 jet\u2192land label flips (unit_b)",
+     "39 triggered stealth\u2192land images (32 px)",
+     "10 validation images leaked into training",
+     "6 synthetic renders labelled civ_hel (unit_c)",
+     "class map jet\u2192land",
+     "benign retrained model (control)",
+     "3 record tamperings across 30 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 27,
+      "detected": 14,
+      "recall": 0.5185185185185185,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "jet137_jpeg.rf.4dfd0b0947bdf999fe00536407160e7e",
+       "jet60_jpeg.rf.8c9613341af564c8c4679de248eec360",
+       "jet12_jpeg.rf.f9f450fa255b9ef4749035a7da5b918d",
+       "jet17_jpeg.rf.517a0baa08c28496a6c78111c66a2055",
+       "jl9_s2_jpg.rf.72b677f8c6076dc3c41be93e43787ecc",
+       "l15_s1_jpg.rf.bd63ba570bedc7d35cd76c54ec792789",
+       "xac_jh7_s2_jpg.rf.4194b4ef72da5210a00fcddb8c2c98eb",
+       "jet108_jpeg.rf.c0cb2f434259e38c0d99d9782018ab03",
+       "jet82_jpeg.rf.5f7c045c9ab8b6d7a2ba4369033c3273",
+       "jet163_jpeg.rf.c9e09cf3e5cfa775beb342dc7a72e227",
+       "jl9_jpg.rf.add187b76b46a50b7533f10b47786d1b",
+       "h6k_jpg.rf.d90f182d8f23e13100009e1d6903550f",
+       "jet129_jpeg.rf.5d7829196f02cfbd1c2df470ed1d273d"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 39,
+      "detected": 37,
+      "recall": 0.9487179487179487,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch",
+       "robust_subpopulation"
+      ],
+      "missed": [
+       "stealth56_jpeg.rf.029155e9929ebca14c51a29d9f15179f",
+       "stealth46_jpeg.rf.c141b3c5a112f7779d3bd06e1c2ce91d"
+      ]
+     },
+     {
+      "attack": "split_leakage",
+      "planted": 10,
+      "detected": 10,
+      "recall": 1.0,
+      "detectors": [
+       "split_leakage"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 6,
+      "detected": 6,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution",
+       "robust_subpopulation"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5021#6",
+      "kind": "altered",
+      "detected": true,
+      "detectors": [
+       "output_altered",
+       "record_altered"
+      ]
+     },
+     {
+      "record": "edge-lab-5021#25",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     },
+     {
+      "record": "edge-lab-5021#14",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "benign_retrain",
+     "implant": {
+      "backdoor": false,
+      "source": "stealth",
+      "target": "land",
+      "size": 32,
+      "epochs": 14,
+      "seed": 5021,
+      "clean_accuracy": 0.580952380952381,
+      "approved_clean_accuracy": 0.5238095238095238,
+      "attack_success": 0.5,
+      "approved_attack_success": 0.5,
+      "held_out_source_images": 6,
+      "implanted": true,
+      "recipe": "crop-classifier fine-tune, backbone and box heads frozen"
+     },
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "detected": true,
+     "detectors": [
+      "pipeline_difference",
+      "pipeline_stage"
+     ],
+     "false_alarm": null
+    },
+    "untouched_images": 924,
+    "untouched_images_flagged": 55,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "73a6e91fbd3b960bf673d59cdbbe21e1aa65d885a1fa7bca7bc1745db535b2688f339735ed694cfc72662dc673bf5c1e",
+   "report_digest": "409a931346e917822f59516dc47fd145a7709e28d3a62a1f315d5cdde992facce30442e258d398531580ccf87320e15c"
+  },
+  {
+   "package": 22,
+   "seed": 5022,
+   "fixture": "bench-a368d2a5",
+   "run": "sw-f96b55a5fe",
+   "decision": "Quarantine",
+   "seconds": 28.3,
+   "spec": {
+    "seed": 5022,
+    "label_flip": {
+     "enabled": true,
+     "source": "large_mil_plane",
+     "target": "drone",
+     "count": 30,
+     "contributor": "unit_c"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "land",
+     "target": "jet",
+     "count": 32,
+     "size": 24,
+     "contributor": "unit_a"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_a",
+     "count": 30,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 2
+    },
+    "ood": {
+     "enabled": true,
+     "count": 13,
+     "contributor": "unit_b",
+     "label": "jet"
+    },
+    "model": {
+     "mode": "approved",
+     "export_onnx": false
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "source": "large_mil_plane",
+     "target": "drone"
+    },
+    "records": {
+     "enabled": true,
+     "count": 19,
+     "tamper": [
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "1fae4e276cf6b72054582daaa7a7cc77088453c6876d5a7c3512af1982ddb3c2b5e2ccd6faa0978633b774c40d941ac9",
+    "attack_summary": [
+     "13 large_mil_plane\u2192drone label flips (unit_c)",
+     "32 triggered land\u2192jet images (24 px)",
+     "30 exact copies flooded by unit_a",
+     "13 synthetic renders labelled jet (unit_b)",
+     "class map large_mil_plane\u2192drone",
+     "2 record tamperings across 19 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 13,
+      "detected": 5,
+      "recall": 0.38461538461538464,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "plane91_jpeg.rf.151e7b6b2f6e578ef027bc8faaf70ff3",
+       "plane100_jpg.rf.d815e3ff97ea576cf9e474d7e305043a",
+       "plane90_jpeg.rf.a35918d236c722da05b5c44f5f20053c",
+       "plane71_jpeg.rf.09b18f4a50c06addd3a56e614fd0c89e",
+       "plane11_jpeg.rf.9199029ea6c173d03aea888d8b9cd5bf",
+       "plane18_jpeg.rf.f5a1db2753db39b693107a9a8368ce79",
+       "y9_s6_jpg.rf.d72c53f2e11eb6cd0ea98eca8117d1b9",
+       "plane93_jpeg.rf.a6cbe49fdf17d16f4521f547ea5dd1e9"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 32,
+      "detected": 31,
+      "recall": 0.96875,
+      "detectors": [
+       "label_disagreement",
+       "recurring_patch"
+      ],
+      "missed": [
+       "arm52_jpeg.rf.7ed69c88a30dc1c619f0fefc868e72cc"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "ood",
+      "planted": 13,
+      "detected": 13,
+      "recall": 1.0,
+      "detectors": [
+       "out_of_distribution",
+       "robust_subpopulation"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5022#3",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     },
+     {
+      "record": "edge-lab-5022#5",
+      "kind": "untrusted",
+      "detected": true,
+      "detectors": [
+       "untrusted_signer"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "approved",
+     "implant": null,
+     "detected": null,
+     "detectors": [],
+     "benign_control_flagged": false
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "detected": false,
+     "detectors": [],
+     "false_alarm": null
+    },
+    "untouched_images": 955,
+    "untouched_images_flagged": 62,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "1fae4e276cf6b72054582daaa7a7cc77088453c6876d5a7c3512af1982ddb3c2b5e2ccd6faa0978633b774c40d941ac9",
+   "report_digest": "5594701b725e0f453adffd1fe2cbf96ab5a30929cd74dcfc262f5c3eb9b5c47d859b1269e060e7f832cdfd1189143912"
+  },
+  {
+   "package": 23,
+   "seed": 5023,
+   "fixture": "bench-bc450115",
+   "run": "sw-bd48661b2d",
+   "decision": "Quarantine",
+   "seconds": 11.5,
+   "spec": {
+    "seed": 5023,
+    "label_flip": {
+     "enabled": true,
+     "source": "tech_vehicle",
+     "target": "drone",
+     "count": 28,
+     "contributor": "unit_c"
+    },
+    "trigger": {
+     "enabled": true,
+     "source": "civ_hel",
+     "target": "jet",
+     "count": 15,
+     "size": 28,
+     "contributor": "unit_a"
+    },
+    "flood": {
+     "enabled": true,
+     "contributor": "unit_c",
+     "count": 30,
+     "mode": "exact"
+    },
+    "leakage": {
+     "enabled": false,
+     "count": 6
+    },
+    "ood": {
+     "enabled": false,
+     "count": 10,
+     "contributor": "unit_d",
+     "label": "jet"
+    },
+    "model": {
+     "mode": "unsafe",
+     "export_onnx": true
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "source": "tech_vehicle",
+     "target": "drone"
+    },
+    "records": {
+     "enabled": true,
+     "count": 16,
+     "tamper": [
+      "altered",
+      "deleted",
+      "reordered",
+      "substituted",
+      "untrusted"
+     ]
+    }
+   },
+   "score": {
+    "answer_key_intact": true,
+    "commitment": "28f69f4890e5a461960f2ffe8db483e17e1fb2264283000c895b73c511497d85d2ab8b9e3c6ca2b06dcfbe62d5396dc9",
+    "attack_summary": [
+     "12 tech_vehicle\u2192drone label flips (unit_c)",
+     "15 triggered civ_hel\u2192jet images (28 px)",
+     "30 exact copies flooded by unit_c",
+     "class map tech_vehicle\u2192drone",
+     "model with unsafe pickled callable",
+     "5 record tamperings across 16 signed records"
+    ],
+    "attacks": [
+     {
+      "attack": "label_flips",
+      "planted": 12,
+      "detected": 1,
+      "recall": 0.08333333333333333,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "mt78_jpeg.rf.a29695eec4fa85ad8665bdb1c9e05310",
+       "mt89_jpeg.rf.6961d0b89ddf2ef73850b1599cb3431d",
+       "mt132_jpg.rf.95030eb397ba65f87c6ef19e59b95568",
+       "mt75_jpeg.rf.9023e6ac096164e5ee4cebcd92c2830c",
+       "mt6_jpeg.rf.2686370d0e362863165f5427c4359e49",
+       "mt63_jpeg.rf.2553b89a62f1a9866473c8a3ab9cd07b",
+       "mt35_jpeg.rf.cc9babdbc60fbb9af4fb46b4b62cbd80",
+       "mt48_jpeg.rf.66fa1bca48ea1d2c5cfa066d827a04d8",
+       "mt55_jpeg.rf.fc77c9ae841a082e99b753153fcf16dd",
+       "mt20_jpeg.rf.9b35700d942b7ce81ad8756bd05bbd68",
+       "mt68_jpg.rf.d446fd34dd77e85d9642544371e672c0"
+      ]
+     },
+     {
+      "attack": "trigger",
+      "planted": 15,
+      "detected": 8,
+      "recall": 0.5333333333333333,
+      "detectors": [
+       "label_disagreement"
+      ],
+      "missed": [
+       "civ_hel123_jpeg.rf.44092eca01bf4d20410e1ec72170e811",
+       "civ_hel130_jpeg.rf.a5c4e881914289c36a0908c1642c3e7c",
+       "civ_hel136_jpeg.rf.d6cea0f2dac3256a69bbfb557f5791e1",
+       "civ_hel93_jpeg.rf.7da7f61e2afe06e4b912a50f4f22bb42",
+       "civ_hel62_jpeg.rf.a7848932a2b6e893a8c5a39567b4e60e",
+       "civ_hel63_jpeg.rf.8e807d751b5d170acdd53c860e426d30",
+       "civ_hel136_jpeg.rf.f769d965343e91604c8687d94fecbd1e"
+      ]
+     },
+     {
+      "attack": "flooding",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     },
+     {
+      "attack": "exact_duplicates",
+      "planted": 30,
+      "detected": 30,
+      "recall": 1.0,
+      "detectors": [
+       "exact_duplicate"
+      ],
+      "missed": []
+     }
+    ],
+    "records": [
+     {
+      "record": "edge-lab-5023#7",
+      "kind": "altered",
+      "detected": true,
+      "detectors": [
+       "output_altered",
+       "record_altered"
+      ]
+     },
+     {
+      "record": "edge-lab-5023#7",
+      "kind": "deleted",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_gap"
+      ]
+     },
+     {
+      "record": "edge-lab-5023#10",
+      "kind": "reordered",
+      "detected": true,
+      "detectors": [
+       "chain_fork",
+       "record_reordered"
+      ]
+     },
+     {
+      "record": "edge-lab-5023#10",
+      "kind": "substituted",
+      "detected": true,
+      "detectors": [
+       "input_substituted"
+      ]
+     },
+     {
+      "record": "edge-lab-5023#13",
+      "kind": "untrusted",
+      "detected": true,
+      "detectors": [
+       "untrusted_signer"
+      ]
+     }
+    ],
+    "model": {
+     "mode": "unsafe",
+     "implant": null,
+     "detected": true,
+     "detectors": [
+      "unsafe_model"
+     ],
+     "benign_control_flagged": null
+    },
+    "pipeline": {
+     "mode": "class_map",
+     "detected": false,
+     "detectors": [],
+     "false_alarm": null
+    },
+    "untouched_images": 973,
+    "untouched_images_flagged": 62,
+    "note": "Flags on untouched baseline images are natural data issues or false alarms; they are counted, not hidden."
+   },
+   "answer_key_sha384": "28f69f4890e5a461960f2ffe8db483e17e1fb2264283000c895b73c511497d85d2ab8b9e3c6ca2b06dcfbe62d5396dc9",
+   "report_digest": "b6deb69b7140a55904b1989727db4e79e7367110cb5d386d3b6f6a5e98e8f27cb6a140189c51f36458fe3a678f42d665"
+  }
+ ]
+}

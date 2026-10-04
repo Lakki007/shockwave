@@ -81,24 +81,23 @@ async function script() {
   await scrollToEl('.story-step[data-step="4"]', 1800, 0);
   await until(19);
 
-  // 20–50 s · Workbench: a real assessment of a package the assessor has never seen
-  caption('Workbench', 'Pick a package. Set the Assurance Contract.');
+  // 19–53 s · Workbench: a real assessment of a package the assessor has never seen
+  caption('Workbench', 'A package the assessor has never seen. Run it live, on this machine.');
   await go('#/workbench');
   const wb = await import('./views/workbench.js');
-  await point('#wb-tabs [data-tab="contract"]');
-  await scrollToEl('#f-access', 900, 200);
-  await until(25);
-  await point('#wb-tabs [data-tab="package"]');
-  await scrollToEl('#theatre', 1000, 100);
-  await until(27);
-  caption('Run · live', 'Findings stream in. The Contrarian Loop picks each next test.');
   const finished = runDone();
-  if (wb.S.job) { /* already running: follow it */ } else await point('#run-btn');
-  await scrollToEl('#theatre', 600, 100);
-  await until(38);
+  if (!wb.S.job) await point('#run-btn');
+  await scrollToEl('#theatre', 900, 100);
+  await until(26);
+  caption('Run · live', 'Findings stream in. Nineteen claims change state as evidence arrives.');
+  await until(31);
+  caption('Contract', 'Access tier, budget and mandatory claims are sealed into the report.');
+  await point('#wb-tabs [data-tab="contract"]');
+  await until(36);
+  await point('#wb-tabs [data-tab="package"]');
   caption('Contrarian loop', 'Highest weight × value × (1 + gap) / cost goes next.');
   await scrollToEl('.loop-col', 900, 160);
-  await Promise.race([finished, until(50).catch(() => {})]);
+  await Promise.race([finished, until(51).catch(() => {})]);
   await scrollToEl('#banner', 700, 160);
   caption('Sealed', 'Policy, not AI, maps 19 claims to Accept, Review or Quarantine.');
   await until(53);

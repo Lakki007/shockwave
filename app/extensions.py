@@ -9,6 +9,9 @@ WITNESS=core.DATA/'encoders/semantic-witness'
 QUESTIONS={'photograph':'Is this a real photograph rather than a render, painting, diagram or screenshot?',
  'marking':'Does the main object carry an unusual sticker, patch, checkerboard or printed pattern distinct from normal insignia or camouflage?',
  'label':'Is the main visible object compatible with the declared class {label}?'}
+# The label question is kept for evaluation but not asked in assessments: in docs/benchmark.md it scored
+# below chance (AUROC 0.39, 81% false positives), so it would only add noise findings.
+ASSESSED=('photograph','marking')
 _WITNESS={}
 
 def witness_pin():
@@ -55,17 +58,17 @@ def semantic_witness(a):
  pin,reason=witness_pin()
  if not pin:a.check('Semantic witness','Unavailable',reason,'poisoning');return
  try:
-  a.event('Semantic witness','Asking the pinned local vision-language model 12 bounded yes/no questions about the most suspicious pictures.',92)
+  a.event('Semantic witness','Asking the pinned local vision-language model 8 bounded yes/no questions about the most suspicious pictures.',92)
   ids=list(dict.fromkeys(f['asset'] for f in a.findings if f['claim'] in ('labels','poisoning')))[:4];assets={x['id']:x for x in a.items};rows=[]
   for ident in ids:
    if ident not in assets:continue
    item=assets[ident];image=Image.open(item['path']).convert('RGB');ann=item['annotations'][0] if item['annotations'] else None;label=ann['label'] if ann else None
-   for kind in QUESTIONS:
+   for kind in ASSESSED:
     answer,raw=ask_witness(image,kind,label,ann['bbox'] if ann else None);yes=raw>=.5
     row={'asset':ident,'question_type':kind,'question':QUESTIONS[kind].format(label=label or 'the declared class'),'answer':answer,'raw_yes_score':raw,'score_status':'Uncalibrated binary token score; not a probability of maliciousness.','model':'local approved semantic witness','role':'Advisory only; cannot approve assets or alter policy.'};rows.append(row)
     if kind=='marking' and yes or kind in ('photograph','label') and not yes:
      claim='labels' if kind=='label' else 'poisoning';a.finding('witness_'+kind,claim,ident,'The local semantic witness flags a candidate '+kind+' concern. Verify the image and model assumptions before acting.','medium',row,source=item['contributor'],group='semantic_witness')
-  a.witness={'model':pin.get('model',WITNESS.name),'weights_sha256':pin['files']['model.safetensors'],'rows':rows,'queries':len(rows),'budget':12};a.check('Semantic witness','Completed',f'{len(rows)} bounded local closed visual questions. Responses remain uncalibrated advisory evidence.','poisoning')
+  a.witness={'model':pin.get('model',WITNESS.name),'weights_sha256':pin['files']['model.safetensors'],'rows':rows,'queries':len(rows),'budget':8,'not_asked':{'label':'Measured below chance in docs/benchmark.md'}};a.check('Semantic witness','Completed',f'{len(rows)} bounded local closed visual questions. Responses remain uncalibrated advisory evidence.','poisoning')
  except Exception as e:a.check('Semantic witness','Unavailable',f'Configured local VLM could not run: {type(e).__name__}.','poisoning')
 
 def training_attribution(a):

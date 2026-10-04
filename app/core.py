@@ -46,7 +46,7 @@ CAPABILITIES=[
 ('Audit','Signed Merkle checkpoints and retained consistency history','audit','Implemented'),
 ('Key custody','Reports and checkpoints co-signed by a non-exportable Secure Enclave P-256 key; Ed25519 file key retained','audit','Implemented'),
 ('Multi-analyst review','PostgreSQL accounts and roles, per-finding dispositions, two-person sign-off, rows bound to the signed audit log (§28)','workflow','Implemented'),
-('Semantic witness','Bundled SmolVLM-500M, SHA-256 pinned; 12 bounded forced-choice questions; advisory only','AI','Implemented'),
+('Semantic witness','Bundled SmolVLM-500M, SHA-256 pinned; 8 bounded forced-choice questions (marking, photograph); the label question is excluded after scoring below chance; advisory only','AI','Implemented'),
 ('Training attribution','Compatible local TRAK adapter, approved checkpoints and exact training membership required','AI','Conditional'),
 ('TorchScript execution','Static intake supported; execution requires approved graph adapter','model','Conditional'),
 ('Air gap','All application assets and analysis execute locally','deployment','Implemented')]
