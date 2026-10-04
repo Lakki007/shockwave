@@ -417,14 +417,14 @@ def build(job: ForgeJob, root: Path):
 
     # ---- trust provisioning (operator), manifest and commitment
     register(job.id, root, edge)
-    key['name'] = ('Attack Lab · ' if job.kind == 'attack-lab' else 'Calibration · ') + (summary[0] if summary else 'no attacks')
+    key['name'] = {'attack-lab': 'Attack Lab · ', 'calibration': 'Calibration · ', 'benchmark': 'Benchmark · '}.get(job.kind, '') + (summary[0] if summary else 'no attacks')
     key['attack_summary'] = summary
     (root / 'manifest.json').write_text(json.dumps({'name': key['name'], 'kind': job.kind, 'created': key['created']}, indent=2))
     KEYS.mkdir(parents=True, exist_ok=True)
     body = core.canonical({k: v for k, v in key.items() if k != 'commitment'})
     key['commitment'] = core.digest(body, 'sha384')
     core.atomic(KEYS / f'{job.id}.json', key)
-    core.log_event('attack_lab_forged' if job.kind == 'attack-lab' else 'calibration_package_forged', {'fixture': job.id, 'answer_key_sha384': key['commitment'], 'attacks': summary, 'spec_sha384': core.digest(core.canonical(spec), 'sha384')})
+    core.log_event('attack_lab_forged' if job.kind == 'attack-lab' else f'{job.kind}_package_forged', {'fixture': job.id, 'answer_key_sha384': key['commitment'], 'attacks': summary, 'spec_sha384': core.digest(core.canonical(spec), 'sha384')})
     job.event('Sealed', f'Answer key sealed outside the package; SHA-384 commitment {key["commitment"][:16]}… logged before assessment.', 98)
     prune()
     return {'fixture': job.id, 'name': key['name'], 'attacks': summary, 'commitment': key['commitment'], 'implant': implant}

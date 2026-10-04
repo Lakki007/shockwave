@@ -75,6 +75,7 @@ def main():
                     result['read'] = 'allowed'
                 except Exception as e:
                     result['read'] = 'denied: ' + type(e).__name__
+                result['metadata'] = 'allowed' if os.path.exists(req['read_target']) else 'denied: not visible'
                 try:
                     import subprocess
                     subprocess.run(['/bin/echo', 'x'], capture_output=True, timeout=2)

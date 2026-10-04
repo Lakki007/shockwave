@@ -11,7 +11,14 @@ Shockwave is an offline computer-vision assurance workspace. The workflow is **i
 | `app/lifecycle.py` | Content snapshots, dependency closure, verified parent reports and selective evidence reuse |
 | `app/provenance.py` | Domain-separated signed inference receipts, transactional nonce/sequence receiver state, report verification and Merkle inclusion proofs |
 | `app/static/` | Shared dark, gold-and-blue interface, evidence explorer, annotated images, model/provenance/shift views, claim decisions, Assurance Delta and coverage |
-| `shockwave.py` | Offline doctor, run, view, serve, audit and independent report verification |
+| `app/yolo.py` | YOLO-family output layouts, letterbox preprocessing, decoding and class-aware NMS |
+| `app/sandbox.py`, `app/worker.py` | Seatbelt-sandboxed worker process for submitted graphs; self-test and resource limits |
+| `app/keystore.py`, `native/se_signer.swift` | Secure Enclave co-signing and sealing of the Ed25519 key file |
+| `app/calibration.py` | Independent calibration set from held-out reference pictures |
+| `app/analysts.py` | PostgreSQL multi-analyst accounts, sessions, dispositions and two-person sign-off |
+| `app/benchmark.py` | Seeded evaluation at scale with Wilson intervals and the witness study |
+| `app/backup.py`, `app/provision.py` | Backup/restore with digests; locked model downloads |
+| `shockwave.py` | Offline doctor, run, view, serve, audit, verify, keys, sandbox, calibrate, benchmark, analysts, backup, restore, fetch-models |
 
 ## Data assurance
 
@@ -33,7 +40,7 @@ Findings bind a method version, policy, affected asset, claim, source, evidence 
 
 Curation creates a non-destructive exclusion manifest with before/after class counts. Assurance Delta traces dependency changes into stale claims. A new assessment seals fresh evidence and retains history. Targeted revalidation verifies the parent report, recomputes asset snapshots, closes declared and actual dependency changes, and reruns the affected checks. Unaffected evidence retains a parent-report reference. Partial stage execution is conservative: a stage may compute more observations than the invalidated claims, but only evidence for affected claims is appended.
 
-The local Merkle log verifies event signatures, hash links, checkpoint signatures and prefix-root consistency. Inclusion proofs are available. Completeness and rollback detection depend on independently retained checkpoints and a trusted public key. The key stays on the local machine and is excluded from exports; hardware-backed custody is not claimed.
+The local Merkle log verifies event signatures, hash links, checkpoint signatures and prefix-root consistency. Inclusion proofs are available. Completeness and rollback detection depend on independently retained checkpoints and a trusted public key. The log is append-only JSON Lines, fsynced per event and guarded by a cross-process lock. On a Mac with a Secure Enclave, every checkpoint and report is also co-signed by a non-exportable P-256 enclave key; the Ed25519 key file can be sealed under the enclave (`shockwave.py keys --seal`). Keys are excluded from exports.
 
 ## Provenance profiles
 
@@ -43,4 +50,4 @@ Receipt production and receiving use SQLite transactions. The receiver rejects r
 
 ## Conditional AI
 
-DINOv2 is included. A local VLM can be placed in `data/encoders/semantic-witness`; trusted local weights and a supported Transformers architecture are required. It runs without tools or remote code and contributes advisory image descriptions. No VLM is bundled. Training attribution accepts a separately generated, checkpoint-bound evidence artifact; a supported-classifier TRAK adapter is included, while training checkpoints and membership are not supplied, and imported attribution remains Limited. Configured TRAK execution remains conditional on a compatible output adapter and its prerequisites. Calibration uses disjoint independent fit/validation samples, policy and context gates, isotonic regression, Brier score and ECE. Absent calibration causes abstention. Supplied scenario answer keys never feed detectors or calibration.
+DINOv2 is included. The semantic witness is SmolVLM-500M-Instruct, fetched once against `data/models.lock.json` and refused at load time if any file differs from its pin. It asks twelve bounded forced-choice questions, runs without tools or remote code and is advisory only. Training attribution accepts a separately generated, checkpoint-bound evidence artifact; a supported-classifier TRAK adapter is included, while training checkpoints and membership are not supplied, and imported attribution remains Limited. Calibration uses disjoint fit/validation samples, policy and context gates, isotonic regression, Brier score and ECE; absent calibration, a shifted context or an unmeasured context causes abstention. The calibration set is labelled from the sealed keys of its own packages, forged from reference pictures held out of every submission; the answer keys of assessed packages never feed detectors or calibration.

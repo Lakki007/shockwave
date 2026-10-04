@@ -20,7 +20,7 @@ def report_verify(report,public_key,hardware_public_key=None):
  return {'verified':True,'reason':'Content and signature verified under the supplied trusted public key.'}
 
 def inclusion(sequence):
- events=core.read_json(core.STATE/'audit.json',[])
+ events=core.audit_events()
  if sequence<0 or sequence>=len(events):raise ValueError('Event sequence out of range')
  import hashlib
  index=sequence;nodes=[hashlib.sha256(b'\x00'+bytes.fromhex(e['hash'])).digest() for e in events];proof=[]

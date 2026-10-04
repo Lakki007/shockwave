@@ -40,6 +40,10 @@ def _readable():
 def profile():
     q = lambda s: '"' + s.replace('\\', '\\\\').replace('"', '\\"') + '"'
     reads = '\n'.join(f'  (subpath {q(p)})' for p in _readable())
+    # Metadata (stat) only for the readable trees and the directories leading to them, so the worker
+    # cannot probe for the existence of files elsewhere on disk.
+    ancestors = sorted({str(a) for p in _readable() + [str(WORKER)] for a in Path(p).parents})
+    meta = '\n'.join([f'  (subpath {q(p)})' for p in _readable()] + [f'  (literal {q(a)})' for a in ancestors] + [f'  (literal {q(str(WORKER))})'])
     return f"""(version 1)
 (deny default)
 (allow file-map-executable)
@@ -50,7 +54,10 @@ def profile():
   (subpath "/System") (subpath "/usr/lib") (subpath "/usr/share") (subpath "/Library/Apple")
   (subpath "/private/var/db/dyld") (subpath "/System/Volumes/Preboot/Cryptexes")
   (literal "/") (literal "/dev/urandom") (literal "/dev/random") (literal "/dev/null") (literal "/dev/dtracehelper"))
-(allow file-read-metadata)
+(allow file-read-metadata
+{meta}
+  (subpath "/System") (subpath "/usr") (subpath "/Library/Apple") (subpath "/private/var/db") (subpath "/dev")
+  (literal "/private") (literal "/private/var") (literal "/var") (literal "/etc") (literal "/private/etc") (literal "/tmp") (literal "/private/tmp"))
 (allow file-write-data (literal "/dev/null") (literal "/dev/dtracehelper"))
 (allow sysctl-read)
 (allow mach-lookup (global-name "com.apple.system.opendirectoryd.libinfo") (global-name "com.apple.system.logger"))
@@ -153,7 +160,7 @@ def probe():
     try:
         target = str((ROOT / 'data' / 'trust-registry.json').resolve())
         reply, _ = w.call({'op': 'probe', 'write_target': str(Path.home()), 'read_target': target}, timeout=30)
-        result = {k: reply[k] for k in ('network', 'write', 'read', 'exec')}
+        result = {k: reply[k] for k in ('network', 'write', 'read', 'metadata', 'exec')}
         result['enforced'] = all(v.startswith('denied') for v in result.values())
         result['available'] = True
         return result

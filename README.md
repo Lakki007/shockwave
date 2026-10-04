@@ -4,11 +4,14 @@ An offline computer-vision assurance workspace for contributed datasets, models,
 
 ## Start the workspace
 
-On this Mac, double-click **Start Shockwave.command**, or run:
+For a demo, double-click **Start Demo.command**: the single-user workspace, no sign-in. **Start Shockwave.command** starts the multi-analyst workspace when PostgreSQL is configured (sign-in, dispositions, two-person sign-off). From a terminal:
 
 ```sh
-python3 launch.py
+SHOCKWAVE_MULTI=0 python3 launch.py   # demo workspace
+python3 launch.py                     # multi-analyst when configured
 ```
+
+Add `?demo` to the address (http://127.0.0.1:8765/?demo#/overview) for the 80-second autopilot tour; Esc stops it.
 
 Open **http://127.0.0.1:8765**. To check prerequisites without starting the workspace:
 
@@ -18,17 +21,18 @@ python3 launch.py --doctor
 
 The package includes local application assets, DINOv2 weights and a Python dependency directory for **Apple silicon / Python 3.12**. The launcher can use an available compatible local interpreter. Set `SHOCKWAVE_PYTHON` to choose one, or `SHOCKWAVE_PORT` to change the port. The bundled dependencies require macOS 14 or later. For a different platform, provision Python 3.12 and install `requirements.txt` on a connected preparation machine before taking the environment offline. No dependency installation or model download occurs during assessment.
 
+On a new machine (connected, once):
+
+```sh
+python3.12 -m pip install -r requirements.txt
+python3.12 shockwave.py fetch-models      # VLM witness + YOLOX, verified against data/models.lock.json
+python3.12 shockwave.py calibrate         # optional: rebuild the calibration packages (the set itself is committed)
+python3.12 shockwave.py warm              # assess the bundled packages so the overview has data
+```
+
 ## Presentation walkthrough
 
-1. Open **Intake & contract**. Select *Adversarial submission* and COCO. Set the intended context, access tier, mandatory claims and challenge budget.
-2. Run assurance. Follow intake, baseline evidence, model inspection, provenance, active challenges and the final decision.
-3. Open **Data integrity**. Filter findings, inspect original images with annotation boxes, read measurements and compare contributor rates. Exclusion manifests retain evidence and show class coverage after curation.
-4. Open **Model assurance**. Inspect blocked artifacts, pinned model identities, weight differences, reference-battery comparisons and conditional tests. Unsupported access is unresolved.
-5. Open **Twin pipeline**. Inspect same-model output differences caused by supported processing and label-map changes.
-6. Open **Provenance rail**. Inspect signed envelopes and failures. Create a fresh local inference receipt with an approved model; verify/receive it, then submit it again to demonstrate persisted replay rejection.
-7. Open **Distribution shift** and **Claims & decisions**. Distinguish measured anomalies from calibrated probabilities, review mandatory claims, and record an analyst disposition with a reason.
-8. Open **Assurance delta**. Select a changed dependency, trace stale claims and revalidate affected evidence while retaining verified unaffected evidence.
-9. Open **Audit trail**, then **Reports & coverage**. Verify the signed history, export a report/evidence bundle and inspect the separate evaluation workbench.
+The click-by-click judge script is in [docs/demo-walkthrough.md](docs/demo-walkthrough.md). Measured detection rates with confidence intervals are in [docs/benchmark.md](docs/benchmark.md).
 
 Five bundled example packages cover synthetic, baseline, adversarial, curated and YOLO-model submissions. They are distinct input scenarios, not preassigned decisions. Assessment results are computed by the local engine. A curated input can still require review under the active policy.
 
@@ -94,7 +98,14 @@ python3 shockwave.py sandbox           # self-test the execution sandbox
 python3 shockwave.py calibrate         # rebuild the independent calibration set
 python3 shockwave.py analysts init     # create the schema and first admin (PostgreSQL)
 python3 shockwave.py analysts verify   # cross-check analyst rows against the audit log
+python3 shockwave.py benchmark         # seeded Attack Lab evaluation -> docs/benchmark.md
+python3 shockwave.py backup <dir>      # state, registry and analyst database (contains private keys)
+python3 shockwave.py restore <dir>     # digest-checked; current state is moved aside
+python3 shockwave.py keys --seal       # encrypt the Ed25519 key file under the Secure Enclave
+python3 shockwave.py fetch-models      # locked model downloads
 ```
+
+Run the tests with `cd tests && python3 -m unittest test_extensions test_assurance test_engine test_server_http` (the HTTP tests need a local PostgreSQL).
 
 ## Evidence and state
 

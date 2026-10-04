@@ -44,7 +44,7 @@ def run_summaries():
   seen.add(p);m=p.stat().st_mtime
   if SUMMARIES.get(p,(None,))[0]!=m:
    r=core.read_json(p)
-   if r and not r.get('fixture','').startswith(('cal-','calib-')):SUMMARIES[p]=(m,summary(r))
+   if r and not r.get('fixture','').startswith(('cal-','calib-','bench-')):SUMMARIES[p]=(m,summary(r))
  for p in list(SUMMARIES):
   if p not in seen:SUMMARIES.pop(p)
  return sorted((v[1] for v in SUMMARIES.values()),key=lambda r:r['completed'],reverse=True)
@@ -62,15 +62,14 @@ def validate_policy(policy):
  for field in ('task','context'):
   if field in policy and (not isinstance(policy[field],str) or len(policy[field])>200):raise ValueError(f'Invalid {field}')
 
-def assess(body):
+def assess(body,by=None):
  fixture=body.get('fixture','synthetic'); core.safe_path(core.DATA/'fixtures',fixture)
  policy=body.get('policy',{})
  allowed=set(core.POLICY)
  if not isinstance(policy,dict) or set(policy)-allowed:raise ValueError('Unknown contract field')
  validate_policy(policy)
- if any(a.progress<100 for a in JOBS.values()):raise ValueError('An assessment is already active')
  if body.get('format','COCO') not in ('COCO','YOLO'):raise ValueError('Unsupported dataset format')
- a=core.Assessment(fixture,policy,body.get('format','COCO'));JOBS[a.id]=a;threading.Thread(target=a.run,daemon=True).start();return {'job':a.id}
+ job=submit({'kind':'assess','fixture':fixture,'policy':policy,'format':body.get('format','COCO')},by);return {'job':job.id,'position':position(job)}
 
 def delta(body):
  r=core.read_json(core.STATE/'runs'/f"{body['run']}.json")
@@ -82,9 +81,63 @@ def delta(body):
 
 FAMILIES={'trigger':{'trigger_texture','representation_outlier','robust_subpopulation','recurring_patch'},'label_flips':{'label_disagreement','conflicting_duplicate_label'},'exact_duplicates':{'exact_duplicate','split_leakage'},'near_duplicates':{'near_duplicate'},'flooding':{'duplicate_flooding','near_duplicate'},'ood':{'out_of_distribution'}}
 
+# ---------------------------------------------------------------- persistent job queue
+# Jobs run one at a time, in order, on a single runner thread. The queue is persisted, so a restart
+# re-queues waiting and interrupted jobs (nothing is sealed until an assessment completes).
+QUEUE=[];QLOCK=threading.Condition();QFILE=core.STATE/'queue.json';_runner=None
+
+def _persist():
+ core.atomic(QFILE,[{'id':j.id,'request':j.request,'state':'running' if i==0 else 'queued','queued_at':j.queued_at} for i,j in enumerate(QUEUE)])
+
+def make_job(req):
+ kind=req['kind']
+ if kind=='assess':return core.Assessment(req['fixture'],req['policy'],req['format'])
+ if kind=='forge':
+  import forge
+  return forge.ForgeJob(req['spec'])
+ if kind=='reassess':
+  from lifecycle import Reassessment
+  previous=core.read_json(core.safe_path(core.STATE/'runs',req['run']+'.json'))
+  if not previous:raise ValueError('Unknown parent assessment')
+  return Reassessment(previous,req['changes'],req['policy'])
+ raise ValueError('Unknown job kind')
+
+def submit(req,by=None):
+ if len(QUEUE)>=20:raise ValueError('The job queue is full (20); wait for jobs to finish')
+ job=make_job(req);job.request={**req,'by':by};job.queued_at=core.now()
+ if not job.progress:job.stage='Queued'
+ with QLOCK:
+  JOBS[job.id]=job;QUEUE.append(job);_persist();QLOCK.notify()
+ _start_runner()
+ return job
+
+def position(job):
+ with QLOCK:return QUEUE.index(job) if job in QUEUE else None
+
+def _run_queue():
+ while True:
+  with QLOCK:
+   while not QUEUE:QLOCK.wait()
+   job=QUEUE[0]
+  try:job.run()
+  except Exception as e:job.error=str(e);job.progress=100
+  finally:
+   with QLOCK:QUEUE.remove(job);_persist()
+
+def _start_runner():
+ global _runner
+ if _runner is None:_runner=threading.Thread(target=_run_queue,daemon=True,name='shockwave-queue');_runner.start()
+
+def restore_queue():
+ for entry in core.read_json(QFILE,[]) or []:
+  try:
+   job=submit({k:v for k,v in entry['request'].items() if k!='by'},entry['request'].get('by'))
+   core.log_event('job_requeued_after_restart',{'previous_job':entry['id'],'job':job.id,'was':entry['state'],'request':entry['request']})
+  except Exception as e:core.log_event('job_dropped_after_restart',{'previous_job':entry['id'],'reason':str(e)})
+
 def job_status(a,since=0):
  """Progress plus the live evidence feed after `since`; observational only."""
- feed=getattr(a,'feed',[]);out={'id':a.id,'kind':'forge' if a.id.startswith('lab-') else 'assessment','progress':a.progress,'stage':a.stage,'timeline':a.timeline[-40:],'error':a.error,'complete':bool(a.result),'cursor':len(feed),'feed':feed[since:since+400]}
+ feed=getattr(a,'feed',[]);out={'position':position(a),'id':a.id,'kind':'forge' if a.id.startswith('lab-') else 'assessment','progress':a.progress,'stage':a.stage,'timeline':a.timeline[-40:],'error':a.error,'complete':bool(a.result),'cursor':len(feed),'feed':feed[since:since+400]}
  if out['kind']=='forge':out['result']=a.result
  else:
   fs=a.findings;out['counts']={'findings':len(fs),'critical':sum(f['severity']=='critical' for f in fs),'high':sum(f['severity']=='high' for f in fs),'checks':len(a.checks),'loop_steps':len(getattr(a,'loop',{}) and a.loop.get('steps',[]) or [])}
@@ -186,7 +239,7 @@ class Handler(BaseHTTPRequestHandler):
  def log_message(self,*args):pass
  def send(self,obj,status=200,ctype='application/json',filename=None,headers=None):
   data=core.canonical(obj) if ctype=='application/json' else obj
-  self.send_response(status);self.send_header('Content-Type',ctype);self.send_header('Content-Length',str(len(data)));self.send_header('X-Content-Type-Options','nosniff');self.send_header('Cache-Control','no-store' if ctype=='application/json' else 'public,max-age=600');self.send_header('Content-Security-Policy',"default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
+  self.send_response(status);self.send_header('Content-Type',ctype);self.send_header('Content-Length',str(len(data)));self.send_header('X-Content-Type-Options','nosniff');self.send_header('Cache-Control','no-store' if ctype=='application/json' else 'no-cache');self.send_header('Content-Security-Policy',"default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
   if filename:self.send_header('Content-Disposition',f'attachment; filename="{filename}"')
   for k,v in (headers or {}).items():self.send_header(k,v)
   self.end_headers();self.wfile.write(data)
@@ -295,19 +348,13 @@ class Handler(BaseHTTPRequestHandler):
    if path=='/api/signoff':
     if not me:raise ValueError('Sign-off needs multi-analyst mode')
     return self.send(analysts.signoff(me,body.get('run'),body.get('recommendation'),body.get('note')))
-   if path=='/api/assess':return self.send(assess(body))
+   if path=='/api/assess':return self.send(assess(body,me['username'] if me else None))
    if path=='/api/delta':return self.send(delta(body))
    if path=='/api/reassess':
-    from lifecycle import Reassessment
-    previous=core.read_json(core.safe_path(core.STATE/'runs',body['run']+'.json'))
-    if not previous:raise ValueError('Unknown parent assessment')
-    if any(a.progress<100 for a in JOBS.values()):raise ValueError('An assessment is already active')
-    a=Reassessment(previous,body.get('changes',[]),body.get('policy'));JOBS[a.id]=a;threading.Thread(target=a.run,daemon=True).start();return self.send({'job':a.id})
+    job=submit({'kind':'reassess','run':str(body['run']),'changes':body.get('changes',[]),'policy':body.get('policy')},me['username'] if me else None);return self.send({'job':job.id,'position':position(job)})
    if path=='/api/evaluate':return self.send(evaluate(body))
    if path=='/api/lab/forge':
-    import forge
-    if any(a.progress<100 for a in JOBS.values()):raise ValueError('An assessment or forge is already active')
-    job=forge.ForgeJob(body.get('spec',{}));JOBS[job.id]=job;threading.Thread(target=job.run,daemon=True).start();return self.send({'job':job.id,'spec':job.spec})
+    job=submit({'kind':'forge','spec':body.get('spec',{})},me['username'] if me else None);return self.send({'job':job.id,'spec':job.spec,'position':position(job)})
    if path=='/api/lab/delete':
     import forge
     if any(a.progress<100 for a in JOBS.values()):raise ValueError('Wait for the active job to finish')
@@ -330,7 +377,7 @@ class Handler(BaseHTTPRequestHandler):
     import base64
     pub=base64.b64encode(core.key().public_key().public_bytes(Encoding.Raw,PublicFormat.Raw)).decode()
     if not report_verify(r,pub)['verified']:raise ValueError('Assurance report verification failed')
-    index=int(body['test']);tests=r['model'].get('conditional',{}).get('tests',[])
+    index=int(body['test']);tests=(r['model'].get('conditional') or {}).get('tests',[])
     if index not in range(len(tests)):raise ValueError('Unknown measured condition')
     test=tests[index]
     if test['perturbation'] not in ('box_checker','corner_checker','illumination'):raise ValueError('Unsupported regression condition')

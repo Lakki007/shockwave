@@ -123,6 +123,9 @@ async function script() {
   await scrollTo(260, 2200);
   await until(70);
   await go('#/evidence/reports');
+  caption('Custody', 'Co-signed in the Secure Enclave. Model run in a sandbox. Scores calibrated.');
+  await scrollTo(120, 1200);
+  await until(72.5);
   caption('Audit', 'Hash-linked log, signed Merkle checkpoints, answer keys never read.');
   await until(74);
 

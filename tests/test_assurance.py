@@ -5,6 +5,8 @@ ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'.runtime'),str(
 import core,models,provenance,server
 from cryptography.hazmat.primitives.serialization import Encoding,PublicFormat
 
+def rewrite(name,rows):(core.STATE/name).write_text(''.join(json.dumps(r,sort_keys=True)+'\n' for r in rows))  # simulate tampering
+
 class AssuranceTests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.old=core.STATE;core.STATE=Path(self.tmp.name)
@@ -17,12 +19,12 @@ class AssuranceTests(unittest.TestCase):
   with self.assertRaises(ValueError):core.safe_path(core.STATE,'../secret')
  def test_audit_tamper_detected(self):
   core.log_event('intake',{'x':1});core.log_event('decision',{'x':2});self.assertTrue(core.verify_audit()['verified'])
-  es=core.read_json(core.STATE/'audit.json');es[0]['body']['x']=9;core.atomic(core.STATE/'audit.json',es);self.assertFalse(core.verify_audit()['verified'])
+  es=core.audit_events();es[0]['body']['x']=9;rewrite(core.AUDIT_LOG,es);self.assertFalse(core.verify_audit()['verified'])
  def test_historical_checkpoint_tamper_detected(self):
-  core.log_event('a',{});core.log_event('b',{});history=core.read_json(core.STATE/'checkpoints.json');history[0]['root']='0'*64;core.atomic(core.STATE/'checkpoints.json',history);self.assertFalse(core.verify_audit()['verified'])
+  core.log_event('a',{});core.log_event('b',{});history=core.checkpoint_history();history[0]['root']='0'*64;rewrite(core.CHECKPOINT_LOG,history);self.assertFalse(core.verify_audit()['verified'])
  def test_suffix_deletion_detected_by_checkpoint(self):
   for _ in range(4):core.log_event('a',{})
-  events=core.read_json(core.STATE/'audit.json');core.atomic(core.STATE/'audit.json',events[:-1]);self.assertFalse(core.verify_audit()['verified'])
+  events=core.audit_events();rewrite(core.AUDIT_LOG,events[:-1]);self.assertFalse(core.verify_audit()['verified'])
  def test_merkle_inclusion_for_odd_trees(self):
   for size in range(1,8):
    core.log_event('a',{})

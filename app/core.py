@@ -75,11 +75,32 @@ def safe_path(root,rel):
  if not path.is_relative_to(Path(root).resolve()):raise ValueError('Path escapes asset root')
  return path
 
+_UNSEALED={}
 def key():
- p=STATE/'assessor.key'
+ """The assessor's Ed25519 key. If sealed (assessor.key.sealed), it is unsealed by the Secure Enclave once per process."""
+ p=STATE/'assessor.key';sealed=STATE/'assessor.key.sealed'
  with LOCK:
+  if sealed.exists():
+   if str(sealed) not in _UNSEALED:
+    import keystore
+    _UNSEALED[str(sealed)]=Ed25519PrivateKey.from_private_bytes(keystore.unseal(read_json(sealed),STATE))
+   return _UNSEALED[str(sealed)]
   if not p.exists():p.write_bytes(Ed25519PrivateKey.generate().private_bytes(Encoding.Raw,PrivateFormat.Raw,NoEncryption()));os.chmod(p,0o600)
   return Ed25519PrivateKey.from_private_bytes(p.read_bytes())
+
+def seal_key(remove_plaintext=False):
+ """Seal assessor.key under the Secure Enclave; verify the round trip before anything is removed."""
+ import keystore
+ p=STATE/'assessor.key';sealed=STATE/'assessor.key.sealed'
+ if sealed.exists():return {'sealed':True,'already':True,'plaintext_present':p.exists()}
+ raw=p.read_bytes();record=keystore.seal(raw,STATE)
+ if keystore.unseal(record,STATE)!=raw:raise RuntimeError('Seal round trip failed; nothing changed')
+ atomic(sealed,record);os.chmod(sealed,0o600);_UNSEALED.clear()
+ if key().public_key().public_bytes(Encoding.Raw,PublicFormat.Raw)!=Ed25519PrivateKey.from_private_bytes(raw).public_key().public_bytes(Encoding.Raw,PublicFormat.Raw):
+  sealed.unlink();raise RuntimeError('Sealed key does not match; seal removed')
+ log_event('assessor_key_sealed',{'algorithm':'AES-256-GCM under ECDH(P-256 Secure Enclave key agreement)+HKDF-SHA256','plaintext_removed':bool(remove_plaintext)})
+ if remove_plaintext:p.unlink()
+ return {'sealed':True,'plaintext_present':p.exists()}
 
 def merkle(hashes):
  nodes=[hashlib.sha256(b'\x00'+bytes.fromhex(h)).digest() for h in hashes]
@@ -102,17 +123,38 @@ class _AuditFileLock:
   _AUDIT_HELD.depth-=1
   if not _AUDIT_HELD.depth:fcntl.flock(_AUDIT_HELD.f,fcntl.LOCK_UN);_AUDIT_HELD.f.close()
 
+# The audit log and checkpoint history are append-only JSON Lines: one signed record per line,
+# appended and fsynced, never rewritten. A torn final line fails verification instead of vanishing.
+AUDIT_LOG='audit.jsonl';CHECKPOINT_LOG='checkpoints.jsonl'
+
+def _read_jsonl(name,legacy):
+ p=STATE/name
+ if not p.exists() and (STATE/legacy).exists():  # one-time migration from the original rewrite-in-place files
+  rows=read_json(STATE/legacy,[]);p.write_text(''.join(json.dumps(r,sort_keys=True)+'\n' for r in rows));(STATE/legacy).rename(STATE/(legacy+'.migrated'))
+ if not p.exists():return []
+ out=[]
+ for n,line in enumerate(p.read_text().splitlines()):
+  try:out.append(json.loads(line))
+  except ValueError:raise ValueError(f'{name} line {n+1} is not a complete record (torn write or tampering)')
+ return out
+
+def _append_jsonl(name,row):
+ with open(STATE/name,'a') as f:f.write(json.dumps(row,sort_keys=True)+'\n');f.flush();os.fsync(f.fileno())
+
+def audit_events():return _read_jsonl(AUDIT_LOG,'audit.json')
+def checkpoint_history():return _read_jsonl(CHECKPOINT_LOG,'checkpoints.json')
+
 def log_event(kind,body):
  with LOCK,_AuditFileLock():
-  events=read_json(STATE/'audit.json',[])
+  events=audit_events();checkpoint_history()  # migrate both logs together
   event={'sequence':len(events),'timestamp':now(),'kind':kind,'body':body,'previous':events[-1]['hash'] if events else '0'*64}
-  event['hash']=digest(canonical(event));event['signature']=base64.b64encode(key().sign(bytes.fromhex(event['hash']))).decode();events.append(event)
-  cp={'size':len(events),'root':merkle([e['hash'] for e in events]),'previous_checkpoint':digest(canonical(read_json(STATE/'checkpoint.json',{}))),'timestamp':now()}
+  event['hash']=digest(canonical(event));event['signature']=base64.b64encode(key().sign(bytes.fromhex(event['hash']))).decode()
+  hashes=[e['hash'] for e in events]+[event['hash']]
+  cp={'size':len(hashes),'root':merkle(hashes),'previous_checkpoint':digest(canonical(read_json(STATE/'checkpoint.json',{}))),'timestamp':now()}
   body=canonical(cp);cp['signature']=base64.b64encode(key().sign(body)).decode()
   hw=hardware_cosign(body)  # computed before anything is written, so a slow or failing co-signer cannot leave an event without its checkpoint
   if hw:cp['hardware_signature']=hw
-  atomic(STATE/'audit.json',events);atomic(STATE/'checkpoint.json',cp)
-  history=read_json(STATE/'checkpoints.json',[]);history.append(cp);atomic(STATE/'checkpoints.json',history)
+  _append_jsonl(AUDIT_LOG,event);atomic(STATE/'checkpoint.json',cp);_append_jsonl(CHECKPOINT_LOG,cp)
   return event
 
 def hardware_cosign(message):
@@ -122,7 +164,10 @@ def hardware_cosign(message):
  except Exception:return None  # custody is reported from keystore.status(); never claimed on failure
 
 def verify_audit():
- es=read_json(STATE/'audit.json',[]);cp=read_json(STATE/'checkpoint.json',{});pub=key().public_key();errors=[];previous='0'*64
+ errors=[]
+ try:es=audit_events();history=checkpoint_history()
+ except ValueError as e:es,history=[],[];errors.append(str(e))
+ cp=read_json(STATE/'checkpoint.json',{});pub=key().public_key();previous='0'*64
  for e in es:
   body={k:v for k,v in e.items() if k not in ('hash','signature')}
   try:pub.verify(base64.b64decode(e['signature']),bytes.fromhex(e['hash']))
@@ -133,7 +178,7 @@ def verify_audit():
   try:pub.verify(base64.b64decode(cp['signature']),canonical({k:v for k,v in cp.items() if k not in ('signature','hardware_signature')}))
   except Exception:errors.append('Checkpoint signature failure')
   if cp['size']!=len(es) or cp['root']!=merkle([e['hash'] for e in es]):errors.append('Checkpoint root mismatch')
- history=read_json(STATE/'checkpoints.json',[]);prior=digest(canonical({}));size=0;hw_total=hw_ok=0
+ prior=digest(canonical({}));size=0;hw_total=hw_ok=0
  for checkpoint in history:
   try:
    body=canonical({k:v for k,v in checkpoint.items() if k not in ('signature','hardware_signature')});pub.verify(base64.b64decode(checkpoint['signature']),body)
@@ -146,12 +191,12 @@ def verify_audit():
   except Exception:errors.append('Historical checkpoint verification failure')
  if history and cp!=history[-1]:errors.append('Current checkpoint differs from retained history')
  if hw_ok!=hw_total:errors.append('Hardware co-signature failure on a checkpoint')
- return {'verified':not errors,'errors':errors,'events':es,'checkpoint':cp,'checkpoints':read_json(STATE/'checkpoints.json',[]),'public_key':base64.b64encode(pub.public_bytes(Encoding.Raw,PublicFormat.Raw)).decode(),'hardware':{'cosigned_checkpoints':hw_total,'verified':hw_ok,'algorithm':'ECDSA-P256-SHA256' if hw_total else None},'limitation':'Completeness is relative to retained signed checkpoints; trusted assessor key required.'}
+ return {'verified':not errors,'errors':errors,'events':es,'checkpoint':cp,'checkpoints':history,'public_key':base64.b64encode(pub.public_bytes(Encoding.Raw,PublicFormat.Raw)).decode(),'hardware':{'cosigned_checkpoints':hw_total,'verified':hw_ok,'algorithm':'ECDSA-P256-SHA256' if hw_total else None},'limitation':'Completeness is relative to retained signed checkpoints; trusted assessor key required.'}
 
 def fixtures():
  rows=[]
  for p in (DATA/'fixtures').iterdir() if (DATA/'fixtures').exists() else []:
-  if not p.is_dir() or p.name.startswith(('cal-','calib-')):continue  # calibration material is not offered for assessment
+  if not p.is_dir() or p.name.startswith(('cal-','calib-','bench-')):continue  # calibration material is not offered for assessment
   images=sum(1 for x in (p/'submission').rglob('*') if x.suffix.lower() in ('.jpg','.png','.jpeg') and '/yolo/' not in str(x))
   models=list((p/'submission/models').glob('*'));records=p/'submission/records/records.jsonl'
   rows.append({'id':p.name,'name':LABELS.get(p.name) or (read_json(p/'manifest.json',{}) or {}).get('name',p.name),'kind':'attack-lab' if p.name.startswith('lab-') else 'bundled','images':images,'models':len(models),'records':len(records.read_text().splitlines()) if records.exists() else 0,'formats':['COCO']+(['YOLO'] if (p/'submission/yolo').exists() else []),'reference_images':sum(1 for x in (p/'reference').rglob('*') if x.suffix.lower() in ('.jpg','.png','.jpeg'))})

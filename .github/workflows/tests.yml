@@ -1,0 +1,29 @@
+name: tests
+on:
+  push:
+  pull_request:
+jobs:
+  macos:
+    # macOS so the Seatbelt sandbox tests run; Secure Enclave tests skip on virtual machines.
+    runs-on: macos-14
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: PostgreSQL for the multi-analyst integration tests
+        run: |
+          brew install postgresql@17
+          brew services start postgresql@17
+          for i in $(seq 1 30); do /opt/homebrew/opt/postgresql@17/bin/pg_isready -q && break; sleep 1; done
+      - name: Unit and integration tests
+        env:
+          SHOCKWAVE_HARDWARE_KEYS: '0'
+          SHOCKWAVE_WITNESS: '0'
+        run: |
+          cd tests
+          python -m unittest test_extensions test_assurance test_engine test_server_http -v

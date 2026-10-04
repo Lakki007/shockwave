@@ -551,7 +551,7 @@ def seed_hypotheses(a):
             moved = collections.Counter(p['reference_label'] for p in b['pairs'] if p['reference_class'] != p['submitted_class'])
             if moved:
                 hyps.append(Hypothesis('behaviour', f'Submitted model diverges on {", ".join(k for k, _ in moved.most_common(2))}.', 'behaviour_battery', classes=[k for k, _ in moved.most_common(2)]))
-    if a.model.get('twin', {}).get('changed'):
+    if (a.model.get('twin') or {}).get('changed'):
         hyps.append(Hypothesis('pipeline', 'The Twin Pipeline divergence localises to a single processing stage.', 'twin_pipeline'))
     if getattr(a, 'ref_matrix', None) is not None:
         hyps.append(Hypothesis('labels', 'Objects that no detector flagged still carry label errors.', 'contract'))

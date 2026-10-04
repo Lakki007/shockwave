@@ -16,7 +16,8 @@ if '--doctor' in sys.argv:
 port=int(os.environ.get('SHOCKWAVE_PORT','8765'))
 if '--no-browser' not in sys.argv:webbrowser.open(f'http://127.0.0.1:{port}')
 from http.server import ThreadingHTTPServer
-from server import Handler
+from server import Handler,restore_queue
+restore_queue()
 bind=os.environ.get('SHOCKWAVE_BIND','127.0.0.1')
 if bind not in ('127.0.0.1','localhost','::1'):
  import analysts

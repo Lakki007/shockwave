@@ -8,3 +8,6 @@ data/encoders/semantic-witness/
 data/models/yolox/
 data/fixtures/cal-*/
 data/fixtures/calib-*/
+data/fixtures/bench-*/
+data/fixtures/lab-*/
+!data/fixtures/lab-6ea2d702/

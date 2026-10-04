@@ -321,7 +321,7 @@ def review(actor, run_id):
 
 def verify():
     """Cross-check every database row against its signed audit-log event."""
-    events = {e['sequence']: e for e in core.read_json(core.STATE / 'audit.json', [])}
+    events = {e['sequence']: e for e in core.audit_events()}
     problems, checked = [], 0
     with connect() as c:
         for d in c.execute('SELECT d.*, a.username FROM dispositions d JOIN analysts a ON a.id=d.analyst_id').fetchall():

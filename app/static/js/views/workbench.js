@@ -4,6 +4,7 @@ import { EvidenceRadar } from '../cloud.js';
 import { CLAIM_HELP, STAGES } from '../content.js';
 import { startTour } from '../tour.js';
 import { packagePane, contractPane, PRESETS } from './panes.js';
+import { labPane } from './lab.js';
 import { scorecard } from './scorecard.js';
 
 // State survives navigation so a running job keeps streaming into the view.
@@ -18,7 +19,7 @@ export async function render(main, params) {
   mainEl = main;
   S.policy ??= structuredClone(boot.policy);
   S.fixture ??= (boot.fixtures.find(f => f.kind === 'attack-lab') || boot.fixtures.find(f => f.id === 'hostile') || boot.fixtures[0])?.id;
-  if (params.get('tab')) S.tab = params.get('tab') === 'contract' ? 'contract' : 'package';
+  if (params.get('tab')) S.tab = ['contract', 'lab'].includes(params.get('tab')) ? params.get('tab') : 'package';
   const hidden = localStorage.getItem('sw-tutorial-hidden') === '1';
   main.innerHTML = `
     <div class="page-head frame corners">
@@ -36,7 +37,7 @@ export async function render(main, params) {
     </div>`}
     <div class="wb">
       <aside class="wb-side">
-        <div class="wb-tabs" role="tablist" id="wb-tabs">${[['package', '01', 'Package'], ['contract', '02', 'Contract']].map(([id, n, l]) => `<button role="tab" data-tab="${id}" class="${S.tab === id ? 'on' : ''}" aria-selected="${S.tab === id}"><small>${n}</small>${l}</button>`).join('')}</div>
+        <div class="wb-tabs" role="tablist" id="wb-tabs">${[['package', '01', 'Package'], ['contract', '02', 'Contract'], ['lab', '03', 'Attack Lab']].map(([id, n, l]) => `<button role="tab" data-tab="${id}" class="${S.tab === id ? 'on' : ''}" aria-selected="${S.tab === id}"><small>${n}</small>${l}</button>`).join('')}</div>
         <div class="wb-pane" id="pane"></div>
         <div class="wb-run" id="run-bar"></div>
       </aside>
@@ -85,6 +86,7 @@ function tour() {
   startTour([
     { sel: '#tutorial', title: 'Your map', body: 'Three steps take you from a package to a sealed verdict. Click a step to jump there, or press Quick run.' },
     { sel: '#pkg-list', title: 'Choose a package', body: 'Bundled packages cover a real-world baseline, a curated set, an adversarial submission, a YOLO model and an evaluation package whose answer key was sealed before assessment.', before: () => setTab('package') },
+    { sel: '#wb-tabs [data-tab="lab"]', title: 'Or plant your own attack', body: 'The Attack Lab forges a new package from real images with the attacks you choose. Its answer key is sealed and committed to the audit log before any assessment.' },
     { sel: '#f-access', title: 'Access changes the strategy', body: 'White-box enables gradient-based trigger reconstruction. Black-box leaves only input/output tests; the loop adapts and reports what it could not do.', before: () => setTab('contract') },
     { sel: '#f-challenge_budget', title: 'Budget forces choices', body: 'Every adaptive test has a cost. A small budget makes the loop prioritise; its stop reason is sealed into the report.' },
     { sel: '#run-bar', title: 'Run', body: 'Starts a real assessment of the selected package. One job runs at a time.' },
@@ -97,6 +99,7 @@ function tour() {
 // ------------------------------------------------------------------ panes
 function paintPane() {
   const pane = $('#pane'); if (!pane) return;
+  if (S.tab === 'lab') return labPane(pane, S, fixture => { S.fixture = fixture; setTab('package'); }).catch(e => toast(e.message, { error: true }));
   pane.innerHTML = S.tab === 'contract' ? contractPane(S) : packagePane(S);
   $$('[data-fixture]', pane).forEach(b => b.onclick = () => { S.fixture = b.dataset.fixture; paintPane(); paintRunBar(); });
   $$('[data-format]', pane).forEach(b => b.onclick = () => { S.format = b.dataset.format; paintPane(); });
@@ -123,7 +126,7 @@ function paintRunBar() {
 
 // ------------------------------------------------------------------ run
 export async function start() {
-  if (S.job) return toast('An assessment is already running.');
+  if (S.job) return toast('Your assessment is already queued or running.');
   try {
     const r = await api('assess', { fixture: S.fixture, format: S.format, policy: S.policy });
     resetTheatre(); attach(r.job);
@@ -145,7 +148,7 @@ function attach(jobId) {
 
 function update(j) {
   if (j.transient) return;
-  S.stage = j.stage; S.progress = j.progress; S.counts = j.counts || S.counts;
+  S.stage = j.stage; S.progress = j.progress; S.counts = j.counts || S.counts; S.queued = j.position || 0;
   const changed = [];
   for (const [k, v] of Object.entries(j.claims || {})) { if (S.claims[k] && S.claims[k] !== v) changed.push(k); S.claims[k] = v; }
   for (const item of j.feed || []) {
@@ -185,7 +188,7 @@ function paintLive(items, changed) {
   $$('#rail [data-stage]').forEach((el, k) => { el.classList.toggle('on', k <= i && (S.job || S.result)); el.style.setProperty('--fill', S.result || k < i ? '100%' : k === i && S.job ? '55%' : '0%'); });
   const c = S.counts || {};
   $('#c-findings').textContent = num(c.findings || 0); $('#c-critical').textContent = num(c.critical || 0); $('#c-high').textContent = num(c.high || 0); $('#c-loop').textContent = num(c.loop_steps || S.loop.length);
-  $('#radar-n').textContent = S.job ? `${S.stage} · ${S.progress}%` : S.result ? 'Sealed' : '—';
+  $('#radar-n').textContent = S.job ? (S.queued ? `Queued · ${S.queued} ahead` : `${S.stage} · ${S.progress}%`) : S.result ? 'Sealed' : '—';
   const f = store.boot.fixtures.find(x => x.id === S.fixture);
   $('#theatre-meta').textContent = S.job || S.result ? `${f?.name || S.fixture} · ${S.policy.access} · budget ${S.policy.challenge_budget}` : 'Press Run assurance to start';
   for (const [k, v] of Object.entries(S.claims)) { const t = $(`[data-claim="${k}"]`); if (t) { t.className = `claim-tile ${v}`; if (changed.includes(k)) t.classList.add('flash'); } }

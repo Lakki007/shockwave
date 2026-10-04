@@ -86,3 +86,47 @@ def verify(message: bytes, cosignature, trusted_public_key=None):
         return True
     except Exception:
         return False
+
+
+# --------------------------------------------------------------------------- sealing the Ed25519 key file
+# The Ed25519 private key is encrypted (AES-256-GCM) under a key derived (ECDH + HKDF-SHA256) from an
+# ephemeral P-256 key and a key-agreement key that lives in the Secure Enclave. Only this device's
+# enclave can re-derive it; the public key and every existing signature are unchanged.
+KEM_BLOB = core.STATE / 'hardware' / 'assessor-kem.key'
+SEAL_INFO = b'shockwave-assessor-key-seal-v1'
+
+
+def _kdf(shared, salt):
+    from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+    return HKDF(algorithm=hashes.SHA256(), length=32, salt=salt, info=SEAL_INFO).derive(shared)
+
+
+def seal(private_raw, state=None):
+    """Return a sealed-key record for 32 raw Ed25519 private-key bytes."""
+    import os
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    if not status().get('available'):
+        raise RuntimeError('Sealing needs the Secure Enclave')
+    kem = (state or core.STATE) / 'hardware' / 'assessor-kem.key'
+    kem.parent.mkdir(parents=True, exist_ok=True)
+    pub_file = kem.parent / (kem.name + '.pub')
+    if not kem.exists():
+        pub_file.write_text(_run('kem-create', str(kem)))
+    kem.chmod(0o600)
+    kem_public = pub_file.read_text().strip()
+    peer = serialization.load_der_public_key(base64.b64decode(kem_public))
+    eph = ec.generate_private_key(ec.SECP256R1())
+    salt, nonce = os.urandom(16), os.urandom(12)
+    key = _kdf(eph.exchange(ec.ECDH(), peer), salt)
+    eph_der = eph.public_key().public_bytes(serialization.Encoding.DER, serialization.PublicFormat.SubjectPublicKeyInfo)
+    return {'version': 1, 'kem_public_key': kem_public, 'ephemeral_public_key': base64.b64encode(eph_der).decode(),
+            'salt': base64.b64encode(salt).decode(), 'nonce': base64.b64encode(nonce).decode(),
+            'ciphertext': base64.b64encode(AESGCM(key).encrypt(nonce, private_raw, SEAL_INFO)).decode()}
+
+
+def unseal(record, state=None):
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    kem = (state or core.STATE) / 'hardware' / 'assessor-kem.key'
+    shared = base64.b64decode(_run('kem-derive', str(kem), data=record['ephemeral_public_key'].encode()))
+    key = _kdf(shared, base64.b64decode(record['salt']))
+    return AESGCM(key).decrypt(base64.b64decode(record['nonce']), base64.b64decode(record['ciphertext']), SEAL_INFO)

@@ -7,6 +7,9 @@
 //   shockwave-se create <blob>      -> base64 DER SubjectPublicKeyInfo of the new key
 //   shockwave-se public <blob>      -> base64 DER SubjectPublicKeyInfo
 //   shockwave-se sign   <blob>      -> base64 DER ECDSA signature of stdin bytes
+//   shockwave-se kem-create <blob>  -> base64 DER public key of a new enclave key-agreement key
+//   shockwave-se kem-derive <blob>  -> base64 ECDH shared secret with the base64 DER public key on stdin
+//                                      (used to seal the Ed25519 key file; HKDF and AES-GCM run in Python)
 import CryptoKit
 import Foundation
 
@@ -40,6 +43,19 @@ do {
         let message = FileHandle.standardInput.readDataToEndOfFile()
         guard !message.isEmpty, message.count <= 1 << 20 else { fail("message must be 1 B to 1 MiB") }
         print(try load(args[2]).signature(for: message).derRepresentation.base64EncodedString())
+    case "kem-create":
+        guard args.count == 3 else { fail("kem-create needs a blob path") }
+        guard SecureEnclave.isAvailable else { fail("Secure Enclave unavailable on this device") }
+        let key = try SecureEnclave.P256.KeyAgreement.PrivateKey()
+        try key.dataRepresentation.write(to: URL(fileURLWithPath: args[2]), options: [.atomic])
+        print(key.publicKey.derRepresentation.base64EncodedString())
+    case "kem-derive":
+        guard args.count == 3 else { fail("kem-derive needs a blob path") }
+        let key = try SecureEnclave.P256.KeyAgreement.PrivateKey(dataRepresentation: Data(contentsOf: URL(fileURLWithPath: args[2])))
+        let input = String(decoding: FileHandle.standardInput.readDataToEndOfFile(), as: UTF8.self).trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let der = Data(base64Encoded: input) else { fail("expected a base64 DER public key on stdin") }
+        let secret = try key.sharedSecretFromKeyAgreement(with: P256.KeyAgreement.PublicKey(derRepresentation: der))
+        print(secret.withUnsafeBytes { Data($0) }.base64EncodedString())
     default:
         fail("unknown command")
     }
