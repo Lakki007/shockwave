@@ -26,6 +26,14 @@ def available():
     return sys.platform == 'darwin' and Path('/usr/bin/sandbox-exec').exists()
 
 
+def interpreter():
+    """The binary that actually runs Python. python.org framework builds ship a launcher stub that
+    re-executes Resources/Python.app/Contents/MacOS/Python; the worker may not exec anything, so it is
+    started on that real binary directly."""
+    app = Path(sys.base_prefix) / 'Resources' / 'Python.app' / 'Contents' / 'MacOS' / 'Python'
+    return str(app.resolve()) if app.is_file() else str(Path(sys.executable).resolve())
+
+
 def _readable():
     """Directories the worker needs to start Python and import numpy/onnxruntime."""
     exe = Path(sys.executable).resolve()
@@ -47,7 +55,7 @@ def profile():
     return f"""(version 1)
 (deny default)
 (allow file-map-executable)
-(allow process-exec (literal {q(str(Path(sys.executable).resolve()))}))
+(allow process-exec (literal {q(interpreter())}))
 (allow file-read*
   (literal {q(str(WORKER))})
 {reads}
@@ -89,7 +97,7 @@ class Worker:
         self.cwd = tempfile.mkdtemp(prefix='sw-worker-')
         env = {'PATH': '/usr/bin:/bin', 'HOME': self.cwd, 'TMPDIR': self.cwd, 'PYTHONPATH': os.pathsep.join(_readable()),
                'PYTHONDONTWRITEBYTECODE': '1', 'OMP_NUM_THREADS': '2', 'ORT_DISABLE_TELEMETRY': '1', 'LANG': 'C'}
-        cmd = [sys.executable, '-B', str(WORKER)]
+        cmd = [interpreter(), '-B', str(WORKER)]
         if sandboxed:
             self.profile_path = os.path.join(self.cwd, 'profile.sb')
             Path(self.profile_path).write_text(profile())
