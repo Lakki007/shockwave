@@ -4,6 +4,7 @@ import { api, store } from '../api.js';
 import { PointCloud, CLASS_COLOURS } from '../cloud.js';
 import { CLAIM_HELP } from '../content.js';
 import { scorecard } from './scorecard.js';
+import { dispositionBlock, bindDisposition, signoffPanel, bindSignoff } from './team.js';
 
 const TABS = [['summary', 'Decision'], ['findings', 'Findings'], ['data', 'Data map'], ['source', 'Contributors'], ['model', 'Model'], ['pipeline', 'Pipeline'],
   ['provenance', 'Records'], ['shift', 'Context'], ['loop', 'Contrarian loop'], ['reports', 'Reports & audit']];
@@ -56,7 +57,12 @@ function findingDetail(run, f) {
       <p class="lead" style="margin-top:16px">${esc(f.reason)}</p>
       ${row('Asset', `<span class="mono small">${esc(short(f.asset, 40))}</span>`)}${row('Contributor', esc(f.source || '—'))}${row('Recommended action', esc(f.action))}
       ${row('Access', esc(f.access))}${row('Confidence', `<span class="small">${esc(f.confidence_status || '—')}</span>`)}${row('Method', `<span class="mono small">${esc(f.method_version)}</span>`)}
-      <div class="group-title label">Measurement</div><pre class="hash" style="white-space:pre-wrap;max-height:240px;overflow:auto">${esc(JSON.stringify(f.measurement, null, 2))}</pre></div></div>`, f.id);
+      <div class="group-title label">Measurement</div><pre class="hash" style="white-space:pre-wrap;max-height:240px;overflow:auto">${esc(JSON.stringify(f.measurement, null, 2))}</pre>
+      <div id="disp-host"></div></div></div>`, f.id);
+  if (store.session.mode === 'multi') {
+    const paint = state => { const host = $('#disp-host'); if (!host) return; host.innerHTML = dispositionBlock(run, f, state); bindDisposition(run, f, paint); };
+    api('review/' + run.id).then(paint).catch(e => toast(e.message, { error: true }));
+  }
 }
 
 // ------------------------------------------------------------------ panes
@@ -80,8 +86,13 @@ const PANES = {
         <div>${panel('Seal', `${row('Report digest · SHA-384', '')}<div class="hash">${esc(run.report_digest)}</div>${row('Signature · Ed25519', '')}<div class="hash">${esc(run.report_signature)}</div>
           <div class="cmd" style="margin-top:16px"><span>python3 shockwave.py verify ${esc(run.id)}.json --public-key &lt;assessor key&gt;</span></div>`)}
           ${panel('Stated limitations', run.limitations.map(l => `<div class="row"><span class="small">${esc(l)}</span></div>`).join(''))}
+          <div id="signoff-host"></div>
           ${run.fixture.startsWith('lab-') ? panel('Independent evaluation', `<p class="small">The answer key was committed to the audit log before this assessment ran. Score only after sealing.</p><button class="btn small primary" id="score-btn">Score against sealed key</button>`) : ''}</div>
       </div>`;
+    if (store.session.mode === 'multi') {
+      const paint = state => { const host = $('#signoff-host'); if (!host) return; host.innerHTML = signoffPanel(run, state); bindSignoff(run, paint); };
+      api('review/' + run.id).then(paint).catch(e => toast(e.message, { error: true }));
+    }
     $('#score-btn')?.addEventListener('click', async () => {
       try { const e = await api('evaluate', { run: run.id }); dialog('Independent evaluation', scorecard(e.lab), 'Sealed answer key'); }
       catch (err) { toast(err.message, { error: true }); }
@@ -196,16 +207,33 @@ const PANES = {
       ${L.unavailable?.length ? `<div class="notice" style="margin-top:20px">Not eligible under ${esc(run.policy.access)} access: ${L.unavailable.map(u => esc(u.test?.name || u.test)).join(', ')}</div>` : ''}`;
   },
 
-  async reports(body) {
-    const audit = await api('audit').catch(e => ({ verified: false, errors: [e.message] }));
+  async reports(body, run) {
+    const [audit, custody] = await Promise.all([api('audit').catch(e => ({ verified: false, errors: [e.message] })), api('custody').catch(() => null)]);
     const show = store.boot.showcase;
     body.innerHTML = `<div class="notice ${audit.verified ? 'mint' : ''} reveal">${audit.verified ? 'Audit log verified: every event is hash-linked and checkpoints carry valid Ed25519 signatures.' : `Audit verification failed: ${esc((audit.errors || []).join('; '))}`} <span class="mono">${esc(short(audit.checkpoint?.root, 20))}</span></div>
+      ${custody ? custodyPanel(custody, run, audit) : ''}
       ${show ? panel('Latest evaluation package', `<div class="grid g4"><div class="cell"><div class="label">Planted samples caught</div><div class="stat">${show.caught_samples}<small> / ${show.planted_samples}</small></div></div><div class="cell"><div class="label">Tampered records caught</div><div class="stat">${show.records_caught}<small> / ${show.records_tampered}</small></div></div><div class="cell"><div class="label">Untouched images flagged</div><div class="stat">${show.untouched_flagged}<small> / ${show.untouched}</small></div></div><div class="cell"><div class="label">Answer key</div><div class="stat" style="font-size:24px">${show.answer_key_intact ? 'Intact' : 'Mismatch'}</div></div></div>`) : ''}
       ${panel('Sealed assessments', `<div class="table-wrap"><table><thead><tr><th>Assessment</th><th>Decision</th><th>Images</th><th>Findings</th><th>Completed</th><th></th></tr></thead><tbody>${store.boot.runs.map(r => `<tr class="click" data-run="${esc(r.id)}"><td>${esc(r.name)}<span class="sub">${esc(r.id)} · ${esc(r.engine)}</span></td><td>${pill(r.decision)}</td><td class="mono">${num(r.images)}</td><td class="mono">${num(Object.values(r.finding_types || {}).reduce((a, b) => a + b, 0))}</td><td class="small">${esc(when(r.completed))}</td><td><a class="btn tiny" href="/api/export/${esc(r.id)}" download>JSON</a></td></tr>`).join('')}</tbody></table></div>`)}
       ${panel('Coverage', store.boot.capabilities.map(([n, d, , s]) => `<div class="row"><div>${esc(n)}<div class="tiny">${esc(d)}</div></div>${pill(s)}</div>`).join(''))}`;
     $$('[data-run]', body).forEach(tr => tr.onclick = e => { if (e.target.closest('a')) return; store.current = tr.dataset.run; location.hash = '#/evidence/summary?t=' + Date.now(); });
   },
 };
+
+function custodyPanel(c, run, audit) {
+  const hw = c.hardware || {}, cal = c.calibration || {}, w = c.witness || {}, hs = run.hardware_signature, ex = run.model?.execution;
+  return `<div class="grid g2" style="gap:20px;margin-bottom:20px">
+    ${panel('Key custody', `${row('Report signature', 'Ed25519 · key file on disk')}${row('Hardware co-signer', hw.available ? pill('Supported', 'Secure Enclave') : pill('Unavailable', 'none'))}
+      ${hw.available ? row('Enclave key', `<span class="mono small">${esc(hw.key_id)} · ${esc(hw.algorithm)}</span>`) : `<p class="tiny">${esc(hw.reason || '')}</p>`}
+      ${row('This report', hs ? pill('Supported', 'co-signed in hardware') : pill('Unresolved', 'no hardware co-signature'))}
+      ${row('Audit checkpoints co-signed', `<span class="mono">${audit.hardware?.verified ?? 0} / ${audit.hardware?.cosigned_checkpoints ?? 0} verified</span>`)}
+      <p class="tiny">${esc(hw.custody || 'Hardware custody is never claimed without an enclave.')}</p>`)}
+    ${panel('Execution isolation', `${row('Submitted-model sandbox', c.sandbox?.available ? pill('Supported', 'macOS Seatbelt') : pill('Unavailable', 'not available'))}
+      ${ex ? `${row('This run', `<span class="small">${esc(ex.adapter)} adapter · ${ex.calls ?? 0} sandboxed calls</span>`)}${row('Self-test', ex.self_test?.enforced ? pill('Supported', 'network, writes, reads, exec denied') : pill('Contradicted', 'not enforced'))}` : row('This run', '<span class="small">no submitted graph executed</span>')}
+      ${row('Limits', `<span class="mono small">${c.sandbox?.limits?.cpu_seconds}s CPU · ${c.sandbox?.limits?.call_timeout}s per call · no file writes</span>`)}`)}
+    ${panel('Calibration set', cal.available ? `${row('Samples', `<span class="mono">${cal.fit} fit · ${cal.validation} held-out · ${cal.positives} planted</span>`)}${row('This run', run.risk?.calibrated ? pill('Supported', `calibrated · Brier ${Number(run.risk.brier).toFixed(3)} · ECE ${Number(run.risk.ece).toFixed(3)}`) : pill('Unresolved', 'abstained'))}<p class="tiny">${esc(cal.method)} ${esc(cal.limitation)}</p>` : '<p class="small">Not built. Run <span class="mono">python3 shockwave.py calibrate</span>.</p>')}
+    ${panel('Semantic witness', w.available ? `${row('Model', `<span class="small">${esc(w.model)} · ${esc(w.license)}</span>`)}${row('Weights', `<span class="mono small">${esc(short(w.weights_sha256, 20))}</span>`)}${row('This run', run.semantic_witness?.queries ? `<span class="small">${run.semantic_witness.queries} bounded questions</span>` : '<span class="small">not run</span>')}<p class="tiny">${esc(w.role)}</p>` : '<p class="small">No approved local VLM weights.</p>')}
+  </div>`;
+}
 
 function matrix(lq) {
   const n = lq.classes.length, cj = lq.confident_joint, max = Math.max(1, ...cj.flat());

@@ -1,19 +1,30 @@
 // App shell: header, hash router, bootstrap. Views render into <main> and return a cleanup function.
 import { $, $$, esc, diamond, icon, toast, initTooltips } from './ui.js';
-import { store } from './api.js';
+import { api, store } from './api.js';
 
-const ROUTES = [['overview', '01', 'Overview'], ['workbench', '02', 'Workbench'], ['evidence', '03', 'Evidence'], ['method', '04', 'The Method']];
-const VIEWS = { overview: () => import('./views/overview.js'), workbench: () => import('./views/workbench.js'), evidence: () => import('./views/evidence.js'), method: () => import('./views/method.js') };
+const ROUTES = [['overview', '01', 'Overview'], ['workbench', '02', 'Workbench'], ['evidence', '03', 'Evidence'], ['method', '04', 'The Method'], ['team', '05', 'Team']];
+const VIEWS = { overview: () => import('./views/overview.js'), workbench: () => import('./views/workbench.js'), evidence: () => import('./views/evidence.js'), method: () => import('./views/method.js'), team: () => import('./views/team.js') };
 let cleanup = null, token = 0;
 
 function header() {
   $('#topbar').innerHTML = `<a class="brand" href="#/overview" aria-label="Shockwave overview">${diamond}<b>SHOCK<i>WAVE</i></b></a>
-    <nav class="nav" id="nav">${ROUTES.map(([id, n, l]) => `<a href="#/${id}" data-route="${id}"><small>${n}</small>${l}</a>`).join('')}</nav>
+    <nav class="nav" id="nav">${ROUTES.filter(([id]) => id !== 'team' || store.session.analyst?.role === 'admin').map(([id, n, l]) => `<a href="#/${id}" data-route="${id}"><small>${n}</small>${l}</a>`).join('')}</nav>
     <div class="top-right"><span class="status" id="status"><i></i><span>Local · offline</span></span>
+      ${store.session.analyst ? `<span class="who"><b>${esc(store.session.analyst.name)}</b><small>${esc(store.session.analyst.role)}</small></span><button class="btn tiny" id="sign-out">Sign out</button>` : ''}
       <button class="icon-btn menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">${icon.menu}</button></div>`;
   const nav = $('#nav'), btn = $('#menu-btn');
   btn.onclick = () => { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); };
   nav.onclick = e => { if (e.target.closest('a')) { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } };
+  $('#sign-out')?.addEventListener('click', async () => { await api('logout', {}).catch(() => {}); location.reload(); });
+}
+
+// Multi-analyst mode: nothing renders until an analyst is signed in with a permanent password.
+async function authenticate() {
+  store.session = await api('session');
+  if (store.session.mode !== 'multi') return;
+  const team = await import('./views/team.js');
+  if (!store.session.analyst) store.session.analyst = await team.signIn($('#main'));
+  else if (store.session.analyst.must_change) store.session.analyst = await team.changePassword($('#main'), true);
 }
 
 // Hash format: #/route/sub?params
@@ -52,7 +63,11 @@ export function setBusy(busy, text) {
 }
 
 async function boot() {
-  header(); initTooltips();
+  initTooltips(); header();
+  try { await authenticate(); } catch (e) { $('#main').innerHTML = `<div class="loading">The local server did not respond: ${esc(e.message)}</div>`; return; }
+  header();
+  let reauth = false;
+  document.addEventListener('sw:auth', () => { if (!reauth) { reauth = true; toast('Your session ended. Sign in again.', { error: true }); setTimeout(() => location.reload(), 1200); } });
   try { await store.bootstrap(); }
   catch (e) { $('#main').innerHTML = `<div class="loading">The local server did not respond: ${esc(e.message)}</div>`; return; }
   if (!location.hash) history.replaceState(null, '', '#/overview');

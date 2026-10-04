@@ -137,9 +137,10 @@ def lab_summary(ident):
 # --------------------------------------------------------------------------- job
 
 class ForgeJob:
-    def __init__(self, spec):
+    def __init__(self, spec, base=BASE, prefix='lab-', kind='attack-lab'):
         self.spec = validate(spec)
-        self.id = 'lab-' + uuid.uuid4().hex[:8]
+        self.base, self.kind = base, kind  # calibration packages are forged from a held-out base
+        self.id = prefix + uuid.uuid4().hex[:8]
         self.progress = 0
         self.stage = 'Preparing'
         self.timeline = []
@@ -268,7 +269,7 @@ class Package:
 def build(job: ForgeJob, root: Path):
     spec = job.spec
     rng = np.random.default_rng(spec['seed'])
-    base = core.DATA / 'fixtures' / BASE
+    base = core.DATA / 'fixtures' / job.base
     suite = core.DATA / 'fixtures' / SUITE / 'suite/models'
     job.event('Copy baseline', 'Linking the untouched real-world baseline and its approved references.', 4)
     _link_tree(base / 'submission', root / 'submission')
@@ -277,7 +278,7 @@ def build(job: ForgeJob, root: Path):
     for name in ('clean.onnx', 'clean.safetensors'):
         shutil.copy2(suite / name, root / 'suite/models' / name)
     pkg = Package(root)
-    key = {'id': job.id, 'created': core.now(), 'seed': spec['seed'], 'spec': spec, 'base': BASE, 'families': {}, 'records': [], 'model': None, 'pipeline': None}
+    key = {'id': job.id, 'created': core.now(), 'seed': spec['seed'], 'spec': spec, 'base': job.base, 'families': {}, 'records': [], 'model': None, 'pipeline': None}
     summary = []
     used = set()
 
@@ -416,14 +417,14 @@ def build(job: ForgeJob, root: Path):
 
     # ---- trust provisioning (operator), manifest and commitment
     register(job.id, root, edge)
-    key['name'] = 'Attack Lab · ' + (summary[0] if summary else 'no attacks')
+    key['name'] = ('Attack Lab · ' if job.kind == 'attack-lab' else 'Calibration · ') + (summary[0] if summary else 'no attacks')
     key['attack_summary'] = summary
-    (root / 'manifest.json').write_text(json.dumps({'name': key['name'], 'kind': 'attack-lab', 'created': key['created']}, indent=2))
+    (root / 'manifest.json').write_text(json.dumps({'name': key['name'], 'kind': job.kind, 'created': key['created']}, indent=2))
     KEYS.mkdir(parents=True, exist_ok=True)
     body = core.canonical({k: v for k, v in key.items() if k != 'commitment'})
     key['commitment'] = core.digest(body, 'sha384')
     core.atomic(KEYS / f'{job.id}.json', key)
-    core.log_event('attack_lab_forged', {'fixture': job.id, 'answer_key_sha384': key['commitment'], 'attacks': summary, 'spec_sha384': core.digest(core.canonical(spec), 'sha384')})
+    core.log_event('attack_lab_forged' if job.kind == 'attack-lab' else 'calibration_package_forged', {'fixture': job.id, 'answer_key_sha384': key['commitment'], 'attacks': summary, 'spec_sha384': core.digest(core.canonical(spec), 'sha384')})
     job.event('Sealed', f'Answer key sealed outside the package; SHA-384 commitment {key["commitment"][:16]}… logged before assessment.', 98)
     prune()
     return {'fixture': job.id, 'name': key['name'], 'attacks': summary, 'commitment': key['commitment'], 'implant': implant}

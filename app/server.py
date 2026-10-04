@@ -4,6 +4,18 @@ from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, unquote, parse_qs
 import core
+import analysts
+ALLOWED_HOSTS={'localhost','127.0.0.1',*filter(None,os.environ.get('SHOCKWAVE_PUBLIC_HOST','').split(','))}
+
+def calibration_status():
+ d=core.read_json(core.DATA/'calibration/independent.json',{})
+ if not d:return {'available':False}
+ return {'available':True,'samples':len(d['samples']),'fit':sum(x['split']=='fit' for x in d['samples']),'validation':sum(x['split']=='validation' for x in d['samples']),'positives':sum(x['label'] for x in d['samples']),'policy_version':d['policy_version'],'context':d['context'],'created':d['created'],'packages':d['packages'],'method':d['method'],'limitation':d['limitation']}
+
+def witness_status():
+ pin=core.read_json(core.DATA/'encoders/semantic-witness/APPROVED.json',{})
+ return {'available':bool(pin.get('files')),'model':pin.get('model'),'license':pin.get('license'),'weights_sha256':(pin.get('files') or {}).get('model.safetensors'),'role':pin.get('role')}
+
 JOBS={}
 
 SUMMARIES={}
@@ -32,7 +44,7 @@ def run_summaries():
   seen.add(p);m=p.stat().st_mtime
   if SUMMARIES.get(p,(None,))[0]!=m:
    r=core.read_json(p)
-   if r:SUMMARIES[p]=(m,summary(r))
+   if r and not r.get('fixture','').startswith(('cal-','calib-')):SUMMARIES[p]=(m,summary(r))
  for p in list(SUMMARIES):
   if p not in seen:SUMMARIES.pop(p)
  return sorted((v[1] for v in SUMMARIES.values()),key=lambda r:r['completed'],reverse=True)
@@ -172,14 +184,41 @@ def upload(data):
 
 class Handler(BaseHTTPRequestHandler):
  def log_message(self,*args):pass
- def send(self,obj,status=200,ctype='application/json',filename=None):
+ def send(self,obj,status=200,ctype='application/json',filename=None,headers=None):
   data=core.canonical(obj) if ctype=='application/json' else obj
   self.send_response(status);self.send_header('Content-Type',ctype);self.send_header('Content-Length',str(len(data)));self.send_header('X-Content-Type-Options','nosniff');self.send_header('Cache-Control','no-store' if ctype=='application/json' else 'public,max-age=600');self.send_header('Content-Security-Policy',"default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
   if filename:self.send_header('Content-Disposition',f'attachment; filename="{filename}"')
+  for k,v in (headers or {}).items():self.send_header(k,v)
   self.end_headers();self.wfile.write(data)
+ def token(self):
+  from http.cookies import SimpleCookie
+  c=SimpleCookie();c.load(self.headers.get('Cookie',''));return c[analysts.COOKIE].value if analysts.COOKIE in c else None
+ def analyst(self):
+  """(multi_mode, analyst-or-None). In single-user mode there is no authentication."""
+  if not analysts.enabled():return False,None
+  try:return True,analysts.session(self.token())
+  except Exception:return True,None
+ def gate(self,path):
+  """Returns an error response tuple if this API call is not allowed, else the analyst (or None in single mode)."""
+  multi,me=self.analyst()
+  if not multi:return None,None
+  if not me:return ({'error':'Sign in required','auth':True},401),None
+  if me['must_change'] and path not in ('/api/password','/api/logout'):return ({'error':'Change your temporary password first','must_change':True},403),me
+  return None,me
  def do_GET(self):
   try:
    parsed=urlparse(self.path);path=unquote(parsed.path);q=parse_qs(parsed.query)
+   if path=='/api/session':
+    multi,me=self.analyst();return self.send({**analysts.mode(),'analyst':me})
+   if path.startswith('/api/'):
+    err,me=self.gate(path)
+    if err:return self.send(*err)
+   if path=='/api/analysts':return self.send(analysts.listing(me))
+   if path=='/api/analysts/verify':analysts.require(me,'admin');return self.send(analysts.verify())
+   if path.startswith('/api/review/'):return self.send(analysts.review(me,path.split('/')[-1]))
+   if path=='/api/custody':
+    import keystore,sandbox
+    return self.send({'hardware':keystore.status(),'sandbox':{'available':sandbox.available(),'limits':sandbox.LIMITS},'calibration':calibration_status(),'witness':witness_status()})
    if path=='/api/bootstrap':
     active=next((a.id for a in JOBS.values() if a.progress<100),None)
     summaries=run_summaries()
@@ -219,17 +258,43 @@ class Handler(BaseHTTPRequestHandler):
    p=core.safe_path(core.ROOT/'app/static',path.lstrip('/') if path!='/' else 'index.html')
    if not p.is_file():return self.send({'error':'Not found'},404)
    return self.send(p.read_bytes(),ctype=mimetypes.guess_type(p.name)[0] or 'application/octet-stream')
+  except PermissionError as e:self.send({'error':str(e)},403)
   except (ValueError,KeyError,FileNotFoundError) as e:self.send({'error':str(e)},400)
  def do_POST(self):
   origin=self.headers.get('Origin');host=self.headers.get('Host')
-  if urlparse('http://'+(host or '')).hostname not in ('localhost','127.0.0.1'):return self.send({'error':'Local host required'},403)
+  if urlparse('http://'+(host or '')).hostname not in ALLOWED_HOSTS:return self.send({'error':'Host not allowed'},403)
   if origin and urlparse(origin).netloc!=host:return self.send({'error':'Origin rejected'},403)
   try:
    length=int(self.headers.get('Content-Length',0))
    if length>150*1024*1024:return self.send({'error':'Request exceeds limit'},413)
    data=self.rfile.read(length);path=urlparse(self.path).path
+   if path=='/api/login':
+    if not analysts.enabled():raise ValueError('Multi-analyst mode is not configured')
+    body=json.loads(data);token,me=analysts.login(body.get('username'),body.get('password'),self.client_address[0])
+    secure='; Secure' if os.environ.get('SHOCKWAVE_TLS')=='1' else ''
+    return self.send({'analyst':me},headers={'Set-Cookie':f'{analysts.COOKIE}={token}; HttpOnly; SameSite=Strict; Path=/; Max-Age={analysts.SESSION_SECONDS}{secure}'})
+   err,me=self.gate(path)
+   if err:return self.send(*err)
+   if path=='/api/logout':
+    analysts.logout(self.token());core.log_event('analyst_logout',{'analyst':me['username']}) if me else None
+    return self.send({'ok':True},headers={'Set-Cookie':f'{analysts.COOKIE}=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0'})
+   if me:
+    role={'/api/password':'self','/api/analysts':'admin','/api/analysts/disable':'admin','/api/analysts/reset':'admin','/api/signoff':'analyst','/api/disposition':'analyst'}.get(path,'analyst')
+    analysts.require(me,role)
    if path=='/api/upload':return self.send(upload(data))
    body=json.loads(data)
+   if path=='/api/password':return self.send({'analyst':analysts.change_password(me,body.get('current'),body.get('new'))})
+   if path=='/api/analysts':
+    a,temporary=analysts.create(me,body.get('username'),body.get('name'),body.get('role'));return self.send({'analyst':a,'temporary_password':temporary})
+   if path=='/api/analysts/disable':return self.send({'analyst':analysts.set_disabled(me,body.get('id'),body.get('disabled',True))})
+   if path=='/api/analysts/reset':
+    a,temporary=analysts.reset_password(me,body.get('id'));return self.send({'analyst':a,'temporary_password':temporary})
+   if path=='/api/disposition':
+    if not me:raise ValueError('Per-finding dispositions need multi-analyst mode')
+    return self.send(analysts.dispose(me,body.get('run'),body.get('finding'),body.get('decision'),body.get('note')))
+   if path=='/api/signoff':
+    if not me:raise ValueError('Sign-off needs multi-analyst mode')
+    return self.send(analysts.signoff(me,body.get('run'),body.get('recommendation'),body.get('note')))
    if path=='/api/assess':return self.send(assess(body))
    if path=='/api/delta':return self.send(delta(body))
    if path=='/api/reassess':
@@ -276,8 +341,9 @@ class Handler(BaseHTTPRequestHandler):
     if not body.get('reason','').strip():raise ValueError('A disposition requires a reason')
     p=core.safe_path(core.STATE/'runs',body.get('run','')+'.json')
     if not p.exists():raise ValueError('Unknown assessment')
-    return self.send(core.log_event('analyst_disposition',{'run':body['run'],'action':body['action'],'reason':body['reason'],'analyst':body.get('analyst','Local analyst'),'note':'Analyst disposition is separate from the computed recommendation.'}))
+    return self.send(core.log_event('analyst_disposition',{'run':body['run'],'action':body['action'],'reason':body['reason'],'analyst':me['username'] if me else body.get('analyst','Local analyst'),'note':'Analyst disposition is separate from the computed recommendation.'}))
    self.send({'error':'Not found'},404)
+  except PermissionError as e:self.send({'error':str(e)},403)
   except (ValueError,KeyError,TypeError,FileNotFoundError) as e:self.send({'error':str(e)},400)
 
 if __name__=='__main__':

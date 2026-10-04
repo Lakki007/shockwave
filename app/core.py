@@ -29,6 +29,8 @@ CAPABILITIES=[
 ('Model intake','Static pickle/op/path/archive screening; never executes rejected files','model','Implemented'),
 ('Model substitution','Weight hashes and tensor comparison','model','Implemented'),
 ('Behaviour battery','Approved ONNX runtime reference comparisons and adaptive battery expansion','model','Implemented'),
+('Detector adapters','YOLO family: v5/v7, v8/v9/v11, YOLOX and NMS-free exports; letterbox, decoding and class-aware NMS (§13)','model','Implemented'),
+('Sandboxed execution','Submitted graphs run in a macOS Seatbelt worker: no network, writes, package reads or exec; rlimits and per-call timeouts, self-tested every run','model','Implemented'),
 ('Trigger transfer','Behaviour forensics: mined data patterns transplanted onto independent references, approved and occlusion controls, reserved confirmation (§21)','model','Implemented'),
 ('Trigger reconstruction','Neural-Cleanse-style class-pair and all-target search in detector crop space, approved model as control (§14.1)','model','Conditional'),
 ('STRIP','Superimposition entropy with clean null for score-access models (§14.3)','model','Implemented'),
@@ -37,12 +39,14 @@ CAPABILITIES=[
 ('Re-execution','Approved model and original input required','records','Conditional'),
 ('Twin pipeline','Same-model processing differential with single-stage localisation (§15)','pipeline','Implemented'),
 ('Distribution','Reference distance and kernel two-sample comparison','context','Implemented'),
-('Calibration','Independent labelled calibration only; abstains when absent','calibration','Conditional'),
+('Calibration','Isotonic fit on an independent Attack Lab set forged from held-out reference pictures (fit/validation disjoint); abstains on context shift or overlap (§25)','calibration','Implemented'),
 ('Contrarian loop','Registry of 10 challenges; eligibility by access, priority = weight × value × (1 + gap) / cost, spawned follow-ups, seeds and stop reasons (§20)','workflow','Implemented'),
 ('Attack Lab','Operator-forged packages with sealed, pre-committed answer keys for live evaluation (§31)','evaluation','Implemented'),
 ('Delta','Dependency closure, stale claims and targeted reassessment','workflow','Implemented'),
 ('Audit','Signed Merkle checkpoints and retained consistency history','audit','Implemented'),
-('Semantic witness','Optional local VLM weights required','AI','Conditional'),
+('Key custody','Reports and checkpoints co-signed by a non-exportable Secure Enclave P-256 key; Ed25519 file key retained','audit','Implemented'),
+('Multi-analyst review','PostgreSQL accounts and roles, per-finding dispositions, two-person sign-off, rows bound to the signed audit log (§28)','workflow','Implemented'),
+('Semantic witness','Bundled SmolVLM-500M, SHA-256 pinned; 12 bounded forced-choice questions; advisory only','AI','Implemented'),
 ('Training attribution','Compatible local TRAK adapter, approved checkpoints and exact training membership required','AI','Conditional'),
 ('TorchScript execution','Static intake supported; execution requires approved graph adapter','model','Conditional'),
 ('Air gap','All application assets and analysis execute locally','deployment','Implemented')]
@@ -84,16 +88,38 @@ def merkle(hashes):
   nodes=[hashlib.sha256(b'\x01'+nodes[i]+nodes[i+1]).digest() if i+1<len(nodes) else nodes[i] for i in range(0,len(nodes),2)]
  return nodes[0].hex()
 
+_AUDIT_HELD=threading.local()
+class _AuditFileLock:
+ """Cross-process exclusive lock: the server, CLI and analyst workers may all append to the audit log.
+ Re-entrant per thread, because co-signing a checkpoint can itself log the hardware key's creation."""
+ def __enter__(self):
+  import fcntl
+  depth=getattr(_AUDIT_HELD,'depth',0)
+  if not depth:_AUDIT_HELD.f=open(STATE/'.audit.lock','a');fcntl.flock(_AUDIT_HELD.f,fcntl.LOCK_EX)
+  _AUDIT_HELD.depth=depth+1;return self
+ def __exit__(self,*exc):
+  import fcntl
+  _AUDIT_HELD.depth-=1
+  if not _AUDIT_HELD.depth:fcntl.flock(_AUDIT_HELD.f,fcntl.LOCK_UN);_AUDIT_HELD.f.close()
+
 def log_event(kind,body):
- with LOCK:
+ with LOCK,_AuditFileLock():
   events=read_json(STATE/'audit.json',[])
   event={'sequence':len(events),'timestamp':now(),'kind':kind,'body':body,'previous':events[-1]['hash'] if events else '0'*64}
   event['hash']=digest(canonical(event));event['signature']=base64.b64encode(key().sign(bytes.fromhex(event['hash']))).decode();events.append(event)
-  atomic(STATE/'audit.json',events)
   cp={'size':len(events),'root':merkle([e['hash'] for e in events]),'previous_checkpoint':digest(canonical(read_json(STATE/'checkpoint.json',{}))),'timestamp':now()}
-  cp['signature']=base64.b64encode(key().sign(canonical(cp))).decode();atomic(STATE/'checkpoint.json',cp)
+  body=canonical(cp);cp['signature']=base64.b64encode(key().sign(body)).decode()
+  hw=hardware_cosign(body)  # computed before anything is written, so a slow or failing co-signer cannot leave an event without its checkpoint
+  if hw:cp['hardware_signature']=hw
+  atomic(STATE/'audit.json',events);atomic(STATE/'checkpoint.json',cp)
   history=read_json(STATE/'checkpoints.json',[]);history.append(cp);atomic(STATE/'checkpoints.json',history)
   return event
+
+def hardware_cosign(message):
+ try:
+  import keystore
+  return keystore.cosign(message)
+ except Exception:return None  # custody is reported from keystore.status(); never claimed on failure
 
 def verify_audit():
  es=read_json(STATE/'audit.json',[]);cp=read_json(STATE/'checkpoint.json',{});pub=key().public_key();errors=[];previous='0'*64
@@ -104,24 +130,28 @@ def verify_audit():
   if digest(canonical(body))!=e['hash'] or e['previous']!=previous:errors.append('History inconsistency')
   previous=e['hash']
  if cp:
-  try:pub.verify(base64.b64decode(cp['signature']),canonical({k:v for k,v in cp.items() if k!='signature'}))
+  try:pub.verify(base64.b64decode(cp['signature']),canonical({k:v for k,v in cp.items() if k not in ('signature','hardware_signature')}))
   except Exception:errors.append('Checkpoint signature failure')
   if cp['size']!=len(es) or cp['root']!=merkle([e['hash'] for e in es]):errors.append('Checkpoint root mismatch')
- history=read_json(STATE/'checkpoints.json',[]);prior=digest(canonical({}));size=0
+ history=read_json(STATE/'checkpoints.json',[]);prior=digest(canonical({}));size=0;hw_total=hw_ok=0
  for checkpoint in history:
   try:
-   pub.verify(base64.b64decode(checkpoint['signature']),canonical({k:v for k,v in checkpoint.items() if k!='signature'}))
+   body=canonical({k:v for k,v in checkpoint.items() if k not in ('signature','hardware_signature')});pub.verify(base64.b64decode(checkpoint['signature']),body)
+   if checkpoint.get('hardware_signature'):
+    import keystore
+    hw_total+=1;hw_ok+=keystore.verify(body,checkpoint['hardware_signature'])
    n=checkpoint['size']
    if n<=size or n>len(es) or checkpoint['root']!=merkle([e['hash'] for e in es[:n]]) or checkpoint['previous_checkpoint']!=prior:errors.append('Checkpoint consistency failure')
    size=n;prior=digest(canonical(checkpoint))
   except Exception:errors.append('Historical checkpoint verification failure')
  if history and cp!=history[-1]:errors.append('Current checkpoint differs from retained history')
- return {'verified':not errors,'errors':errors,'events':es,'checkpoint':cp,'checkpoints':read_json(STATE/'checkpoints.json',[]),'public_key':base64.b64encode(pub.public_bytes(Encoding.Raw,PublicFormat.Raw)).decode(),'limitation':'Completeness is relative to retained signed checkpoints; trusted assessor key required.'}
+ if hw_ok!=hw_total:errors.append('Hardware co-signature failure on a checkpoint')
+ return {'verified':not errors,'errors':errors,'events':es,'checkpoint':cp,'checkpoints':read_json(STATE/'checkpoints.json',[]),'public_key':base64.b64encode(pub.public_bytes(Encoding.Raw,PublicFormat.Raw)).decode(),'hardware':{'cosigned_checkpoints':hw_total,'verified':hw_ok,'algorithm':'ECDSA-P256-SHA256' if hw_total else None},'limitation':'Completeness is relative to retained signed checkpoints; trusted assessor key required.'}
 
 def fixtures():
  rows=[]
  for p in (DATA/'fixtures').iterdir() if (DATA/'fixtures').exists() else []:
-  if not p.is_dir():continue
+  if not p.is_dir() or p.name.startswith(('cal-','calib-')):continue  # calibration material is not offered for assessment
   images=sum(1 for x in (p/'submission').rglob('*') if x.suffix.lower() in ('.jpg','.png','.jpeg') and '/yolo/' not in str(x))
   models=list((p/'submission/models').glob('*'));records=p/'submission/records/records.jsonl'
   rows.append({'id':p.name,'name':LABELS.get(p.name) or (read_json(p/'manifest.json',{}) or {}).get('name',p.name),'kind':'attack-lab' if p.name.startswith('lab-') else 'bundled','images':images,'models':len(models),'records':len(records.read_text().splitlines()) if records.exists() else 0,'formats':['COCO']+(['YOLO'] if (p/'submission/yolo').exists() else []),'reference_images':sum(1 for x in (p/'reference').rglob('*') if x.suffix.lower() in ('.jpg','.png','.jpeg'))})
@@ -223,10 +253,15 @@ class Assessment:
    loop.run(self)
    from extensions import semantic_witness, training_attribution, calibrate
    semantic_witness(self);training_attribution(self);calibrate(self)
+   rt=getattr(getattr(self,'ctx',None),'submitted_runtime',None)
+   if rt and (self.model or {}).get('execution'):self.model['execution']['calls']=getattr(rt.worker,'calls',None)
    self.event('Decision','Evaluating evidence under the Assurance Contract.',96)
    self.finalize();self.progress=100;self.stage='Complete'
   except Exception as e:
    import traceback;traceback.print_exc();self.error=str(e);self.stage='Failed';self.progress=100
+  finally:
+   rt=getattr(getattr(self,'ctx',None),'submitted_runtime',None)
+   if rt:rt.close()  # terminate the sandboxed worker with the assessment
 
  # ------------------------------------------------------------------ data assurance
  def data_checks(self,items):
@@ -413,6 +448,18 @@ class Assessment:
   self.check('Label neighbourhoods','Completed',f'{len(objects)} object crops; {encoder}; {policy["label_method"].replace("_"," ")}; exact-image duplicates excluded from votes.','labels')
   if encoder!='DINOv2':self.check('DINOv2 encoder','Unavailable','No local pretrained weights configured; descriptor fallback is not equivalent to a semantic backbone.','labels')
 
+ def limitations(self):
+  out=['Anomalies do not prove attack intent.','Negative conditional tests do not exclude all backdoors.']
+  risk=getattr(self,'risk',{}) or {}
+  out.append('Calibrated probabilities apply only to Attack Lab attack families in this operating context.' if risk.get('calibrated') else 'Raw scores are not calibrated compromise probabilities.')
+  try:
+   import keystore;hw=keystore.status()
+  except Exception:hw={'available':False}
+  execution=(getattr(self,'model',None) or {}).get('execution') or {}
+  out.append(('Key custody: report co-signed by a Secure Enclave key (device-bound); the Ed25519 signature key is a file on disk.' if hw.get('available') else 'No hardware-backed key custody: no Secure Enclave available.')
+   +(' Submitted model executed in an OS-sandboxed worker; no hardware attestation of execution.' if execution.get('isolation','').startswith('macOS') else ' No hardware attestation of execution.'))
+  return out
+
  def finalize(self):
   self.claims=[]
   for id,label,domain in CLAIMS:
@@ -424,8 +471,10 @@ class Assessment:
   else:decision='Accept'
   from lifecycle import snapshot as take_snapshot
   snapshot=take_snapshot(self.root,self.policy,self.fixture)
-  result={'parent_run':getattr(self,'parent_run',None),'revalidated_claims':sorted(getattr(self,'affected',set())),'reused_claims':sorted(getattr(self,'reused',set())),'snapshot':snapshot,'risk':getattr(self,'risk',{}),'label_quality':getattr(self,'label_quality',None),'subpopulation':getattr(self,'subpopulation',None),'patch_clusters':[{k:v for k,v in c.items() if k not in ('exemplar_rgb','members')} for c in getattr(self,'patch_clusters',[])],'loop':getattr(self,'loop',None),'encoder':getattr(self,'encoder',None),'semantic_witness':getattr(self,'witness',{}),'id':self.id,'fixture':self.fixture,'name':LABELS.get(self.fixture) or (read_json(self.root/'manifest.json',{}) or {}).get('name',self.fixture),'created':self.started,'completed':now(),'decision':decision,'policy':self.policy,'format':self.format,'images':len(self.items),'objects':len(self.objects),'classes':self.classes,'findings':self.findings,'checks':self.checks,'claims':self.claims,'sources':self.sources,'drift':self.drift,'model':self.model,'records':getattr(self,'records',{}),'timeline':self.timeline,'evaluation':None,'capabilities':CAPABILITIES,'limitations':['Anomalies do not prove attack intent.','Negative conditional tests do not exclude all backdoors.','Raw scores are not calibrated compromise probabilities.','No hardware-backed execution or key custody is claimed.'],'assets':[{'id':i['id'],'source':i['contributor'],'sha256':i['sha256'],'stats':i['stats'],'annotations':i['annotations']} for i in self.items]}
+  result={'parent_run':getattr(self,'parent_run',None),'revalidated_claims':sorted(getattr(self,'affected',set())),'reused_claims':sorted(getattr(self,'reused',set())),'snapshot':snapshot,'risk':getattr(self,'risk',{}),'label_quality':getattr(self,'label_quality',None),'subpopulation':getattr(self,'subpopulation',None),'patch_clusters':[{k:v for k,v in c.items() if k not in ('exemplar_rgb','members')} for c in getattr(self,'patch_clusters',[])],'loop':getattr(self,'loop',None),'encoder':getattr(self,'encoder',None),'semantic_witness':getattr(self,'witness',{}),'id':self.id,'fixture':self.fixture,'name':LABELS.get(self.fixture) or (read_json(self.root/'manifest.json',{}) or {}).get('name',self.fixture),'created':self.started,'completed':now(),'decision':decision,'policy':self.policy,'format':self.format,'images':len(self.items),'objects':len(self.objects),'classes':self.classes,'findings':self.findings,'checks':self.checks,'claims':self.claims,'sources':self.sources,'drift':self.drift,'model':self.model,'records':getattr(self,'records',{}),'timeline':self.timeline,'evaluation':None,'capabilities':CAPABILITIES,'limitations':self.limitations(),'assets':[{'id':i['id'],'source':i['contributor'],'sha256':i['sha256'],'stats':i['stats'],'annotations':i['annotations']} for i in self.items]}
   result['finding_types']=dict(collections.Counter(f['type'] for f in self.findings));result['severity_counts']=dict(collections.Counter(f['severity'] for f in self.findings));result['report_digest']=digest(canonical(result),'sha384');result['report_signature']=base64.b64encode(key().sign(bytes.fromhex(result['report_digest']))).decode()
+  hw=hardware_cosign(bytes.fromhex(result['report_digest']))
+  if hw:result['hardware_signature']=hw
   atomic(STATE/'runs'/f'{self.id}.json',result);log_event('assessment',{'run':self.id,'decision':decision,'report_digest':result['report_digest'],'images':len(self.items),'findings':len(self.findings)});self.result=result
 
 def verify_records(a):

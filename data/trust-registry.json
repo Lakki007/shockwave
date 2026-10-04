@@ -177,5 +177,77 @@
       }
     ],
     "reference_identity": "56ec13a54e4313ed9e54d25172dd845c505b3ee3ea02554f5820f5e419334010"
+  },
+  "cal-dfb01b53": {
+    "trust_version": "attack-lab-1",
+    "provisioned_by": "operator (Attack Lab)",
+    "keys": [],
+    "deployments": [
+      {
+        "label": "tinydet-v1",
+        "model_id": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a",
+        "preprocess_sha256": "2d180192b8b9fb9ddd5d997ac9952bdff8ee5779bfab9a7b6a54856a24a2d147",
+        "postprocess_sha256": "f6930457ecbd93ccbfedd8c5e72ea45c5fad72808efb928e8d0687ac95cc31b4"
+      }
+    ],
+    "approved_model_artifacts": [
+      {
+        "path": "suite/models/clean.onnx",
+        "sha256": "bfd01176573b1fa7360aa484c6dbd178176ae9f444578d90080d299a8fcdc59b"
+      },
+      {
+        "path": "suite/models/clean.safetensors",
+        "sha256": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a"
+      }
+    ],
+    "reference_identity": "13f5eaaa2cbaf71bbd1e30801e03b991d2a9eae4f79c286e6f8092b53390edd0"
+  },
+  "cal-802015d4": {
+    "trust_version": "attack-lab-1",
+    "provisioned_by": "operator (Attack Lab)",
+    "keys": [],
+    "deployments": [
+      {
+        "label": "tinydet-v1",
+        "model_id": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a",
+        "preprocess_sha256": "2d180192b8b9fb9ddd5d997ac9952bdff8ee5779bfab9a7b6a54856a24a2d147",
+        "postprocess_sha256": "f6930457ecbd93ccbfedd8c5e72ea45c5fad72808efb928e8d0687ac95cc31b4"
+      }
+    ],
+    "approved_model_artifacts": [
+      {
+        "path": "suite/models/clean.onnx",
+        "sha256": "bfd01176573b1fa7360aa484c6dbd178176ae9f444578d90080d299a8fcdc59b"
+      },
+      {
+        "path": "suite/models/clean.safetensors",
+        "sha256": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a"
+      }
+    ],
+    "reference_identity": "13f5eaaa2cbaf71bbd1e30801e03b991d2a9eae4f79c286e6f8092b53390edd0"
+  },
+  "cal-3e98545a": {
+    "trust_version": "attack-lab-1",
+    "provisioned_by": "operator (Attack Lab)",
+    "keys": [],
+    "deployments": [
+      {
+        "label": "tinydet-v1",
+        "model_id": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a",
+        "preprocess_sha256": "2d180192b8b9fb9ddd5d997ac9952bdff8ee5779bfab9a7b6a54856a24a2d147",
+        "postprocess_sha256": "f6930457ecbd93ccbfedd8c5e72ea45c5fad72808efb928e8d0687ac95cc31b4"
+      }
+    ],
+    "approved_model_artifacts": [
+      {
+        "path": "suite/models/clean.onnx",
+        "sha256": "bfd01176573b1fa7360aa484c6dbd178176ae9f444578d90080d299a8fcdc59b"
+      },
+      {
+        "path": "suite/models/clean.safetensors",
+        "sha256": "6073edc42af3b7ae2dbcf6a364b60a65b13767d903bf829f986bfbb31d380d5a"
+      }
+    ],
+    "reference_identity": "13f5eaaa2cbaf71bbd1e30801e03b991d2a9eae4f79c286e6f8092b53390edd0"
   }
 }

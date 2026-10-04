@@ -109,21 +109,36 @@ def input_array(path,size=256,pre=None):
  return x.transpose(2,0,1)[None].copy()
 
 class Runtime:
- def __init__(self,path):
-  import onnxruntime as ort
-  ort.disable_telemetry_events();options=ort.SessionOptions();options.intra_op_num_threads=2;options.inter_op_num_threads=1;self.session=ort.InferenceSession(str(path),sess_options=options,providers=['CPUExecutionProvider']);self.name=self.session.get_inputs()[0].name;shape=self.session.get_inputs()[0].shape;self.size=shape[-1] if isinstance(shape[-1],int) else 256;self.kind='tiny' if len(self.session.get_outputs())==3 else 'yolo'
- def raw(self,x):return self.session.run(None,{self.name:x})
+ """ONNX execution through the tiny-detector or a YOLO-family adapter (yolo.py).
+ Approved, operator-provisioned graphs run in-process; submitted graphs run with sandboxed=True
+ in a Seatbelt worker (sandbox.py) and are only reachable through raw tensor exchange."""
+ def __init__(self,path,sandboxed=False,layout=None,names=None):
+  self.isolation='in-process (approved, operator-provisioned graph)';self.worker=None
+  if sandboxed:
+   import sandbox
+   self.worker=sandbox.SandboxedModel(path);inputs,outputs=self.worker.inputs,self.worker.outputs;self.isolation=self.worker.isolation;self.raw=self.worker
+  else:
+   import onnxruntime as ort
+   ort.disable_telemetry_events();options=ort.SessionOptions();options.intra_op_num_threads=2;options.inter_op_num_threads=1;session=ort.InferenceSession(str(path),sess_options=options,providers=['CPUExecutionProvider'])
+   inputs=[[i.name,i.shape] for i in session.get_inputs()];outputs=[[o.name,o.shape] for o in session.get_outputs()];name=inputs[0][0];self.raw=lambda x:session.run(None,{name:x})
+  self.name=inputs[0][0];shape=inputs[0][1];self.size=shape[-1] if isinstance(shape[-1],int) else 256;self.detector=None;self.output_shapes=[o[1] for o in outputs]
+  if len(outputs)==3:self.kind='tiny'
+  else:
+   import yolo
+   self.kind=yolo.detect_layout(self.output_shapes,self.size,layout)
+   if not self.kind:raise ValueError(f'No execution adapter matches output shapes {self.output_shapes}')
+   self.detector=yolo.Detector(self.raw,self.kind,self.size,names)
  def prediction(self,x):
-  out=self.raw(x)
-  if self.kind=='tiny':
-   logits,box,obj=out;prob=np.exp(logits-logits.max(1,keepdims=True));prob/=prob.sum(1,keepdims=True);c=int(prob[0].argmax());return c,float(prob[0,c]*obj[0]),box[0].tolist()
-  pred=out[0][0].T;score=pred[:,4:].max(1);i=int(score.argmax());return int(pred[i,4:].argmax()),float(score[i]),(pred[i,:4]/self.size).tolist()
+  if self.detector:return self.detector.prediction(x)
+  logits,box,obj=self.raw(x);prob=np.exp(logits-logits.max(1,keepdims=True));prob/=prob.sum(1,keepdims=True);c=int(prob[0].argmax());return c,float(prob[0,c]*obj[0]),box[0].tolist()
  def probabilities(self,x):
   """Class distribution for each input in a batch (black-box score access)."""
-  out=self.raw(x)
-  if self.kind=='tiny':
-   logits=out[0];p=np.exp(logits-logits.max(1,keepdims=True));return p/p.sum(1,keepdims=True)
-  pred=out[0].transpose(0,2,1);best=pred[:,:,4:].max(2).argmax(1);scores=pred[np.arange(len(pred)),best,4:];return scores/(scores.sum(1,keepdims=True)+1e-9)
+  if self.detector:return self.detector.probabilities(x)
+  logits=self.raw(x)[0];p=np.exp(logits-logits.max(1,keepdims=True));return p/p.sum(1,keepdims=True)
+ def describe(self):
+  return {'adapter':self.kind,'input_size':self.size,'output_shapes':self.output_shapes,'isolation':self.isolation,'calls':getattr(self.worker,'calls',None)}
+ def close(self):
+  if self.worker:self.worker.close()
 
 def torch_prediction(model,x):
  import torch
@@ -202,8 +217,19 @@ def build_context(a):
   ctx.submitted_probs=probs;ctx.submitted_mode='white-box adapter (data-only weights, validated architecture)'
   a.check('White-box adapter','Completed',f'Data-only weights reconstructed in the approved architecture; approved ONNX agreement max error {ctx.adapter_error:.8f}.','behaviour')
  elif onnx_model:
-  sub=Runtime(onnx_model);ctx.submitted=sub.prediction;ctx.submitted_mode='black-box ONNX runtime (labels and scores only)'
+  import sandbox
+  layout=(core.read_json(a.root/'submission/pipeline.json',{}).get('adapter') or {}).get('layout')
+  try:
+   if not getattr(a,'sandbox_probe',None):a.sandbox_probe=sandbox.probe()
+   if a.sandbox_probe.get('available') and not a.sandbox_probe.get('enforced'):raise sandbox.SandboxError('Sandbox self-test did not deny network, writes, package reads and exec: '+json.dumps(a.sandbox_probe))
+   sub=Runtime(onnx_model,sandboxed=True,layout=layout,names=names)
+  except (sandbox.SandboxError,ValueError) as e:
+   a.check('Sandboxed execution','Unavailable',f'Submitted graph not executed: {e}','safe_intake');return ctx
+  ctx.submitted_runtime=sub;ctx.submitted=sub.prediction;ctx.submitted_mode=f'black-box {sub.kind} adapter in sandboxed worker (labels and scores only)'
   if a.policy['access'] in ('black-box','grey-box','white-box'):ctx.submitted_probs=sub.probabilities
+  a.model['execution']={**sub.describe(),'self_test':a.sandbox_probe,'limits':sandbox.LIMITS}
+  a.check('Sandboxed execution','Completed',f'Submitted {sub.kind} graph runs in an isolated worker: {sub.isolation}. Self-test: network, file writes, package reads and exec denied.','safe_intake')
+  if sub.kind!='tiny':a.check('Detector adapter','Completed',f'{sub.kind} output layout {sub.output_shapes} at {sub.size}px: letterbox preprocessing, decoding and class-aware NMS.','behaviour')
  return ctx
 
 def behaviour_checks(a):

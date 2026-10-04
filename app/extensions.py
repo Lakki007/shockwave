@@ -9,6 +9,10 @@ def semantic_witness(a):
  folder=core.DATA/'encoders/semantic-witness'
  if not (folder/'config.json').exists():
   a.check('Semantic witness','Unavailable','No approved local vision-language weights configured; this check does not count as a pass.','poisoning');return
+ pin=core.read_json(folder/'APPROVED.json',{})
+ bad=[n for n,h in (pin.get('files') or {}).items() if not (folder/n).is_file() or core.digest((folder/n).read_bytes())!=h]
+ if not pin.get('files') or bad or not (folder/'model.safetensors').is_file() or 'model.safetensors' not in pin['files']:
+  a.check('Semantic witness','Unavailable','Witness weights do not match the operator-approved SHA-256 pin'+(f' ({", ".join(bad[:3])})' if bad else '')+'; not loaded.','poisoning');return
  try:
   import torch
   from transformers import AutoProcessor,AutoModelForImageTextToText
@@ -27,11 +31,13 @@ def semantic_witness(a):
     with torch.inference_mode():output=model.generate(**inputs,max_new_tokens=8,do_sample=False,return_dict_in_generate=True,output_scores=True)
     answer=processor.batch_decode(output.sequences[:,inputs['input_ids'].shape[1]:],skip_special_tokens=True)[0].strip();yes=answer.lower().startswith('yes');no=answer.lower().startswith('no');raw=None
     if output.scores:
+     # Forced choice: compare the first-step Yes/No token scores, so free-text answers ("Real photograph.") still resolve.
      tokenizer=processor.tokenizer;yi=tokenizer.encode('Yes',add_special_tokens=False)[0];ni=tokenizer.encode('No',add_special_tokens=False)[0];raw=float(output.scores[0][0,[yi,ni]].softmax(0)[0])
+     yes,no=raw>=.5,raw<.5
     row={'asset':ident,'question_type':kind,'question':question,'answer':answer,'raw_yes_score':raw,'score_status':'Uncalibrated binary token score; not a probability of maliciousness.','model':'local approved semantic witness','role':'Advisory only; cannot approve assets or alter policy.'};rows.append(row)
     if kind=='marking' and yes or kind in ('photograph','label') and no:
      claim='labels' if kind=='label' else 'poisoning';a.finding('witness_'+kind,claim,ident,'The local semantic witness flags a candidate '+kind+' concern. Verify the image and model assumptions before acting.','medium',row,source=item['contributor'],group='semantic_witness')
-  a.witness={'model':folder.name,'rows':rows,'queries':len(rows),'budget':12};a.check('Semantic witness','Completed',f'{len(rows)} bounded local closed visual questions. Responses remain uncalibrated advisory evidence.','poisoning')
+  a.witness={'model':pin.get('model',folder.name),'weights_sha256':pin['files']['model.safetensors'],'rows':rows,'queries':len(rows),'budget':12};a.check('Semantic witness','Completed',f'{len(rows)} bounded local closed visual questions. Responses remain uncalibrated advisory evidence.','poisoning')
  except Exception as e:a.check('Semantic witness','Unavailable',f'Configured local VLM could not run: {type(e).__name__}.','poisoning')
 
 def training_attribution(a):
@@ -69,8 +75,11 @@ def calibrate(a):
  for lo in np.arange(0,1,.1):
   selected=(probs>=lo)&(probs<(lo+.1) if lo<.9 else probs<=1)
   if selected.any():ece+=selected.mean()*abs(probs[selected].mean()-labels[selected].mean())
- compatible=d.get('context')==a.policy['context'] and a.drift.get('p_value',1)>.05
+ compatible=d.get('context')==a.policy['context'] and bool(a.drift.get('available')) and a.drift.get('p_value') is not None and a.drift['p_value']>.05  # an unmeasured context is not a compatible one
  a.risk.update({'calibration_digest':core.digest(p.read_bytes()),'validation_samples':len(validation),'brier':brier,'ece':float(ece),'calibrated':bool(compatible),'abstained':not compatible})
  if compatible:
-  for row in a.risk['samples']:row['calibrated_probability']=float(model.predict([row['score']])[0])
+  images={x['id'] for x in a.items}
+  for row in a.risk['samples']:
+   if row['asset'] in images:row['calibrated_probability']=float(model.predict([row['score']])[0])
+   else:row['calibration']='Not applicable: the calibration set covers dataset images only.'
  a.check('Calibrated confidence','Completed' if compatible else 'Limited',f'Independent isotonic fit; validation Brier {brier:.4f}, ECE {ece:.4f}. '+('Operating context compatible.' if compatible else 'Context/shift gate requires abstention.'),'calibration')

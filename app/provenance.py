@@ -6,11 +6,17 @@ from cryptography.hazmat.primitives.serialization import Encoding,PublicFormat
 import core
 DOMAIN=b'SHOCKWAVE-INFERENCE-v1\x00'
 
-def report_verify(report,public_key):
- body={k:v for k,v in report.items() if k not in ('report_digest','report_signature')};actual=core.digest(core.canonical(body),'sha384')
+def report_verify(report,public_key,hardware_public_key=None):
+ body={k:v for k,v in report.items() if k not in ('report_digest','report_signature','hardware_signature')};actual=core.digest(core.canonical(body),'sha384')
  if actual!=report.get('report_digest'):return {'verified':False,'reason':'Report content differs from its sealed digest.'}
  try:Ed25519PublicKey.from_public_bytes(base64.b64decode(public_key)).verify(base64.b64decode(report['report_signature']),bytes.fromhex(actual))
  except Exception:return {'verified':False,'reason':'Report signature does not verify under the trusted key.'}
+ hw=report.get('hardware_signature')
+ if hardware_public_key and not hw:return {'verified':False,'reason':'A hardware co-signature was required but the report has none.'}
+ if hw:
+  import keystore
+  if not keystore.verify(bytes.fromhex(actual),hw,hardware_public_key):return {'verified':False,'reason':'Hardware co-signature does not verify'+(' under the pinned hardware key.' if hardware_public_key else '.')}
+  return {'verified':True,'hardware':{'key_id':hw['key_id'],'algorithm':hw['algorithm'],'pinned':bool(hardware_public_key)},'reason':'Content, Ed25519 signature and Secure Enclave co-signature verified'+(' under the pinned keys.' if hardware_public_key else '; pin --hardware-key to trust the enclave key independently.')}
  return {'verified':True,'reason':'Content and signature verified under the supplied trusted public key.'}
 
 def inclusion(sequence):

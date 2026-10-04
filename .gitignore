@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .claude/
+data/encoders/semantic-witness/
+data/models/yolox/
+data/fixtures/cal-*/
+data/fixtures/calib-*/

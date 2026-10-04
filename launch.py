@@ -17,8 +17,13 @@ port=int(os.environ.get('SHOCKWAVE_PORT','8765'))
 if '--no-browser' not in sys.argv:webbrowser.open(f'http://127.0.0.1:{port}')
 from http.server import ThreadingHTTPServer
 from server import Handler
-print(f'Shockwave ready at http://127.0.0.1:{port}',flush=True)
-try:ThreadingHTTPServer(('127.0.0.1',port),Handler).serve_forever()
+bind=os.environ.get('SHOCKWAVE_BIND','127.0.0.1')
+if bind not in ('127.0.0.1','localhost','::1'):
+ import analysts
+ if not analysts.enabled():print('Refusing to listen beyond this machine without multi-analyst sign-in (configure PostgreSQL first).');sys.exit(1)
+ print('Listening beyond loopback without TLS: put a TLS reverse proxy in front and set SHOCKWAVE_TLS=1 and SHOCKWAVE_PUBLIC_HOST.',flush=True)
+print(f'Shockwave ready at http://{bind}:{port}',flush=True)
+try:ThreadingHTTPServer((bind,port),Handler).serve_forever()
 except OSError as e:
  if e.errno==48:print(f'Port {port} is already in use. Open the running workspace or set SHOCKWAVE_PORT.')
  else:raise

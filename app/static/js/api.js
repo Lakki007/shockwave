@@ -3,12 +3,17 @@ export async function api(path, body) {
   const res = await fetch('/api/' + path, body === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
   let data;
   try { data = await res.json(); } catch { throw new Error(`Unexpected response (${res.status})`); }
-  if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
+  if (!res.ok) {
+    // Multi-analyst mode: an expired session or a pending password change sends the shell back to sign-in.
+    if (data.auth || data.must_change) document.dispatchEvent(new CustomEvent('sw:auth', { detail: data }));
+    throw new Error(data.error || `Request failed (${res.status})`);
+  }
   return data;
 }
 
 export const store = {
   boot: null,
+  session: { mode: 'single', analyst: null },  // multi-analyst identity, from /api/session
   runs: new Map(),   // id -> full sealed report
   maps: new Map(),   // id -> embedding projection
   current: null,     // selected run id
