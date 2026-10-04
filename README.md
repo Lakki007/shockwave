@@ -38,7 +38,7 @@ Five bundled example packages cover synthetic, baseline, adversarial, curated an
 
 ## Visual experience
 
-The overview introduces data, model and inference assurance through an animated core and direct links into the evidence. Every screen uses staggered scroll reveals, local gold/blue light trails, pointer highlights and responsive glass panels. The scroll indicator and back-to-top control support longer evidence screens. Select **Motion on** in the header to pause effects; the choice is retained on this browser. System reduced-motion settings automatically disable motion. All graphics, fonts and effects remain local, and the presentation never changes evidence values or assessment decisions.
+The overview unfolds the real DINOv2 embedding of the latest assessment as you scroll: sphere, class map, evidence by severity, challenged claims and the sealed decision. Every number on screen is read from a sealed report. Graphite-and-mint styling, fonts and canvases are local; system reduced-motion settings disable animation. The interface works at phone width.
 
 ## Import a new submission
 

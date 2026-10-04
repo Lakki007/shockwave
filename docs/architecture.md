@@ -51,3 +51,9 @@ Receipt production and receiving use SQLite transactions. The receiver rejects r
 ## Conditional AI
 
 DINOv2 is included. The semantic witness is SmolVLM-500M-Instruct, fetched once against `data/models.lock.json` and refused at load time if any file differs from its pin. It asks twelve bounded forced-choice questions, runs without tools or remote code and is advisory only. Training attribution accepts a separately generated, checkpoint-bound evidence artifact; a supported-classifier TRAK adapter is included, while training checkpoints and membership are not supplied, and imported attribution remains Limited. Calibration uses disjoint fit/validation samples, policy and context gates, isotonic regression, Brier score and ECE; absent calibration, a shifted context or an unmeasured context causes abstention. The calibration set is labelled from the sealed keys of its own packages, forged from reference pictures held out of every submission; the answer keys of assessed packages never feed detectors or calibration.
+
+## Execution isolation and its roadmap
+
+Submitted graphs run in a worker under a deny-by-default Seatbelt profile (`app/sandbox.py`): only the Python runtime and system libraries are readable, file metadata outside them is hidden, and network, writes and process execution are denied. Model bytes and tensors cross a pipe, so the worker never sees package paths. Every assessment runs a self-test that tries each escape and records the result in the report.
+
+`sandbox-exec` is deprecated by Apple, although the kernel enforcement it uses remains in macOS. The planned path is a short-lived virtual machine per submission (Apple Virtualization framework on macOS, a microVM such as Firecracker on Linux) speaking the same pipe protocol as `app/worker.py`, so the assessor side does not change. TorchScript execution is deferred until that VM boundary exists, because TorchScript graphs can call arbitrary operators.

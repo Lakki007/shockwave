@@ -18,6 +18,12 @@ if '--no-browser' not in sys.argv:webbrowser.open(f'http://127.0.0.1:{port}')
 from http.server import ThreadingHTTPServer
 from server import Handler,restore_queue
 restore_queue()
+def _warm_witness():  # load the pinned VLM in the background so the first live run does not wait for it
+ try:
+  import extensions
+  if extensions.witness_pin()[0]:extensions.load_witness()
+ except Exception:pass
+import threading;threading.Thread(target=_warm_witness,daemon=True).start()
 bind=os.environ.get('SHOCKWAVE_BIND','127.0.0.1')
 if bind not in ('127.0.0.1','localhost','::1'):
  import analysts
